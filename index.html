@@ -3,570 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amine SALKI — Digital Marketing & Web Creation</title>
+<title>El Jadida Web Solutions — Création de Sites Web & Digital Marketing</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --purple: #6B21A8;
-    --violet: #7C3AED;
-    --pink: #EC4899;
-    --dark: #0D0014;
-    --darker: #08000D;
-    --text: #F3E8FF;
-    --muted: #C084FC;
-    --glass: rgba(255,255,255,0.04);
-    --border: rgba(192,132,252,0.15);
+    --purple: #6B21A8; --violet: #7C3AED; --pink: #EC4899;
+    --dark: #0D0014; --darker: #08000D;
+    --text: #F3E8FF; --muted: #C084FC;
+    --glass: rgba(255,255,255,0.04); --border: rgba(192,132,252,0.15);
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Outfit', sans-serif;
-    background: var(--darker);
-    color: var(--text);
-    overflow-x: hidden;
-  }
-
-  /* ─── BG MESH ─── */
+  body { font-family: 'Outfit', sans-serif; background: var(--darker); color: var(--text); overflow-x: hidden; }
   body::before {
-    content: '';
-    position: fixed; inset: 0; z-index: 0;
+    content: ''; position: fixed; inset: 0; z-index: 0;
     background:
       radial-gradient(ellipse 60% 50% at 10% 20%, rgba(107,33,168,0.35) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 40% at 90% 80%, rgba(236,72,153,0.25) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 60% at 50% 50%, rgba(124,58,237,0.1) 0%, transparent 70%);
+      radial-gradient(ellipse 50% 40% at 90% 80%, rgba(236,72,153,0.25) 0%, transparent 60%);
     pointer-events: none;
   }
 
-  /* ─── NAV ─── */
+  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 4rem;
-    background: rgba(8,0,13,0.7);
-    backdrop-filter: blur(20px);
+    padding: 1rem 4rem;
+    background: rgba(8,0,13,0.85); backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
   }
-
-  .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
-    letter-spacing: 2px;
-    background: linear-gradient(135deg, #C084FC, #EC4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
+  .nav-logo img { height: 52px; width: auto; }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a {
-    text-decoration: none;
-    color: var(--muted);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color 0.3s;
-  }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
   .nav-links a:hover { color: var(--text); }
-
-  /* ─── HERO ─── */
-  .hero {
-    position: relative; z-index: 1;
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 8rem 4rem 4rem;
-    overflow: hidden;
-  }
-
-  .hero-content { max-width: 650px; }
-
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.4rem 1rem;
-    background: rgba(107,33,168,0.3);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 2rem;
-    animation: fadeUp 0.8s ease both;
-  }
-
-  .hero-badge::before {
-    content: '';
-    width: 6px; height: 6px;
-    background: #EC4899;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%,100% { opacity:1; transform: scale(1); }
-    50% { opacity:0.5; transform: scale(1.4); }
-  }
-
-  .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(4rem, 8vw, 7.5rem);
-    line-height: 0.95;
-    letter-spacing: 2px;
-    animation: fadeUp 0.8s 0.1s ease both;
-  }
-
-  .hero h1 .line-color {
-    background: linear-gradient(135deg, #C084FC 0%, #EC4899 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .hero-sub {
-    margin-top: 1.5rem;
-    font-size: 1.05rem;
-    color: #A78BCA;
-    line-height: 1.7;
-    max-width: 500px;
-    animation: fadeUp 0.8s 0.2s ease both;
-  }
-
-  .hero-cta {
-    display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap;
-    animation: fadeUp 0.8s 0.3s ease both;
-  }
-
-  .btn-primary {
-    padding: 0.85rem 2.2rem;
-    background: linear-gradient(135deg, #7C3AED, #EC4899);
-    border: none; border-radius: 6px;
-    color: white;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.9rem; font-weight: 600;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 30px rgba(124,58,237,0.4);
-  }
+  .btn-primary { padding: 0.7rem 1.8rem; background: linear-gradient(135deg, #7C3AED, #EC4899); border: none; border-radius: 6px; color: white; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 30px rgba(124,58,237,0.4); }
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(124,58,237,0.6); }
-
-  .btn-outline {
-    padding: 0.85rem 2.2rem;
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--muted);
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.9rem; font-weight: 500;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: border-color 0.2s, color 0.2s;
-  }
+  .btn-outline { padding: 0.7rem 1.8rem; background: transparent; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); font-family: 'Outfit', sans-serif; font-size: 0.85rem; cursor: pointer; text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s; }
   .btn-outline:hover { border-color: var(--muted); color: var(--text); }
 
-  .hero-stats {
-    display: flex; gap: 3rem; margin-top: 3.5rem;
-    animation: fadeUp 0.8s 0.4s ease both;
-  }
+  /* SECTIONS */
+  section { position: relative; z-index: 1; padding: 6rem 4rem; }
+  .section-label { font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase; color: #EC4899; font-weight: 600; margin-bottom: 1rem; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; letter-spacing: 1px; }
+  .section-title span { background: linear-gradient(135deg, #C084FC, #EC4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .divider { width: 60px; height: 3px; background: linear-gradient(90deg, #7C3AED, #EC4899); border-radius: 3px; margin: 1.2rem 0 0; }
 
-  .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.8rem;
-    background: linear-gradient(135deg, #C084FC, #EC4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 0.8rem;
-    color: #7C5FA0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 0.3rem;
-  }
-
-  /* floating orbs */
-  .orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    pointer-events: none;
-  }
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 4rem 4rem; overflow: hidden; }
+  .hero-content { max-width: 650px; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; background: rgba(107,33,168,0.3); border: 1px solid var(--border); border-radius: 100px; font-size: 0.75rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 2rem; animation: fadeUp 0.8s ease both; }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; background: #EC4899; border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.4);} }
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 7vw, 6.5rem); line-height: 0.95; letter-spacing: 2px; animation: fadeUp 0.8s 0.1s ease both; }
+  .hero h1 .lc { background: linear-gradient(135deg, #C084FC, #EC4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-sub { margin-top: 1.5rem; font-size: 1rem; color: #A78BCA; line-height: 1.7; max-width: 500px; animation: fadeUp 0.8s 0.2s ease both; }
+  .hero-cta { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; animation: fadeUp 0.8s 0.3s ease both; }
+  .hero-stats { display: flex; gap: 3rem; margin-top: 3.5rem; animation: fadeUp 0.8s 0.4s ease both; }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; background: linear-gradient(135deg, #C084FC, #EC4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+  .stat-label { font-size: 0.8rem; color: #7C5FA0; text-transform: uppercase; letter-spacing: 1px; margin-top: 0.3rem; }
+  .orb { position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none; }
   .orb-1 { width: 400px; height: 400px; right: -100px; top: 100px; background: rgba(107,33,168,0.3); animation: float 8s ease-in-out infinite; }
   .orb-2 { width: 250px; height: 250px; right: 200px; bottom: 100px; background: rgba(236,72,153,0.25); animation: float 6s 2s ease-in-out infinite; }
+  @keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-30px);} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);} }
 
-  @keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-30px); }
-  }
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+  .service-card { padding: 2rem; background: var(--glass); border: 1px solid var(--border); border-radius: 12px; transition: transform .3s, border-color .3s, box-shadow .3s; }
+  .service-card:hover { transform: translateY(-6px); border-color: rgba(192,132,252,.35); box-shadow: 0 20px 60px rgba(107,33,168,.2); }
+  .service-icon { width: 48px; height: 48px; background: linear-gradient(135deg, rgba(107,33,168,.5), rgba(236,72,153,.3)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.2rem; }
+  .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .6rem; }
+  .service-card p { font-size: .85rem; color: #7C5FA0; line-height: 1.6; }
 
-  @keyframes fadeUp {
-    from { opacity:0; transform: translateY(30px); }
-    to { opacity:1; transform: translateY(0); }
-  }
+  /* ══════════════════════════════════════
+     PORTFOLIO SLIDER
+  ══════════════════════════════════════ */
+  .portfolio-section { overflow: hidden; }
 
-  /* ─── SECTION BASE ─── */
-  section {
-    position: relative; z-index: 1;
-    padding: 6rem 4rem;
-  }
-
-  .section-label {
-    font-size: 0.72rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #EC4899;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1;
-    letter-spacing: 1px;
-  }
-
-  .section-title span {
-    background: linear-gradient(135deg, #C084FC, #EC4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  /* ─── ABOUT ─── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
+  .slider-outer {
+    position: relative;
     margin-top: 3.5rem;
+    cursor: grab;
+    user-select: none;
   }
+  .slider-outer.dragging { cursor: grabbing; }
 
-  .about-text p {
-    color: #A78BCA;
-    line-height: 1.8;
-    margin-bottom: 1.2rem;
-    font-size: 1rem;
+  .slider-track {
+    display: flex;
+    gap: 2.4rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem 0 2rem;
   }
+  .slider-track::-webkit-scrollbar { display: none; }
 
-  .skills-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .skill-item {
-    padding: 1rem 1.2rem;
+  /* Each card: desktop mockup + phone mockup side by side */
+  .pcard {
+    flex: 0 0 520px;
+    scroll-snap-align: center;
     background: var(--glass);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    font-size: 0.85rem;
-    color: var(--muted);
-    display: flex; align-items: center; gap: 0.6rem;
-    transition: border-color 0.3s, background 0.3s;
-  }
-  .skill-item:hover { border-color: rgba(192,132,252,0.4); background: rgba(107,33,168,0.15); }
-  .skill-dot { width: 6px; height: 6px; background: #EC4899; border-radius: 50%; flex-shrink: 0; }
-
-  .certif-badge {
-    display: inline-flex; align-items: center; gap: 0.8rem;
-    padding: 1rem 1.5rem;
-    background: linear-gradient(135deg, rgba(107,33,168,0.3), rgba(236,72,153,0.15));
-    border: 1px solid rgba(192,132,252,0.3);
-    border-radius: 10px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-top: 1.5rem;
-  }
-  .certif-badge .g-icon {
-    font-size: 1.4rem;
-  }
-
-  /* ─── SERVICES ─── */
-  .services-bg { background: rgba(107,33,168,0.04); }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3.5rem;
-  }
-
-  .service-card {
-    padding: 2rem;
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    cursor: default;
-  }
-  .service-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(192,132,252,0.35);
-    box-shadow: 0 20px 60px rgba(107,33,168,0.2);
-  }
-
-  .service-icon {
-    width: 48px; height: 48px;
-    background: linear-gradient(135deg, rgba(107,33,168,0.5), rgba(236,72,153,0.3));
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.4rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .service-card h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 0.6rem;
-    color: var(--text);
-  }
-  .service-card p { font-size: 0.85rem; color: #7C5FA0; line-height: 1.6; }
-
-  /* ─── PORTFOLIO ─── */
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3.5rem;
-  }
-
-  .project-card {
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 20px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: border-color .3s, box-shadow .3s, transform .3s;
+    position: relative;
   }
-  .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 24px 60px rgba(107,33,168,0.3);
-  }
+  .pcard:hover { border-color: rgba(192,132,252,.5); box-shadow: 0 30px 80px rgba(107,33,168,.3); }
 
-  .project-mockup {
-    aspect-ratio: 16/9;
-    background: linear-gradient(135deg, #1a0030, #2d0050);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.8rem;
-    color: var(--muted);
+  /* Hover label at top */
+  .pcard-hover-label {
+    position: absolute; top: 0; left: 0; right: 0;
+    padding: 0.7rem 1.2rem;
+    background: linear-gradient(135deg, #7C3AED, #EC4899);
+    color: white; font-size: .78rem; font-weight: 600;
+    letter-spacing: .5px; text-align: center;
+    transform: translateY(-100%);
+    transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+    z-index: 10;
+  }
+  .pcard:hover .pcard-hover-label { transform: translateY(0); }
+
+  /* Mockups area */
+  .pcard-mockups {
+    display: flex; align-items: flex-end; gap: 1.2rem;
+    padding: 2rem 1.5rem 1.2rem;
+    background: linear-gradient(160deg, #12002a 0%, #1a0035 100%);
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid var(--border);
   }
-
-  .project-mockup::before {
+  .pcard-mockups::before {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(107,33,168,0.3), rgba(236,72,153,0.1));
+    background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(124,58,237,.25) 0%, transparent 70%);
   }
 
-  .mockup-browser {
-    position: absolute; inset: 12px;
-    background: rgba(0,0,0,0.5);
-    border-radius: 6px;
-    border: 1px solid rgba(255,255,255,0.08);
+  /* Desktop browser mockup */
+  .desktop-mock {
+    flex: 1;
+    background: #1e1e2e;
+    border-radius: 8px;
+    border: 1.5px solid rgba(255,255,255,.1);
+    box-shadow: 0 12px 40px rgba(0,0,0,.5);
     overflow: hidden;
-  }
-
-  .mockup-bar {
-    height: 20px;
-    background: rgba(255,255,255,0.05);
-    display: flex; align-items: center; padding: 0 8px; gap: 4px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-
-  .mockup-dot { width: 5px; height: 5px; border-radius: 50%; }
-  .mockup-dot:nth-child(1) { background: #ff5f57; }
-  .mockup-dot:nth-child(2) { background: #ffbd2e; }
-  .mockup-dot:nth-child(3) { background: #28c840; }
-
-  .mockup-content {
-    padding: 8px;
-    display: flex; flex-direction: column; gap: 4px;
-  }
-
-  .mockup-line { height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; }
-  .mockup-line.w-full { width: 100%; }
-  .mockup-line.w-3q { width: 75%; }
-  .mockup-line.w-half { width: 50%; }
-  .mockup-line.accent { background: linear-gradient(90deg, rgba(107,33,168,0.6), rgba(236,72,153,0.4)); }
-
-  .project-url {
-    position: absolute;
-    bottom: 8px; left: 12px;
-    font-size: 0.7rem;
-    color: rgba(192,132,252,0.7);
-    font-family: monospace;
-  }
-
-  .project-info { padding: 1.2rem 1.5rem 1.5rem; }
-  .project-info h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
-  .project-info p { font-size: 0.8rem; color: #7C5FA0; }
-
-  .project-tag {
-    display: inline-block;
-    padding: 0.2rem 0.7rem;
-    background: rgba(107,33,168,0.3);
-    border: 1px solid rgba(192,132,252,0.2);
-    border-radius: 100px;
-    font-size: 0.7rem;
-    color: var(--muted);
-    margin-top: 0.6rem;
-    margin-right: 0.3rem;
-  }
-
-  /* ─── CLIENTS ─── */
-  .clients-section { overflow: hidden; }
-
-  .clients-track {
-    display: flex; gap: 3rem; align-items: center;
-    margin-top: 3rem;
-    animation: marquee 25s linear infinite;
-    white-space: nowrap;
-  }
-
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  .client-pill {
-    flex-shrink: 0;
-    padding: 0.6rem 1.4rem;
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    font-size: 0.82rem;
-    color: #9D6BC9;
-    white-space: nowrap;
-    letter-spacing: 0.3px;
-  }
-
-  /* ─── CONTACT ─── */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-    margin-top: 3.5rem;
-  }
-
-  .contact-info p {
-    color: #A78BCA;
-    line-height: 1.8;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
-
-  .contact-link {
-    display: flex; align-items: center; gap: 1rem;
-    padding: 1rem 1.5rem;
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    text-decoration: none;
-    color: var(--text);
-    font-size: 0.9rem;
-    transition: border-color 0.3s, background 0.3s;
-  }
-  .contact-link:hover { border-color: rgba(192,132,252,0.4); background: rgba(107,33,168,0.15); }
-
-  .contact-icon {
-    width: 38px; height: 38px;
-    background: linear-gradient(135deg, rgba(107,33,168,0.5), rgba(236,72,153,0.3));
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem;
-    flex-shrink: 0;
-  }
-
-  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-
-  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-
-  .form-group label {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--muted);
-    letter-spacing: 0.5px;
-  }
-
-  .form-group input, .form-group textarea {
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.85rem 1rem;
-    color: var(--text);
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.9rem;
-    outline: none;
-    transition: border-color 0.3s;
-    resize: none;
-  }
-  .form-group input:focus, .form-group textarea:focus { border-color: rgba(192,132,252,0.5); }
-  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(160,107,200,0.4); }
-
-  /* ─── FOOTER ─── */
-  footer {
     position: relative; z-index: 1;
-    border-top: 1px solid var(--border);
-    padding: 2rem 4rem;
-    display: flex; align-items: center; justify-content: space-between;
   }
-
-  footer p { font-size: 0.8rem; color: #5C3A7A; }
-
-  .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
-    background: linear-gradient(135deg, #C084FC, #EC4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .desktop-bar {
+    height: 24px;
+    background: #2a2a3e;
+    display: flex; align-items: center; padding: 0 8px; gap: 5px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
   }
-
-  /* ─── DIVIDER ─── */
-  .divider {
-    width: 60px; height: 3px;
-    background: linear-gradient(90deg, #7C3AED, #EC4899);
-    border-radius: 3px;
-    margin: 1.2rem 0 0;
+  .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .dot-r { background: #ff5f57; }
+  .dot-y { background: #ffbd2e; }
+  .dot-g { background: #28c840; }
+  .desktop-url {
+    flex: 1; height: 12px; background: rgba(255,255,255,.08);
+    border-radius: 3px; margin: 0 6px;
   }
+  .desktop-screen { width: 100%; aspect-ratio: 16/10; overflow: hidden; }
+  .desktop-screen canvas { width: 100%; height: 100%; display: block; }
 
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    section { padding: 4rem 1.5rem; }
-    .hero { padding: 7rem 1.5rem 4rem; }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .services-grid, .portfolio-grid { grid-template-columns: 1fr; }
-    .hero-stats { gap: 2rem; }
-    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  /* Phone mockup */
+  .phone-mock {
+    width: 90px;
+    background: #111;
+    border-radius: 16px;
+    border: 2px solid rgba(255,255,255,.15);
+    box-shadow: 0 8px 30px rgba(0,0,0,.6);
+    overflow: hidden;
+    position: relative; z-index: 1;
+    flex-shrink: 0;
+  }
+  .phone-top {
+    height: 16px; background: #1a1a1a;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .phone-notch { width: 28px; height: 6px; background: #111; border-radius: 3px; }
+  .phone-screen { width: 100%; aspect-ratio: 9/16; overflow: hidden; }
+  .phone-screen canvas { width: 100%; height: 100%; display: block; }
+  .phone-home { height: 12px; background: #1a1a1a; display: flex; align-items: center; justify-content: center; }
+  .phone-home-bar { width: 24px; height: 3px; background: rgba(255,255,255,.3); border-radius: 2px; }
+
+  /* Card info */
+  .pcard-info { padding: 1.2rem 1.5rem 1.5rem; }
+  .pcard-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: .3rem; }
+  .pcard-info p { font-size: .82rem; color: #7C5FA0; margin-bottom: .8rem; }
+  .ptag { display: inline-block; padding: .2rem .7rem; background: rgba(107,33,168,.3); border: 1px solid rgba(192,132,252,.2); border-radius: 100px; font-size: .7rem; color: var(--muted); margin-right: .3rem; }
+
+  /* Nav arrows */
+  .slider-nav { display: flex; gap: .8rem; margin-top: 1.2rem; }
+  .snav-btn { width: 42px; height: 42px; background: var(--glass); border: 1px solid var(--border); border-radius: 50%; color: var(--muted); font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .2s; }
+  .snav-btn:hover { background: rgba(107,33,168,.3); border-color: rgba(192,132,252,.4); color: var(--text); }
+
+  /* CLIENTS */
+  .clients-track { display: flex; gap: 3rem; align-items: center; margin-top: 3rem; animation: marquee 25s linear infinite; white-space: nowrap; }
+  @keyframes marquee { from{transform:translateX(0);}to{transform:translateX(-50%);} }
+  .client-pill { flex-shrink: 0; padding: .6rem 1.4rem; background: var(--glass); border: 1px solid var(--border); border-radius: 100px; font-size: .82rem; color: #9D6BC9; }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3.5rem; }
+  .contact-info p { color: #A78BCA; line-height: 1.8; font-size: 1rem; margin-bottom: 2rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.5rem; background: var(--glass); border: 1px solid var(--border); border-radius: 10px; text-decoration: none; color: var(--text); font-size: .9rem; transition: border-color .3s, background .3s; }
+  .contact-link:hover { border-color: rgba(192,132,252,.4); background: rgba(107,33,168,.15); }
+  .contact-icon { width: 38px; height: 38px; background: linear-gradient(135deg,rgba(107,33,168,.5),rgba(236,72,153,.3)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: .4rem; }
+  .form-group label { font-size: .8rem; font-weight: 500; color: var(--muted); letter-spacing: .5px; }
+  .form-group input, .form-group textarea { background: var(--glass); border: 1px solid var(--border); border-radius: 8px; padding: .85rem 1rem; color: var(--text); font-family: 'Outfit',sans-serif; font-size: .9rem; outline: none; transition: border-color .3s; resize: none; }
+  .form-group input:focus, .form-group textarea:focus { border-color: rgba(192,132,252,.5); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(160,107,200,.4); }
+  .form-success { display:none; padding:1rem; background:rgba(107,33,168,.2); border:1px solid rgba(192,132,252,.3); border-radius:8px; color:var(--muted); text-align:center; font-size:.9rem; }
+
+  /* FOOTER */
+  footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 2rem 4rem; display: flex; align-items: center; justify-content: space-between; }
+  .footer-logo img { height: 44px; }
+  footer p { font-size: .8rem; color: #5C3A7A; }
+
+  @media(max-width:900px){
+    nav{padding:1rem 1.5rem;} .nav-links{display:none;}
+    section{padding:4rem 1.5rem;} .hero{padding:7rem 1.5rem 4rem;}
+    .contact-grid{grid-template-columns:1fr;gap:2.5rem;}
+    .services-grid{grid-template-columns:1fr;}
+    .hero-stats{gap:2rem;}
+    .pcard{flex:0 0 300px;}
+    footer{padding:1.5rem;flex-direction:column;gap:.5rem;text-align:center;}
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-logo">AMINE SALKI</div>
+  <div class="nav-logo"><img src="logo.png" alt="El Jadida Web Solutions"></div>
   <ul class="nav-links">
-    <li><a href="#about">À propos</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#clients">Clients</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="tel:+212620830606" class="btn-primary" style="padding:0.6rem 1.4rem;font-size:0.82rem;">+212 6 20 83 06 06</a>
+  <a href="tel:+212620830606" class="btn-primary">+212 6 20 83 06 06</a>
 </nav>
 
 <!-- HERO -->
@@ -575,292 +252,188 @@
   <div class="orb orb-2"></div>
   <div class="hero-content">
     <div class="hero-badge">Google Certified · El Jadida, Maroc</div>
-    <h1>
-      DIGITAL<br>
-      <span class="line-color">MARKETING</span><br>
-      & WEB
-    </h1>
-    <p class="hero-sub">
-      Spécialiste en création de sites web, SEO, et marketing digital. J'aide les entreprises marocaines à booster leur présence en ligne avec des solutions sur mesure et des résultats mesurables.
-    </p>
+    <h1>CRÉATION<br><span class="lc">SITES WEB</span><br>& DIGITAL</h1>
+    <p class="hero-sub">Agence spécialisée en création de sites web professionnels, SEO et marketing digital à El Jadida, Casablanca et Rabat.</p>
     <div class="hero-cta">
-      <a href="#portfolio" class="btn-primary">Voir mes réalisations</a>
-      <a href="#contact" class="btn-outline">Me contacter</a>
+      <a href="#portfolio" class="btn-primary">Voir nos réalisations</a>
+      <a href="#contact" class="btn-outline">Devis gratuit</a>
     </div>
     <div class="hero-stats">
-      <div>
-        <div class="stat-num">20+</div>
-        <div class="stat-label">Clients</div>
-      </div>
-      <div>
-        <div class="stat-num">9+</div>
-        <div class="stat-label">Sites créés</div>
-      </div>
-      <div>
-        <div class="stat-num">N°1</div>
-        <div class="stat-label">SEO local</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-label">Qui suis-je</div>
-  <div class="section-title">AMINE <span>SALKI</span></div>
-  <div class="divider"></div>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>
-        Professionnel du marketing digital polyvalent, je mets mes compétences au service des agences et entreprises souhaitant booster leur présence en ligne.
-      </p>
-      <p>
-        De la création de contenu visuel et vidéo à la gestion de campagnes publicitaires et la création de sites web optimisés SEO, je propose une collaboration agile, sur mesure et orientée performance.
-      </p>
-      <p>
-        Ancien consultant marketing chez Sono-Ned Medical et Directeur Marketing Digital chez Continuum Solutions, je combine expertise terrain et certifications reconnues.
-      </p>
-      <div class="certif-badge">
-        <span class="g-icon">🏆</span>
-        Google Certified · Google Ads · SEO · Digital Marketing
-      </div>
-    </div>
-    <div>
-      <div class="skills-grid">
-        <div class="skill-item"><span class="skill-dot"></span>WordPress & SEO</div>
-        <div class="skill-item"><span class="skill-dot"></span>Facebook Ads</div>
-        <div class="skill-item"><span class="skill-dot"></span>Google Ads</div>
-        <div class="skill-item"><span class="skill-dot"></span>Adobe Photoshop</div>
-        <div class="skill-item"><span class="skill-dot"></span>Adobe Premiere Pro</div>
-        <div class="skill-item"><span class="skill-dot"></span>LinkedIn Ads</div>
-        <div class="skill-item"><span class="skill-dot"></span>Google Analytics</div>
-        <div class="skill-item"><span class="skill-dot"></span>Canva Pro</div>
-        <div class="skill-item"><span class="skill-dot"></span>Community Mgmt</div>
-        <div class="skill-item"><span class="skill-dot"></span>Identité Visuelle</div>
-      </div>
+      <div><div class="stat-num">20+</div><div class="stat-label">Clients</div></div>
+      <div><div class="stat-num">9+</div><div class="stat-label">Sites créés</div></div>
+      <div><div class="stat-num">N°1</div><div class="stat-label">SEO local</div></div>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="services-bg">
-  <div class="section-label">Ce que je fais</div>
-  <div class="section-title">MES <span>SERVICES</span></div>
+<section id="services" style="background:rgba(107,33,168,.04)">
+  <div class="section-label">Ce que nous faisons</div>
+  <div class="section-title">NOS <span>SERVICES</span></div>
   <div class="divider"></div>
   <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">🌐</div>
-      <h3>Création de Sites Web</h3>
-      <p>Sites vitrines, e-commerce et applications web sur mesure, optimisés SEO et responsive.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">📈</div>
-      <h3>SEO & Référencement</h3>
-      <p>Optimisation pour apparaître en première position sur Google. Résultats prouvés.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">📱</div>
-      <h3>Social Media Management</h3>
-      <p>Gestion de vos réseaux sociaux, création de contenu visuel et vidéo (Reels, posts, stories).</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🎯</div>
-      <h3>Publicité en ligne</h3>
-      <p>Gestion de campagnes Facebook Ads, Google Ads et LinkedIn Ads avec tracking de performance.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🎨</div>
-      <h3>Design & Identité Visuelle</h3>
-      <p>Création de logos, chartes graphiques, flyers, roll-ups et supports print professionnels.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🎬</div>
-      <h3>Photo & Vidéo</h3>
-      <p>Photographie événementielle, vidéos professionnelles et montage pour vos campagnes.</p>
-    </div>
+    <div class="service-card"><div class="service-icon">🌐</div><h3>Création de Sites Web</h3><p>Sites vitrines, e-commerce et applications web sur mesure, optimisés SEO et responsive.</p></div>
+    <div class="service-card"><div class="service-icon">📈</div><h3>SEO & Référencement</h3><p>Optimisation pour apparaître en première position sur Google. Résultats prouvés.</p></div>
+    <div class="service-card"><div class="service-icon">📱</div><h3>Social Media Management</h3><p>Gestion de vos réseaux sociaux, création de contenu visuel et vidéo (Reels, posts, stories).</p></div>
+    <div class="service-card"><div class="service-icon">🎯</div><h3>Publicité en ligne</h3><p>Gestion de campagnes Facebook Ads, Google Ads et LinkedIn Ads avec tracking de performance.</p></div>
+    <div class="service-card"><div class="service-icon">🎨</div><h3>Design & Identité Visuelle</h3><p>Création de logos, chartes graphiques, flyers, roll-ups et supports print professionnels.</p></div>
+    <div class="service-card"><div class="service-icon">🎬</div><h3>Photo & Vidéo</h3><p>Photographie événementielle, vidéos professionnelles et montage pour vos campagnes.</p></div>
   </div>
 </section>
 
 <!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="section-label">Mes réalisations</div>
-  <div class="section-title">SITES <span>CRÉÉS</span></div>
+<section id="portfolio" class="portfolio-section">
+  <div class="section-label">Exemples de réalisations</div>
+  <div class="section-title">NOS <span>TEMPLATES</span></div>
   <div class="divider"></div>
-  <div class="portfolio-grid">
 
-    <div class="project-card">
-      <div class="project-mockup">
-        <div class="mockup-browser">
-          <div class="mockup-bar">
-            <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+  <div class="slider-outer" id="sliderOuter">
+    <div class="slider-track" id="sliderTrack">
+
+      <!-- CARD 1: Restaurant -->
+      <div class="pcard">
+        <div class="pcard-hover-label">✦ Template Restaurant & Food</div>
+        <div class="pcard-mockups">
+          <div class="desktop-mock">
+            <div class="desktop-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="desktop-url"></div></div>
+            <div class="desktop-screen"><canvas id="c1d" width="480" height="300"></canvas></div>
           </div>
-          <div class="mockup-content">
-            <div class="mockup-line accent w-3q"></div>
-            <div class="mockup-line w-full" style="height:30px;background:rgba(107,33,168,0.15);margin:4px 0;"></div>
-            <div class="mockup-line w-half"></div>
-            <div class="mockup-line w-3q"></div>
+          <div class="phone-mock">
+            <div class="phone-top"><div class="phone-notch"></div></div>
+            <div class="phone-screen"><canvas id="c1m" width="90" height="160"></canvas></div>
+            <div class="phone-home"><div class="phone-home-bar"></div></div>
           </div>
         </div>
-        <div class="project-url">afrahdarnaprestige.ma</div>
+        <div class="pcard-info">
+          <h3>Restaurant & Food</h3>
+          <p>Site vitrine élégant pour restaurant, café ou traiteur</p>
+          <span class="ptag">WordPress</span><span class="ptag">Responsive</span><span class="ptag">Réservation</span>
+        </div>
       </div>
-      <div class="project-info">
-        <h3>Afrah Darna Prestige</h3>
-        <p>Organisateur de mariage — Site vitrine premium</p>
-        <span class="project-tag">WordPress</span>
-        <span class="project-tag">SEO</span>
-      </div>
-    </div>
 
-    <div class="project-card">
-      <div class="project-mockup">
-        <div class="mockup-browser">
-          <div class="mockup-bar">
-            <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+      <!-- CARD 2: Immobilier -->
+      <div class="pcard">
+        <div class="pcard-hover-label">✦ Template Immobilier & Luxe</div>
+        <div class="pcard-mockups">
+          <div class="desktop-mock">
+            <div class="desktop-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="desktop-url"></div></div>
+            <div class="desktop-screen"><canvas id="c2d" width="480" height="300"></canvas></div>
           </div>
-          <div class="mockup-content">
-            <div class="mockup-line accent w-full"></div>
-            <div class="mockup-line w-3q" style="height:25px;background:rgba(236,72,153,0.15);margin:4px 0;"></div>
-            <div class="mockup-line w-half"></div>
-            <div class="mockup-line w-3q"></div>
+          <div class="phone-mock">
+            <div class="phone-top"><div class="phone-notch"></div></div>
+            <div class="phone-screen"><canvas id="c2m" width="90" height="160"></canvas></div>
+            <div class="phone-home"><div class="phone-home-bar"></div></div>
           </div>
         </div>
-        <div class="project-url">taxinavette.ma</div>
+        <div class="pcard-info">
+          <h3>Immobilier & Luxe</h3>
+          <p>Agence immobilière, promoteur ou architecte</p>
+          <span class="ptag">WordPress</span><span class="ptag">Catalogue</span><span class="ptag">SEO</span>
+        </div>
       </div>
-      <div class="project-info">
-        <h3>Taxi Navette</h3>
-        <p>Transport aéroport — Réservation en ligne</p>
-        <span class="project-tag">WordPress</span>
-        <span class="project-tag">Booking</span>
-      </div>
-    </div>
 
-    <div class="project-card">
-      <div class="project-mockup">
-        <div class="mockup-browser">
-          <div class="mockup-bar">
-            <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+      <!-- CARD 3: E-commerce -->
+      <div class="pcard">
+        <div class="pcard-hover-label">✦ Template Boutique E-commerce</div>
+        <div class="pcard-mockups">
+          <div class="desktop-mock">
+            <div class="desktop-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="desktop-url"></div></div>
+            <div class="desktop-screen"><canvas id="c3d" width="480" height="300"></canvas></div>
           </div>
-          <div class="mockup-content">
-            <div class="mockup-line accent w-3q"></div>
-            <div class="mockup-line w-full" style="height:28px;background:rgba(107,33,168,0.2);margin:4px 0;"></div>
-            <div class="mockup-line w-half"></div>
-            <div class="mockup-line w-full"></div>
+          <div class="phone-mock">
+            <div class="phone-top"><div class="phone-notch"></div></div>
+            <div class="phone-screen"><canvas id="c3m" width="90" height="160"></canvas></div>
+            <div class="phone-home"><div class="phone-home-bar"></div></div>
           </div>
         </div>
-        <div class="project-url">soprofeu.com</div>
+        <div class="pcard-info">
+          <h3>Boutique E-commerce</h3>
+          <p>Vente en ligne, mode, beauté ou produits artisanaux</p>
+          <span class="ptag">WooCommerce</span><span class="ptag">Paiement</span><span class="ptag">Mobile-first</span>
+        </div>
       </div>
-      <div class="project-info">
-        <h3>Soprofeu</h3>
-        <p>Experts en sécurité incendie — Catalogue produits</p>
-        <span class="project-tag">WordPress</span>
-        <span class="project-tag">SEO</span>
-      </div>
-    </div>
 
-    <div class="project-card">
-      <div class="project-mockup">
-        <div class="mockup-browser">
-          <div class="mockup-bar">
-            <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+      <!-- CARD 4: Médical -->
+      <div class="pcard">
+        <div class="pcard-hover-label">✦ Template Médical & Santé</div>
+        <div class="pcard-mockups">
+          <div class="desktop-mock">
+            <div class="desktop-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="desktop-url"></div></div>
+            <div class="desktop-screen"><canvas id="c4d" width="480" height="300"></canvas></div>
           </div>
-          <div class="mockup-content">
-            <div class="mockup-line accent w-full"></div>
-            <div class="mockup-line w-3q" style="height:30px;background:rgba(236,72,153,0.12);margin:4px 0;"></div>
-            <div class="mockup-line w-half"></div>
-            <div class="mockup-line w-3q"></div>
+          <div class="phone-mock">
+            <div class="phone-top"><div class="phone-notch"></div></div>
+            <div class="phone-screen"><canvas id="c4m" width="90" height="160"></canvas></div>
+            <div class="phone-home"><div class="phone-home-bar"></div></div>
           </div>
         </div>
-        <div class="project-url">sononedmedical.com</div>
+        <div class="pcard-info">
+          <h3>Médical & Santé</h3>
+          <p>Clinique, cabinet médical ou pharmacie</p>
+          <span class="ptag">WordPress</span><span class="ptag">Rendez-vous</span><span class="ptag">SEO local</span>
+        </div>
       </div>
-      <div class="project-info">
-        <h3>Sono-Ned Medical</h3>
-        <p>Équipements médicaux Samsung — N°1 sur Google</p>
-        <span class="project-tag">WordPress</span>
-        <span class="project-tag">SEO #1</span>
-      </div>
-    </div>
 
-    <div class="project-card">
-      <div class="project-mockup">
-        <div class="mockup-browser">
-          <div class="mockup-bar">
-            <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+      <!-- CARD 5: Corporate -->
+      <div class="pcard">
+        <div class="pcard-hover-label">✦ Template Corporate & Business</div>
+        <div class="pcard-mockups">
+          <div class="desktop-mock">
+            <div class="desktop-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="desktop-url"></div></div>
+            <div class="desktop-screen"><canvas id="c5d" width="480" height="300"></canvas></div>
           </div>
-          <div class="mockup-content">
-            <div class="mockup-line accent w-3q"></div>
-            <div class="mockup-line w-full" style="height:25px;background:rgba(107,33,168,0.15);margin:4px 0;"></div>
-            <div class="mockup-line w-half"></div>
-            <div class="mockup-line w-full"></div>
+          <div class="phone-mock">
+            <div class="phone-top"><div class="phone-notch"></div></div>
+            <div class="phone-screen"><canvas id="c5m" width="90" height="160"></canvas></div>
+            <div class="phone-home"><div class="phone-home-bar"></div></div>
           </div>
         </div>
-        <div class="project-url">switch-care.fr</div>
+        <div class="pcard-info">
+          <h3>Corporate & Business</h3>
+          <p>Entreprise, agence ou société de services</p>
+          <span class="ptag">WordPress</span><span class="ptag">Multilingue</span><span class="ptag">Blog</span>
+        </div>
       </div>
-      <div class="project-info">
-        <h3>Switch Care</h3>
-        <p>Organisation aérienne humanitaire — International</p>
-        <span class="project-tag">WordPress</span>
-        <span class="project-tag">Bilingue</span>
-      </div>
-    </div>
 
-    <div class="project-card">
-      <div class="project-mockup">
-        <div class="mockup-browser">
-          <div class="mockup-bar">
-            <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+      <!-- CARD 6: Transport -->
+      <div class="pcard">
+        <div class="pcard-hover-label">✦ Template Transport & Logistique</div>
+        <div class="pcard-mockups">
+          <div class="desktop-mock">
+            <div class="desktop-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="desktop-url"></div></div>
+            <div class="desktop-screen"><canvas id="c6d" width="480" height="300"></canvas></div>
           </div>
-          <div class="mockup-content">
-            <div class="mockup-line accent w-full"></div>
-            <div class="mockup-line w-3q" style="height:28px;background:rgba(236,72,153,0.12);margin:4px 0;"></div>
-            <div class="mockup-line w-half"></div>
-            <div class="mockup-line w-3q"></div>
+          <div class="phone-mock">
+            <div class="phone-top"><div class="phone-notch"></div></div>
+            <div class="phone-screen"><canvas id="c6m" width="90" height="160"></canvas></div>
+            <div class="phone-home"><div class="phone-home-bar"></div></div>
           </div>
         </div>
-        <div class="project-url">leadermed.ma</div>
+        <div class="pcard-info">
+          <h3>Transport & Logistique</h3>
+          <p>Taxi, navette, transport de marchandises</p>
+          <span class="ptag">WordPress</span><span class="ptag">Réservation</span><span class="ptag">Google Maps</span>
+        </div>
       </div>
-      <div class="project-info">
-        <h3>Leader Med</h3>
-        <p>Services de surveillance et nettoyage professionnel</p>
-        <span class="project-tag">WordPress</span>
-        <span class="project-tag">SEO</span>
-      </div>
-    </div>
 
+    </div><!-- /slider-track -->
+
+    <div class="slider-nav">
+      <button class="snav-btn" id="btnLeft">←</button>
+      <button class="snav-btn" id="btnRight">→</button>
+    </div>
   </div>
 </section>
 
 <!-- CLIENTS -->
-<section id="clients" class="clients-section">
-  <div class="section-label">Ils m'ont fait confiance</div>
-  <div class="section-title">MES <span>CLIENTS</span></div>
+<section id="clients" style="overflow:hidden">
+  <div class="section-label">Ils nous ont fait confiance</div>
+  <div class="section-title">NOS <span>CLIENTS</span></div>
   <div class="divider"></div>
-  <div style="overflow:hidden; margin-top:2.5rem;">
+  <div style="overflow:hidden;margin-top:2.5rem">
     <div class="clients-track">
-      <div class="client-pill">Sono-Ned Medical</div>
-      <div class="client-pill">Taxi Navette</div>
-      <div class="client-pill">Soprofeu</div>
-      <div class="client-pill">Leader Med</div>
-      <div class="client-pill">Switch Care</div>
-      <div class="client-pill">Perfeo Energy</div>
-      <div class="client-pill">Aviation Solidaire</div>
-      <div class="client-pill">Grand Optical</div>
-      <div class="client-pill">Next Flight</div>
-      <div class="client-pill">Continuum Solutions</div>
-      <div class="client-pill">DoNet Services</div>
-      <div class="client-pill">Sheriff Groupe</div>
-      <div class="client-pill">El Menzeh</div>
-      <div class="client-pill">YesAdi Shop</div>
-      <div class="client-pill">Gwad Air</div>
-      <div class="client-pill">Marmo & Piedra</div>
-      <!-- duplicate for seamless loop -->
-      <div class="client-pill">Sono-Ned Medical</div>
-      <div class="client-pill">Taxi Navette</div>
-      <div class="client-pill">Soprofeu</div>
-      <div class="client-pill">Leader Med</div>
-      <div class="client-pill">Switch Care</div>
-      <div class="client-pill">Perfeo Energy</div>
-      <div class="client-pill">Aviation Solidaire</div>
-      <div class="client-pill">Grand Optical</div>
+      <div class="client-pill">Sono-Ned Medical</div><div class="client-pill">Taxi Navette</div><div class="client-pill">Soprofeu</div><div class="client-pill">Leader Med</div><div class="client-pill">Switch Care</div><div class="client-pill">Perfeo Energy</div><div class="client-pill">Aviation Solidaire</div><div class="client-pill">Grand Optical</div><div class="client-pill">Next Flight</div><div class="client-pill">Continuum Solutions</div><div class="client-pill">DoNet Services</div><div class="client-pill">Sheriff Groupe</div><div class="client-pill">El Menzeh</div><div class="client-pill">YesAdi Shop</div><div class="client-pill">Gwad Air</div><div class="client-pill">Marmo &amp; Piedra</div>
+      <div class="client-pill">Sono-Ned Medical</div><div class="client-pill">Taxi Navette</div><div class="client-pill">Soprofeu</div><div class="client-pill">Leader Med</div><div class="client-pill">Switch Care</div><div class="client-pill">Perfeo Energy</div><div class="client-pill">Aviation Solidaire</div><div class="client-pill">Grand Optical</div>
     </div>
   </div>
 </section>
@@ -868,74 +441,243 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-label">Travaillons ensemble</div>
-  <div class="section-title">ME <span>CONTACTER</span></div>
+  <div class="section-title">NOUS <span>CONTACTER</span></div>
   <div class="divider"></div>
   <div class="contact-grid">
     <div class="contact-info">
-      <p>
-        Vous avez un projet de site web, une campagne à lancer ou besoin d'une stratégie digitale ? Contactez-moi pour discuter de vos besoins et construire une collaboration efficace et durable.
-      </p>
+      <p>Vous avez un projet de site web, une campagne à lancer ou besoin d'une stratégie digitale ? Contactez-nous pour un devis gratuit.</p>
       <div class="contact-links">
-        <a href="tel:+212620830606" class="contact-link">
-          <div class="contact-icon">📞</div>
-          <div>
-            <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.2rem;">Téléphone</div>
-            +212 6 20 83 06 06
-          </div>
-        </a>
-        <a href="https://wa.me/212679148046" class="contact-link" target="_blank">
-          <div class="contact-icon">💬</div>
-          <div>
-            <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.2rem;">WhatsApp</div>
-            +212 6 79 14 80 46
-          </div>
-        </a>
-        <a href="mailto:amine.salki@gmail.com" class="contact-link">
-          <div class="contact-icon">✉️</div>
-          <div>
-            <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.2rem;">Email</div>
-            amine.salki@gmail.com
-          </div>
-        </a>
-        <div class="contact-link" style="cursor:default;">
-          <div class="contact-icon">📍</div>
-          <div>
-            <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.2rem;">Zones desservies</div>
-            El Jadida · Casablanca · Rabat
-          </div>
-        </div>
+        <a href="tel:+212620830606" class="contact-link"><div class="contact-icon">📞</div><div><div style="font-size:.75rem;color:var(--muted);margin-bottom:.2rem">Téléphone</div>+212 6 20 83 06 06</div></a>
+        <a href="https://wa.me/212679148046" class="contact-link" target="_blank"><div class="contact-icon">💬</div><div><div style="font-size:.75rem;color:var(--muted);margin-bottom:.2rem">WhatsApp</div>+212 6 79 14 80 46</div></a>
+        <a href="mailto:amine.salki@gmail.com" class="contact-link"><div class="contact-icon">✉️</div><div><div style="font-size:.75rem;color:var(--muted);margin-bottom:.2rem">Email</div>amine.salki@gmail.com</div></a>
+        <div class="contact-link" style="cursor:default"><div class="contact-icon">📍</div><div><div style="font-size:.75rem;color:var(--muted);margin-bottom:.2rem">Zones</div>El Jadida · Casablanca · Rabat</div></div>
       </div>
     </div>
     <div>
-      <div class="contact-form">
-        <div class="form-group">
-          <label>Nom complet</label>
-          <input type="text" placeholder="Votre nom">
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" placeholder="votre@email.com">
-        </div>
-        <div class="form-group">
-          <label>Sujet</label>
-          <input type="text" placeholder="Création de site web / SEO / ...">
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea rows="4" placeholder="Décrivez votre projet..."></textarea>
-        </div>
-        <button class="btn-primary" style="width:100%;text-align:center;" onclick="alert('Message envoyé ! Je vous réponds dans les plus brefs délais.')">Envoyer le message</button>
-      </div>
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xpwrklqb" method="POST">
+        <div class="form-group"><label>Nom complet</label><input type="text" name="name" placeholder="Votre nom" required></div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="votre@email.com" required></div>
+        <div class="form-group"><label>Sujet</label><input type="text" name="subject" placeholder="Création de site web / SEO / ..."></div>
+        <div class="form-group"><label>Message</label><textarea name="message" rows="4" placeholder="Décrivez votre projet..." required></textarea></div>
+        <button type="submit" class="btn-primary" style="width:100%;text-align:center">Envoyer le message</button>
+        <div class="form-success" id="formSuccess">✅ Message envoyé ! Nous vous répondons dans les plus brefs délais.</div>
+      </form>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">AMINE SALKI</div>
-  <p>© 2025 Amine Salki · El Jadida Web Solutions · Tous droits réservés</p>
-  <p style="font-size:0.75rem;color:#3D2060;">Google Certified · El Jadida · Maroc</p>
+  <div class="footer-logo"><img src="logo.png" alt="El Jadida Web Solutions"></div>
+  <p>© 2025 El Jadida Web Solutions · Tous droits réservés</p>
+  <p style="font-size:.75rem;color:#3D2060">Google Certified · El Jadida · Maroc</p>
 </footer>
 
+<script>
+/* ══════════════════════════════════════
+   CANVAS TEMPLATE DRAWINGS
+══════════════════════════════════════ */
+function r(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+
+// Palette per template
+const palettes = [
+  // 1 Restaurant - warm dark
+  { bg:'#1a0a00', hero:'#3d1500', accent:'#e8621a', accent2:'#f0a060', text:'#fff8f0', nav:'#110600', card:'#2a1200' },
+  // 2 Immobilier - deep navy gold
+  { bg:'#060d18', hero:'#0d1e38', accent:'#c9a84c', accent2:'#e8d090', text:'#eef4ff', nav:'#040a12', card:'#0f1e35' },
+  // 3 E-commerce - rose modern
+  { bg:'#0f0018', hero:'#1e003a', accent:'#e040a0', accent2:'#ff88cc', text:'#fff0f8', nav:'#0a0010', card:'#1a0030' },
+  // 4 Médical - clean teal
+  { bg:'#001a1a', hero:'#003030', accent:'#00c4b4', accent2:'#80ffe8', text:'#e8fffc', nav:'#001010', card:'#002828' },
+  // 5 Corporate - midnight blue
+  { bg:'#06060f', hero:'#0e0e28', accent:'#4f8ef7', accent2:'#a0c4ff', text:'#eef2ff', nav:'#040408', card:'#10102a' },
+  // 6 Transport - dark amber
+  { bg:'#0a0800', hero:'#1a1400', accent:'#f5c400', accent2:'#ffe066', text:'#fff8e0', nav:'#060500', card:'#161000' },
+];
+
+function drawDesktop(id, p) {
+  const c = document.getElementById(id);
+  if(!c) return;
+  const ctx = c.getContext('2d');
+  const W = c.width, H = c.height;
+
+  // bg
+  ctx.fillStyle = p.bg;
+  ctx.fillRect(0,0,W,H);
+
+  // nav bar
+  ctx.fillStyle = p.nav;
+  ctx.fillRect(0,0,W,28);
+  // logo block
+  ctx.fillStyle = p.accent;
+  ctx.fillRect(10,8,44,12);
+  // nav items
+  for(let i=0;i<4;i++){
+    ctx.fillStyle = 'rgba(255,255,255,.25)';
+    ctx.fillRect(230+i*55,11,38,6);
+  }
+  // CTA button in nav
+  ctx.fillStyle = p.accent;
+  ctx.beginPath(); ctx.roundRect(400,8,60,13,3); ctx.fill();
+
+  // hero section
+  const grd = ctx.createLinearGradient(0,28,0,H*0.55);
+  grd.addColorStop(0, p.hero);
+  grd.addColorStop(1, p.bg);
+  ctx.fillStyle = grd;
+  ctx.fillRect(0,28,W,H*0.52);
+
+  // hero heading lines
+  ctx.fillStyle = p.text;
+  ctx.fillRect(24,52,200,14);
+  ctx.fillRect(24,72,160,10);
+  ctx.fillRect(24,88,120,7);
+  // accent line
+  ctx.fillStyle = p.accent;
+  ctx.fillRect(24,105,80,4);
+  // CTA
+  ctx.fillStyle = p.accent;
+  ctx.beginPath(); ctx.roundRect(24,116,70,18,4); ctx.fill();
+  ctx.fillStyle = 'rgba(255,255,255,.15)';
+  ctx.beginPath(); ctx.roundRect(102,116,60,18,4); ctx.fill();
+
+  // hero image block (right side)
+  ctx.fillStyle = p.card;
+  ctx.beginPath(); ctx.roundRect(270,38,180,120,8); ctx.fill();
+  // image placeholder gradient
+  const hg = ctx.createLinearGradient(270,38,450,158);
+  hg.addColorStop(0, p.hero);
+  hg.addColorStop(1, p.accent+'33');
+  ctx.fillStyle = hg;
+  ctx.beginPath(); ctx.roundRect(270,38,180,120,8); ctx.fill();
+  // decorative circles
+  ctx.fillStyle = p.accent+'44';
+  ctx.beginPath(); ctx.arc(420,80,35,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle = p.accent2+'22';
+  ctx.beginPath(); ctx.arc(300,130,25,0,Math.PI*2); ctx.fill();
+
+  // cards row
+  const cardY = H*0.62;
+  for(let i=0;i<3;i++){
+    ctx.fillStyle = p.card;
+    ctx.beginPath(); ctx.roundRect(16+i*154,cardY,140,H-cardY-10,6); ctx.fill();
+    ctx.fillStyle = p.accent;
+    ctx.fillRect(16+i*154,cardY,140,18);
+    ctx.fillStyle = 'rgba(255,255,255,.2)';
+    ctx.fillRect(24+i*154,cardY+26,80,6);
+    ctx.fillRect(24+i*154,cardY+38,100,4);
+    ctx.fillRect(24+i*154,cardY+48,60,4);
+  }
+  // 4th card partial
+  ctx.fillStyle = p.card;
+  ctx.beginPath(); ctx.roundRect(478,cardY,30,H-cardY-10,6); ctx.fill();
+}
+
+function drawPhone(id, p) {
+  const c = document.getElementById(id);
+  if(!c) return;
+  const ctx = c.getContext('2d');
+  const W = c.width, H = c.height;
+
+  ctx.fillStyle = p.bg; ctx.fillRect(0,0,W,H);
+
+  // header
+  ctx.fillStyle = p.nav; ctx.fillRect(0,0,W,18);
+  ctx.fillStyle = p.accent; ctx.fillRect(4,5,24,8);
+  // hamburger
+  for(let i=0;i<3;i++){ctx.fillStyle='rgba(255,255,255,.4)';ctx.fillRect(60,6+i*3.5,14,2);}
+
+  // hero
+  const gh = ctx.createLinearGradient(0,18,0,70);
+  gh.addColorStop(0,p.hero); gh.addColorStop(1,p.bg);
+  ctx.fillStyle=gh; ctx.fillRect(0,18,W,52);
+  ctx.fillStyle=p.text;
+  ctx.fillRect(6,26,55,8);
+  ctx.fillRect(6,38,42,5);
+  ctx.fillStyle=p.accent;
+  ctx.fillRect(6,48,40,3);
+  ctx.beginPath();ctx.roundRect(6,54,36,12,3);ctx.fill();
+
+  // hero img
+  ctx.fillStyle=p.card;
+  ctx.beginPath();ctx.roundRect(52,22,32,40,4);ctx.fill();
+  const hi=ctx.createLinearGradient(52,22,84,62);
+  hi.addColorStop(0,p.hero);hi.addColorStop(1,p.accent+'44');
+  ctx.fillStyle=hi;ctx.beginPath();ctx.roundRect(52,22,32,40,4);ctx.fill();
+
+  // cards
+  for(let i=0;i<3;i++){
+    ctx.fillStyle=p.card;
+    ctx.beginPath();ctx.roundRect(4,76+i*26,W-8,22,4);ctx.fill();
+    ctx.fillStyle=p.accent;ctx.fillRect(4,76+i*26,W-8,7);
+    ctx.fillStyle='rgba(255,255,255,.2)';
+    ctx.fillRect(8,88+i*26,36,4);
+    ctx.fillRect(8,95+i*26,50,3);
+  }
+}
+
+// Draw all 6 templates
+window.addEventListener('load', ()=>{
+  palettes.forEach((p,i)=>{
+    drawDesktop('c'+(i+1)+'d', p);
+    drawPhone('c'+(i+1)+'m', p);
+  });
+});
+
+/* ══════════════════════════════════════
+   DRAG-TO-SCROLL SLIDER
+══════════════════════════════════════ */
+const track = document.getElementById('sliderTrack');
+const outer = document.getElementById('sliderOuter');
+let isDown=false, startX=0, scrollLeft=0;
+
+outer.addEventListener('mousedown', e=>{
+  isDown=true; outer.classList.add('dragging');
+  startX = e.pageX - track.offsetLeft;
+  scrollLeft = track.scrollLeft;
+});
+outer.addEventListener('mouseleave',()=>{ isDown=false; outer.classList.remove('dragging'); });
+outer.addEventListener('mouseup',()=>{ isDown=false; outer.classList.remove('dragging'); });
+outer.addEventListener('mousemove', e=>{
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - track.offsetLeft;
+  const walk = (x - startX)*1.5;
+  track.scrollLeft = scrollLeft - walk;
+});
+
+// Touch support
+outer.addEventListener('touchstart', e=>{
+  startX = e.touches[0].pageX - track.offsetLeft;
+  scrollLeft = track.scrollLeft;
+});
+outer.addEventListener('touchmove', e=>{
+  const x = e.touches[0].pageX - track.offsetLeft;
+  track.scrollLeft = scrollLeft - (x - startX)*1.2;
+});
+
+// Arrow buttons
+document.getElementById('btnLeft').addEventListener('click',()=>{
+  track.scrollBy({left:-560, behavior:'smooth'});
+});
+document.getElementById('btnRight').addEventListener('click',()=>{
+  track.scrollBy({left:560, behavior:'smooth'});
+});
+
+/* ══════════════════════════════════════
+   FORMSPREE
+══════════════════════════════════════ */
+const form = document.getElementById('contactForm');
+const success = document.getElementById('formSuccess');
+form.addEventListener('submit', async e=>{
+  e.preventDefault();
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent='Envoi en cours...'; btn.disabled=true;
+  try {
+    const res = await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    if(res.ok){ form.reset(); success.style.display='block'; btn.textContent='Message envoyé ✅'; }
+    else { btn.textContent='Erreur — réessayez'; btn.disabled=false; }
+  } catch { btn.textContent='Erreur — réessayez'; btn.disabled=false; }
+});
+</script>
 </body>
 </html>
