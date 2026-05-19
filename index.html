@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amine SALKI — Digital Marketing & Web Creation</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #6B21A8;
+    --violet: #7C3AED;
+    --pink: #EC4899;
+    --dark: #0D0014;
+    --darker: #08000D;
+    --text: #F3E8FF;
+    --muted: #C084FC;
+    --glass: rgba(255,255,255,0.04);
+    --border: rgba(192,132,252,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--darker);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ─── BG MESH ─── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 10% 20%, rgba(107,33,168,0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 90% 80%, rgba(236,72,153,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 50% 50%, rgba(124,58,237,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(8,0,13,0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #C084FC, #EC4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative; z-index: 1;
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 4rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero-content { max-width: 650px; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(107,33,168,0.3);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: #EC4899;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { opacity:1; transform: scale(1); }
+    50% { opacity:0.5; transform: scale(1.4); }
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    line-height: 0.95;
+    letter-spacing: 2px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero h1 .line-color {
+    background: linear-gradient(135deg, #C084FC 0%, #EC4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+    color: #A78BCA;
+    line-height: 1.7;
+    max-width: 500px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-cta {
+    display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .btn-primary {
+    padding: 0.85rem 2.2rem;
+    background: linear-gradient(135deg, #7C3AED, #EC4899);
+    border: none; border-radius: 6px;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem; font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 30px rgba(124,58,237,0.4);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(124,58,237,0.6); }
+
+  .btn-outline {
+    padding: 0.85rem 2.2rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--muted);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem; font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--muted); color: var(--text); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 3.5rem;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    background: linear-gradient(135deg, #C084FC, #EC4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: #7C5FA0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.3rem;
+  }
+
+  /* floating orbs */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .orb-1 { width: 400px; height: 400px; right: -100px; top: 100px; background: rgba(107,33,168,0.3); animation: float 8s ease-in-out infinite; }
+  .orb-2 { width: 250px; height: 250px; right: 200px; bottom: 100px; background: rgba(236,72,153,0.25); animation: float 6s 2s ease-in-out infinite; }
+
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(30px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+
+  /* ─── SECTION BASE ─── */
+  section {
+    position: relative; z-index: 1;
+    padding: 6rem 4rem;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #EC4899;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+
+  .section-title span {
+    background: linear-gradient(135deg, #C084FC, #EC4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ─── ABOUT ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    margin-top: 3.5rem;
+  }
+
+  .about-text p {
+    color: #A78BCA;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .skill-item {
+    padding: 1rem 1.2rem;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 0.6rem;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .skill-item:hover { border-color: rgba(192,132,252,0.4); background: rgba(107,33,168,0.15); }
+  .skill-dot { width: 6px; height: 6px; background: #EC4899; border-radius: 50%; flex-shrink: 0; }
+
+  .certif-badge {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, rgba(107,33,168,0.3), rgba(236,72,153,0.15));
+    border: 1px solid rgba(192,132,252,0.3);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-top: 1.5rem;
+  }
+  .certif-badge .g-icon {
+    font-size: 1.4rem;
+  }
+
+  /* ─── SERVICES ─── */
+  .services-bg { background: rgba(107,33,168,0.04); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .service-card {
+    padding: 2rem;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    cursor: default;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(192,132,252,0.35);
+    box-shadow: 0 20px 60px rgba(107,33,168,0.2);
+  }
+
+  .service-icon {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, rgba(107,33,168,0.5), rgba(236,72,153,0.3));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: var(--text);
+  }
+  .service-card p { font-size: 0.85rem; color: #7C5FA0; line-height: 1.6; }
+
+  /* ─── PORTFOLIO ─── */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .project-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 60px rgba(107,33,168,0.3);
+  }
+
+  .project-mockup {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #1a0030, #2d0050);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-mockup::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(107,33,168,0.3), rgba(236,72,153,0.1));
+  }
+
+  .mockup-browser {
+    position: absolute; inset: 12px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+  }
+
+  .mockup-bar {
+    height: 20px;
+    background: rgba(255,255,255,0.05);
+    display: flex; align-items: center; padding: 0 8px; gap: 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .mockup-dot { width: 5px; height: 5px; border-radius: 50%; }
+  .mockup-dot:nth-child(1) { background: #ff5f57; }
+  .mockup-dot:nth-child(2) { background: #ffbd2e; }
+  .mockup-dot:nth-child(3) { background: #28c840; }
+
+  .mockup-content {
+    padding: 8px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+
+  .mockup-line { height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; }
+  .mockup-line.w-full { width: 100%; }
+  .mockup-line.w-3q { width: 75%; }
+  .mockup-line.w-half { width: 50%; }
+  .mockup-line.accent { background: linear-gradient(90deg, rgba(107,33,168,0.6), rgba(236,72,153,0.4)); }
+
+  .project-url {
+    position: absolute;
+    bottom: 8px; left: 12px;
+    font-size: 0.7rem;
+    color: rgba(192,132,252,0.7);
+    font-family: monospace;
+  }
+
+  .project-info { padding: 1.2rem 1.5rem 1.5rem; }
+  .project-info h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .project-info p { font-size: 0.8rem; color: #7C5FA0; }
+
+  .project-tag {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    background: rgba(107,33,168,0.3);
+    border: 1px solid rgba(192,132,252,0.2);
+    border-radius: 100px;
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-top: 0.6rem;
+    margin-right: 0.3rem;
+  }
+
+  /* ─── CLIENTS ─── */
+  .clients-section { overflow: hidden; }
+
+  .clients-track {
+    display: flex; gap: 3rem; align-items: center;
+    margin-top: 3rem;
+    animation: marquee 25s linear infinite;
+    white-space: nowrap;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .client-pill {
+    flex-shrink: 0;
+    padding: 0.6rem 1.4rem;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.82rem;
+    color: #9D6BC9;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 3.5rem;
+  }
+
+  .contact-info p {
+    color: #A78BCA;
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+
+  .contact-link {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.9rem;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .contact-link:hover { border-color: rgba(192,132,252,0.4); background: rgba(107,33,168,0.15); }
+
+  .contact-icon {
+    width: 38px; height: 38px;
+    background: linear-gradient(135deg, rgba(107,33,168,0.5), rgba(236,72,153,0.3));
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .form-group label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  .form-group input, .form-group textarea {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+    resize: none;
+  }
+  .form-group input:focus, .form-group textarea:focus { border-color: rgba(192,132,252,0.5); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(160,107,200,0.4); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 2rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  footer p { font-size: 0.8rem; color: #5C3A7A; }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, #C084FC, #EC4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    width: 60px; height: 3px;
+    background: linear-gradient(90deg, #7C3AED, #EC4899);
+    border-radius: 3px;
+    margin: 1.2rem 0 0;
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .services-grid, .portfolio-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 2rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">AMINE SALKI</div>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:+212620830606" class="btn-primary" style="padding:0.6rem 1.4rem;font-size:0.82rem;">+212 6 20 83 06 06</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Google Certified · El Jadida, Maroc</div>
+    <h1>
+      DIGITAL<br>
+      <span class="line-color">MARKETING</span><br>
+      & WEB
+    </h1>
+    <p class="hero-sub">
+      Spécialiste en création de sites web, SEO, et marketing digital. J'aide les entreprises marocaines à booster leur présence en ligne avec des solutions sur mesure et des résultats mesurables.
+    </p>
+    <div class="hero-cta">
+      <a href="#portfolio" class="btn-primary">Voir mes réalisations</a>
+      <a href="#contact" class="btn-outline">Me contacter</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Clients</div>
+      </div>
+      <div>
+        <div class="stat-num">9+</div>
+        <div class="stat-label">Sites créés</div>
+      </div>
+      <div>
+        <div class="stat-num">N°1</div>
+        <div class="stat-label">SEO local</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">Qui suis-je</div>
+  <div class="section-title">AMINE <span>SALKI</span></div>
+  <div class="divider"></div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        Professionnel du marketing digital polyvalent, je mets mes compétences au service des agences et entreprises souhaitant booster leur présence en ligne.
+      </p>
+      <p>
+        De la création de contenu visuel et vidéo à la gestion de campagnes publicitaires et la création de sites web optimisés SEO, je propose une collaboration agile, sur mesure et orientée performance.
+      </p>
+      <p>
+        Ancien consultant marketing chez Sono-Ned Medical et Directeur Marketing Digital chez Continuum Solutions, je combine expertise terrain et certifications reconnues.
+      </p>
+      <div class="certif-badge">
+        <span class="g-icon">🏆</span>
+        Google Certified · Google Ads · SEO · Digital Marketing
+      </div>
+    </div>
+    <div>
+      <div class="skills-grid">
+        <div class="skill-item"><span class="skill-dot"></span>WordPress & SEO</div>
+        <div class="skill-item"><span class="skill-dot"></span>Facebook Ads</div>
+        <div class="skill-item"><span class="skill-dot"></span>Google Ads</div>
+        <div class="skill-item"><span class="skill-dot"></span>Adobe Photoshop</div>
+        <div class="skill-item"><span class="skill-dot"></span>Adobe Premiere Pro</div>
+        <div class="skill-item"><span class="skill-dot"></span>LinkedIn Ads</div>
+        <div class="skill-item"><span class="skill-dot"></span>Google Analytics</div>
+        <div class="skill-item"><span class="skill-dot"></span>Canva Pro</div>
+        <div class="skill-item"><span class="skill-dot"></span>Community Mgmt</div>
+        <div class="skill-item"><span class="skill-dot"></span>Identité Visuelle</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-bg">
+  <div class="section-label">Ce que je fais</div>
+  <div class="section-title">MES <span>SERVICES</span></div>
+  <div class="divider"></div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🌐</div>
+      <h3>Création de Sites Web</h3>
+      <p>Sites vitrines, e-commerce et applications web sur mesure, optimisés SEO et responsive.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📈</div>
+      <h3>SEO & Référencement</h3>
+      <p>Optimisation pour apparaître en première position sur Google. Résultats prouvés.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3>Social Media Management</h3>
+      <p>Gestion de vos réseaux sociaux, création de contenu visuel et vidéo (Reels, posts, stories).</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎯</div>
+      <h3>Publicité en ligne</h3>
+      <p>Gestion de campagnes Facebook Ads, Google Ads et LinkedIn Ads avec tracking de performance.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3>Design & Identité Visuelle</h3>
+      <p>Création de logos, chartes graphiques, flyers, roll-ups et supports print professionnels.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎬</div>
+      <h3>Photo & Vidéo</h3>
+      <p>Photographie événementielle, vidéos professionnelles et montage pour vos campagnes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-label">Mes réalisations</div>
+  <div class="section-title">SITES <span>CRÉÉS</span></div>
+  <div class="divider"></div>
+  <div class="portfolio-grid">
+
+    <div class="project-card">
+      <div class="project-mockup">
+        <div class="mockup-browser">
+          <div class="mockup-bar">
+            <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-line accent w-3q"></div>
+            <div class="mockup-line w-full" style="height:30px;background:rgba(107,33,168,0.15);margin:4px 0;"></div>
+            <div class="mockup-line w-half"></div>
+            <div class="mockup-line w-3q"></div>
+          </div>
+        </div>
+        <div class="project-url">afrahdarnaprestige.ma</div>
+      </div>
+      <div class="project-info">
+        <h3>Afrah Darna Prestige</h3>
+        <p>Organisateur de mariage — Site vitrine premium</p>
+        <span class="project-tag">WordPress</span>
+        <span class="project-tag">SEO</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-mockup">
+        <div class="mockup-browser">
+          <div class="mockup-bar">
+            <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-line accent w-full"></div>
+            <div class="mockup-line w-3q" style="height:25px;background:rgba(236,72,153,0.15);margin:4px 0;"></div>
+            <div class="mockup-line w-half"></div>
+            <div class="mockup-line w-3q"></div>
+          </div>
+        </div>
+        <div class="project-url">taxinavette.ma</div>
+      </div>
+      <div class="project-info">
+        <h3>Taxi Navette</h3>
+        <p>Transport aéroport — Réservation en ligne</p>
+        <span class="project-tag">WordPress</span>
+        <span class="project-tag">Booking</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-mockup">
+        <div class="mockup-browser">
+          <div class="mockup-bar">
+            <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-line accent w-3q"></div>
+            <div class="mockup-line w-full" style="height:28px;background:rgba(107,33,168,0.2);margin:4px 0;"></div>
+            <div class="mockup-line w-half"></div>
+            <div class="mockup-line w-full"></div>
+          </div>
+        </div>
+        <div class="project-url">soprofeu.com</div>
+      </div>
+      <div class="project-info">
+        <h3>Soprofeu</h3>
+        <p>Experts en sécurité incendie — Catalogue produits</p>
+        <span class="project-tag">WordPress</span>
+        <span class="project-tag">SEO</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-mockup">
+        <div class="mockup-browser">
+          <div class="mockup-bar">
+            <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-line accent w-full"></div>
+            <div class="mockup-line w-3q" style="height:30px;background:rgba(236,72,153,0.12);margin:4px 0;"></div>
+            <div class="mockup-line w-half"></div>
+            <div class="mockup-line w-3q"></div>
+          </div>
+        </div>
+        <div class="project-url">sononedmedical.com</div>
+      </div>
+      <div class="project-info">
+        <h3>Sono-Ned Medical</h3>
+        <p>Équipements médicaux Samsung — N°1 sur Google</p>
+        <span class="project-tag">WordPress</span>
+        <span class="project-tag">SEO #1</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-mockup">
+        <div class="mockup-browser">
+          <div class="mockup-bar">
+            <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-line accent w-3q"></div>
+            <div class="mockup-line w-full" style="height:25px;background:rgba(107,33,168,0.15);margin:4px 0;"></div>
+            <div class="mockup-line w-half"></div>
+            <div class="mockup-line w-full"></div>
+          </div>
+        </div>
+        <div class="project-url">switch-care.fr</div>
+      </div>
+      <div class="project-info">
+        <h3>Switch Care</h3>
+        <p>Organisation aérienne humanitaire — International</p>
+        <span class="project-tag">WordPress</span>
+        <span class="project-tag">Bilingue</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-mockup">
+        <div class="mockup-browser">
+          <div class="mockup-bar">
+            <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-line accent w-full"></div>
+            <div class="mockup-line w-3q" style="height:28px;background:rgba(236,72,153,0.12);margin:4px 0;"></div>
+            <div class="mockup-line w-half"></div>
+            <div class="mockup-line w-3q"></div>
+          </div>
+        </div>
+        <div class="project-url">leadermed.ma</div>
+      </div>
+      <div class="project-info">
+        <h3>Leader Med</h3>
+        <p>Services de surveillance et nettoyage professionnel</p>
+        <span class="project-tag">WordPress</span>
+        <span class="project-tag">SEO</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients" class="clients-section">
+  <div class="section-label">Ils m'ont fait confiance</div>
+  <div class="section-title">MES <span>CLIENTS</span></div>
+  <div class="divider"></div>
+  <div style="overflow:hidden; margin-top:2.5rem;">
+    <div class="clients-track">
+      <div class="client-pill">Sono-Ned Medical</div>
+      <div class="client-pill">Taxi Navette</div>
+      <div class="client-pill">Soprofeu</div>
+      <div class="client-pill">Leader Med</div>
+      <div class="client-pill">Switch Care</div>
+      <div class="client-pill">Perfeo Energy</div>
+      <div class="client-pill">Aviation Solidaire</div>
+      <div class="client-pill">Grand Optical</div>
+      <div class="client-pill">Next Flight</div>
+      <div class="client-pill">Continuum Solutions</div>
+      <div class="client-pill">DoNet Services</div>
+      <div class="client-pill">Sheriff Groupe</div>
+      <div class="client-pill">El Menzeh</div>
+      <div class="client-pill">YesAdi Shop</div>
+      <div class="client-pill">Gwad Air</div>
+      <div class="client-pill">Marmo & Piedra</div>
+      <!-- duplicate for seamless loop -->
+      <div class="client-pill">Sono-Ned Medical</div>
+      <div class="client-pill">Taxi Navette</div>
+      <div class="client-pill">Soprofeu</div>
+      <div class="client-pill">Leader Med</div>
+      <div class="client-pill">Switch Care</div>
+      <div class="client-pill">Perfeo Energy</div>
+      <div class="client-pill">Aviation Solidaire</div>
+      <div class="client-pill">Grand Optical</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Travaillons ensemble</div>
+  <div class="section-title">ME <span>CONTACTER</span></div>
+  <div class="divider"></div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p>
+        Vous avez un projet de site web, une campagne à lancer ou besoin d'une stratégie digitale ? Contactez-moi pour discuter de vos besoins et construire une collaboration efficace et durable.
+      </p>
+      <div class="contact-links">
+        <a href="tel:+212620830606" class="contact-link">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.2rem;">Téléphone</div>
+            +212 6 20 83 06 06
+          </div>
+        </a>
+        <a href="https://wa.me/212679148046" class="contact-link" target="_blank">
+          <div class="contact-icon">💬</div>
+          <div>
+            <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.2rem;">WhatsApp</div>
+            +212 6 79 14 80 46
+          </div>
+        </a>
+        <a href="mailto:amine.salki@gmail.com" class="contact-link">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.2rem;">Email</div>
+            amine.salki@gmail.com
+          </div>
+        </a>
+        <div class="contact-link" style="cursor:default;">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.2rem;">Zones desservies</div>
+            El Jadida · Casablanca · Rabat
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="contact-form">
+        <div class="form-group">
+          <label>Nom complet</label>
+          <input type="text" placeholder="Votre nom">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="votre@email.com">
+        </div>
+        <div class="form-group">
+          <label>Sujet</label>
+          <input type="text" placeholder="Création de site web / SEO / ...">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="4" placeholder="Décrivez votre projet..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;text-align:center;" onclick="alert('Message envoyé ! Je vous réponds dans les plus brefs délais.')">Envoyer le message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">AMINE SALKI</div>
+  <p>© 2025 Amine Salki · El Jadida Web Solutions · Tous droits réservés</p>
+  <p style="font-size:0.75rem;color:#3D2060;">Google Certified · El Jadida · Maroc</p>
+</footer>
+
+</body>
+</html>
