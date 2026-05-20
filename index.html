@@ -1,1222 +1,169 @@
 <!DOCTYPE html>
-<html lang="fr">
+
+<html dir="ltr" lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>El Jadida Web Solutions</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>El Jadida Web Solutions | Création site web, SEO &amp; marketing digital à El Jadida</title>
+<meta content="Agence web à El Jadida spécialisée en création de sites web, SEO local, Google Business Profile, publicité en ligne et stratégie digitale." name="description"/>
+<link href="https://www.eljadidawebsolutions.com/" rel="canonical"/>
+<meta content="El Jadida Web Solutions | Sites web &amp; SEO à El Jadida" property="og:title"/><meta content="Création de sites premium, SEO local et marketing digital pour générer plus de demandes." property="og:description"/><meta content="website" property="og:type"/><meta content="https://www.eljadidawebsolutions.com/" property="og:url"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/><style>
+
 :root{
-  --bg:#06060a;
-  --bg2:#0c0c14;
-  --accent:#7c5cfc;
-  --accent2:#e040fb;
-  --pink:#ff3d9a;
-  --cyan:#00e5ff;
-  --text:#f0eeff;
-  --muted:rgba(240,238,255,.45);
-  --border:rgba(124,92,252,.18);
-  --glass:rgba(124,92,252,.06);
+  --bg:#07070c;--bg2:#0e0f18;--card:#141522;--card2:#10111b;
+  --accent:#7c5cfc;--accent2:#13d6e4;--pink:#f13d9a;--gold:#ffd166;
+  --text:#f6f4ff;--muted:rgba(246,244,255,.68);--muted2:rgba(246,244,255,.45);
+  --border:rgba(124,92,252,.22);--soft:rgba(124,92,252,.09);--shadow:0 30px 90px rgba(0,0,0,.42);
 }
-html{scroll-behavior:smooth;font-size:16px;}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Inter',sans-serif;
-  overflow-x:hidden;
-  cursor:none;
-}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px}body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow-x:hidden;line-height:1.5}body::before{content:'';position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 80% 12%,rgba(124,92,252,.18),transparent 32%),radial-gradient(circle at 12% 28%,rgba(19,214,228,.10),transparent 28%),linear-gradient(180deg,#07070c 0%,#090a12 50%,#07070c 100%)}body::after{content:'';position:fixed;inset:0;z-index:-1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");pointer-events:none}.skip-link{position:absolute;left:-999px;top:auto}.skip-link:focus{left:18px;top:18px;z-index:9999;background:#fff;color:#000;padding:.8rem 1rem;border-radius:10px}a{color:inherit}img{max-width:100%}.container{width:min(1200px,calc(100% - 3rem));margin:0 auto}.section{padding:6.5rem 0}.section.alt{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00))}.eyebrow{display:inline-flex;align-items:center;gap:.7rem;color:var(--accent2);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.2em;margin-bottom:1rem}.eyebrow::before{content:'';width:32px;height:1px;background:var(--accent2)}h1,h2,h3,.logo-word,.stat-num{font-family:'Manrope',system-ui,sans-serif;letter-spacing:-.03em}h1{font-size:clamp(2.8rem,7vw,6.2rem);line-height:.98;font-weight:800;max-width:820px}h2{font-size:clamp(2.05rem,4.2vw,4rem);line-height:1.06;font-weight:800}h3{font-weight:800}.gradient{background:linear-gradient(135deg,var(--accent),var(--pink),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:1.08rem;color:var(--muted);line-height:1.85}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.92rem 1.35rem;border-radius:999px;text-decoration:none;font-weight:800;font-size:.92rem;border:1px solid transparent;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease}.btn:hover{transform:translateY(-3px)}.btn-primary{background:linear-gradient(135deg,var(--accent),var(--pink));color:#fff;box-shadow:0 18px 45px rgba(124,92,252,.3)}.btn-secondary{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);color:var(--text)}.btn-soft{background:rgba(124,92,252,.12);border-color:var(--border);color:var(--text)}
+.site-header{position:fixed;z-index:120;inset:0 0 auto 0;background:rgba(7,7,12,.78);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07);transition:padding .25s ease}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:1.2rem}.site-header.scrolled .nav{height:68px}.brand{display:flex;align-items:center;gap:.8rem;text-decoration:none;min-width:max-content}.logo-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;box-shadow:0 14px 35px rgba(124,92,252,.25);font-weight:900}.logo-word{font-size:.88rem;line-height:1.05;text-transform:uppercase;font-weight:900}.logo-word span{display:block;color:var(--muted2);font-size:.63rem;letter-spacing:.16em;margin-top:.14rem}.nav-links{display:flex;align-items:center;gap:1.7rem;list-style:none}.nav-links a{text-decoration:none;color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.11em;transition:color .2s}.nav-links a:hover{color:#fff}.nav-actions{display:flex;align-items:center;gap:.8rem}.lang-switch{display:flex;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:999px;padding:.25rem}.lang-switch button{border:0;background:transparent;color:var(--muted);font:800 .72rem 'Inter',sans-serif;padding:.38rem .58rem;border-radius:999px;cursor:pointer}.lang-switch button.active{background:var(--accent);color:#fff}.mobile-toggle{display:none;border:1px solid var(--border);background:rgba(255,255,255,.04);color:#fff;border-radius:12px;width:44px;height:44px;font-size:1.3rem}.hero{min-height:100vh;display:grid;align-items:center;padding:9.5rem 0 5rem;position:relative;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center}.hero-tag{display:inline-flex;align-items:center;gap:.55rem;padding:.42rem 1rem;background:rgba(124,92,252,.12);border:1px solid var(--border);border-radius:999px;color:#dcd5ff;font-weight:800;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.55rem}.tag-dot{width:21px;height:21px;border-radius:999px;background:var(--accent);display:grid;place-items:center}.hero .lead{margin-top:1.6rem;max-width:640px}.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}.stat-card{padding:1.15rem;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:18px}.stat-num{font-size:2rem;font-weight:900;line-height:1;background:linear-gradient(135deg,#fff,var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}.stat-label{margin-top:.45rem;color:var(--muted2);font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.hero-panel{position:relative}.glass-preview{background:linear-gradient(135deg,rgba(124,92,252,.13),rgba(19,214,228,.06));border:1px solid var(--border);border-radius:26px;padding:1.35rem;box-shadow:var(--shadow);overflow:hidden}.browser{background:#0b0c13;border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden}.browser-bar{height:38px;background:rgba(255,255,255,.05);display:flex;align-items:center;gap:.4rem;padding:0 .9rem}.dot{width:9px;height:9px;border-radius:50%}.r{background:#ff5f57}.y{background:#ffbd2e}.g{background:#28c840}.mock-screen{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;padding:1.1rem;min-height:360px;background:radial-gradient(circle at 80% 20%,rgba(124,92,252,.26),transparent 35%),linear-gradient(180deg,#0b0c13,#111320)}.mock-left{display:flex;flex-direction:column;gap:.85rem}.mock-line{height:13px;background:rgba(255,255,255,.14);border-radius:8px}.mock-line.big{height:26px;width:82%;background:linear-gradient(90deg,var(--accent),var(--pink))}.mock-line.mid{width:65%}.mock-line.small{width:48%}.mock-card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin-top:auto}.mock-card{height:86px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:15px}.mock-img{border-radius:16px;background:linear-gradient(135deg,rgba(19,214,228,.18),rgba(124,92,252,.2));min-height:100%;position:relative;overflow:hidden}.mock-img::before{content:'';position:absolute;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.09);right:-40px;top:30px}.float-card{position:absolute;background:rgba(14,15,24,.92);border:1px solid var(--border);border-radius:18px;padding:1rem 1.15rem;box-shadow:0 22px 50px rgba(0,0,0,.35)}.float-card.one{right:-18px;top:-20px}.float-card.two{left:-20px;bottom:26px}.float-card strong{display:block;font-family:'Manrope';font-size:1.3rem}.float-card span{font-size:.72rem;color:var(--muted2);text-transform:uppercase;letter-spacing:.12em;font-weight:800}.marquee{overflow:hidden;border-block:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025);padding:1.25rem 0}.marquee-track{display:flex;width:max-content;gap:2.4rem;animation:move 24s linear infinite}.marquee span{color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.16em;font-size:.78rem}@keyframes move{to{transform:translateX(-50%)}}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:3rem}.section-head .lead{max-width:520px}.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:24px;overflow:hidden}.service-card{background:var(--bg2);padding:2rem;position:relative;transition:background .2s}.service-card:hover{background:#121421}.service-num{color:var(--accent2);font-weight:900;letter-spacing:.15em;font-size:.72rem;margin-bottom:1.2rem}.service-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:16px;background:rgba(124,92,252,.13);border:1px solid var(--border);font-size:1.45rem;margin-bottom:1.2rem}.service-card h3{font-size:1.16rem;margin-bottom:.7rem}.service-card p{color:var(--muted);font-size:.92rem;line-height:1.7}.proof-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1.4rem}.proof-panel,.audit-card,.faq-item,.article-card,.testimonial-card,.pricing-card{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:24px}.proof-panel{padding:2rem}.proof-list{display:grid;gap:1rem;margin-top:1.6rem}.proof-item{display:flex;gap:.9rem;align-items:flex-start;color:var(--muted);line-height:1.65}.check{width:27px;height:27px;border-radius:50%;background:rgba(19,214,228,.12);color:var(--accent2);display:grid;place-items:center;flex-shrink:0;font-weight:900}.audit-card{padding:2rem;background:linear-gradient(135deg,rgba(124,92,252,.16),rgba(19,214,228,.07));box-shadow:var(--shadow)}.audit-card h3{font-size:1.55rem}.audit-card p{color:var(--muted);line-height:1.75;margin:1rem 0 1.3rem}.mini-form{display:grid;gap:.85rem}.input,textarea,select{width:100%;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.045);color:#fff;border-radius:14px;padding:1rem;font:500 .95rem 'Inter';outline:none}.input:focus,textarea:focus,select:focus{border-color:var(--accent)}textarea{resize:vertical;min-height:140px}.portfolio-section{overflow:hidden}.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.45rem}.portfolio-card{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.035);border-radius:24px;box-shadow:0 18px 60px rgba(0,0,0,.28);transition:transform .24s,border-color .24s}.portfolio-card:hover{transform:translateY(-8px);border-color:var(--accent)}.portfolio-card img{width:100%;height:350px;object-fit:cover;object-position:top;display:block;background:#111}.portfolio-body{padding:1.25rem}.portfolio-body h3{font-size:1.1rem}.portfolio-body p{margin-top:.45rem;color:var(--muted);font-size:.9rem;line-height:1.65}.badge{position:absolute;top:14px;left:14px;background:rgba(7,7,12,.78);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:.48rem .75rem;color:#fff;font-weight:900;font-size:.72rem}.conversion-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.conv-card{padding:1.4rem;border-radius:22px;background:rgba(124,92,252,.085);border:1px solid var(--border)}.conv-card strong{font-family:'Manrope';display:block;margin:.75rem 0 .35rem}.conv-card p{color:var(--muted);font-size:.88rem;line-height:1.65}.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}.pricing-card{padding:1.6rem}.pricing-card.featured{border-color:var(--accent);background:linear-gradient(180deg,rgba(124,92,252,.14),rgba(255,255,255,.035))}.pricing-card h3{font-size:1.25rem}.pricing-note{color:var(--accent2);font-weight:900;margin:.4rem 0 1rem}.pricing-card ul{display:grid;gap:.75rem;list-style:none;color:var(--muted);margin:1.1rem 0 1.4rem}.pricing-card li{display:flex;gap:.6rem}.pricing-card li::before{content:'✓';color:var(--accent2);font-weight:900}.testimonials{overflow:hidden}.testimonial-slider{margin-top:3rem;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}.testimonial-track{display:flex;gap:1.2rem;width:max-content;animation:testimonials 52s linear infinite}.testimonial-slider:hover .testimonial-track{animation-play-state:paused}.testimonial-card{width:355px;min-height:245px;padding:1.55rem;flex-shrink:0}.stars{color:var(--gold);letter-spacing:.12em;margin-bottom:.9rem}.testimonial-card p{color:#fff;line-height:1.72;margin-bottom:1.2rem}.testimonial-card strong{display:block}.testimonial-card span{display:block;margin-top:.25rem;color:var(--muted2);font-size:.84rem}@keyframes testimonials{to{transform:translateX(-50%)}}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}.article-card{padding:1.6rem;display:flex;flex-direction:column;min-height:292px;transition:transform .2s,border-color .2s}.article-card:hover{transform:translateY(-6px);border-color:var(--accent)}.article-meta{display:flex;gap:.6rem;flex-wrap:wrap;color:var(--accent2);font-size:.73rem;text-transform:uppercase;letter-spacing:.11em;font-weight:900}.article-card h3{font-size:1.25rem;line-height:1.22;margin:1rem 0 .75rem}.article-card p{color:var(--muted);font-size:.92rem;line-height:1.7;margin-bottom:1.2rem}.article-card .read-link{margin-top:auto;color:#fff;text-decoration:none;font-weight:900}.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}.faq-item{padding:1.4rem}.faq-item h3{font-size:1.02rem;margin-bottom:.55rem}.faq-item p{color:var(--muted);line-height:1.7;font-size:.92rem}.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:2rem;align-items:start}.contact-list{display:grid;gap:.85rem;margin:1.8rem 0}.contact-link{display:flex;gap:.9rem;align-items:center;padding:1rem;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:18px;text-decoration:none;transition:transform .2s,border-color .2s}.contact-link:hover{transform:translateX(5px);border-color:var(--accent)}.contact-ico{width:42px;height:42px;border-radius:14px;background:rgba(124,92,252,.13);display:grid;place-items:center}.contact-meta{font-size:.72rem;color:var(--muted2);text-transform:uppercase;letter-spacing:.12em;font-weight:900}.contact-card{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:26px;padding:1.4rem}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.fg{display:grid;gap:.45rem}.fg.full{grid-column:1/-1}.fg label{font-size:.72rem;color:var(--muted2);font-weight:900;text-transform:uppercase;letter-spacing:.12em}.map-card{margin-top:1rem;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035)}.map-card iframe{display:block;width:100%;height:300px;border:0;filter:saturate(.9) contrast(1.05)}.map-card a{display:block;padding:1rem 1.1rem;text-decoration:none;color:var(--accent2);font-weight:900}.site-footer{padding:2.2rem 0;border-top:1px solid rgba(255,255,255,.08);background:#080910}.footer-grid{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap}.footer-links{display:flex;gap:1rem;flex-wrap:wrap}.footer-links a{color:var(--muted2);text-decoration:none;font-size:.84rem}.floating-contact{position:fixed;right:22px;bottom:22px;z-index:130;display:flex;flex-direction:column;gap:.75rem}.floating-contact a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:white;font-size:1.35rem;box-shadow:0 16px 38px rgba(0,0,0,.35);transition:transform .2s}.floating-contact a:hover{transform:translateY(-4px) scale(1.05)}.float-wa{background:#25D366}.float-call{background:linear-gradient(135deg,var(--accent),var(--pink))}.blog-hero{padding:10rem 0 4rem;background:linear-gradient(180deg,rgba(124,92,252,.12),transparent)}.blog-hero .lead{max-width:760px;margin-top:1rem}.article-layout{display:grid;grid-template-columns:1fr 300px;gap:2.2rem;align-items:start}.article-main{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:28px;padding:2.2rem}.article-main h1{font-size:clamp(2.2rem,4.5vw,4rem);margin-bottom:1rem}.article-main .article-intro{font-size:1.08rem;color:var(--muted);line-height:1.85;margin:1rem 0 2rem}.article-content h2{font-size:1.55rem;margin:2rem 0 .7rem}.article-content p{color:var(--muted);line-height:1.9;margin-bottom:1rem}.article-side{position:sticky;top:98px;display:grid;gap:1rem}.side-card{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:1.2rem}.side-card p{color:var(--muted);line-height:1.65;margin:.7rem 0}.lang-content{display:none}.lang-content.active{display:block}html[dir="rtl"] body{font-family:'Inter',Tahoma,Arial,sans-serif}html[dir="rtl"] .eyebrow::before{display:none}html[dir="rtl"] .eyebrow::after{content:'';width:32px;height:1px;background:var(--accent2)}html[dir="rtl"] .contact-link:hover{transform:translateX(-5px)}html[dir="rtl"] .badge{left:auto;right:14px}html[dir="rtl"] .nav-links{padding-right:0}
+@media(max-width:1050px){.nav-links{position:fixed;inset:78px 1rem auto 1rem;background:rgba(12,13,22,.98);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:1.2rem;display:none;flex-direction:column;align-items:flex-start}.nav-links.open{display:flex}.mobile-toggle{display:block}.nav-actions .btn{display:none}.hero-grid,.proof-grid,.contact-grid,.article-layout{grid-template-columns:1fr}.hero-panel{max-width:680px}.services-grid,.portfolio-grid,.blog-grid{grid-template-columns:repeat(2,1fr)}.conversion-grid,.pricing-grid{grid-template-columns:repeat(2,1fr)}.article-side{position:static}.float-card.one{right:8px}.float-card.two{left:8px}}
+@media(max-width:700px){.container{width:min(100% - 1.2rem,1200px)}.section{padding:4.5rem 0}.nav{height:72px}.brand{gap:.55rem}.logo-mark{width:38px;height:38px}.logo-word{font-size:.72rem}.hero{padding-top:8rem}.hero-stats,.services-grid,.portfolio-grid,.conversion-grid,.pricing-grid,.blog-grid,.faq-grid,.form-grid{grid-template-columns:1fr}.mock-screen{grid-template-columns:1fr;min-height:320px}.hero-panel{display:none}.section-head{display:block}.section-head .lead{margin-top:1rem}.portfolio-card img{height:300px}.testimonial-card{width:300px}.article-main{padding:1.25rem}.floating-contact{right:14px;bottom:14px}.floating-contact a{width:50px;height:50px}.nav-actions{gap:.45rem}.lang-switch button{padding:.35rem .44rem}.contact-card{padding:1rem}}
 
-/* ── CUSTOM CURSOR ── */
-#cursor{
-  position:fixed;width:10px;height:10px;
-  background:var(--accent);border-radius:50%;
-  pointer-events:none;z-index:9999;
-  transform:translate(-50%,-50%);
-  transition:transform .1s,width .3s,height .3s,background .3s;
-  mix-blend-mode:screen;
-}
-#cursor-ring{
-  position:fixed;width:36px;height:36px;
-  border:1.5px solid var(--accent);border-radius:50%;
-  pointer-events:none;z-index:9998;
-  transform:translate(-50%,-50%);
-  transition:transform .12s ease,width .3s,height .3s,opacity .3s;
-  opacity:.5;
-}
-body:hover #cursor{opacity:1;}
-
-/* ── NOISE OVERLAY ── */
-body::before{
-  content:'';
-  position:fixed;inset:0;z-index:1;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
-  pointer-events:none;opacity:.4;
-}
-
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.4rem 3rem;
-  background:rgba(6,6,10,.8);
-  backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--border);
-  transition:padding .3s;
-}
-nav.scrolled{padding:1rem 3rem;}
-.nav-logo img{height:48px;width:auto;}
-.nav-links{display:flex;gap:2.5rem;list-style:none;}
-.nav-links a{
-  text-decoration:none;color:var(--muted);font-size:.82rem;
-  font-weight:500;letter-spacing:1.5px;text-transform:uppercase;
-  transition:color .3s;position:relative;
-}
-.nav-links a::after{
-  content:'';position:absolute;left:0;bottom:-4px;
-  width:0;height:1px;background:var(--accent);
-  transition:width .3s;
-}
-.nav-links a:hover{color:var(--text);}
-.nav-links a:hover::after{width:100%;}
-.nav-cta{
-  padding:.65rem 1.6rem;
-  background:transparent;
-  border:1px solid var(--accent);
-  border-radius:100px;
-  color:var(--accent);
-  font-family:'Inter',sans-serif;
-  font-size:.82rem;font-weight:600;
-  cursor:none;text-decoration:none;
-  transition:background .3s,color .3s,box-shadow .3s;
-  letter-spacing:.5px;
-}
-.nav-cta:hover{
-  background:var(--accent);color:white;
-  box-shadow:0 0 30px rgba(124,92,252,.4);
-}
-
-/* ── HERO ── */
-.hero{
-  min-height:100vh;
-  display:flex;align-items:center;
-  padding:8rem 3rem 4rem;
-  position:relative;overflow:hidden;
-}
-.hero-bg{
-  position:absolute;inset:0;z-index:0;
-  background:
-    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(124,92,252,.18) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(224,64,251,.1) 0%, transparent 55%),
-    radial-gradient(ellipse 40% 50% at 80% 90%, rgba(0,229,255,.07) 0%, transparent 50%);
-}
-.hero-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:4rem;align-items:center;
-  position:relative;z-index:2;width:100%;max-width:1400px;margin:0 auto;
-}
-.hero-tag{
-  display:inline-flex;align-items:center;gap:.6rem;
-  padding:.35rem 1rem .35rem .5rem;
-  background:rgba(124,92,252,.12);
-  border:1px solid var(--border);
-  border-radius:100px;
-  font-size:.72rem;font-weight:500;
-  letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--accent);margin-bottom:2rem;
-  animation:fadeUp .8s ease both;
-}
-.hero-tag-dot{
-  width:22px;height:22px;background:var(--accent);
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-size:.65rem;
-}
-.hero h1{
-  font-family:'Poppins',sans-serif;
-  font-size:clamp(3rem,5.5vw,5.5rem);
-  font-weight:800;
-  line-height:1;
-  letter-spacing:-2px;
-  animation:fadeUp .8s .1s ease both;
-}
-.hero h1 em{
-  font-style:normal;
-  background:linear-gradient(135deg,var(--accent),var(--pink),var(--cyan));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.hero-sub{
-  margin-top:1.8rem;
-  font-size:1.05rem;
-  color:var(--muted);
-  line-height:1.75;
-  max-width:520px;
-  animation:fadeUp .8s .2s ease both;
-}
-.hero-actions{
-  display:flex;gap:1rem;margin-top:2.8rem;flex-wrap:wrap;
-  animation:fadeUp .8s .3s ease both;
-}
-.btn-glow{
-  padding:.85rem 2rem;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  border:none;border-radius:100px;color:white;
-  font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;
-  cursor:none;text-decoration:none;
-  transition:transform .2s,box-shadow .3s;
-  box-shadow:0 4px 30px rgba(124,92,252,.35);
-  letter-spacing:.3px;
-}
-.btn-glow:hover{transform:translateY(-3px);box-shadow:0 12px 50px rgba(124,92,252,.5);}
-.btn-ghost{
-  padding:.85rem 2rem;
-  background:transparent;
-  border:1px solid rgba(240,238,255,.15);
-  border-radius:100px;color:var(--muted);
-  font-family:'Inter',sans-serif;font-size:.9rem;
-  cursor:none;text-decoration:none;
-  transition:border-color .3s,color .3s;
-}
-.btn-ghost:hover{border-color:var(--text);color:var(--text);}
-
-/* hero stats */
-.hero-stats{
-  display:flex;gap:2.5rem;margin-top:3.5rem;
-  animation:fadeUp .8s .4s ease both;
-  border-top:1px solid var(--border);
-  padding-top:2rem;
-}
-.stat-item{}
-.stat-num{
-  font-family:'Poppins',sans-serif;font-size:2.4rem;font-weight:800;
-  background:linear-gradient(135deg,var(--text),var(--accent));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  line-height:1;
-}
-.stat-lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:.3rem;}
-
-/* Hero visual */
-.hero-visual{position:relative;animation:fadeUp .8s .2s ease both;}
-.hero-visual-main{
-  background:linear-gradient(135deg,rgba(124,92,252,.15),rgba(224,64,251,.08));
-  border:1px solid var(--border);border-radius:20px;
-  padding:2rem;overflow:hidden;
-  position:relative;
-}
-.hero-visual-main::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(124,92,252,.15) 0%,transparent 60%);
-}
-/* Browser mockup in hero */
-.browser-mock{
-  background:rgba(6,6,10,.8);border-radius:10px;
-  border:1px solid rgba(255,255,255,.08);
-  overflow:hidden;position:relative;z-index:1;
-}
-.browser-bar{
-  height:28px;background:rgba(255,255,255,.04);
-  display:flex;align-items:center;padding:0 10px;gap:5px;
-  border-bottom:1px solid rgba(255,255,255,.05);
-}
-.bdot{width:7px;height:7px;border-radius:50%;}
-.bdot-r{background:#ff5f57;}.bdot-y{background:#ffbd2e;}.bdot-g{background:#28c840;}
-.burl{flex:1;height:12px;background:rgba(255,255,255,.06);border-radius:3px;margin:0 8px;}
-.browser-screen{width:100%;aspect-ratio:16/9;}
-.browser-screen canvas{width:100%;height:100%;display:block;}
-
-/* floating badges */
-.float-badge{
-  position:absolute;
-  background:rgba(12,12,20,.9);
-  border:1px solid var(--border);
-  border-radius:12px;padding:.8rem 1.1rem;
-  backdrop-filter:blur(10px);
-  z-index:3;
-}
-.float-badge-1{top:-20px;right:-20px;animation:float1 4s ease-in-out infinite;}
-.float-badge-2{bottom:-15px;left:-15px;animation:float2 5s ease-in-out infinite;}
-.fb-icon{font-size:1.4rem;margin-bottom:.3rem;}
-.fb-num{font-family:'Poppins',sans-serif;font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.fb-lbl{font-size:.65rem;color:var(--muted);letter-spacing:.5px;}
-
-@keyframes float1{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-10px) rotate(1deg);}}
-@keyframes float2{0%,100%{transform:translateY(0) rotate(1deg);}50%{transform:translateY(-8px) rotate(-2deg);}}
-
-/* ── MARQUEE ── */
-.marquee-section{
-  padding:2rem 0;overflow:hidden;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  background:var(--glass);
-  position:relative;z-index:2;
-}
-.marquee-track{
-  display:flex;gap:3rem;white-space:nowrap;
-  animation:marqueeScroll 20s linear infinite;
-}
-.marquee-track span{
-  font-family:'Poppins',sans-serif;font-size:.8rem;font-weight:600;
-  letter-spacing:2px;text-transform:uppercase;color:var(--muted);
-  display:flex;align-items:center;gap:1rem;
-  flex-shrink:0;
-}
-.marquee-dot{width:4px;height:4px;background:var(--accent);border-radius:50%;}
-@keyframes marqueeScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-
-/* ── SECTIONS BASE ── */
-.section{padding:7rem 3rem;position:relative;z-index:2;}
-.section-inner{max-width:1300px;margin:0 auto;}
-.section-eyebrow{
-  font-size:.7rem;font-weight:600;letter-spacing:3px;
-  text-transform:uppercase;color:var(--accent);
-  display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem;
-}
-.section-eyebrow::before{
-  content:'';width:30px;height:1px;background:var(--accent);
-}
-.section-h{
-  font-family:'Poppins',sans-serif;
-  font-size:clamp(2.2rem,4vw,3.5rem);
-  font-weight:800;letter-spacing:-1px;line-height:1.05;
-}
-.section-h em{
-  font-style:normal;
-  background:linear-gradient(135deg,var(--accent),var(--pink));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-}
-
-/* ── SERVICES ── */
-.services-bg{background:var(--bg2);}
-.services-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:4rem;flex-wrap:wrap;gap:2rem;}
-.services-desc{max-width:400px;color:var(--muted);line-height:1.7;font-size:.95rem;}
-
-.services-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-  background:var(--border);border-radius:16px;overflow:hidden;
-}
-.srv-card{
-  background:var(--bg2);padding:2.5rem 2rem;
-  transition:background .3s;position:relative;overflow:hidden;
-}
-.srv-card::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(124,92,252,.08),transparent);
-  opacity:0;transition:opacity .3s;
-}
-.srv-card:hover{background:rgba(124,92,252,.06);}
-.srv-card:hover::after{opacity:1;}
-.srv-num{
-  font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:700;
-  color:var(--accent);letter-spacing:2px;margin-bottom:1.5rem;
-  opacity:.6;
-}
-.srv-icon-wrap{
-  width:52px;height:52px;
-  background:rgba(124,92,252,.12);
-  border:1px solid var(--border);
-  border-radius:12px;display:flex;align-items:center;justify-content:center;
-  font-size:1.5rem;margin-bottom:1.4rem;
-  transition:background .3s,border-color .3s;
-}
-.srv-card:hover .srv-icon-wrap{background:rgba(124,92,252,.2);border-color:var(--accent);}
-.srv-card h3{font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.7rem;}
-.srv-card p{font-size:.85rem;color:var(--muted);line-height:1.65;}
-.srv-arrow{
-  margin-top:1.5rem;width:32px;height:32px;
-  border:1px solid var(--border);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:.9rem;color:var(--muted);
-  transition:background .3s,color .3s,transform .3s;
-}
-.srv-card:hover .srv-arrow{background:var(--accent);color:white;transform:rotate(45deg);}
-
-/* ── PORTFOLIO ── */
-.portfolio-section{background:var(--bg);padding:7rem 0;}
-.portfolio-header{padding:0 3rem;margin-bottom:3rem;}
-.portfolio-slider-outer{
-  overflow:hidden;cursor:grab;user-select:none;
-  padding:1rem 0 3rem;
-}
-.portfolio-slider-outer.dragging{cursor:grabbing;}
-.portfolio-track{
-  display:flex;gap:2rem;
-  padding:0 3rem;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scrollbar-width:none;
-  -webkit-overflow-scrolling:touch;
-}
-.portfolio-track::-webkit-scrollbar{display:none;}
-
-/* Template card */
-.tmpl-card{
-  flex:0 0 480px;
-  scroll-snap-align:center;
-  position:relative;
-}
-.tmpl-mockup-wrap{
-  display:flex;align-items:flex-end;gap:-25px;
-  filter:drop-shadow(0 25px 60px rgba(0,0,0,.8));
-  transition:transform .4s cubic-bezier(.34,1.2,.64,1);
-}
-.tmpl-card:hover .tmpl-mockup-wrap{transform:translateY(-10px);}
-
-/* badge on hover */
-.tmpl-badge{
-  position:absolute;top:-12px;left:50%;
-  transform:translateX(-50%) translateY(-6px);
-  background:linear-gradient(135deg,var(--accent),var(--pink));
-  color:white;font-size:.7rem;font-weight:700;
-  letter-spacing:.5px;padding:.3rem 1rem;
-  border-radius:100px;white-space:nowrap;
-  opacity:0;transition:opacity .3s,transform .3s;
-  z-index:10;box-shadow:0 4px 20px rgba(124,92,252,.5);
-}
-.tmpl-card:hover .tmpl-badge{opacity:1;transform:translateX(-50%) translateY(0);}
-
-/* desktop shell */
-.d-shell{
-  flex:1;background:#161620;border-radius:10px 10px 6px 6px;
-  border:1.5px solid rgba(255,255,255,.1);overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,.6);
-}
-.d-bar{
-  height:26px;background:#111118;
-  display:flex;align-items:center;padding:0 10px;gap:5px;
-  border-bottom:1px solid rgba(255,255,255,.05);
-}
-.xdot{width:8px;height:8px;border-radius:50%;}
-.xd-r{background:#ff5f57;}.xd-y{background:#ffbd2e;}.xd-g{background:#28c840;}
-.d-url{flex:1;height:12px;background:rgba(255,255,255,.06);border-radius:3px;margin:0 8px;}
-.d-screen{width:100%;aspect-ratio:16/10;overflow:hidden;}
-.d-screen canvas{width:100%;height:100%;display:block;}
-
-/* phone shell */
-.p-shell{
-  width:100px;background:#0d0d0d;border-radius:20px;
-  border:2px solid rgba(255,255,255,.12);
-  box-shadow:0 20px 50px rgba(0,0,0,.7);
-  overflow:hidden;flex-shrink:0;
-  margin-left:-28px;margin-bottom:8px;position:relative;z-index:2;
-}
-.p-top{height:16px;background:#181818;display:flex;align-items:center;justify-content:center;}
-.p-notch{width:28px;height:6px;background:#0d0d0d;border-radius:3px;}
-.p-screen{width:100%;aspect-ratio:9/19;overflow:hidden;}
-.p-screen canvas{width:100%;height:100%;display:block;}
-.p-bot{height:12px;background:#181818;display:flex;align-items:center;justify-content:center;}
-.p-home{width:24px;height:3px;background:rgba(255,255,255,.2);border-radius:2px;}
-
-.tmpl-info{margin-top:1.4rem;text-align:center;}
-.tmpl-info h3{font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:.3rem;}
-.tmpl-info p{font-size:.78rem;color:var(--muted);margin-bottom:.8rem;}
-.tmpl-tags{display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;}
-.ttag{
-  padding:.2rem .65rem;
-  background:rgba(124,92,252,.12);
-  border:1px solid rgba(124,92,252,.2);
-  border-radius:100px;font-size:.62rem;color:var(--accent);
-}
-
-.p-nav{display:flex;gap:.8rem;padding:0 3rem;margin-top:1rem;}
-.p-btn{
-  width:44px;height:44px;
-  background:rgba(124,92,252,.08);
-  border:1px solid var(--border);border-radius:50%;
-  color:var(--muted);font-size:1rem;cursor:none;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .2s;
-}
-.p-btn:hover{background:rgba(124,92,252,.25);border-color:var(--accent);color:var(--text);}
-
-/* ── CLIENTS ── */
-.clients-section{background:var(--bg2);padding:6rem 3rem;}
-.clients-track-wrap{overflow:hidden;margin-top:3rem;}
-.clients-track{
-  display:flex;gap:1.5rem;animation:marqueeScroll 35s linear infinite;
-  white-space:nowrap;
-}
-.clogo{
-  flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  padding:.7rem 1.5rem;
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:10px;height:66px;min-width:130px;
-  transition:all .3s;
-}
-.clogo:hover{background:rgba(124,92,252,.08);border-color:var(--border);}
-.clogo img{max-height:44px;max-width:120px;object-fit:contain;opacity:.65;transition:opacity .3s;}
-.clogo:hover img{opacity:1;}
-
-/* ── PROCESS ── */
-.process-section{background:var(--bg);padding:7rem 3rem;}
-.process-steps{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:0;margin-top:4rem;
-  position:relative;
-}
-.process-steps::before{
-  content:'';position:absolute;
-  top:32px;left:12%;right:12%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--accent),var(--pink),transparent);
-  z-index:0;
-}
-.step{text-align:center;padding:0 1.5rem;position:relative;z-index:1;}
-.step-num{
-  width:64px;height:64px;margin:0 auto 1.5rem;
-  background:var(--bg2);
-  border:1px solid var(--border);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:800;
-  color:var(--accent);
-  transition:background .3s,border-color .3s,box-shadow .3s;
-}
-.step:hover .step-num{
-  background:rgba(124,92,252,.15);
-  border-color:var(--accent);
-  box-shadow:0 0 30px rgba(124,92,252,.3);
-}
-.step h3{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.6rem;}
-.step p{font-size:.82rem;color:var(--muted);line-height:1.6;}
-
-/* ── CTA BANNER ── */
-.cta-banner{
-  background:linear-gradient(135deg,rgba(124,92,252,.15),rgba(224,64,251,.08),rgba(0,229,255,.05));
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:5rem 3rem;text-align:center;position:relative;overflow:hidden;
-}
-.cta-banner::before{
-  content:'';position:absolute;
-  width:600px;height:600px;top:-300px;left:50%;transform:translateX(-50%);
-  background:radial-gradient(circle,rgba(124,92,252,.15) 0%,transparent 70%);
-}
-.cta-banner h2{
-  font-family:'Poppins',sans-serif;
-  font-size:clamp(2.2rem,4vw,3.8rem);
-  font-weight:800;letter-spacing:-1.5px;
-  position:relative;z-index:1;
-  line-height:1.1;
-}
-.cta-banner h2 em{
-  font-style:normal;
-  background:linear-gradient(135deg,var(--accent),var(--pink),var(--cyan));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-}
-.cta-banner p{
-  margin-top:1.2rem;font-size:1rem;color:var(--muted);
-  max-width:500px;margin-left:auto;margin-right:auto;
-  line-height:1.7;position:relative;z-index:1;
-}
-.cta-banner .cta-btns{
-  display:flex;gap:1rem;justify-content:center;
-  margin-top:2.5rem;flex-wrap:wrap;position:relative;z-index:1;
-}
-
-/* ── CONTACT ── */
-.contact-section{background:var(--bg2);padding:7rem 3rem;}
-.contact-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:6rem;align-items:start;margin-top:4rem;
-}
-.contact-left p{color:var(--muted);line-height:1.8;font-size:.95rem;margin-bottom:2.5rem;}
-.contact-links{display:flex;flex-direction:column;gap:1rem;}
-.clink{
-  display:flex;align-items:center;gap:1rem;
-  padding:1.1rem 1.4rem;
-  background:rgba(124,92,252,.05);
-  border:1px solid var(--border);border-radius:12px;
-  text-decoration:none;color:var(--text);font-size:.9rem;
-  transition:border-color .3s,background .3s,transform .2s;
-}
-.clink:hover{border-color:var(--accent);background:rgba(124,92,252,.1);transform:translateX(4px);}
-.clink-icon{
-  width:40px;height:40px;
-  background:rgba(124,92,252,.15);border:1px solid var(--border);
-  border-radius:10px;display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;flex-shrink:0;
-}
-.clink-meta{font-size:.72rem;color:var(--muted);margin-bottom:.15rem;letter-spacing:.5px;}
-
-.contact-form{display:flex;flex-direction:column;gap:1.2rem;}
-.fg{display:flex;flex-direction:column;gap:.5rem;}
-.fg label{font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
-.fg input,.fg textarea{
-  background:rgba(255,255,255,.03);
-  border:1px solid var(--border);border-radius:10px;
-  padding:.9rem 1.1rem;color:var(--text);
-  font-family:'Inter',sans-serif;font-size:.9rem;
-  outline:none;transition:border-color .3s,background .3s;resize:none;
-}
-.fg input:focus,.fg textarea:focus{border-color:var(--accent);background:rgba(124,92,252,.05);}
-.fg input::placeholder,.fg textarea::placeholder{color:rgba(240,238,255,.2);}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
-.submit-btn{
-  padding:1rem 2rem;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  border:none;border-radius:100px;color:white;
-  font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;
-  cursor:none;transition:transform .2s,box-shadow .3s;
-  box-shadow:0 4px 30px rgba(124,92,252,.35);
-  letter-spacing:.3px;
-}
-.submit-btn:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(124,92,252,.5);}
-.form-ok{display:none;padding:1rem;background:rgba(124,92,252,.1);border:1px solid var(--border);border-radius:10px;color:var(--accent);text-align:center;font-size:.88rem;}
-
-/* ── FOOTER ── */
-footer{
-  background:var(--bg);padding:2.5rem 3rem;
-  border-top:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:1rem;
-  position:relative;z-index:2;
-}
-.footer-logo img{height:42px;}
-footer p{font-size:.78rem;color:rgba(240,238,255,.25);}
-.footer-links{display:flex;gap:2rem;}
-.footer-links a{font-size:.78rem;color:rgba(240,238,255,.25);text-decoration:none;transition:color .3s;}
-.footer-links a:hover{color:var(--muted);}
-
-/* ── SCROLL REVEAL ── */
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-delay-1{transition-delay:.1s;}
-.reveal-delay-2{transition-delay:.2s;}
-.reveal-delay-3{transition-delay:.3s;}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-
-/* ── RESPONSIVE ── */
-@media(max-width:960px){
-  nav{padding:1rem 1.5rem;}
-  .nav-links{display:none;}
-  .hero{padding:7rem 1.5rem 4rem;}
-  .hero-grid{grid-template-columns:1fr;gap:3rem;}
-  .hero-visual{display:none;}
-  .section{padding:5rem 1.5rem;}
-  .services-grid{grid-template-columns:1fr;}
-  .contact-grid{grid-template-columns:1fr;gap:3rem;}
-  .process-steps{grid-template-columns:1fr 1fr;gap:3rem;}
-  .process-steps::before{display:none;}
-  .hero-stats{gap:1.5rem;}
-  footer{flex-direction:column;text-align:center;}
-  .form-row{grid-template-columns:1fr;}
-  .portfolio-header{padding:0 1.5rem;}
-  .portfolio-track{padding:0 1.5rem;}
-  .p-nav{padding:0 1.5rem;}
-  .p-shell{width:70px;}
-  .tmpl-card{flex:0 0 300px;}
-  .cta-banner{padding:4rem 1.5rem;}
-  .clients-section{padding:5rem 1.5rem;}
-}
-
-/* ── AMÉLIORATIONS DEMANDÉES ── */
-.nav-actions{display:flex;align-items:center;gap:1rem;}
-.lang-switch{display:flex;gap:.25rem;padding:.25rem;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.03);}
-.lang-switch button{border:0;background:transparent;color:var(--muted);padding:.35rem .55rem;border-radius:999px;font:600 .7rem 'Inter',sans-serif;cursor:pointer;}
-.lang-switch button.active{background:var(--accent);color:white;}
-.hero h1,.section-h{letter-spacing:-.7px;line-height:1.08;}
-.examples-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;padding:0 3rem;}
-.example-card{background:rgba(255,255,255,.035);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;}
-.example-card:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 22px 70px rgba(0,0,0,.38);}
-.example-card img{width:100%;height:310px;object-fit:cover;object-position:top;display:block;}
-.example-card div{padding:1.25rem;}
-.example-card h3{font-family:'Poppins',sans-serif;font-size:1.05rem;margin-bottom:.45rem;}
-.example-card p{color:var(--muted);font-size:.86rem;line-height:1.6;}
-.testimonials-section{background:var(--bg2);overflow:hidden;}
-.testimonial-slider{margin-top:3rem;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
-.testimonial-track{display:flex;gap:1.5rem;width:max-content;animation:testimonialMove 26s linear infinite;}
-.testimonial-card{width:360px;min-height:220px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:18px;padding:1.8rem;flex-shrink:0;}
-.testimonial-card .stars{color:#ffd166;letter-spacing:2px;margin-bottom:1rem;}
-.testimonial-card p{color:var(--text);line-height:1.7;margin-bottom:1.3rem;}
-.testimonial-card strong{display:block;font-family:'Poppins',sans-serif;}
-.testimonial-card span{display:block;color:var(--muted);font-size:.8rem;margin-top:.25rem;}
-@keyframes testimonialMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.blog-section{background:var(--bg);}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
-.blog-card{background:rgba(124,92,252,.055);border:1px solid var(--border);border-radius:18px;padding:1.7rem;}
-.blog-card span{color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;}
-.blog-card h3{font-family:'Poppins',sans-serif;font-size:1.15rem;margin:1rem 0 .7rem;line-height:1.35;}
-.blog-card p{color:var(--muted);line-height:1.65;font-size:.9rem;margin-bottom:1.2rem;}
-.blog-card a{color:var(--accent);text-decoration:none;font-weight:700;font-size:.86rem;}
-.map-card{margin-top:1.4rem;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.03);}
-.map-card iframe{width:100%;height:260px;border:0;display:block;filter:saturate(.85) invert(.9) hue-rotate(180deg);}
-.map-card a{display:block;padding:1rem 1.2rem;color:var(--accent);text-decoration:none;font-weight:700;font-size:.86rem;}
-.floating-contact{position:fixed;right:22px;bottom:22px;display:flex;flex-direction:column;gap:.75rem;z-index:150;}
-.floating-contact a{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.35rem;color:white;box-shadow:0 12px 35px rgba(0,0,0,.35);transition:transform .2s;}
-.floating-contact a:hover{transform:translateY(-4px) scale(1.04);}
-.float-wa{background:#25D366;}.float-call{background:linear-gradient(135deg,var(--accent),var(--accent2));}
-html[lang="ar"] body{direction:rtl;font-family:'Inter',sans-serif;}
-html[lang="ar"] .section-eyebrow::before{display:none;}
-html[lang="ar"] .section-eyebrow::after{content:'';width:30px;height:1px;background:var(--accent);}
-html[lang="ar"] .contact-links .clink:hover{transform:translateX(-4px);}
-@media(max-width:960px){body{cursor:auto}.examples-grid,.blog-grid{grid-template-columns:1fr;padding:0 1.5rem}.nav-actions{gap:.5rem}.lang-switch button{padding:.3rem .45rem}.example-card img{height:260px}.testimonial-card{width:300px}.floating-contact{right:14px;bottom:14px}.floating-contact a{width:48px;height:48px}}
+/* v3 safety */
+.portfolio-card img{background:#111;border-bottom:1px solid rgba(255,255,255,.08)}
+.no-css-warning{display:none}
 
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"El Jadida Web Solutions","url":"https://www.eljadidawebsolutions.com/","telephone":"+212620830606","email":"amine.salki@gmail.com","address":{"@type":"PostalAddress","streetAddress":"aprt 3, Lot nouzha, imm 4","addressLocality":"El Jadida","postalCode":"24000","addressCountry":"MA"},"areaServed":["El Jadida","Casablanca","Rabat","Maroc"],"sameAs":["https://maps.app.goo.gl/HU6UTVKSi1T74BHA6"],"description":"Agence web spécialisée en création de sites, SEO et marketing digital."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "Combien de temps prend la création d’un site ?", "acceptedAnswer": {"@type": "Answer", "text": "Selon le projet, un site vitrine peut être livré rapidement après validation du contenu. Les sites plus avancés demandent un cadrage plus détaillé."}},{"@type": "Question", "name": "Est-ce que le site sera optimisé SEO ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. La structure, les titres, la vitesse, les balises, les contenus et le maillage sont pensés dès le départ pour le référencement."}},{"@type": "Question", "name": "Pouvez-vous gérer la fiche Google ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nous pouvons optimiser la fiche, les catégories, les services, les photos, les descriptions et la stratégie d’avis."}},{"@type": "Question", "name": "Le site peut-il être en français, arabe et anglais ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Le site intègre un système multilingue avec direction RTL pour l’arabe et mémorisation du choix de langue."}},{"@type": "Question", "name": "Proposez-vous un accompagnement après livraison ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nous pouvons assurer la maintenance, les mises à jour, le blog, le SEO et les campagnes publicitaires."}},{"@type": "Question", "name": "Puis-je demander un audit avant de commencer ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. L’audit gratuit permet d’identifier rapidement les actions qui auront le plus d’impact sur votre visibilité et vos conversions."}}]}</script>
 </head>
 <body>
-
-<!-- CURSOR -->
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
-
-<!-- NAV -->
-<nav id="mainNav">
-  <div class="nav-logo"><img src="logo.png" alt="El Jadida Web Solutions"></div>
-  <ul class="nav-links">
-    <li><a href="#services" data-i18n="nav_services">Services</a></li>
-    <li><a href="#portfolio" data-i18n="nav_portfolio">Exemples</a></li>
-    <li><a href="#testimonials" data-i18n="nav_reviews">Avis</a></li>
-    <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
-    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-  </ul>
-  <div class="nav-actions"><div class="lang-switch"><button data-lang="fr" class="active">FR</button><button data-lang="en">EN</button><button data-lang="ar">AR</button></div><a href="#contact" class="nav-cta" data-i18n="nav_cta">Devis gratuit →</a></div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-grid">
-    <div class="hero-left">
-      <div class="hero-tag">
-        <span class="hero-tag-dot">✦</span>
-        Google Certified · El Jadida, Maroc
-      </div>
-      <h1><span data-i18n="hero_title">Votre présence<br>digitale,<br><em>réinventée.</em></span></h1>
-      <p class="hero-sub"><span data-i18n="hero_sub">Agence spécialisée en création de sites web premium, SEO et marketing digital. Nous transformons votre vision en expériences numériques qui convertissent.</span></p>
-      <div class="hero-actions">
-        <a href="#portfolio" class="btn-glow"><span data-i18n="hero_portfolio">Voir nos créations</span></a>
-        <a href="#contact" class="btn-ghost"><span data-i18n="hero_project">Parler d'un projet →</span></a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-num">+100</div>
-          <div class="stat-lbl"><span data-i18n="stat_clients">Clients satisfaits</span></div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">+80</div>
-          <div class="stat-lbl"><span data-i18n="stat_sites">Sites créés</span></div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">N°1</div>
-          <div class="stat-lbl"><span data-i18n="stat_seo">SEO Local</span></div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">+7</div>
-          <div class="stat-lbl" data-i18n="stat_exp">Ans d'expérience</div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="float-badge float-badge-1">
-        <div class="fb-icon">🚀</div>
-        <div class="fb-num">+80</div>
-        <div class="fb-lbl">Sites livrés</div>
-      </div>
-      <div class="float-badge float-badge-2">
-        <div class="fb-icon">⭐</div>
-        <div class="fb-num">5.0</div>
-        <div class="fb-lbl">Note Google</div>
-      </div>
-      <div class="hero-visual-main">
-        <div class="browser-mock">
-          <div class="browser-bar">
-            <div class="bdot bdot-r"></div>
-            <div class="bdot bdot-y"></div>
-            <div class="bdot bdot-g"></div>
-            <div class="burl"></div>
-          </div>
-          <div class="browser-screen"><canvas id="heroCanvas" width="640" height="360"></canvas></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-section">
-  <div class="marquee-track">
-    <span>Création Web <span class="marquee-dot"></span></span>
-    <span>SEO & Référencement <span class="marquee-dot"></span></span>
-    <span>Marketing Digital <span class="marquee-dot"></span></span>
-    <span>Facebook Ads <span class="marquee-dot"></span></span>
-    <span>Google Ads <span class="marquee-dot"></span></span>
-    <span>WordPress <span class="marquee-dot"></span></span>
-    <span>WooCommerce <span class="marquee-dot"></span></span>
-    <span>Design UI/UX <span class="marquee-dot"></span></span>
-    <span>Identité Visuelle <span class="marquee-dot"></span></span>
-    <span>Création Web <span class="marquee-dot"></span></span>
-    <span>SEO & Référencement <span class="marquee-dot"></span></span>
-    <span>Marketing Digital <span class="marquee-dot"></span></span>
-    <span>Facebook Ads <span class="marquee-dot"></span></span>
-    <span>Google Ads <span class="marquee-dot"></span></span>
-    <span>WordPress <span class="marquee-dot"></span></span>
-    <span>WooCommerce <span class="marquee-dot"></span></span>
-    <span>Design UI/UX <span class="marquee-dot"></span></span>
-    <span>Identité Visuelle <span class="marquee-dot"></span></span>
-  </div>
+<a class="skip-link" data-i18n="skip" href="#main">Aller au contenu</a>
+<header class="site-header">
+<div class="container nav">
+<a class="brand" href="index.html">
+<span class="logo-mark">EJ</span>
+<span class="logo-word">El Jadida<br/><span>Web Solutions</span></span>
+</a>
+<button aria-label="Menu" class="mobile-toggle">☰</button>
+<ul class="nav-links">
+<li><a data-i18n="nav_services" href="index.html#services">Services</a></li>
+<li><a data-i18n="nav_portfolio" href="index.html#portfolio">Exemples</a></li>
+<li><a data-i18n="nav_reviews" href="index.html#testimonials">Avis</a></li>
+<li><a data-i18n="nav_blog" href="blog.html">Blog</a></li>
+<li><a data-i18n="nav_contact" href="index.html#contact">Contact</a></li>
+</ul>
+<div class="nav-actions">
+<div aria-label="Changer de langue" class="lang-switch"><button class="active" data-lang="fr" type="button">FR</button><button data-lang="en" type="button">EN</button><button data-lang="ar" type="button">AR</button></div>
+<a class="btn btn-soft" data-i18n="nav_cta" href="index.html#contact">Devis gratuit</a>
 </div>
-
-<!-- SERVICES -->
-<section class="section services-bg" id="services">
-  <div class="section-inner">
-    <div class="services-header">
-      <div>
-        <div class="section-eyebrow reveal">Ce que nous faisons</div>
-        <h2 class="section-h reveal reveal-delay-1">Des services <em>complets</em><br>pour votre croissance</h2>
-      </div>
-      <p class="services-desc reveal reveal-delay-2">De la conception à la mise en ligne, nous accompagnons les entreprises marocaines dans leur transformation digitale.</p>
-    </div>
-    <div class="services-grid reveal">
-      <div class="srv-card">
-        <div class="srv-num">01</div>
-        <div class="srv-icon-wrap">🌐</div>
-        <h3>Création de Sites Web</h3>
-        <p>Sites vitrines, e-commerce et applications web sur mesure, optimisés SEO et 100% responsive.</p>
-        <div class="srv-arrow">↗</div>
-      </div>
-      <div class="srv-card">
-        <div class="srv-num">02</div>
-        <div class="srv-icon-wrap">📈</div>
-        <h3>SEO & Référencement</h3>
-        <p>Stratégies d'optimisation pour dominer les résultats Google. Résultats prouvés et mesurables.</p>
-        <div class="srv-arrow">↗</div>
-      </div>
-      <div class="srv-card">
-        <div class="srv-num">03</div>
-        <div class="srv-icon-wrap">📱</div>
-        <h3>Social Media</h3>
-        <p>Gestion complète de vos réseaux sociaux, création de contenu visuel et vidéo impactant.</p>
-        <div class="srv-arrow">↗</div>
-      </div>
-      <div class="srv-card">
-        <div class="srv-num">04</div>
-        <div class="srv-icon-wrap">🎯</div>
-        <h3>Publicité en ligne</h3>
-        <p>Campagnes Facebook Ads, Google Ads et LinkedIn Ads avec suivi de performance avancé.</p>
-        <div class="srv-arrow">↗</div>
-      </div>
-      <div class="srv-card">
-        <div class="srv-num">05</div>
-        <div class="srv-icon-wrap">🎨</div>
-        <h3>Design & Branding</h3>
-        <p>Identité visuelle, logos, chartes graphiques et supports print pour votre image de marque.</p>
-        <div class="srv-arrow">↗</div>
-      </div>
-      <div class="srv-card">
-        <div class="srv-num">06</div>
-        <div class="srv-icon-wrap">🎬</div>
-        <h3>Photo & Vidéo</h3>
-        <p>Production photo et vidéo professionnelle pour vos campagnes et réseaux sociaux.</p>
-        <div class="srv-arrow">↗</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio" class="portfolio-section examples-section">
-  <div class="portfolio-header section-inner">
-    <div class="section-eyebrow reveal" data-i18n="portfolio_eyebrow">Exemples de sites</div>
-    <h2 class="section-h reveal reveal-delay-1"><span data-i18n="portfolio_title">Des réalisations réelles<br>qui donnent <em>confiance</em></span></h2>
-  </div>
-  <div class="examples-grid section-inner">
-    <article class="example-card reveal"><img src="assets/afrah-darna.png" alt="Site mariage Afrah Darna"><div><h3>Afrah Darna</h3><p data-i18n="ex1">Site événementiel premium avec galerie, partenaires et appel à l'action.</p></div></article>
-    <article class="example-card reveal reveal-delay-1"><img src="assets/aviation-solidaire.png" alt="Site Aviation Solidaire"><div><h3>Aviation Solidaire</h3><p data-i18n="ex2">Site institutionnel structuré pour présenter missions, organisation et contact.</p></div></article>
-    <article class="example-card reveal reveal-delay-2"><img src="assets/sononed.png" alt="Site Sono-Ned Medical"><div><h3>Sono-Ned Medical</h3><p data-i18n="ex3">Site B2B médical avec services, spécialités, partenaires et témoignages.</p></div></article>
-    <article class="example-card reveal"><img src="assets/soprofeu.png" alt="Site Soprofeu"><div><h3>Soprofeu</h3><p data-i18n="ex4">Site industriel moderne pour sécurité incendie, services et formation.</p></div></article>
-    <article class="example-card reveal reveal-delay-1"><img src="assets/switchcare.png" alt="Site Switch Care"><div><h3>Switch Care</h3><p data-i18n="ex5">Site aviation haut de gamme avec positionnement international et pages services.</p></div></article>
-    <article class="example-card reveal reveal-delay-2"><img src="assets/taxi-navette.png" alt="Site Taxi Navette"><div><h3>Taxi Navette</h3><p data-i18n="ex6">Site de transport avec réservation, avantages, flotte et formulaire de contact.</p></div></article>
-  </div>
-</section>
-
-<!-- CLIENTS -->
-<section class="clients-section" id="clients">
-  <div class="section-inner">
-    <div class="section-eyebrow reveal">Ils nous font confiance</div>
-    <h2 class="section-h reveal reveal-delay-1">Nos <em>clients</em></h2>
-  </div>
-  <div class="clients-track-wrap" style="margin-top:3rem;">
-    <div class="clients-track">
-      <div class="clogo"><img src="1.png" alt="DoNet"></div>
-      <div class="clogo"><img src="2.png" alt="Taxi Navette"></div>
-      <div class="clogo"><img src="3.png" alt="Sheriff"></div>
-      <div class="clogo"><img src="4.png" alt="Sono-Ned"></div>
-      <div class="clogo"><img src="5.png" alt="Grand Optical"></div>
-      <div class="clogo"><img src="6.png" alt="Airantilles"></div>
-      <div class="clogo"><img src="7.png" alt="La Puerta"></div>
-      <div class="clogo"><img src="8.png" alt="Gwad Air"></div>
-      <div class="clogo"><img src="9.png" alt="O'Nouilles"></div>
-      <div class="clogo"><img src="11.png" alt="Switch Care"></div>
-      <div class="clogo"><img src="12.png" alt="El Menzeh"></div>
-      <div class="clogo"><img src="13.png" alt="Bectep"></div>
-      <div class="clogo"><img src="15.png" alt="Airantilles"></div>
-      <div class="clogo"><img src="16.png" alt="Leader Med"></div>
-      <div class="clogo"><img src="17.png" alt="Soprofeu"></div>
-      <div class="clogo"><img src="18.png" alt="MetrikX"></div>
-      <div class="clogo"><img src="19.png" alt="Continuum"></div>
-      <div class="clogo"><img src="20.png" alt="Fadaa"></div>
-      <div class="clogo"><img src="21.png" alt="Luxury"></div>
-      <div class="clogo"><img src="24.png" alt="Clinique"></div>
-      <!-- dup -->
-      <div class="clogo"><img src="1.png" alt="DoNet"></div>
-      <div class="clogo"><img src="2.png" alt="Taxi Navette"></div>
-      <div class="clogo"><img src="3.png" alt="Sheriff"></div>
-      <div class="clogo"><img src="4.png" alt="Sono-Ned"></div>
-      <div class="clogo"><img src="5.png" alt="Grand Optical"></div>
-      <div class="clogo"><img src="6.png" alt="Airantilles"></div>
-      <div class="clogo"><img src="7.png" alt="La Puerta"></div>
-      <div class="clogo"><img src="8.png" alt="Gwad Air"></div>
-      <div class="clogo"><img src="9.png" alt="O'Nouilles"></div>
-      <div class="clogo"><img src="11.png" alt="Switch Care"></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="process-section section" id="process">
-  <div class="section-inner">
-    <div class="section-eyebrow reveal">Comment ça marche</div>
-    <h2 class="section-h reveal reveal-delay-1">Notre <em>processus</em><br>en 4 étapes</h2>
-    <div class="process-steps">
-      <div class="step reveal reveal-delay-1">
-        <div class="step-num">01</div>
-        <h3>Découverte</h3>
-        <p>Analyse de vos besoins, vos objectifs et votre marché pour définir la meilleure stratégie.</p>
-      </div>
-      <div class="step reveal reveal-delay-2">
-        <div class="step-num">02</div>
-        <h3>Design</h3>
-        <p>Conception d'une interface moderne, responsive et optimisée pour la conversion.</p>
-      </div>
-      <div class="step reveal reveal-delay-3">
-        <div class="step-num">03</div>
-        <h3>Développement</h3>
-        <p>Intégration technique soignée avec les meilleures pratiques SEO et performance.</p>
-      </div>
-      <div class="step reveal" style="transition-delay:.4s">
-        <div class="step-num">04</div>
-        <h3>Lancement</h3>
-        <p>Mise en ligne, formation et suivi pour assurer votre succès digital sur le long terme.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section testimonials-section" id="testimonials">
-  <div class="section-inner">
-    <div class="section-eyebrow reveal" data-i18n="testimonials_eyebrow">Témoignages</div>
-    <h2 class="section-h reveal reveal-delay-1"><span data-i18n="testimonials_title">Ce que disent <em>nos clients</em></span></h2>
-    <div class="testimonial-slider reveal" aria-label="Témoignages clients">
-      <div class="testimonial-track" id="testimonialTrack">
-        <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="t1">Une équipe réactive et professionnelle. Notre site est moderne, rapide et parfaitement adapté au mobile.</p><strong>Omar A.</strong><span>Commerce local</span></article>
-        <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="t2">Très bonne compréhension de notre besoin. Le résultat donne confiance et nous aide à générer plus de demandes.</p><strong>Karim B.</strong><span>Services B2B</span></article>
-        <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="t3">Le design est propre, les textes sont optimisés SEO et l'accompagnement après livraison est sérieux.</p><strong>Salma E.</strong><span>Profession libérale</span></article>
-        <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="t4">Nous avons gagné en visibilité sur Google et en crédibilité auprès de nos clients.</p><strong>Yassine M.</strong><span>Entreprise</span></article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BLOG -->
-<section class="section blog-section" id="blog">
-  <div class="section-inner">
-    <div class="services-header">
-      <div>
-        <div class="section-eyebrow reveal" data-i18n="blog_eyebrow">Blog & SEO</div>
-        <h2 class="section-h reveal reveal-delay-1"><span data-i18n="blog_title">Des articles pour améliorer<br>votre <em>classement Google</em></span></h2>
-      </div>
-      <p class="services-desc reveal reveal-delay-2" data-i18n="blog_desc">Publier régulièrement des articles ciblés aide votre site à gagner en visibilité sur les recherches locales et métiers.</p>
-    </div>
-    <div class="blog-grid reveal">
-      <article class="blog-card"><span>SEO Local</span><h3 data-i18n="blog1_t">Comment apparaître sur Google à El Jadida ?</h3><p data-i18n="blog1_p">Optimisez votre fiche Google, vos pages services et vos avis clients pour attirer des prospects proches.</p><a href="#contact" data-i18n="read_more">Lire plus →</a></article>
-      <article class="blog-card"><span>Site web</span><h3 data-i18n="blog2_t">Pourquoi un site rapide convertit mieux ?</h3><p data-i18n="blog2_p">La vitesse, le responsive et une navigation claire améliorent l'expérience utilisateur et les conversions.</p><a href="#contact" data-i18n="read_more">Lire plus →</a></article>
-      <article class="blog-card"><span>Marketing</span><h3 data-i18n="blog3_t">Google Ads ou SEO : que choisir ?</h3><p data-i18n="blog3_p">Le SEO construit la visibilité durable, tandis que la publicité accélère les demandes à court terme.</p><a href="#contact" data-i18n="read_more">Lire plus →</a></article>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BANNER -->
-<div class="cta-banner">
-  <h2>Prêt à <em>transformer</em><br>votre présence en ligne ?</h2>
-  <p>Contactez-nous dès aujourd'hui pour un devis gratuit et sans engagement.</p>
-  <div class="cta-btns">
-    <a href="#contact" class="btn-glow">Commencer maintenant</a>
-    <a href="tel:+212620830606" class="btn-ghost">+212 6 20 83 06 06</a>
-  </div>
 </div>
-
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="section-inner">
-    <div class="section-eyebrow reveal">Parlons de votre projet</div>
-    <h2 class="section-h reveal reveal-delay-1">Nous <em>contacter</em></h2>
-    <div class="contact-grid">
-      <div class="contact-left reveal">
-        <p>Vous avez un projet web, une campagne marketing à lancer ou besoin d'une stratégie digitale complète ? Notre équipe est disponible pour vous accompagner.</p>
-        <div class="contact-links">
-          <a href="tel:+212620830606" class="clink"><div class="clink-icon">📞</div><div><div class="clink-meta">Téléphone</div>+212 6 20 83 06 06</div></a>
-          <a href="https://wa.me/212679148046" class="clink" target="_blank"><div class="clink-icon">💬</div><div><div class="clink-meta">WhatsApp</div>+212 6 79 14 80 46</div></a>
-          <a href="mailto:amine.salki@gmail.com" class="clink"><div class="clink-icon">✉️</div><div><div class="clink-meta">Email</div>amine.salki@gmail.com</div></a>
-          <div class="clink"><div class="clink-icon">📍</div><div><div class="clink-meta">Zones desservies</div>El Jadida · Casablanca · Rabat</div></div>
-        </div>
-        <div class="map-card"><iframe title="El Jadida Web Solutions sur Google Maps" src="https://www.google.com/maps?q=El%20Jadida%20Web%20Solutions&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><a href="https://maps.app.goo.gl/HU6UTVKSi1T74BHA6" target="_blank" rel="noopener" data-i18n="open_map">Ouvrir la fiche Google Maps →</a></div>
-      </div>
-      <div class="reveal reveal-delay-2">
-        <form class="contact-form" id="cForm" action="https://formspree.io/f/xpwrklqb" method="POST">
-          <div class="form-row">
-            <div class="fg"><label>Nom</label><input type="text" name="name" placeholder="Votre nom" required></div>
-            <div class="fg"><label>Email</label><input type="email" name="email" placeholder="votre@email.com" required></div>
-          </div>
-          <div class="fg"><label>Sujet</label><input type="text" name="subject" placeholder="Création de site / SEO / ..."></div>
-          <div class="fg"><label>Message</label><textarea name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea></div>
-          <button type="submit" class="submit-btn">Envoyer le message →</button>
-          <div class="form-ok" id="fOk">✅ Message envoyé ! Nous vous répondons sous 24h.</div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="floating-contact"><a class="float-wa" href="https://wa.me/212679148046" target="_blank" aria-label="WhatsApp">💬</a><a class="float-call" href="tel:+212620830606" aria-label="Appel">📞</a></div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo"><img src="logo.png" alt="El Jadida Web Solutions"></div>
-  <p>© 2025 El Jadida Web Solutions · Tous droits réservés</p>
-  <div class="footer-links">
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-  </div>
+</header>
+<main id="main">
+<section class="hero" id="home"><div class="container hero-grid"><div><div class="hero-tag"><span class="tag-dot">✦</span><span data-i18n="hero_tag">Google Certified · El Jadida, Maroc</span></div><h1 data-i18n="hero_title">Votre présence digitale,<br/><span class="gradient">réinventée.</span></h1><p class="lead" data-i18n="hero_sub">Agence spécialisée en création de sites web premium, SEO et marketing digital. Nous transformons votre vision en expériences numériques qui convertissent.</p><div class="hero-actions"><a class="btn btn-primary" data-i18n="hero_btn1" href="#portfolio">Voir nos créations</a><a class="btn btn-secondary" data-i18n="hero_btn2" href="#contact">Parler d’un projet</a></div><div class="hero-stats"><div class="stat-card"><div class="stat-num">+100</div><div class="stat-label" data-i18n="stat_clients">Clients satisfaits</div></div><div class="stat-card"><div class="stat-num">+80</div><div class="stat-label" data-i18n="stat_sites">Sites créés</div></div><div class="stat-card"><div class="stat-num">N°1</div><div class="stat-label" data-i18n="stat_seo">SEO local</div></div><div class="stat-card"><div class="stat-num">+7</div><div class="stat-label" data-i18n="stat_exp">Ans d’expérience</div></div></div></div><div class="hero-panel"><div class="float-card one"><strong>5.0★</strong><span>Confiance</span></div><div class="float-card two"><strong>24h</strong><span>Réponse devis</span></div><div class="glass-preview"><div class="browser"><div class="browser-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div><div class="mock-screen"><div class="mock-left"><span class="mock-line big"></span><span class="mock-line mid"></span><span class="mock-line small"></span><div class="mock-card-grid"><span class="mock-card"></span><span class="mock-card"></span><span class="mock-card"></span><span class="mock-card"></span></div></div><div class="mock-img"></div></div></div></div></div></div></section>
+<div class="marquee"><div class="marquee-track"><span data-i18n="marquee">Création Web • SEO • Google Ads • Social Media • Branding • Photo &amp; Vidéo • WordPress • E-commerce • IA &amp; Automatisation •</span><span data-i18n="marquee">Création Web • SEO • Google Ads • Social Media • Branding • Photo &amp; Vidéo • WordPress • E-commerce • IA &amp; Automatisation •</span></div></div>
+<section class="section alt" id="services"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="services_eye">Ce que nous faisons</div><h2 data-i18n="services_title">Des services complets<br/><span class="gradient">pour votre croissance</span></h2></div><p class="lead" data-i18n="services_desc">De la stratégie à la mise en ligne, nous construisons des outils digitaux pensés pour attirer, rassurer et convertir.</p></div><div class="services-grid"><article class="service-card"><div class="service-num">01</div><div class="service-icon">🌐</div><h3 data-i18n="service1_title">Création de Sites Web</h3><p data-i18n="service1_desc">Sites vitrines, e-commerce et plateformes sur mesure, rapides, responsives et optimisées SEO dès le départ.</p></article>
+<article class="service-card"><div class="service-num">02</div><div class="service-icon">📈</div><h3 data-i18n="service2_title">SEO &amp; Référencement</h3><p data-i18n="service2_desc">Structure technique, contenus ciblés, blog, maillage interne et stratégie locale pour mieux apparaître sur Google.</p></article>
+<article class="service-card"><div class="service-num">03</div><div class="service-icon">🎯</div><h3 data-i18n="service3_title">Publicité en ligne</h3><p data-i18n="service3_desc">Campagnes Google Ads, Meta Ads et landing pages pensées pour convertir vos budgets en demandes mesurables.</p></article>
+<article class="service-card"><div class="service-num">04</div><div class="service-icon">📱</div><h3 data-i18n="service4_title">Social Media</h3><p data-i18n="service4_desc">Calendrier éditorial, visuels, vidéos courtes et contenus qui donnent confiance à votre audience.</p></article>
+<article class="service-card"><div class="service-num">05</div><div class="service-icon">🎨</div><h3 data-i18n="service5_title">Branding &amp; UX</h3><p data-i18n="service5_desc">Identité visuelle, design d’interface, expérience utilisateur et messages commerciaux clairs.</p></article>
+<article class="service-card"><div class="service-num">06</div><div class="service-icon">🤖</div><h3 data-i18n="service6_title">IA &amp; Automatisation</h3><p data-i18n="service6_desc">Chatbots, formulaires intelligents, automatisation des demandes et suivi commercial plus rapide.</p></article></div></div></section>
+<section class="section"><div class="container proof-grid"><div class="proof-panel"><div class="eyebrow" data-i18n="proof_eye">Pourquoi nous choisir</div><h2 data-i18n="proof_title">Une expérience pensée pour<br/><span class="gradient">convertir vos visiteurs</span></h2><p class="lead" data-i18n="proof_desc">Nous ajoutons les éléments marketing qui rassurent vos prospects et réduisent les freins au contact.</p><div class="proof-list"><div class="proof-item"><span class="check">✓</span><span data-i18n="proof1">Promesse claire dès le premier écran et appels à l’action répétés.</span></div><div class="proof-item"><span class="check">✓</span><span data-i18n="proof2">Pages services optimisées pour le SEO local et les recherches métiers.</span></div><div class="proof-item"><span class="check">✓</span><span data-i18n="proof3">Preuves, témoignages, FAQ et garanties pour rassurer avant le contact.</span></div><div class="proof-item"><span class="check">✓</span><span data-i18n="proof4">Suivi des demandes : appels, WhatsApp, formulaires et conversions.</span></div></div></div><aside class="audit-card"><h3 data-i18n="audit_title">Audit gratuit de votre présence Google</h3><p data-i18n="audit_desc">Envoyez votre site ou votre fiche Google. Nous vous répondons avec 3 actions prioritaires pour gagner en visibilité.</p><a class="btn btn-primary" data-i18n="audit_btn" href="https://wa.me/212679148046?text=Bonjour%2C%20je%20veux%20un%20audit%20gratuit%20de%20ma%20pr%C3%A9sence%20Google." rel="noopener" target="_blank">Demander mon audit</a></aside></div></section>
+<section class="section portfolio-section" id="portfolio"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="portfolio_eye">Exemples de sites</div><h2 data-i18n="portfolio_title">Des réalisations réelles<br/><span class="gradient">qui donnent confiance</span></h2></div><p class="lead" data-i18n="portfolio_desc">Les captures ci-dessous sont intégrées avec les noms exacts de vos fichiers pour éviter les images cassées sur GitHub.</p></div><div class="portfolio-grid"><article class="portfolio-card"><span class="badge" data-i18n="port1_sector">Événementiel &amp; mariage</span><img alt="Capture du site Afrah Darna" loading="lazy" src="assets/site mariage Afrah Darna.png"/><div class="portfolio-body"><h3>Afrah Darna</h3><p data-i18n="port1_desc">Site événementiel premium avec galerie, partenaires et appels à l’action.</p></div></article>
+<article class="portfolio-card"><span class="badge" data-i18n="port2_sector">Aviation humanitaire</span><img alt="Capture du site Aviation Solidaire" loading="lazy" src="assets/site aviation solidaire.png"/><div class="portfolio-body"><h3>Aviation Solidaire</h3><p data-i18n="port2_desc">Site institutionnel structuré pour présenter missions, organisation et contact.</p></div></article>
+<article class="portfolio-card"><span class="badge" data-i18n="port3_sector">Médical B2B</span><img alt="Capture du site Sono-Ned Medical" loading="lazy" src="assets/site sono-ned medical.png"/><div class="portfolio-body"><h3>Sono-Ned Medical</h3><p data-i18n="port3_desc">Site médical B2B avec spécialités, partenaires, preuves et témoignages.</p></div></article>
+<article class="portfolio-card"><span class="badge" data-i18n="port4_sector">Industriel &amp; sécurité</span><img alt="Capture du site Soprofeu" loading="lazy" src="assets/site soprofeu.png"/><div class="portfolio-body"><h3>Soprofeu</h3><p data-i18n="port4_desc">Site industriel moderne pour sécurité incendie, formations et demande de devis.</p></div></article>
+<article class="portfolio-card"><span class="badge" data-i18n="port5_sector">Aviation privée</span><img alt="Capture du site Switch Care" loading="lazy" src="assets/site switch care.png"/><div class="portfolio-body"><h3>Switch Care</h3><p data-i18n="port5_desc">Positionnement premium, pages services et crédibilité internationale.</p></div></article>
+<article class="portfolio-card"><span class="badge" data-i18n="port6_sector">Transport &amp; navette</span><img alt="Capture du site Taxi Navette" loading="lazy" src="assets/site taxi navette.png"/><div class="portfolio-body"><h3>Taxi Navette</h3><p data-i18n="port6_desc">Réservation, flotte, avantages, témoignages et formulaire de demande.</p></div></article></div></div></section>
+<section class="section alt"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="conversion_eye">Pensé marketing</div><h2 data-i18n="conversion_title">Les détails qui transforment<br/><span class="gradient">un site en machine à demandes</span></h2></div><p class="lead" data-i18n="conversion_desc">Au-delà du design, nous intégrons des preuves, des appels à l’action, des réponses aux objections et des parcours rapides.</p></div><div class="conversion-grid">
+<article class="conv-card"><div class="service-icon">⚡</div><strong data-i18n="conv1_title">Vitesse &amp; mobile-first</strong><p data-i18n="conv1_desc">Des pages rapides, lisibles et faciles à contacter depuis smartphone.</p></article>
+<article class="conv-card"><div class="service-icon">🧭</div><strong data-i18n="conv2_title">Parcours clair</strong><p data-i18n="conv2_desc">Des sections organisées pour expliquer, rassurer puis déclencher l’action.</p></article>
+<article class="conv-card"><div class="service-icon">🛡️</div><strong data-i18n="conv3_title">Preuves visibles</strong><p data-i18n="conv3_desc">Réalisations, avis, chiffres, secteurs et garanties au bon endroit.</p></article>
+<article class="conv-card"><div class="service-icon">📞</div><strong data-i18n="conv4_title">Contact rapide</strong><p data-i18n="conv4_desc">Boutons flottants WhatsApp/appel, formulaire court et réponse rapide.</p></article></div></div></section>
+<section class="section"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="pricing_eye">Offres</div><h2 data-i18n="pricing_title">Des packs clairs<br/><span class="gradient">pour chaque étape</span></h2></div><p class="lead" data-i18n="pricing_desc">Des formules adaptées aux entrepreneurs, PME et entreprises qui veulent accélérer leur acquisition.</p></div><div class="pricing-grid"><article class="pricing-card"><h3 data-i18n="pack1_name">Starter</h3><div class="pricing-note" data-i18n="pack1_note">Pour lancer proprement</div><ul><li data-i18n="pack1_item1">Site vitrine responsive</li><li data-i18n="pack1_item2">Formulaire + WhatsApp</li><li data-i18n="pack1_item3">SEO technique de base</li><li data-i18n="pack1_item4">Mise en ligne</li></ul><a class="btn btn-soft" data-i18n="quote_btn" href="#contact">Demander un devis</a></article>
+<article class="pricing-card featured"><h3 data-i18n="pack2_name">Business</h3><div class="pricing-note" data-i18n="pack2_note">Pour générer plus de demandes</div><ul><li data-i18n="pack2_item1">Pages services ciblées</li><li data-i18n="pack2_item2">Blog SEO initial</li><li data-i18n="pack2_item3">Optimisation Google Business</li><li data-i18n="pack2_item4">Suivi conversion</li></ul><a class="btn btn-soft" data-i18n="quote_btn" href="#contact">Demander un devis</a></article>
+<article class="pricing-card"><h3 data-i18n="pack3_name">Premium</h3><div class="pricing-note" data-i18n="pack3_note">Pour accélérer la croissance</div><ul><li data-i18n="pack3_item1">Stratégie SEO avancée</li><li data-i18n="pack3_item2">Landing pages Ads</li><li data-i18n="pack3_item3">Automatisation &amp; chatbot</li><li data-i18n="pack3_item4">Reporting mensuel</li></ul><a class="btn btn-soft" data-i18n="quote_btn" href="#contact">Demander un devis</a></article></div></div></section>
+<section class="section testimonials alt" id="testimonials"><div class="container"><div class="eyebrow" data-i18n="testimonials_eye">Témoignages sectoriels</div><h2 data-i18n="testimonials_title">Ce que disent <span class="gradient">nos clients</span></h2><div class="testimonial-slider"><div class="testimonial-track"><article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi1_text">“Le site présente nos spécialités avec clarté. Les patients trouvent rapidement les informations et les demandes de rendez-vous sont plus simples.”</p><strong data-i18n="testi1_sector">Cabinet médical</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
+<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi2_text">“La nouvelle page explique nos abonnements et met en avant les coachs. Les visiteurs comprennent mieux notre offre avant de venir.”</p><strong data-i18n="testi2_sector">Salle de sport</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
+<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi3_text">“Le catalogue, les horaires et le bouton WhatsApp nous aident à recevoir des demandes plus qualifiées.”</p><strong data-i18n="testi3_sector">Opticien</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
+<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi4_text">“Les parents trouvent les programmes, les niveaux et le formulaire d’inscription sans nous appeler plusieurs fois.”</p><strong data-i18n="testi4_sector">École privée</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
+<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi5_text">“Les pages par formation nous permettent de répondre aux recherches précises et d’envoyer le bon programme aux prospects.”</p><strong data-i18n="testi5_sector">Centre de formation</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
+<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi6_text">“Les photos, le menu et la réservation donnent envie. Le site est devenu un vrai support commercial.”</p><strong data-i18n="testi6_sector">Restaurant</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
+<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi7_text">“Le design met en valeur l’ambiance et les produits. Les clients consultent facilement l’adresse et les horaires.”</p><strong data-i18n="testi7_sector">Café &amp; pâtisserie</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
+<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi8_text">“La présentation technique est claire et rassurante. Les demandes de devis arrivent avec plus d’informations utiles.”</p><strong data-i18n="testi8_sector">Industrie</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
+<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi9_text">“Les biens sont mieux présentés, les contacts sont plus directs et l’image de marque est plus professionnelle.”</p><strong data-i18n="testi9_sector">Agence immobilière</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
+<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi10_text">“L’expérience mobile est fluide et rassure les nouveaux patients avant la prise de contact.”</p><strong data-i18n="testi10_sector">Clinique dentaire</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
+<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi11_text">“Le contenu explique enfin notre expertise sans jargon. Les prospects arrivent mieux informés.”</p><strong data-i18n="testi11_sector">Cabinet de conseil</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
+<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi12_text">“Le parcours d’achat est plus clair et les pages produits inspirent davantage confiance.”</p><strong data-i18n="testi12_sector">Boutique e-commerce</strong><span data-i18n="testi_label">Retour client sectoriel</span></article></div></div></div></section>
+<section class="section" id="blog"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="blog_eye">Blog &amp; SEO</div><h2 data-i18n="blog_title">Articles utiles pour gagner<br/><span class="gradient">en visibilité Google</span></h2></div><p class="lead" data-i18n="blog_desc">Une page blog dédiée et des articles complets pour attirer des recherches qualifiées, rassurer les lecteurs et améliorer le référencement.</p></div><div class="blog-grid"><article class="article-card">
+<div class="article-meta"><span>SEO Local</span><span>7 min</span></div>
+<h3 data-i18n="article_seo-local-el-jadida-2026_title">Comment apparaître sur Google à El Jadida en 2026 : guide SEO local</h3>
+<p data-i18n="article_seo-local-el-jadida-2026_desc">Une méthode claire pour transformer votre site et votre fiche Google Business Profile en source régulière de demandes locales.</p>
+<a class="read-link" data-i18n="read_article" href="articles/seo-local-el-jadida-2026.html">Lire l’article →</a>
+</article>
+<article class="article-card">
+<div class="article-meta"><span>Google Business Profile</span><span>6 min</span></div>
+<h3 data-i18n="article_google-business-profile-appels_title">Google Business Profile : comment recevoir plus d’appels sans augmenter le budget pub</h3>
+<p data-i18n="article_google-business-profile-appels_desc">Les actions concrètes pour rendre votre fiche Google plus visible, plus rassurante et plus rentable.</p>
+<a class="read-link" data-i18n="read_article" href="articles/google-business-profile-appels.html">Lire l’article →</a>
+</article>
+<article class="article-card">
+<div class="article-meta"><span>Conversion</span><span>6 min</span></div>
+<h3 data-i18n="article_site-rapide-mobile-first-conversion_title">Site rapide et mobile-first : pourquoi la vitesse convertit mieux</h3>
+<p data-i18n="article_site-rapide-mobile-first-conversion_desc">Découvrez comment la performance, l’ergonomie mobile et les appels à l’action influencent directement vos demandes clients.</p>
+<a class="read-link" data-i18n="read_article" href="articles/site-rapide-mobile-first-conversion.html">Lire l’article →</a>
+</article>
+<article class="article-card">
+<div class="article-meta"><span>Innovation</span><span>8 min</span></div>
+<h3 data-i18n="article_ia-chatbots-automatisation-pme_title">IA, chatbots et automatisation : comment les PME peuvent gagner du temps</h3>
+<p data-i18n="article_ia-chatbots-automatisation-pme_desc">Des idées concrètes pour utiliser l’intelligence artificielle sans compliquer votre organisation.</p>
+<a class="read-link" data-i18n="read_article" href="articles/ia-chatbots-automatisation-pme.html">Lire l’article →</a>
+</article>
+<article class="article-card">
+<div class="article-meta"><span>SEO Multilingue</span><span>7 min</span></div>
+<h3 data-i18n="article_seo-multilingue-maroc_title">SEO multilingue au Maroc : français, arabe et anglais sans perdre Google</h3>
+<p data-i18n="article_seo-multilingue-maroc_desc">Comment structurer un site multilingue propre pour parler à plus de clients et préserver la visibilité SEO.</p>
+<a class="read-link" data-i18n="read_article" href="articles/seo-multilingue-maroc.html">Lire l’article →</a>
+</article>
+<article class="article-card">
+<div class="article-meta"><span>Stratégie sectorielle</span><span>8 min</span></div>
+<h3 data-i18n="article_marketing-digital-secteurs-medical-formation-restauration_title">Marketing digital pour médecins, opticiens, écoles, restaurants et industriels</h3>
+<p data-i18n="article_marketing-digital-secteurs-medical-formation-restauration_desc">Chaque secteur a ses codes. Voici comment adapter votre site, vos contenus et vos appels à l’action.</p>
+<a class="read-link" data-i18n="read_article" href="articles/marketing-digital-secteurs-medical-formation-restauration.html">Lire l’article →</a>
+</article></div><div style="text-align:center;margin-top:2rem"><a class="btn btn-primary" data-i18n="blog_all" href="blog.html">Voir tous les articles</a></div></div></section>
+<section class="section alt"><div class="container"><div class="eyebrow" data-i18n="faq_eye">Questions fréquentes</div><h2 data-i18n="faq_title">Réponses aux objections<br/><span class="gradient">avant le premier contact</span></h2><div class="faq-grid" style="margin-top:2rem"><article class="faq-item"><h3 data-i18n="faq1_q">Combien de temps prend la création d’un site ?</h3><p data-i18n="faq1_a">Selon le projet, un site vitrine peut être livré rapidement après validation du contenu. Les sites plus avancés demandent un cadrage plus détaillé.</p></article>
+<article class="faq-item"><h3 data-i18n="faq2_q">Est-ce que le site sera optimisé SEO ?</h3><p data-i18n="faq2_a">Oui. La structure, les titres, la vitesse, les balises, les contenus et le maillage sont pensés dès le départ pour le référencement.</p></article>
+<article class="faq-item"><h3 data-i18n="faq3_q">Pouvez-vous gérer la fiche Google ?</h3><p data-i18n="faq3_a">Oui. Nous pouvons optimiser la fiche, les catégories, les services, les photos, les descriptions et la stratégie d’avis.</p></article>
+<article class="faq-item"><h3 data-i18n="faq4_q">Le site peut-il être en français, arabe et anglais ?</h3><p data-i18n="faq4_a">Oui. Le site intègre un système multilingue avec direction RTL pour l’arabe et mémorisation du choix de langue.</p></article>
+<article class="faq-item"><h3 data-i18n="faq5_q">Proposez-vous un accompagnement après livraison ?</h3><p data-i18n="faq5_a">Oui. Nous pouvons assurer la maintenance, les mises à jour, le blog, le SEO et les campagnes publicitaires.</p></article>
+<article class="faq-item"><h3 data-i18n="faq6_q">Puis-je demander un audit avant de commencer ?</h3><p data-i18n="faq6_a">Oui. L’audit gratuit permet d’identifier rapidement les actions qui auront le plus d’impact sur votre visibilité et vos conversions.</p></article></div></div></section>
+<section class="section" id="contact"><div class="container contact-grid"><div><div class="eyebrow" data-i18n="contact_eye">Parlons de votre projet</div><h2 data-i18n="contact_title">Nous <span class="gradient">contacter</span></h2><p class="lead" data-i18n="contact_desc">Vous avez un projet web, une campagne marketing ou une refonte à lancer ? Nous vous répondons rapidement avec une recommandation claire.</p><div class="contact-list"><a class="contact-link" href="tel:+212620830606"><span class="contact-ico">📞</span><span><span class="contact-meta" data-i18n="contact_phone">Téléphone</span><br/>+212 6 20 83 06 06</span></a><a class="contact-link" href="https://wa.me/212679148046" rel="noopener" target="_blank"><span class="contact-ico">💬</span><span><span class="contact-meta" data-i18n="contact_whatsapp">WhatsApp</span><br/>+212 6 79 14 80 46</span></a><a class="contact-link" href="mailto:amine.salki@gmail.com"><span class="contact-ico">✉️</span><span><span class="contact-meta" data-i18n="contact_email">Email</span><br/>amine.salki@gmail.com</span></a><div class="contact-link"><span class="contact-ico">📍</span><span><span class="contact-meta" data-i18n="contact_address">Adresse</span><br/>aprt 3, Lot nouzha, imm 4, El Jadida 24000</span></div></div><div class="map-card"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=aprt%203%2C%20Lot%20nouzha%2C%20imm%204%2C%20El%20Jadida%2024000&amp;output=embed" title="Carte El Jadida Web Solutions"></iframe><a data-i18n="map_open" href="https://maps.app.goo.gl/HU6UTVKSi1T74BHA6" rel="noopener" target="_blank">Ouvrir la fiche Google Maps</a></div></div><div class="contact-card"><form action="https://formspree.io/f/xpwrklqb" method="POST"><div class="form-grid"><div class="fg"><label data-i18n="form_name">Nom</label><input class="input" name="name" required=""/></div><div class="fg"><label data-i18n="form_phone">Téléphone</label><input class="input" name="phone"/></div><div class="fg"><label data-i18n="form_email">Email</label><input class="input" name="email" required="" type="email"/></div><div class="fg"><label data-i18n="form_service">Service souhaité</label><select name="service"><option data-i18n="opt_web">Création site web</option><option data-i18n="opt_seo">SEO / Référencement</option><option data-i18n="opt_ads">Google Ads / Meta Ads</option><option data-i18n="opt_refonte">Refonte site web</option><option data-i18n="opt_blog">Blog &amp; contenu SEO</option></select></div><div class="fg full"><label data-i18n="form_message">Message</label><textarea name="message" required=""></textarea></div><div class="fg full"><button class="btn btn-primary" data-i18n="form_submit" type="submit">Envoyer le message</button></div></div></form></div></div></section>
+</main>
+<div class="floating-contact"><a aria-label="WhatsApp" class="float-wa" href="https://wa.me/212679148046?text=Bonjour%20El%20Jadida%20Web%20Solutions%2C%20je%20veux%20un%20devis%20pour%20mon%20projet." rel="noopener" target="_blank">💬</a><a aria-label="Appel" class="float-call" href="tel:+212620830606">📞</a></div>
+<footer class="site-footer">
+<div class="container footer-grid">
+<a class="brand" href="index.html"><span class="logo-mark">EJ</span><span class="logo-word">El Jadida<br/><span>Web Solutions</span></span></a>
+<p>© <span data-year="">2026</span> El Jadida Web Solutions · <span data-i18n="footer_rights">Tous droits réservés</span></p>
+<div class="footer-links"><a href="index.html#services">Services</a><a href="index.html#portfolio">Portfolio</a><a href="blog.html">Blog</a><a href="index.html#contact">Contact</a></div>
+</div>
 </footer>
-
 <script>
-/* ══ CURSOR ══ */
-const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);}
-animRing();
-document.querySelectorAll('a,button,.tmpl-card,.srv-card,.step').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='56px';ring.style.height='56px';ring.style.opacity='.3';});
-  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='36px';ring.style.height='36px';ring.style.opacity='.5';});
-});
+const COMMON_I18N={"fr":{"nav_services":"Services","nav_portfolio":"Exemples","nav_reviews":"Avis","nav_blog":"Blog","nav_contact":"Contact","nav_cta":"Devis gratuit","hero_tag":"Google Certified · El Jadida, Maroc","hero_title":"Votre présence digitale,<br><span class=\"gradient\">réinventée.</span>","hero_sub":"Agence spécialisée en création de sites web premium, SEO et marketing digital. Nous transformons votre vision en expériences numériques qui convertissent.","hero_btn1":"Voir nos créations","hero_btn2":"Parler d’un projet","stat_clients":"Clients satisfaits","stat_sites":"Sites créés","stat_seo":"SEO local","stat_exp":"Ans d’expérience","marquee":"Création Web • SEO • Google Ads • Social Media • Branding • Photo & Vidéo • WordPress • E-commerce • IA & Automatisation •","services_eye":"Ce que nous faisons","services_title":"Des services complets<br><span class=\"gradient\">pour votre croissance</span>","services_desc":"De la stratégie à la mise en ligne, nous construisons des outils digitaux pensés pour attirer, rassurer et convertir.","proof_eye":"Pourquoi nous choisir","proof_title":"Une expérience pensée pour<br><span class=\"gradient\">convertir vos visiteurs</span>","proof_desc":"Nous ajoutons les éléments marketing qui rassurent vos prospects et réduisent les freins au contact.","audit_eye":"Audit","audit_title":"Audit gratuit de votre présence Google","audit_desc":"Envoyez votre site ou votre fiche Google. Nous vous répondons avec 3 actions prioritaires pour gagner en visibilité.","audit_btn":"Demander mon audit","portfolio_eye":"Exemples de sites","portfolio_title":"Des réalisations réelles<br><span class=\"gradient\">qui donnent confiance</span>","portfolio_desc":"Les captures ci-dessous sont intégrées avec les noms exacts de vos fichiers pour éviter les images cassées sur GitHub.","conversion_eye":"Pensé marketing","conversion_title":"Les détails qui transforment<br><span class=\"gradient\">un site en machine à demandes</span>","conversion_desc":"Au-delà du design, nous intégrons des preuves, des appels à l’action, des réponses aux objections et des parcours rapides.","pricing_eye":"Offres","pricing_title":"Des packs clairs<br><span class=\"gradient\">pour chaque étape</span>","pricing_desc":"Des formules adaptées aux entrepreneurs, PME et entreprises qui veulent accélérer leur acquisition.","testimonials_eye":"Témoignages sectoriels","testimonials_title":"Ce que disent <span class=\"gradient\">nos clients</span>","blog_eye":"Blog & SEO","blog_title":"Articles utiles pour gagner<br><span class=\"gradient\">en visibilité Google</span>","blog_desc":"Une page blog dédiée et des articles complets pour attirer des recherches qualifiées, rassurer les lecteurs et améliorer le référencement.","blog_all":"Voir tous les articles","faq_eye":"Questions fréquentes","faq_title":"Réponses aux objections<br><span class=\"gradient\">avant le premier contact</span>","contact_eye":"Parlons de votre projet","contact_title":"Nous <span class=\"gradient\">contacter</span>","contact_desc":"Vous avez un projet web, une campagne marketing ou une refonte à lancer ? Nous vous répondons rapidement avec une recommandation claire.","contact_phone":"Téléphone","contact_whatsapp":"WhatsApp","contact_email":"Email","contact_address":"Adresse","map_open":"Ouvrir la fiche Google Maps","form_name":"Nom","form_phone":"Téléphone","form_email":"Email","form_service":"Service souhaité","form_message":"Message","form_submit":"Envoyer le message","footer_rights":"Tous droits réservés","blog_page_title":"Blog digital marketing & SEO","blog_page_desc":"Des guides pratiques pour améliorer votre visibilité, générer plus de contacts et offrir une meilleure expérience client.","article_back":"Retour au blog","article_cta_title":"Vous voulez appliquer ces conseils ?","article_cta_desc":"Demandez un audit gratuit. Nous vous indiquons les actions prioritaires pour votre site et votre fiche Google.","article_cta_btn":"Demander un audit","read_article":"Lire l’article →","quote_btn":"Demander un devis","testi_label":"Retour client sectoriel","side_desc":"Création de sites web, SEO local, contenus, publicité et automatisation.","skip":"Aller au contenu","service1_title":"Création de Sites Web","service1_desc":"Sites vitrines, e-commerce et plateformes sur mesure, rapides, responsives et optimisées SEO dès le départ.","service2_title":"SEO & Référencement","service2_desc":"Structure technique, contenus ciblés, blog, maillage interne et stratégie locale pour mieux apparaître sur Google.","service3_title":"Publicité en ligne","service3_desc":"Campagnes Google Ads, Meta Ads et landing pages pensées pour convertir vos budgets en demandes mesurables.","service4_title":"Social Media","service4_desc":"Calendrier éditorial, visuels, vidéos courtes et contenus qui donnent confiance à votre audience.","service5_title":"Branding & UX","service5_desc":"Identité visuelle, design d’interface, expérience utilisateur et messages commerciaux clairs.","service6_title":"IA & Automatisation","service6_desc":"Chatbots, formulaires intelligents, automatisation des demandes et suivi commercial plus rapide.","proof1":"Promesse claire dès le premier écran et appels à l’action répétés.","proof2":"Pages services optimisées pour le SEO local et les recherches métiers.","proof3":"Preuves, témoignages, FAQ et garanties pour rassurer avant le contact.","proof4":"Suivi des demandes : appels, WhatsApp, formulaires et conversions.","port1_sector":"Événementiel & mariage","port1_desc":"Site événementiel premium avec galerie, partenaires et appels à l’action.","port2_sector":"Aviation humanitaire","port2_desc":"Site institutionnel structuré pour présenter missions, organisation et contact.","port3_sector":"Médical B2B","port3_desc":"Site médical B2B avec spécialités, partenaires, preuves et témoignages.","port4_sector":"Industriel & sécurité","port4_desc":"Site industriel moderne pour sécurité incendie, formations et demande de devis.","port5_sector":"Aviation privée","port5_desc":"Positionnement premium, pages services et crédibilité internationale.","port6_sector":"Transport & navette","port6_desc":"Réservation, flotte, avantages, témoignages et formulaire de demande.","conv1_title":"Vitesse & mobile-first","conv1_desc":"Des pages rapides, lisibles et faciles à contacter depuis smartphone.","conv2_title":"Parcours clair","conv2_desc":"Des sections organisées pour expliquer, rassurer puis déclencher l’action.","conv3_title":"Preuves visibles","conv3_desc":"Réalisations, avis, chiffres, secteurs et garanties au bon endroit.","conv4_title":"Contact rapide","conv4_desc":"Boutons flottants WhatsApp/appel, formulaire court et réponse rapide.","pack1_name":"Starter","pack1_note":"Pour lancer proprement","pack1_item1":"Site vitrine responsive","pack1_item2":"Formulaire + WhatsApp","pack1_item3":"SEO technique de base","pack1_item4":"Mise en ligne","pack2_name":"Business","pack2_note":"Pour générer plus de demandes","pack2_item1":"Pages services ciblées","pack2_item2":"Blog SEO initial","pack2_item3":"Optimisation Google Business","pack2_item4":"Suivi conversion","pack3_name":"Premium","pack3_note":"Pour accélérer la croissance","pack3_item1":"Stratégie SEO avancée","pack3_item2":"Landing pages Ads","pack3_item3":"Automatisation & chatbot","pack3_item4":"Reporting mensuel","testi1_sector":"Cabinet médical","testi1_text":"“Le site présente nos spécialités avec clarté. Les patients trouvent rapidement les informations et les demandes de rendez-vous sont plus simples.”","testi2_sector":"Salle de sport","testi2_text":"“La nouvelle page explique nos abonnements et met en avant les coachs. Les visiteurs comprennent mieux notre offre avant de venir.”","testi3_sector":"Opticien","testi3_text":"“Le catalogue, les horaires et le bouton WhatsApp nous aident à recevoir des demandes plus qualifiées.”","testi4_sector":"École privée","testi4_text":"“Les parents trouvent les programmes, les niveaux et le formulaire d’inscription sans nous appeler plusieurs fois.”","testi5_sector":"Centre de formation","testi5_text":"“Les pages par formation nous permettent de répondre aux recherches précises et d’envoyer le bon programme aux prospects.”","testi6_sector":"Restaurant","testi6_text":"“Les photos, le menu et la réservation donnent envie. Le site est devenu un vrai support commercial.”","testi7_sector":"Café & pâtisserie","testi7_text":"“Le design met en valeur l’ambiance et les produits. Les clients consultent facilement l’adresse et les horaires.”","testi8_sector":"Industrie","testi8_text":"“La présentation technique est claire et rassurante. Les demandes de devis arrivent avec plus d’informations utiles.”","testi9_sector":"Agence immobilière","testi9_text":"“Les biens sont mieux présentés, les contacts sont plus directs et l’image de marque est plus professionnelle.”","testi10_sector":"Clinique dentaire","testi10_text":"“L’expérience mobile est fluide et rassure les nouveaux patients avant la prise de contact.”","testi11_sector":"Cabinet de conseil","testi11_text":"“Le contenu explique enfin notre expertise sans jargon. Les prospects arrivent mieux informés.”","testi12_sector":"Boutique e-commerce","testi12_text":"“Le parcours d’achat est plus clair et les pages produits inspirent davantage confiance.”","faq1_q":"Combien de temps prend la création d’un site ?","faq1_a":"Selon le projet, un site vitrine peut être livré rapidement après validation du contenu. Les sites plus avancés demandent un cadrage plus détaillé.","faq2_q":"Est-ce que le site sera optimisé SEO ?","faq2_a":"Oui. La structure, les titres, la vitesse, les balises, les contenus et le maillage sont pensés dès le départ pour le référencement.","faq3_q":"Pouvez-vous gérer la fiche Google ?","faq3_a":"Oui. Nous pouvons optimiser la fiche, les catégories, les services, les photos, les descriptions et la stratégie d’avis.","faq4_q":"Le site peut-il être en français, arabe et anglais ?","faq4_a":"Oui. Le site intègre un système multilingue avec direction RTL pour l’arabe et mémorisation du choix de langue.","faq5_q":"Proposez-vous un accompagnement après livraison ?","faq5_a":"Oui. Nous pouvons assurer la maintenance, les mises à jour, le blog, le SEO et les campagnes publicitaires.","faq6_q":"Puis-je demander un audit avant de commencer ?","faq6_a":"Oui. L’audit gratuit permet d’identifier rapidement les actions qui auront le plus d’impact sur votre visibilité et vos conversions.","article_seo-local-el-jadida-2026_title":"Comment apparaître sur Google à El Jadida en 2026 : guide SEO local","article_seo-local-el-jadida-2026_desc":"Une méthode claire pour transformer votre site et votre fiche Google Business Profile en source régulière de demandes locales.","article_google-business-profile-appels_title":"Google Business Profile : comment recevoir plus d’appels sans augmenter le budget pub","article_google-business-profile-appels_desc":"Les actions concrètes pour rendre votre fiche Google plus visible, plus rassurante et plus rentable.","article_site-rapide-mobile-first-conversion_title":"Site rapide et mobile-first : pourquoi la vitesse convertit mieux","article_site-rapide-mobile-first-conversion_desc":"Découvrez comment la performance, l’ergonomie mobile et les appels à l’action influencent directement vos demandes clients.","article_ia-chatbots-automatisation-pme_title":"IA, chatbots et automatisation : comment les PME peuvent gagner du temps","article_ia-chatbots-automatisation-pme_desc":"Des idées concrètes pour utiliser l’intelligence artificielle sans compliquer votre organisation.","article_seo-multilingue-maroc_title":"SEO multilingue au Maroc : français, arabe et anglais sans perdre Google","article_seo-multilingue-maroc_desc":"Comment structurer un site multilingue propre pour parler à plus de clients et préserver la visibilité SEO.","article_marketing-digital-secteurs-medical-formation-restauration_title":"Marketing digital pour médecins, opticiens, écoles, restaurants et industriels","article_marketing-digital-secteurs-medical-formation-restauration_desc":"Chaque secteur a ses codes. Voici comment adapter votre site, vos contenus et vos appels à l’action.","article_design-oriente-conversion_title":"Design orienté conversion : transformer les visiteurs en clients","article_design-oriente-conversion_desc":"Les principes UX qui font la différence entre un joli site et un site qui génère des demandes.","article_refonte-site-web-signaux_title":"Refonte de site web : 9 signes qu’il est temps de moderniser votre présence digitale","article_refonte-site-web-signaux_desc":"Votre site ne convertit plus ? Voici les signaux qui montrent qu’une refonte peut devenir rentable.","opt_web":"Création site web","opt_seo":"SEO / Référencement","opt_ads":"Google Ads / Meta Ads","opt_refonte":"Refonte site web","opt_blog":"Blog & contenu SEO"},"en":{"nav_services":"Services","nav_portfolio":"Work","nav_reviews":"Reviews","nav_blog":"Blog","nav_contact":"Contact","nav_cta":"Free quote","hero_tag":"Google Certified · El Jadida, Morocco","hero_title":"Your digital presence,<br><span class=\"gradient\">reinvented.</span>","hero_sub":"Premium website creation, SEO and digital marketing. We turn your vision into digital experiences that attract, reassure and convert.","hero_btn1":"View our work","hero_btn2":"Discuss a project","stat_clients":"Happy clients","stat_sites":"Websites built","stat_seo":"Local SEO","stat_exp":"Years experience","marquee":"Web Design • SEO • Google Ads • Social Media • Branding • Photo & Video • WordPress • E-commerce • AI & Automation •","services_eye":"What we do","services_title":"Complete services<br><span class=\"gradient\">for your growth</span>","services_desc":"From strategy to launch, we build digital tools designed to attract, reassure and convert.","proof_eye":"Why choose us","proof_title":"An experience designed to<br><span class=\"gradient\">convert visitors</span>","proof_desc":"We add marketing elements that build trust and reduce hesitation before contact.","audit_eye":"Audit","audit_title":"Free Google presence audit","audit_desc":"Send your website or Google listing. We reply with 3 priority actions to gain visibility.","audit_btn":"Request my audit","portfolio_eye":"Website examples","portfolio_title":"Real work<br><span class=\"gradient\">that builds trust</span>","portfolio_desc":"The screenshots below use your exact file names to avoid broken images on GitHub.","conversion_eye":"Marketing focused","conversion_title":"Details that turn<br><span class=\"gradient\">a website into a lead engine</span>","conversion_desc":"Beyond design, we add proof, calls to action, objection handling and fast contact paths.","pricing_eye":"Offers","pricing_title":"Clear packages<br><span class=\"gradient\">for every stage</span>","pricing_desc":"Flexible options for entrepreneurs, SMEs and companies that want to accelerate acquisition.","testimonials_eye":"Sector testimonials","testimonials_title":"What <span class=\"gradient\">our clients</span> say","blog_eye":"Blog & SEO","blog_title":"Useful articles to improve<br><span class=\"gradient\">Google visibility</span>","blog_desc":"A dedicated blog and full articles to attract qualified searches, reassure readers and improve SEO.","blog_all":"View all articles","faq_eye":"FAQ","faq_title":"Answering objections<br><span class=\"gradient\">before first contact</span>","contact_eye":"Let’s talk about your project","contact_title":"Contact <span class=\"gradient\">us</span>","contact_desc":"Have a website, campaign or redesign project? We reply quickly with a clear recommendation.","contact_phone":"Phone","contact_whatsapp":"WhatsApp","contact_email":"Email","contact_address":"Address","map_open":"Open Google Maps listing","form_name":"Name","form_phone":"Phone","form_email":"Email","form_service":"Desired service","form_message":"Message","form_submit":"Send message","footer_rights":"All rights reserved","blog_page_title":"Digital marketing & SEO blog","blog_page_desc":"Practical guides to improve visibility, generate more inquiries and create a better customer experience.","article_back":"Back to blog","article_cta_title":"Want to apply these ideas?","article_cta_desc":"Request a free audit. We will show you the priority actions for your site and Google profile.","article_cta_btn":"Request an audit","read_article":"Read article →","quote_btn":"Request a quote","testi_label":"Sector client feedback","side_desc":"Website creation, local SEO, content, advertising and automation.","skip":"Skip to content","service1_title":"Website creation","service1_desc":"Showcase websites, e-commerce and custom platforms: fast, responsive and SEO-ready from day one.","service2_title":"SEO & ranking","service2_desc":"Technical structure, targeted content, blog strategy, internal linking and local SEO to appear better on Google.","service3_title":"Online advertising","service3_desc":"Google Ads, Meta Ads and landing pages designed to turn budgets into measurable inquiries.","service4_title":"Social media","service4_desc":"Editorial calendars, visuals, short videos and content that builds trust with your audience.","service5_title":"Branding & UX","service5_desc":"Visual identity, interface design, user experience and clear commercial messaging.","service6_title":"AI & automation","service6_desc":"Chatbots, smart forms, lead automation and faster commercial follow-up.","proof1":"Clear promise above the fold and repeated calls to action.","proof2":"Service pages optimized for local SEO and industry searches.","proof3":"Proof, testimonials, FAQ and guarantees to reassure before contact.","proof4":"Lead tracking: calls, WhatsApp, forms and conversions.","port1_sector":"Events & weddings","port1_desc":"Premium event website with gallery, partners and clear calls to action.","port2_sector":"Humanitarian aviation","port2_desc":"Institutional website structured around missions, organization and contact.","port3_sector":"Medical B2B","port3_desc":"Medical B2B website with specialties, partners, proof and testimonials.","port4_sector":"Industrial & safety","port4_desc":"Modern industrial website for fire safety, training and quote requests.","port5_sector":"Private aviation","port5_desc":"Premium positioning, service pages and international credibility.","port6_sector":"Transport & shuttle","port6_desc":"Booking, fleet, benefits, testimonials and request form.","conv1_title":"Speed & mobile-first","conv1_desc":"Fast, readable pages that make contacting easy from a smartphone.","conv2_title":"Clear journey","conv2_desc":"Sections organized to explain, reassure and trigger action.","conv3_title":"Visible proof","conv3_desc":"Work examples, reviews, numbers, sectors and guarantees in the right places.","conv4_title":"Fast contact","conv4_desc":"Floating WhatsApp/call buttons, short form and quick response promise.","pack1_name":"Starter","pack1_note":"To launch properly","pack1_item1":"Responsive showcase website","pack1_item2":"Form + WhatsApp","pack1_item3":"Basic technical SEO","pack1_item4":"Deployment","pack2_name":"Business","pack2_note":"To generate more leads","pack2_item1":"Targeted service pages","pack2_item2":"Initial SEO blog","pack2_item3":"Google Business optimization","pack2_item4":"Conversion tracking","pack3_name":"Premium","pack3_note":"To accelerate growth","pack3_item1":"Advanced SEO strategy","pack3_item2":"Ads landing pages","pack3_item3":"Automation & chatbot","pack3_item4":"Monthly reporting","testi1_sector":"Medical clinic","testi1_text":"“The website presents our specialties clearly. Patients find information quickly and appointment requests are simpler.”","testi2_sector":"Gym","testi2_text":"“The new page explains our memberships and highlights our coaches. Visitors understand our offer before coming.”","testi3_sector":"Optician","testi3_text":"“The catalogue, hours and WhatsApp button help us receive more qualified inquiries.”","testi4_sector":"Private school","testi4_text":"“Parents find programs, levels and the registration form without calling several times.”","testi5_sector":"Training center","testi5_text":"“Pages by course help us answer precise searches and send the right program to prospects.”","testi6_sector":"Restaurant","testi6_text":"“Photos, menu and booking create desire. The website became a real sales support.”","testi7_sector":"Café & pastry shop","testi7_text":"“The design highlights the atmosphere and products. Customers easily check address and hours.”","testi8_sector":"Industrial company","testi8_text":"“The technical presentation is clear and reassuring. Quote requests arrive with more useful details.”","testi9_sector":"Real estate agency","testi9_text":"“Properties are better presented, contacts are more direct and the brand image is more professional.”","testi10_sector":"Dental clinic","testi10_text":"“The mobile experience is smooth and reassures new patients before contact.”","testi11_sector":"Consulting firm","testi11_text":"“The content explains our expertise without jargon. Prospects arrive better informed.”","testi12_sector":"E-commerce shop","testi12_text":"“The purchase journey is clearer and product pages inspire more trust.”","faq1_q":"How long does website creation take?","faq1_a":"Depending on the project, a showcase website can be delivered quickly after content approval. More advanced websites need deeper planning.","faq2_q":"Will the website be SEO optimized?","faq2_a":"Yes. Structure, titles, speed, tags, content and internal links are planned from the start for search visibility.","faq3_q":"Can you manage the Google profile?","faq3_a":"Yes. We can optimize categories, services, photos, descriptions, posts and the review strategy.","faq4_q":"Can the website be in French, Arabic and English?","faq4_a":"Yes. The website includes a multilingual system with RTL support for Arabic and saved language preferences.","faq5_q":"Do you offer support after delivery?","faq5_a":"Yes. We can handle maintenance, updates, blog content, SEO and advertising campaigns.","faq6_q":"Can I request an audit first?","faq6_a":"Yes. The free audit identifies the actions with the strongest impact on visibility and conversion.","article_seo-local-el-jadida-2026_title":"How to appear on Google in El Jadida in 2026: local SEO guide","article_seo-local-el-jadida-2026_desc":"A practical method to turn your website and Google Business Profile into a consistent source of local leads.","article_google-business-profile-appels_title":"Google Business Profile: get more calls without increasing ad spend","article_google-business-profile-appels_desc":"Concrete steps to make your Google listing more visible, trustworthy and profitable.","article_site-rapide-mobile-first-conversion_title":"Fast mobile-first websites: why speed improves conversion","article_site-rapide-mobile-first-conversion_desc":"How performance, mobile usability and calls to action directly influence customer inquiries.","article_ia-chatbots-automatisation-pme_title":"AI, chatbots and automation: how small businesses save time","article_ia-chatbots-automatisation-pme_desc":"Practical ideas to use AI without adding complexity to your operations.","article_seo-multilingue-maroc_title":"Multilingual SEO in Morocco: French, Arabic and English without confusing Google","article_seo-multilingue-maroc_desc":"How to structure a multilingual website that reaches more clients while protecting SEO visibility.","article_marketing-digital-secteurs-medical-formation-restauration_title":"Digital marketing for clinics, opticians, schools, restaurants and industrial companies","article_marketing-digital-secteurs-medical-formation-restauration_desc":"Each sector has its own codes. Here is how to adapt your website, content and calls to action.","article_design-oriente-conversion_title":"Conversion-focused design: turn visitors into customers","article_design-oriente-conversion_desc":"The UX principles that separate a beautiful website from a website that generates leads.","article_refonte-site-web-signaux_title":"Website redesign: 9 signs it is time to modernize your digital presence","article_refonte-site-web-signaux_desc":"If your website no longer converts, these signals show when a redesign can become profitable.","opt_web":"Website creation","opt_seo":"SEO / Ranking","opt_ads":"Google Ads / Meta Ads","opt_refonte":"Website redesign","opt_blog":"Blog & SEO content"},"ar":{"nav_services":"الخدمات","nav_portfolio":"نماذج الأعمال","nav_reviews":"آراء العملاء","nav_blog":"المدونة","nav_contact":"اتصل بنا","nav_cta":"عرض مجاني","hero_tag":"Google Certified · الجديدة، المغرب","hero_title":"حضورك الرقمي<br><span class=\"gradient\">بشكل جديد.</span>","hero_sub":"وكالة متخصصة في إنشاء المواقع الاحترافية، السيو والتسويق الرقمي. نحول فكرتك إلى تجربة رقمية تجذب وتطمئن وتحول الزوار إلى عملاء.","hero_btn1":"شاهد أعمالنا","hero_btn2":"ناقش مشروعك","stat_clients":"عملاء راضون","stat_sites":"مواقع منجزة","stat_seo":"سيو محلي","stat_exp":"سنوات خبرة","marquee":"إنشاء المواقع • السيو • إعلانات Google • الشبكات الاجتماعية • الهوية البصرية • تصوير وفيديو • WordPress • المتاجر الإلكترونية • الذكاء الاصطناعي •","services_eye":"ما الذي نقدمه","services_title":"خدمات متكاملة<br><span class=\"gradient\">لنمو مشروعك</span>","services_desc":"من الاستراتيجية إلى الإطلاق، نبني أدوات رقمية مصممة لجذب العميل وطمأنته ودفعه للتواصل.","proof_eye":"لماذا تختارنا","proof_title":"تجربة مصممة<br><span class=\"gradient\">لتحويل الزوار إلى عملاء</span>","proof_desc":"نضيف عناصر تسويقية تبني الثقة وتقلل تردد العميل قبل التواصل.","audit_eye":"تدقيق","audit_title":"تدقيق مجاني لحضورك على Google","audit_desc":"أرسل موقعك أو بطاقة Google وسنرسل لك 3 إجراءات أولوية لتحسين الظهور.","audit_btn":"اطلب التدقيق المجاني","portfolio_eye":"نماذج مواقع","portfolio_title":"أعمال حقيقية<br><span class=\"gradient\">تعطي الثقة</span>","portfolio_desc":"الصور التالية مدمجة بالأسماء الدقيقة للملفات لتجنب مشكلة عدم ظهور الصور على GitHub.","conversion_eye":"تفكير تسويقي","conversion_title":"تفاصيل تحول<br><span class=\"gradient\">الموقع إلى مصدر طلبات</span>","conversion_desc":"إلى جانب التصميم، نضيف الأدلة وأزرار التواصل والإجابة على الاعتراضات ومسارات اتصال سريعة.","pricing_eye":"العروض","pricing_title":"باقات واضحة<br><span class=\"gradient\">لكل مرحلة</span>","pricing_desc":"حلول مناسبة للمقاولين والشركات الصغيرة والمتوسطة التي تريد تسريع جذب العملاء.","testimonials_eye":"آراء حسب القطاعات","testimonials_title":"ماذا يقول <span class=\"gradient\">عملاؤنا</span>","blog_eye":"المدونة والسيو","blog_title":"مقالات مفيدة لتحسين<br><span class=\"gradient\">ظهورك في Google</span>","blog_desc":"صفحة مدونة مخصصة ومقالات كاملة لجذب عمليات بحث مؤهلة وطمأنة القراء وتحسين السيو.","blog_all":"شاهد كل المقالات","faq_eye":"أسئلة شائعة","faq_title":"إجابات على الاعتراضات<br><span class=\"gradient\">قبل أول تواصل</span>","contact_eye":"لنتحدث عن مشروعك","contact_title":"اتصل <span class=\"gradient\">بنا</span>","contact_desc":"لديك مشروع موقع أو حملة تسويق أو تجديد؟ نرد بسرعة بتوصية واضحة.","contact_phone":"الهاتف","contact_whatsapp":"واتساب","contact_email":"البريد الإلكتروني","contact_address":"العنوان","map_open":"افتح بطاقة Google Maps","form_name":"الاسم","form_phone":"الهاتف","form_email":"البريد الإلكتروني","form_service":"الخدمة المطلوبة","form_message":"الرسالة","form_submit":"إرسال الرسالة","footer_rights":"جميع الحقوق محفوظة","blog_page_title":"مدونة التسويق الرقمي والسيو","blog_page_desc":"دلائل عملية لتحسين الظهور، الحصول على طلبات أكثر وتقديم تجربة عميل أفضل.","article_back":"العودة إلى المدونة","article_cta_title":"هل تريد تطبيق هذه النصائح؟","article_cta_desc":"اطلب تدقيقاً مجانياً. سنوضح لك الإجراءات الأولوية لموقعك وبطاقة Google.","article_cta_btn":"اطلب التدقيق","read_article":"اقرأ المقال ←","quote_btn":"اطلب عرضاً","testi_label":"رأي عميل حسب القطاع","side_desc":"إنشاء المواقع، السيو المحلي، المحتوى، الإعلانات والأتمتة.","skip":"الانتقال إلى المحتوى","service1_title":"إنشاء المواقع","service1_desc":"مواقع تعريفية، متاجر إلكترونية ومنصات مخصصة سريعة ومتجاوبة ومهيأة للسيو من البداية.","service2_title":"السيو والظهور في Google","service2_desc":"بنية تقنية، محتوى مستهدف، مدونة، روابط داخلية واستراتيجية محلية لتحسين الظهور.","service3_title":"الإعلانات الرقمية","service3_desc":"حملات Google Ads وMeta Ads وصفحات هبوط لتحويل الميزانية إلى طلبات قابلة للقياس.","service4_title":"الشبكات الاجتماعية","service4_desc":"تقويم محتوى، تصاميم، فيديوهات قصيرة ومحتوى يبني الثقة مع جمهورك.","service5_title":"الهوية وتجربة المستخدم","service5_desc":"هوية بصرية، تصميم واجهات، تجربة مستخدم ورسائل تجارية واضحة.","service6_title":"الذكاء الاصطناعي والأتمتة","service6_desc":"شات بوت، نماذج ذكية، أتمتة الطلبات ومتابعة تجارية أسرع.","proof1":"وعد واضح في الشاشة الأولى وأزرار تواصل متكررة.","proof2":"صفحات خدمات مهيأة للسيو المحلي وبحث القطاعات.","proof3":"أدلة وآراء وأسئلة وضمانات لطمأنة العميل قبل التواصل.","proof4":"تتبع الطلبات: مكالمات، واتساب، نماذج وتحويلات.","port1_sector":"المناسبات والأعراس","port1_desc":"موقع مناسبات احترافي مع معرض صور وشركاء ودعوات واضحة للتواصل.","port2_sector":"الطيران الإنساني","port2_desc":"موقع مؤسساتي منظم لعرض المهام والتنظيم والتواصل.","port3_sector":"المجال الطبي B2B","port3_desc":"موقع طبي B2B بالتخصصات والشركاء والأدلة وآراء العملاء.","port4_sector":"الصناعة والسلامة","port4_desc":"موقع صناعي حديث للسلامة من الحرائق والتكوين وطلبات العروض.","port5_sector":"الطيران الخاص","port5_desc":"تموقع فاخر وصفحات خدمات ومصداقية دولية.","port6_sector":"النقل والنافيت","port6_desc":"حجز، أسطول، مزايا، آراء ونموذج طلب.","conv1_title":"السرعة والهاتف أولاً","conv1_desc":"صفحات سريعة ومقروءة وسهلة التواصل من الهاتف.","conv2_title":"مسار واضح","conv2_desc":"أقسام منظمة لتشرح وتطمئن ثم تدفع للتواصل.","conv3_title":"أدلة ظاهرة","conv3_desc":"أعمال، آراء، أرقام، قطاعات وضمانات في المكان المناسب.","conv4_title":"تواصل سريع","conv4_desc":"أزرار واتساب واتصال عائمة، نموذج قصير ووعد برد سريع.","pack1_name":"Starter","pack1_note":"للانطلاق بشكل احترافي","pack1_item1":"موقع تعريفي متجاوب","pack1_item2":"نموذج + واتساب","pack1_item3":"سيو تقني أساسي","pack1_item4":"النشر على الإنترنت","pack2_name":"Business","pack2_note":"للحصول على طلبات أكثر","pack2_item1":"صفحات خدمات مستهدفة","pack2_item2":"مدونة SEO أولية","pack2_item3":"تحسين بطاقة Google","pack2_item4":"تتبع التحويلات","pack3_name":"Premium","pack3_note":"لتسريع النمو","pack3_item1":"استراتيجية SEO متقدمة","pack3_item2":"صفحات هبوط للإعلانات","pack3_item3":"أتمتة وشات بوت","pack3_item4":"تقرير شهري","testi1_sector":"عيادة طبية","testi1_text":"“الموقع يعرض تخصصاتنا بوضوح. المرضى يجدون المعلومات بسرعة وطلب المواعيد أصبح أسهل.”","testi2_sector":"قاعة رياضة","testi2_text":"“الصفحة الجديدة تشرح الاشتراكات وتبرز المدربين. الزوار يفهمون عرضنا قبل الزيارة.”","testi3_sector":"محل نظارات","testi3_text":"“الكتالوج، أوقات العمل وزر واتساب يساعدوننا على استقبال طلبات أكثر جودة.”","testi4_sector":"مدرسة خاصة","testi4_text":"“الآباء يجدون البرامج والمستويات ونموذج التسجيل دون الاتصال عدة مرات.”","testi5_sector":"مركز تكوين","testi5_text":"“صفحات كل تكوين تساعدنا على الظهور في بحث محدد وإرسال البرنامج المناسب.”","testi6_sector":"مطعم","testi6_text":"“الصور، القائمة والحجز تخلق الرغبة. الموقع أصبح دعامة تجارية حقيقية.”","testi7_sector":"مقهى وحلويات","testi7_text":"“التصميم يبرز الأجواء والمنتجات. العملاء يجدون العنوان والأوقات بسهولة.”","testi8_sector":"شركة صناعية","testi8_text":"“العرض التقني واضح ومطمئن. طلبات العروض تصل بمعلومات أكثر فائدة.”","testi9_sector":"وكالة عقارية","testi9_text":"“العقارات أصبحت معروضة بشكل أفضل، والتواصل مباشر والصورة أكثر احترافية.”","testi10_sector":"عيادة أسنان","testi10_text":"“تجربة الهاتف سلسة وتطمئن المرضى الجدد قبل التواصل.”","testi11_sector":"مكتب استشارات","testi11_text":"“المحتوى يشرح خبرتنا بدون تعقيد. العملاء المحتملون يصلون أكثر فهماً.”","testi12_sector":"متجر إلكتروني","testi12_text":"“مسار الشراء أوضح وصفحات المنتجات تعطي ثقة أكبر.”","faq1_q":"كم يستغرق إنشاء الموقع؟","faq1_a":"حسب المشروع، يمكن تسليم موقع تعريفي بسرعة بعد اعتماد المحتوى. المواقع المتقدمة تحتاج تخطيطاً أكثر تفصيلاً.","faq2_q":"هل سيكون الموقع مهيأ للسيو؟","faq2_a":"نعم. البنية، العناوين، السرعة، الوسوم، المحتوى والروابط الداخلية تُخطط من البداية للظهور في البحث.","faq3_q":"هل يمكنكم إدارة بطاقة Google؟","faq3_a":"نعم. يمكننا تحسين التصنيفات، الخدمات، الصور، الأوصاف، المنشورات واستراتيجية التقييمات.","faq4_q":"هل يمكن أن يكون الموقع بالفرنسية والعربية والإنجليزية؟","faq4_a":"نعم. الموقع يتضمن نظاماً متعدد اللغات مع دعم RTL للعربية وحفظ اختيار اللغة.","faq5_q":"هل تقدمون مواكبة بعد التسليم؟","faq5_a":"نعم. يمكننا إدارة الصيانة، التحديثات، المدونة، السيو والحملات الإعلانية.","faq6_q":"هل يمكن طلب تدقيق قبل البدء؟","faq6_a":"نعم. التدقيق المجاني يحدد الإجراءات الأعلى تأثيراً على الظهور والتحويلات.","article_seo-local-el-jadida-2026_title":"كيف تظهر على Google في الجديدة سنة 2026: دليل السيو المحلي","article_seo-local-el-jadida-2026_desc":"منهجية عملية لتحويل موقعك وبطاقة Google Business Profile إلى مصدر دائم للطلبات المحلية.","article_google-business-profile-appels_title":"Google Business Profile: كيف تحصل على مكالمات أكثر بدون رفع ميزانية الإعلانات","article_google-business-profile-appels_desc":"خطوات عملية لجعل بطاقة Google أكثر ظهوراً وثقة وربحية.","article_site-rapide-mobile-first-conversion_title":"الموقع السريع والمتجاوب: لماذا السرعة تزيد التحويلات؟","article_site-rapide-mobile-first-conversion_desc":"كيف تؤثر السرعة وتجربة الهاتف وأزرار التواصل على طلبات العملاء.","article_ia-chatbots-automatisation-pme_title":"الذكاء الاصطناعي والشات بوت والأتمتة: كيف تربح الشركات الصغيرة الوقت؟","article_ia-chatbots-automatisation-pme_desc":"أفكار عملية لاستخدام الذكاء الاصطناعي بدون تعقيد العمل اليومي.","article_seo-multilingue-maroc_title":"السيو متعدد اللغات في المغرب: الفرنسية والعربية والإنجليزية بدون إرباك Google","article_seo-multilingue-maroc_desc":"كيف تنظم موقعاً متعدد اللغات يصل إلى عملاء أكثر ويحافظ على ظهوره.","article_marketing-digital-secteurs-medical-formation-restauration_title":"التسويق الرقمي للأطباء والنظارات والمدارس والمطاعم والشركات الصناعية","article_marketing-digital-secteurs-medical-formation-restauration_desc":"كل قطاع له أسلوبه. هكذا تكيف موقعك ومحتواك وأزرار التواصل.","article_design-oriente-conversion_title":"تصميم موجه للتحويل: كيف تحول الزوار إلى عملاء","article_design-oriente-conversion_desc":"مبادئ تجربة المستخدم التي تفرق بين موقع جميل وموقع يجلب الطلبات.","article_refonte-site-web-signaux_title":"تجديد الموقع: 9 علامات تدل أن الوقت حان لتحديث حضورك الرقمي","article_refonte-site-web-signaux_desc":"إذا كان موقعك لا يحول الزوار، فهذه العلامات توضح متى يصبح التجديد مربحاً.","opt_web":"إنشاء موقع","opt_seo":"السيو والظهور","opt_ads":"إعلانات Google / Meta","opt_refonte":"تجديد الموقع","opt_blog":"مدونة ومحتوى SEO"}};
 
-/* ══ NAV SCROLL ══ */
-window.addEventListener('scroll',()=>{
-  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60);
-});
-
-/* ══ SCROLL REVEAL ══ */
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-/* ══ CANVAS TEMPLATES ══ */
-const T=[
-  {bg:'#180900',nav:'#0a0400',hero:'#2a1000',hi:'#5a2200',a:'#e85218',a2:'#ffa040',t:'#fff5ee',t2:'rgba(255,245,238,.4)',c:'#221200'},
-  {bg:'#f0f8ff',nav:'#fff',hero:'#e0f2fe',hi:'#bae6fd',a:'#0284c7',a2:'#38bdf8',t:'#0c1a2e',t2:'rgba(12,26,46,.35)',c:'#fff'},
-  {bg:'#06091e',nav:'#030512',hero:'#0a1030',hi:'#141e50',a:'#3b82f6',a2:'#93c5fd',t:'#e8f0ff',t2:'rgba(232,240,255,.35)',c:'#0c1030'},
-  {bg:'#080808',nav:'#000',hero:'#101010',hi:'#1c1c1c',a:'#f97316',a2:'#fb923c',t:'#fff',t2:'rgba(255,255,255,.35)',c:'#141414'},
-  {bg:'#04091a',nav:'#020610',hero:'#07102a',hi:'#0e1c44',a:'#c9a84c',a2:'#e8d090',t:'#f0f4ff',t2:'rgba(240,244,255,.35)',c:'#080e22'},
-  {bg:'#0a001a',nav:'#060010',hero:'#160030',hi:'#280055',a:'#ec4899',a2:'#f9a8d4',t:'#fdf2f8',t2:'rgba(253,242,248,.35)',c:'#120024'},
-  {bg:'#16100a',nav:'#0c0804',hero:'#221808',hi:'#3a2812',a:'#b45309',a2:'#fcd34d',t:'#fffbeb',t2:'rgba(255,251,235,.35)',c:'#1c1408'},
-  {bg:'#001a18',nav:'#000e0d',hero:'#002522',hi:'#003d38',a:'#10b981',a2:'#6ee7b7',t:'#ecfdf5',t2:'rgba(236,253,245,.35)',c:'#002820'},
-];
-
-function drawD(id,p){
-  const c=document.getElementById(id);if(!c)return;
-  const ctx=c.getContext('2d'),W=c.width,H=c.height;
-  ctx.fillStyle=p.bg;ctx.fillRect(0,0,W,H);
-  // nav
-  ctx.fillStyle=p.nav;ctx.fillRect(0,0,W,34);
-  ctx.fillStyle=p.a;ctx.beginPath();ctx.roundRect(14,10,52,14,3);ctx.fill();
-  [190,250,310,370].forEach(x=>{ctx.fillStyle=p.t2;ctx.fillRect(x,15,36,5);});
-  ctx.fillStyle=p.a;ctx.beginPath();ctx.roundRect(480,10,70,14,7);ctx.fill();
-  // hero
-  const g=ctx.createLinearGradient(0,34,W,H*.52);
-  g.addColorStop(0,p.hero);g.addColorStop(1,p.bg);
-  ctx.fillStyle=g;ctx.fillRect(0,34,W,H*.5);
-  // left text
-  ctx.fillStyle=p.a;ctx.fillRect(28,52,4,44);
-  ctx.fillStyle=p.t;ctx.fillRect(38,54,160,16);
-  ctx.fillStyle=p.a;ctx.fillRect(38,74,140,13);
-  ctx.fillStyle=p.t;ctx.fillRect(38,92,180,9);
-  ctx.fillStyle=p.t2;ctx.fillRect(38,108,150,5);ctx.fillRect(38,117,120,5);ctx.fillRect(38,126,140,5);
-  ctx.fillStyle=p.a;ctx.beginPath();ctx.roundRect(38,140,80,22,5);ctx.fill();
-  ctx.fillStyle='rgba(255,255,255,.1)';ctx.beginPath();ctx.roundRect(126,140,68,22,5);ctx.fill();
-  // right image
-  const gi=ctx.createLinearGradient(310,38,W-12,H*.52);
-  gi.addColorStop(0,p.hi);gi.addColorStop(1,p.hero);
-  ctx.fillStyle=gi;ctx.beginPath();ctx.roundRect(310,42,W-322,H*.5-16,10);ctx.fill();
-  ctx.fillStyle=p.a+'55';ctx.beginPath();ctx.arc(W-80,95,44,0,Math.PI*2);ctx.fill();
-  ctx.fillStyle=p.a2+'33';ctx.beginPath();ctx.arc(330,140,28,0,Math.PI*2);ctx.fill();
-  // floating card
-  ctx.fillStyle=p.c+'ee';ctx.beginPath();ctx.roundRect(W-155,H*.52-70,130,58,8);ctx.fill();
-  ctx.fillStyle=p.a;ctx.fillRect(W-147,H*.52-62,45,6);
-  ctx.fillStyle=p.t2;ctx.fillRect(W-147,H*.52-52,90,4);ctx.fillRect(W-147,H*.52-44,65,4);
-  ctx.fillStyle=p.a;ctx.beginPath();ctx.roundRect(W-147,H*.52-34,55,15,3);ctx.fill();
-  // cards row
-  const cy=34+H*.52+8,ch=H-cy-10;
-  for(let i=0;i<4;i++){
-    const cx=12+i*142;
-    ctx.fillStyle=p.c;ctx.beginPath();ctx.roundRect(cx,cy,134,ch,7);ctx.fill();
-    const gi2=ctx.createLinearGradient(cx,cy,cx+134,cy+ch*.42);
-    gi2.addColorStop(0,p.hi);gi2.addColorStop(1,p.hero);
-    ctx.fillStyle=gi2;ctx.beginPath();ctx.roundRect(cx,cy,134,ch*.42,7);ctx.fill();
-    ctx.fillStyle=p.a+'bb';ctx.beginPath();ctx.arc(cx+67,cy+ch*.21,16,0,Math.PI*2);ctx.fill();
-    ctx.fillStyle='rgba(255,255,255,.8)';ctx.fillRect(cx+59,cy+ch*.21-1,16,4);ctx.fillRect(cx+65,cy+ch*.21-7,4,14);
-    ctx.fillStyle=p.t;ctx.fillRect(cx+10,cy+ch*.44,90,7);
-    ctx.fillStyle=p.t2;ctx.fillRect(cx+10,cy+ch*.56,110,4);ctx.fillRect(cx+10,cy+ch*.64,80,4);
-    ctx.fillStyle=p.a;ctx.beginPath();ctx.roundRect(cx+10,ch+cy-24,74,16,4);ctx.fill();
-  }
-  ctx.fillStyle=p.c;ctx.beginPath();ctx.roundRect(580,cy,14,ch,7);ctx.fill();
+function applyLang(lang){
+ const dict=COMMON_I18N[lang]||COMMON_I18N.fr;
+ document.documentElement.lang=lang;
+ document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+ document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n'); if(dict[key]) el.innerHTML=dict[key];});
+ document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const key=el.getAttribute('data-i18n-placeholder'); if(dict[key]) el.setAttribute('placeholder',dict[key]);});
+ document.querySelectorAll('.lang-switch button').forEach(btn=>btn.classList.toggle('active',btn.dataset.lang===lang));
+ document.querySelectorAll('.lang-content').forEach(el=>el.classList.toggle('active',el.dataset.lang===lang));
+ try{localStorage.setItem('ejws_lang',lang)}catch(e){}
 }
-
-function drawM(id,p){
-  const c=document.getElementById(id);if(!c)return;
-  const ctx=c.getContext('2d'),W=c.width,H=c.height;
-  ctx.fillStyle=p.bg;ctx.fillRect(0,0,W,H);
-  ctx.fillStyle=p.nav;ctx.fillRect(0,0,W,20);
-  ctx.fillStyle=p.a;ctx.beginPath();ctx.roundRect(5,6,26,9,2);ctx.fill();
-  [0,4,8].forEach(dy=>{ctx.fillStyle=p.t2;ctx.fillRect(W-18,8+dy,13,2);});
-  const g=ctx.createLinearGradient(0,20,0,90);
-  g.addColorStop(0,p.hero);g.addColorStop(1,p.bg);
-  ctx.fillStyle=g;ctx.fillRect(0,20,W,70);
-  ctx.fillStyle=p.a;ctx.fillRect(6,28,3,36);
-  ctx.fillStyle=p.t;ctx.fillRect(13,29,50,9);
-  ctx.fillStyle=p.a;ctx.fillRect(13,43,44,7);
-  ctx.fillStyle=p.t2;ctx.fillRect(13,54,60,4);ctx.fillRect(13,62,48,3);
-  ctx.fillStyle=p.a;ctx.beginPath();ctx.roundRect(13,70,36,13,3);ctx.fill();
-  const gi=ctx.createLinearGradient(W-42,22,W-2,88);
-  gi.addColorStop(0,p.hi);gi.addColorStop(1,p.hero);
-  ctx.fillStyle=gi;ctx.beginPath();ctx.roundRect(W-40,24,36,58,5);ctx.fill();
-  ctx.fillStyle=p.a+'66';ctx.beginPath();ctx.arc(W-22,52,13,0,Math.PI*2);ctx.fill();
-  for(let i=0;i<4;i++){
-    const cy=96+i*28;
-    ctx.fillStyle=p.c;ctx.beginPath();ctx.roundRect(4,cy,W-8,24,5);ctx.fill();
-    const gi2=ctx.createLinearGradient(4,cy,26,cy+24);
-    gi2.addColorStop(0,p.hi);gi2.addColorStop(1,p.hero);
-    ctx.fillStyle=gi2;ctx.beginPath();ctx.roundRect(4,cy,26,24,5);ctx.fill();
-    ctx.fillStyle=p.a+'99';ctx.beginPath();ctx.arc(17,cy+12,7,0,Math.PI*2);ctx.fill();
-    ctx.fillStyle=p.t;ctx.fillRect(35,cy+4,44,6);
-    ctx.fillStyle=p.t2;ctx.fillRect(35,cy+13,58,4);
-    ctx.fillStyle=p.a;ctx.beginPath();ctx.roundRect(W-26,cy+7,18,10,2);ctx.fill();
-  }
-}
-
-// Hero canvas
-function drawHero(){
-  const c=document.getElementById('heroCanvas');if(!c)return;
-  const ctx=c.getContext('2d'),W=c.width,H=c.height;
-  // gradient bg
-  const g=ctx.createLinearGradient(0,0,W,H);
-  g.addColorStop(0,'#0a0518');g.addColorStop(1,'#06060a');
-  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
-  // hero of a web agency website
-  ctx.fillStyle='rgba(124,92,252,.1)';ctx.fillRect(0,0,W,52);
-  ctx.fillStyle='rgba(124,92,252,.8)';ctx.beginPath();ctx.roundRect(14,18,60,16,3);ctx.fill();
-  [180,240,300,360].forEach(x=>{ctx.fillStyle='rgba(255,255,255,.15)';ctx.fillRect(x,23,36,6);});
-  ctx.fillStyle='rgba(124,92,252,.6)';ctx.beginPath();ctx.roundRect(460,18,82,16,8);ctx.fill();
-  // big hero text
-  ctx.fillStyle='rgba(255,255,255,.9)';ctx.fillRect(30,70,200,20);
-  ctx.fillStyle='rgba(200,150,255,.8)';ctx.fillRect(30,96,180,16);
-  ctx.fillStyle='rgba(255,255,255,.9)';ctx.fillRect(30,118,160,16);
-  ctx.fillStyle='rgba(255,255,255,.35)';ctx.fillRect(30,144,240,7);ctx.fillRect(30,156,200,6);
-  ctx.fillStyle='rgba(124,92,252,.8)';ctx.beginPath();ctx.roundRect(30,174,96,26,13);ctx.fill();
-  ctx.fillStyle='rgba(255,255,255,.08)';ctx.beginPath();ctx.roundRect(134,174,80,26,13);ctx.fill();
-  // stats
-  [30,130,230].forEach(x=>{
-    ctx.fillStyle='rgba(200,150,255,.8)';ctx.fillRect(x,212,32,12);
-    ctx.fillStyle='rgba(255,255,255,.3)';ctx.fillRect(x,228,44,5);
-  });
-  // right visual - phone+desktop mockup
-  const g2=ctx.createLinearGradient(340,52,W,H);
-  g2.addColorStop(0,'rgba(124,92,252,.15)');g2.addColorStop(1,'transparent');
-  ctx.fillStyle=g2;ctx.beginPath();ctx.roundRect(340,58,W-350,H-68,12);ctx.fill();
-  // mini desktop
-  ctx.fillStyle='rgba(20,20,40,.9)';ctx.beginPath();ctx.roundRect(358,70,220,140,7);ctx.fill();
-  ctx.fillStyle='rgba(255,255,255,.06)';ctx.fillRect(358,70,220,22);
-  [365,374,383].forEach((x,i)=>{ctx.fillStyle=['#ff5f57','#ffbd2e','#28c840'][i];ctx.beginPath();ctx.arc(x,81,4,0,Math.PI*2);ctx.fill();});
-  ctx.fillStyle='rgba(124,92,252,.4)';ctx.fillRect(358,92,220,40);
-  ctx.fillStyle='rgba(255,255,255,.6)';ctx.fillRect(368,98,120,10);ctx.fillRect(368,113,90,8);
-  ctx.fillStyle='rgba(124,92,252,.6)';ctx.beginPath();ctx.roundRect(368,126,60,14,4);ctx.fill();
-  for(let i=0;i<3;i++){
-    ctx.fillStyle='rgba(30,30,50,.8)';ctx.beginPath();ctx.roundRect(360+i*72,140,65,60,4);ctx.fill();
-    ctx.fillStyle='rgba(124,92,252,.3)';ctx.fillRect(360+i*72,140,65,25);
-    ctx.fillStyle='rgba(255,255,255,.4)';ctx.fillRect(368+i*72,150,40,5);ctx.fillRect(368+i*72,163,50,4);
-  }
-  // mini phone
-  ctx.fillStyle='rgba(15,15,15,.95)';ctx.beginPath();ctx.roundRect(570,100,70,130,12);ctx.fill();
-  ctx.fillStyle='rgba(255,255,255,.08)';ctx.fillRect(570,100,70,14);
-  ctx.fillStyle='rgba(15,15,15,.95)';ctx.beginPath();ctx.arc(605,107,5,0,Math.PI*2);ctx.fill();
-  ctx.fillStyle='rgba(124,92,252,.4)';ctx.fillRect(576,118,58,44);
-  ctx.fillStyle='rgba(255,255,255,.6)';ctx.fillRect(582,124,36,8);ctx.fillRect(582,136,28,6);
-  ctx.fillStyle='rgba(124,92,252,.6)';ctx.beginPath();ctx.roundRect(582,148,28,10,3);ctx.fill();
-  for(let i=0;i<3;i++){ctx.fillStyle='rgba(30,30,50,.7)';ctx.beginPath();ctx.roundRect(576,168+i*18,58,14,3);ctx.fill();}
-  // glow effect
-  ctx.fillStyle='rgba(124,92,252,.08)';ctx.beginPath();ctx.arc(500,180,100,0,Math.PI*2);ctx.fill();
-}
-
-window.addEventListener('load',()=>{
-  drawHero();
-  T.forEach((p,i)=>{
-    drawD('td'+(i+1),p);
-    drawM('tm'+(i+1),p);
-  });
+function currentLang(){try{return localStorage.getItem('ejws_lang')||'fr'}catch(e){return 'fr'}}
+document.addEventListener('DOMContentLoaded',()=>{
+ const header=document.querySelector('.site-header');
+ if(header){window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40));}
+ document.querySelectorAll('.lang-switch button').forEach(btn=>btn.addEventListener('click',()=>applyLang(btn.dataset.lang)));
+ const toggle=document.querySelector('.mobile-toggle'); const links=document.querySelector('.nav-links');
+ if(toggle&&links){toggle.addEventListener('click',()=>links.classList.toggle('open')); links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));}
+ document.querySelectorAll('.testimonial-track').forEach(track=>{if(!track.dataset.ready){track.innerHTML+=track.innerHTML;track.dataset.ready='1';}});
+ document.querySelectorAll('[data-year]').forEach(el=>el.textContent='2026');
+ applyLang(currentLang());
 });
-
-/* ══ DRAG SLIDER ══ */
-const pTrack=document.getElementById('pTrack');
-const pOuter=document.getElementById('pOuter');
-let dn=false,sx=0,sl=0;
-pOuter.addEventListener('mousedown',e=>{dn=true;pOuter.classList.add('dragging');sx=e.pageX-pTrack.offsetLeft;sl=pTrack.scrollLeft;});
-pOuter.addEventListener('mouseleave',()=>{dn=false;pOuter.classList.remove('dragging');});
-pOuter.addEventListener('mouseup',()=>{dn=false;pOuter.classList.remove('dragging');});
-pOuter.addEventListener('mousemove',e=>{if(!dn)return;e.preventDefault();const x=e.pageX-pTrack.offsetLeft;pTrack.scrollLeft=sl-(x-sx)*1.5;});
-pOuter.addEventListener('touchstart',e=>{sx=e.touches[0].pageX-pTrack.offsetLeft;sl=pTrack.scrollLeft;});
-pOuter.addEventListener('touchmove',e=>{const x=e.touches[0].pageX-pTrack.offsetLeft;pTrack.scrollLeft=sl-(x-sx)*1.2;});
-document.getElementById('pL').addEventListener('click',()=>pTrack.scrollBy({left:-540,behavior:'smooth'}));
-document.getElementById('pR').addEventListener('click',()=>pTrack.scrollBy({left:540,behavior:'smooth'}));
-
-/* ══ FORM ══ */
-const cForm=document.getElementById('cForm');
-const fOk=document.getElementById('fOk');
-cForm.addEventListener('submit',async e=>{
-  e.preventDefault();
-  const btn=cForm.querySelector('button[type="submit"]');
-  btn.textContent='Envoi...';btn.disabled=true;
-  try{
-    const r=await fetch(cForm.action,{method:'POST',body:new FormData(cForm),headers:{'Accept':'application/json'}});
-    if(r.ok){cForm.reset();fOk.style.display='block';btn.textContent='Envoyé ✅';}
-    else{btn.textContent='Erreur — réessayez';btn.disabled=false;}
-  }catch{btn.textContent='Erreur — réessayez';btn.disabled=false;}
-});
-
-
-/* ══ LANGUES FR / EN / AR ══ */
-const I18N={
-  fr:{nav_services:'Services',nav_portfolio:'Exemples',nav_reviews:'Avis',nav_blog:'Blog',nav_contact:'Contact',nav_cta:'Devis gratuit →',hero_title:'Votre présence<br>digitale,<br><em>réinventée.</em>',hero_sub:'Agence spécialisée en création de sites web premium, SEO et marketing digital. Nous transformons votre vision en expériences numériques qui convertissent.',hero_portfolio:'Voir nos créations',hero_project:"Parler d'un projet →",stat_clients:'Clients satisfaits',stat_sites:'Sites créés',stat_seo:'SEO Local',stat_exp:"Ans d'expérience",portfolio_eyebrow:'Exemples de sites',portfolio_title:'Des réalisations réelles<br>qui donnent <em>confiance</em>',ex1:"Site événementiel premium avec galerie, partenaires et appel à l'action.",ex2:'Site institutionnel structuré pour présenter missions, organisation et contact.',ex3:'Site B2B médical avec services, spécialités, partenaires et témoignages.',ex4:'Site industriel moderne pour sécurité incendie, services et formation.',ex5:'Site aviation haut de gamme avec positionnement international et pages services.',ex6:'Site de transport avec réservation, avantages, flotte et formulaire de contact.',testimonials_eyebrow:'Témoignages',testimonials_title:'Ce que disent <em>nos clients</em>',t1:'Une équipe réactive et professionnelle. Notre site est moderne, rapide et parfaitement adapté au mobile.',t2:'Très bonne compréhension de notre besoin. Le résultat donne confiance et nous aide à générer plus de demandes.',t3:"Le design est propre, les textes sont optimisés SEO et l'accompagnement après livraison est sérieux.",t4:'Nous avons gagné en visibilité sur Google et en crédibilité auprès de nos clients.',blog_eyebrow:'Blog & SEO',blog_title:'Des articles pour améliorer<br>votre <em>classement Google</em>',blog_desc:'Publier régulièrement des articles ciblés aide votre site à gagner en visibilité sur les recherches locales et métiers.',blog1_t:'Comment apparaître sur Google à El Jadida ?',blog1_p:'Optimisez votre fiche Google, vos pages services et vos avis clients pour attirer des prospects proches.',blog2_t:'Pourquoi un site rapide convertit mieux ?',blog2_p:"La vitesse, le responsive et une navigation claire améliorent l'expérience utilisateur et les conversions.",blog3_t:'Google Ads ou SEO : que choisir ?',blog3_p:'Le SEO construit la visibilité durable, tandis que la publicité accélère les demandes à court terme.',read_more:'Lire plus →',open_map:'Ouvrir la fiche Google Maps →'},
-  en:{nav_services:'Services',nav_portfolio:'Examples',nav_reviews:'Reviews',nav_blog:'Blog',nav_contact:'Contact',nav_cta:'Free quote →',hero_title:'Your digital<br>presence,<br><em>reinvented.</em>',hero_sub:'A premium web design, SEO and digital marketing agency. We turn your vision into digital experiences that convert.',hero_portfolio:'View our work',hero_project:'Discuss a project →',stat_clients:'Happy clients',stat_sites:'Websites built',stat_seo:'Local SEO',stat_exp:'Years of experience',portfolio_eyebrow:'Website examples',portfolio_title:'Real projects<br>built to create <em>trust</em>',ex1:'Premium event website with gallery, partners and clear calls to action.',ex2:'Institutional website structured around missions, organization and contact.',ex3:'Medical B2B website with services, specialties, partners and testimonials.',ex4:'Modern industrial website for fire safety, services and training.',ex5:'High-end aviation website with international positioning and service pages.',ex6:'Transport website with booking, benefits, fleet and contact form.',testimonials_eyebrow:'Testimonials',testimonials_title:'What <em>our clients</em> say',t1:'A responsive and professional team. Our site is modern, fast and perfectly mobile-friendly.',t2:'They understood our needs very well. The result builds trust and helps us generate more inquiries.',t3:'Clean design, SEO-optimized copy and serious support after delivery.',t4:'We gained visibility on Google and credibility with our clients.',blog_eyebrow:'Blog & SEO',blog_title:'Articles to improve<br>your <em>Google ranking</em>',blog_desc:'Publishing targeted articles regularly helps your website gain visibility for local and industry searches.',blog1_t:'How to appear on Google in El Jadida?',blog1_p:'Optimize your Google profile, service pages and reviews to attract nearby prospects.',blog2_t:'Why does a fast website convert better?',blog2_p:'Speed, responsive design and clear navigation improve user experience and conversions.',blog3_t:'Google Ads or SEO: what should you choose?',blog3_p:'SEO builds long-term visibility while advertising accelerates short-term inquiries.',read_more:'Read more →',open_map:'Open Google Maps listing →'},
-  ar:{nav_services:'الخدمات',nav_portfolio:'نماذج',nav_reviews:'آراء العملاء',nav_blog:'المدونة',nav_contact:'اتصل بنا',nav_cta:'عرض سعر مجاني ←',hero_title:'حضورك<br>الرقمي<br><em>بشكل جديد.</em>',hero_sub:'وكالة متخصصة في إنشاء المواقع الاحترافية، السيو والتسويق الرقمي. نحول فكرتك إلى تجربة رقمية تجلب العملاء.',hero_portfolio:'شاهد أعمالنا',hero_project:'ناقش مشروعك ←',stat_clients:'عملاء راضون',stat_sites:'مواقع منجزة',stat_seo:'سيو محلي',stat_exp:'سنوات خبرة',portfolio_eyebrow:'نماذج مواقع',portfolio_title:'أعمال حقيقية<br>تعطي <em>الثقة</em>',ex1:'موقع مناسبات احترافي مع معرض صور وشركاء ودعوات واضحة للتواصل.',ex2:'موقع مؤسساتي منظم لعرض المهام والفريق ومعلومات التواصل.',ex3:'موقع طبي B2B يتضمن الخدمات والتخصصات والشركاء وآراء العملاء.',ex4:'موقع صناعي حديث لخدمات السلامة من الحرائق والتكوين.',ex5:'موقع طيران فاخر بهوية دولية وصفحات خدمات واضحة.',ex6:'موقع نقل يتضمن الحجز والمزايا والأسطول ونموذج التواصل.',testimonials_eyebrow:'آراء العملاء',testimonials_title:'ماذا يقول <em>عملاؤنا</em>',t1:'فريق سريع ومحترف. الموقع حديث وسريع ومناسب تماماً للهاتف.',t2:'فهموا احتياجاتنا جيداً. النتيجة تعطي الثقة وتساعدنا على استقبال طلبات أكثر.',t3:'تصميم نظيف، نصوص محسنة للسيو ومواكبة جدية بعد التسليم.',t4:'حصلنا على ظهور أفضل في Google ومصداقية أكبر عند عملائنا.',blog_eyebrow:'المدونة والسيو',blog_title:'مقالات لتحسين<br><em>ترتيبك في Google</em>',blog_desc:'نشر مقالات مستهدفة بانتظام يساعد موقعك على الظهور في عمليات البحث المحلية والمتخصصة.',blog1_t:'كيف تظهر على Google في الجديدة؟',blog1_p:'حسّن بطاقة Google وصفحات الخدمات وآراء العملاء لجذب زبناء قريبين.',blog2_t:'لماذا الموقع السريع يحقق نتائج أفضل؟',blog2_p:'السرعة والتجاوب وسهولة التصفح تحسن تجربة المستخدم ونسبة التحويل.',blog3_t:'Google Ads أم SEO: ماذا تختار؟',blog3_p:'السيو يبني ظهوراً مستداماً، بينما الإعلانات تسرّع الطلبات على المدى القصير.',read_more:'اقرأ المزيد ←',open_map:'افتح بطاقة Google Maps ←'}
-};
-function setLang(lang){
-  const dict=I18N[lang]||I18N.fr;
-  document.documentElement.lang=lang;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(dict[k])el.innerHTML=dict[k];});
-  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
-  localStorage.setItem('ejws_lang',lang);
-}
-document.querySelectorAll('.lang-switch button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-setLang(localStorage.getItem('ejws_lang')||'fr');
-
-/* duplication pour boucle témoignages fluide */
-const testimonialTrack=document.getElementById('testimonialTrack');
-if(testimonialTrack && !testimonialTrack.dataset.ready){testimonialTrack.innerHTML += testimonialTrack.innerHTML; testimonialTrack.dataset.ready='1';}
 
 </script>
-</body>
-</html>
+</body></html>
