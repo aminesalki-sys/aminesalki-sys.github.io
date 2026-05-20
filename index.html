@@ -48,7 +48,7 @@
 <header class="site-header">
 <div class="container nav">
 <a class="brand" href="index.html">
-<span class="logo-mark"><img src="1779292840114_image.png" alt="EJ Logo" style="width:32px;height:32px;object-fit:contain;border-radius:6px;display:block;"></span>
+<span class="logo-mark"><img src="logo.png" alt="El Jadida Web Solutions" style="width:38px;height:38px;object-fit:contain;border-radius:10px;display:block;"></span>
 <span class="logo-word">El Jadida<br/><span>Web Solutions</span></span>
 </a>
 <button aria-label="Menu" class="mobile-toggle">☰</button>
@@ -192,7 +192,7 @@
 <div class="floating-contact"><a aria-label="WhatsApp" class="float-wa" href="https://wa.me/212679148046?text=Bonjour%20El%20Jadida%20Web%20Solutions%2C%20je%20veux%20un%20devis%20pour%20mon%20projet." rel="noopener" target="_blank">💬</a><a aria-label="Appel" class="float-call" href="tel:+212620830606">📞</a></div>
 <footer class="site-footer">
 <div class="container footer-grid">
-<a class="brand" href="index.html"><span class="logo-mark"><img src="1779292840114_image.png" alt="EJ Logo" style="width:32px;height:32px;object-fit:contain;border-radius:6px;display:block;"></span><span class="logo-word">El Jadida<br/><span>Web Solutions</span></span></a>
+<a class="brand" href="index.html"><span class="logo-mark"><img src="logo.png" alt="El Jadida Web Solutions" style="width:38px;height:38px;object-fit:contain;border-radius:10px;display:block;"></span><span class="logo-word">El Jadida<br/><span>Web Solutions</span></span></a>
 <p>© <span data-year="">2026</span> El Jadida Web Solutions · <span data-i18n="footer_rights">Tous droits réservés</span></p>
 <div class="footer-links"><a href="index.html#services">Services</a><a href="index.html#portfolio">Portfolio</a><a href="blog.html">Blog</a><a href="index.html#contact">Contact</a></div>
 </div>
@@ -218,51 +218,60 @@ document.addEventListener('DOMContentLoaded',()=>{
  const toggle=document.querySelector('.mobile-toggle'); const links=document.querySelector('.nav-links');
  if(toggle&&links){toggle.addEventListener('click',()=>links.classList.toggle('open')); links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));}
  
-// ── TESTIMONIALS INFINITE SLIDER ──
+// ── TESTIMONIALS SLIDER ──
 (function(){
   const track = document.getElementById('testiTrack');
   const dotsEl = document.getElementById('testiDots');
-  if(!track) return;
-  const cards = Array.from(track.querySelectorAll('.testimonial-card'));
-  const total = cards.length;
+  if(!track || !dotsEl) return;
+  const total = track.querySelectorAll('.testimonial-card').length;
   let current = 0;
   let autoTimer;
-  const CARD_W = () => {
+
+  function isRTL(){ return document.documentElement.dir === 'rtl'; }
+  function cardW(){
     const c = track.querySelector('.testimonial-card');
-    return c ? c.offsetWidth + 19 : 374; // width + gap
-  };
-  // Build dots
-  cards.forEach((_,i)=>{
-    const d = document.createElement('button');
-    d.className = 'testi-dot' + (i===0?' active':'');
-    d.setAttribute('aria-label','Slide '+(i+1));
-    d.addEventListener('click',()=>goTo(i));
-    dotsEl.appendChild(d);
-  });
+    return c ? c.offsetWidth + 19 : 374;
+  }
+  function buildDots(){
+    dotsEl.innerHTML = '';
+    for(let i=0;i<total;i++){
+      const d = document.createElement('button');
+      d.className = 'testi-dot' + (i===0?' active':'');
+      d.setAttribute('aria-label','Slide '+(i+1));
+      d.addEventListener('click',()=>goTo(i));
+      dotsEl.appendChild(d);
+    }
+  }
   function updateDots(){
     dotsEl.querySelectorAll('.testi-dot').forEach((d,i)=>d.classList.toggle('active',i===current));
   }
   function goTo(idx){
     current = ((idx % total) + total) % total;
-    track.style.transform = 'translateX(-' + (current * CARD_W()) + 'px)';
+    // RTL: slide direction is positive; LTR: negative
+    const offset = isRTL() ? (current * cardW()) : -(current * cardW());
+    track.style.transform = 'translateX(' + offset + 'px)';
     updateDots();
-    resetAuto();
-  }
-  window._testiGoTo = goTo;
-  function resetAuto(){
     clearInterval(autoTimer);
     autoTimer = setInterval(()=>goTo(current+1), 4500);
   }
-  document.getElementById('testiPrev').addEventListener('click',()=>goTo(current-1));
-  document.getElementById('testiNext').addEventListener('click',()=>goTo(current+1));
-  // Touch support
+  window._testiGoTo = goTo;
+  window._testiRebuild = function(){ buildDots(); goTo(0); };
+
+  const prevBtn = document.getElementById('testiPrev');
+  const nextBtn = document.getElementById('testiNext');
+  if(prevBtn) prevBtn.addEventListener('click',()=>goTo(current-1));
+  if(nextBtn) nextBtn.addEventListener('click',()=>goTo(current+1));
+
   let tsx=0;
   track.addEventListener('touchstart',e=>{tsx=e.touches[0].clientX;},{passive:true});
   track.addEventListener('touchend',e=>{
     const dx=tsx-e.changedTouches[0].clientX;
     if(Math.abs(dx)>40) goTo(current+(dx>0?1:-1));
   });
-  resetAuto();
+
+  buildDots();
+  goTo(0);
+  autoTimer = setInterval(()=>goTo(current+1), 4500);
 })();
  document.querySelectorAll('[data-year]').forEach(el=>el.textContent='2026');
  applyLang(currentLang());
