@@ -7,220 +7,128 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --purple: #6B21A8; --violet: #7C3AED; --pink: #EC4899;
-    --dark: #0D0014; --darker: #08000D;
-    --text: #F3E8FF; --muted: #C084FC;
-    --glass: rgba(255,255,255,0.04); --border: rgba(192,132,252,0.15);
+    --purple:#6B21A8;--violet:#7C3AED;--pink:#EC4899;
+    --dark:#0D0014;--darker:#08000D;
+    --text:#F3E8FF;--muted:#C084FC;
+    --glass:rgba(255,255,255,0.04);--border:rgba(192,132,252,0.15);
   }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Outfit', sans-serif; background: var(--darker); color: var(--text); overflow-x: hidden; }
-  body::before {
-    content: ''; position: fixed; inset: 0; z-index: 0;
-    background:
-      radial-gradient(ellipse 60% 50% at 10% 20%, rgba(107,33,168,0.35) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 40% at 90% 80%, rgba(236,72,153,0.25) 0%, transparent 60%);
-    pointer-events: none;
-  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Outfit',sans-serif;background:var(--darker);color:var(--text);overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 60% 50% at 10% 20%,rgba(107,33,168,.35) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 90% 80%,rgba(236,72,153,.25) 0%,transparent 60%);pointer-events:none;}
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 4rem;
-    background: rgba(8,0,13,0.85); backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo img { height: 52px; width: auto; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
-  .nav-links a:hover { color: var(--text); }
-  .btn-primary { padding: 0.7rem 1.8rem; background: linear-gradient(135deg, #7C3AED, #EC4899); border: none; border-radius: 6px; color: white; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 30px rgba(124,58,237,0.4); }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(124,58,237,0.6); }
-  .btn-outline { padding: 0.7rem 1.8rem; background: transparent; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); font-family: 'Outfit', sans-serif; font-size: 0.85rem; cursor: pointer; text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s; }
-  .btn-outline:hover { border-color: var(--muted); color: var(--text); }
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 4rem;background:rgba(8,0,13,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+  .nav-logo img{height:52px;width:auto;}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;}
+  .nav-links a{text-decoration:none;color:var(--muted);font-size:.85rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;transition:color .3s;}
+  .nav-links a:hover{color:var(--text);}
+  .btn-primary{padding:.7rem 1.8rem;background:linear-gradient(135deg,#7C3AED,#EC4899);border:none;border-radius:6px;color:white;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 30px rgba(124,58,237,.4);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,58,237,.6);}
+  .btn-outline{padding:.7rem 1.8rem;background:transparent;border:1px solid var(--border);border-radius:6px;color:var(--muted);font-family:'Outfit',sans-serif;font-size:.85rem;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s;}
+  .btn-outline:hover{border-color:var(--muted);color:var(--text);}
 
-  /* SECTIONS */
-  section { position: relative; z-index: 1; padding: 6rem 4rem; }
-  .section-label { font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase; color: #EC4899; font-weight: 600; margin-bottom: 1rem; }
-  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; letter-spacing: 1px; }
-  .section-title span { background: linear-gradient(135deg, #C084FC, #EC4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .divider { width: 60px; height: 3px; background: linear-gradient(90deg, #7C3AED, #EC4899); border-radius: 3px; margin: 1.2rem 0 0; }
+  section{position:relative;z-index:1;padding:6rem 4rem;}
+  .section-label{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:#EC4899;font-weight:600;margin-bottom:1rem;}
+  .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1;letter-spacing:1px;}
+  .section-title span{background:linear-gradient(135deg,#C084FC,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .divider{width:60px;height:3px;background:linear-gradient(90deg,#7C3AED,#EC4899);border-radius:3px;margin:1.2rem 0 0;}
 
-  /* HERO */
-  .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 4rem 4rem; overflow: hidden; }
-  .hero-content { max-width: 650px; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; background: rgba(107,33,168,0.3); border: 1px solid var(--border); border-radius: 100px; font-size: 0.75rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 2rem; animation: fadeUp 0.8s ease both; }
-  .hero-badge::before { content: ''; width: 6px; height: 6px; background: #EC4899; border-radius: 50%; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.4);} }
-  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 7vw, 6.5rem); line-height: 0.95; letter-spacing: 2px; animation: fadeUp 0.8s 0.1s ease both; }
-  .hero h1 .lc { background: linear-gradient(135deg, #C084FC, #EC4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .hero-sub { margin-top: 1.5rem; font-size: 1rem; color: #A78BCA; line-height: 1.7; max-width: 500px; animation: fadeUp 0.8s 0.2s ease both; }
-  .hero-cta { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; animation: fadeUp 0.8s 0.3s ease both; }
-  .hero-stats { display: flex; gap: 3rem; margin-top: 3.5rem; animation: fadeUp 0.8s 0.4s ease both; }
-  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; background: linear-gradient(135deg, #C084FC, #EC4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
-  .stat-label { font-size: 0.8rem; color: #7C5FA0; text-transform: uppercase; letter-spacing: 1px; margin-top: 0.3rem; }
-  .orb { position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none; }
-  .orb-1 { width: 400px; height: 400px; right: -100px; top: 100px; background: rgba(107,33,168,0.3); animation: float 8s ease-in-out infinite; }
-  .orb-2 { width: 250px; height: 250px; right: 200px; bottom: 100px; background: rgba(236,72,153,0.25); animation: float 6s 2s ease-in-out infinite; }
-  @keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-30px);} }
-  @keyframes fadeUp { from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);} }
+  .hero{min-height:100vh;display:flex;align-items:center;padding:8rem 4rem 4rem;overflow:hidden;}
+  .hero-content{max-width:650px;}
+  .hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;background:rgba(107,33,168,.3);border:1px solid var(--border);border-radius:100px;font-size:.75rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;animation:fadeUp .8s ease both;}
+  .hero-badge::before{content:'';width:6px;height:6px;background:#EC4899;border-radius:50%;animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.4);}}
+  .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,7vw,6.5rem);line-height:.95;letter-spacing:2px;animation:fadeUp .8s .1s ease both;}
+  .hero h1 .lc{background:linear-gradient(135deg,#C084FC,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .hero-sub{margin-top:1.5rem;font-size:1rem;color:#A78BCA;line-height:1.7;max-width:500px;animation:fadeUp .8s .2s ease both;}
+  .hero-cta{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;animation:fadeUp .8s .3s ease both;}
+  .hero-stats{display:flex;gap:3rem;margin-top:3.5rem;animation:fadeUp .8s .4s ease both;}
+  .stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;background:linear-gradient(135deg,#C084FC,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+  .stat-label{font-size:.8rem;color:#7C5FA0;text-transform:uppercase;letter-spacing:1px;margin-top:.3rem;}
+  .orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;}
+  .orb-1{width:400px;height:400px;right:-100px;top:100px;background:rgba(107,33,168,.3);animation:float 8s ease-in-out infinite;}
+  .orb-2{width:250px;height:250px;right:200px;bottom:100px;background:rgba(236,72,153,.25);animation:float 6s 2s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-30px);}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 
-  /* SERVICES */
-  .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
-  .service-card { padding: 2rem; background: var(--glass); border: 1px solid var(--border); border-radius: 12px; transition: transform .3s, border-color .3s, box-shadow .3s; }
-  .service-card:hover { transform: translateY(-6px); border-color: rgba(192,132,252,.35); box-shadow: 0 20px 60px rgba(107,33,168,.2); }
-  .service-icon { width: 48px; height: 48px; background: linear-gradient(135deg, rgba(107,33,168,.5), rgba(236,72,153,.3)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.2rem; }
-  .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .6rem; }
-  .service-card p { font-size: .85rem; color: #7C5FA0; line-height: 1.6; }
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;}
+  .service-card{padding:2rem;background:var(--glass);border:1px solid var(--border);border-radius:12px;transition:transform .3s,border-color .3s,box-shadow .3s;}
+  .service-card:hover{transform:translateY(-6px);border-color:rgba(192,132,252,.35);box-shadow:0 20px 60px rgba(107,33,168,.2);}
+  .service-icon{width:48px;height:48px;background:linear-gradient(135deg,rgba(107,33,168,.5),rgba(236,72,153,.3));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.2rem;}
+  .service-card h3{font-size:1rem;font-weight:700;margin-bottom:.6rem;}
+  .service-card p{font-size:.85rem;color:#7C5FA0;line-height:1.6;}
 
-  /* ══════════════════════════════════════
-     PORTFOLIO SLIDER
-  ══════════════════════════════════════ */
-  .portfolio-section { overflow: hidden; }
+  /* ══ PORTFOLIO SLIDER ══ */
+  .portfolio-section{overflow:hidden;}
+  .slider-outer{position:relative;margin-top:3.5rem;cursor:grab;user-select:none;}
+  .slider-outer.dragging{cursor:grabbing;}
+  .slider-track{display:flex;gap:2rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:1rem 0 2rem;}
+  .slider-track::-webkit-scrollbar{display:none;}
 
-  .slider-outer {
-    position: relative;
-    margin-top: 3.5rem;
-    cursor: grab;
-    user-select: none;
-  }
-  .slider-outer.dragging { cursor: grabbing; }
+  .pcard{flex:0 0 400px;scroll-snap-align:center;background:var(--glass);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:border-color .3s,box-shadow .3s;position:relative;}
+  .pcard:hover{border-color:rgba(192,132,252,.5);box-shadow:0 30px 80px rgba(107,33,168,.3);}
 
-  .slider-track {
-    display: flex;
-    gap: 2.4rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    padding: 1rem 0 2rem;
-  }
-  .slider-track::-webkit-scrollbar { display: none; }
+  /* hover label */
+  .pcard-label{position:absolute;top:0;left:0;right:0;padding:.6rem 1rem;background:linear-gradient(135deg,#7C3AED,#EC4899);color:white;font-size:.75rem;font-weight:700;letter-spacing:.5px;text-align:center;transform:translateY(-100%);transition:transform .3s cubic-bezier(.34,1.56,.64,1);z-index:10;}
+  .pcard:hover .pcard-label{transform:translateY(0);}
 
-  /* Each card: desktop mockup + phone mockup side by side */
-  .pcard {
-    flex: 0 0 520px;
-    scroll-snap-align: center;
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: border-color .3s, box-shadow .3s, transform .3s;
-    position: relative;
-  }
-  .pcard:hover { border-color: rgba(192,132,252,.5); box-shadow: 0 30px 80px rgba(107,33,168,.3); }
+  /* mockup area */
+  .pcard-screens{display:flex;align-items:flex-end;gap:1rem;padding:1.8rem 1.4rem 1rem;background:linear-gradient(160deg,#10002a 0%,#1c003a 100%);position:relative;overflow:hidden;}
+  .pcard-screens::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 120%,rgba(124,58,237,.2) 0%,transparent 70%);}
 
-  /* Hover label at top */
-  .pcard-hover-label {
-    position: absolute; top: 0; left: 0; right: 0;
-    padding: 0.7rem 1.2rem;
-    background: linear-gradient(135deg, #7C3AED, #EC4899);
-    color: white; font-size: .78rem; font-weight: 600;
-    letter-spacing: .5px; text-align: center;
-    transform: translateY(-100%);
-    transition: transform .3s cubic-bezier(.34,1.56,.64,1);
-    z-index: 10;
-  }
-  .pcard:hover .pcard-hover-label { transform: translateY(0); }
+  /* desktop */
+  .dmock{flex:1;background:#1a1a2e;border-radius:7px;border:1.5px solid rgba(255,255,255,.1);box-shadow:0 10px 35px rgba(0,0,0,.5);overflow:hidden;position:relative;z-index:1;}
+  .dbar{height:22px;background:#252538;display:flex;align-items:center;padding:0 7px;gap:4px;border-bottom:1px solid rgba(255,255,255,.06);}
+  .dd{width:6px;height:6px;border-radius:50%;}
+  .dd-r{background:#ff5f57;} .dd-y{background:#ffbd2e;} .dd-g{background:#28c840;}
+  .durl{flex:1;height:10px;background:rgba(255,255,255,.07);border-radius:3px;margin:0 5px;}
+  .dscreen{width:100%;overflow:hidden;}
+  .dscreen canvas{width:100%;height:100%;display:block;}
 
-  /* Mockups area */
-  .pcard-mockups {
-    display: flex; align-items: flex-end; gap: 1.2rem;
-    padding: 2rem 1.5rem 1.2rem;
-    background: linear-gradient(160deg, #12002a 0%, #1a0035 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .pcard-mockups::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(124,58,237,.25) 0%, transparent 70%);
-  }
+  /* phone */
+  .pmock{width:80px;background:#0f0f0f;border-radius:14px;border:2px solid rgba(255,255,255,.12);box-shadow:0 8px 25px rgba(0,0,0,.6);overflow:hidden;flex-shrink:0;position:relative;z-index:1;}
+  .ptop{height:14px;background:#191919;display:flex;align-items:center;justify-content:center;}
+  .pnotch{width:24px;height:5px;background:#0f0f0f;border-radius:3px;}
+  .pscreen{width:100%;overflow:hidden;}
+  .pscreen canvas{width:100%;height:100%;display:block;}
+  .pbottom{height:10px;background:#191919;display:flex;align-items:center;justify-content:center;}
+  .pbar{width:20px;height:2.5px;background:rgba(255,255,255,.25);border-radius:2px;}
 
-  /* Desktop browser mockup */
-  .desktop-mock {
-    flex: 1;
-    background: #1e1e2e;
-    border-radius: 8px;
-    border: 1.5px solid rgba(255,255,255,.1);
-    box-shadow: 0 12px 40px rgba(0,0,0,.5);
-    overflow: hidden;
-    position: relative; z-index: 1;
-  }
-  .desktop-bar {
-    height: 24px;
-    background: #2a2a3e;
-    display: flex; align-items: center; padding: 0 8px; gap: 5px;
-    border-bottom: 1px solid rgba(255,255,255,.06);
-  }
-  .dot { width: 7px; height: 7px; border-radius: 50%; }
-  .dot-r { background: #ff5f57; }
-  .dot-y { background: #ffbd2e; }
-  .dot-g { background: #28c840; }
-  .desktop-url {
-    flex: 1; height: 12px; background: rgba(255,255,255,.08);
-    border-radius: 3px; margin: 0 6px;
-  }
-  .desktop-screen { width: 100%; aspect-ratio: 16/10; overflow: hidden; }
-  .desktop-screen canvas { width: 100%; height: 100%; display: block; }
+  .pcard-info{padding:1rem 1.4rem 1.4rem;}
+  .pcard-info h3{font-size:.95rem;font-weight:700;margin-bottom:.25rem;}
+  .pcard-info p{font-size:.78rem;color:#7C5FA0;margin-bottom:.7rem;}
+  .ptag{display:inline-block;padding:.18rem .6rem;background:rgba(107,33,168,.3);border:1px solid rgba(192,132,252,.2);border-radius:100px;font-size:.65rem;color:var(--muted);margin-right:.3rem;margin-bottom:.2rem;}
 
-  /* Phone mockup */
-  .phone-mock {
-    width: 90px;
-    background: #111;
-    border-radius: 16px;
-    border: 2px solid rgba(255,255,255,.15);
-    box-shadow: 0 8px 30px rgba(0,0,0,.6);
-    overflow: hidden;
-    position: relative; z-index: 1;
-    flex-shrink: 0;
-  }
-  .phone-top {
-    height: 16px; background: #1a1a1a;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .phone-notch { width: 28px; height: 6px; background: #111; border-radius: 3px; }
-  .phone-screen { width: 100%; aspect-ratio: 9/16; overflow: hidden; }
-  .phone-screen canvas { width: 100%; height: 100%; display: block; }
-  .phone-home { height: 12px; background: #1a1a1a; display: flex; align-items: center; justify-content: center; }
-  .phone-home-bar { width: 24px; height: 3px; background: rgba(255,255,255,.3); border-radius: 2px; }
+  .slider-nav{display:flex;gap:.8rem;margin-top:1.2rem;}
+  .snav{width:42px;height:42px;background:var(--glass);border:1px solid var(--border);border-radius:50%;color:var(--muted);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+  .snav:hover{background:rgba(107,33,168,.3);border-color:rgba(192,132,252,.4);color:var(--text);}
 
-  /* Card info */
-  .pcard-info { padding: 1.2rem 1.5rem 1.5rem; }
-  .pcard-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: .3rem; }
-  .pcard-info p { font-size: .82rem; color: #7C5FA0; margin-bottom: .8rem; }
-  .ptag { display: inline-block; padding: .2rem .7rem; background: rgba(107,33,168,.3); border: 1px solid rgba(192,132,252,.2); border-radius: 100px; font-size: .7rem; color: var(--muted); margin-right: .3rem; }
-
-  /* Nav arrows */
-  .slider-nav { display: flex; gap: .8rem; margin-top: 1.2rem; }
-  .snav-btn { width: 42px; height: 42px; background: var(--glass); border: 1px solid var(--border); border-radius: 50%; color: var(--muted); font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .2s; }
-  .snav-btn:hover { background: rgba(107,33,168,.3); border-color: rgba(192,132,252,.4); color: var(--text); }
-
-  /* CLIENTS */
-  .clients-track { display: flex; gap: 3rem; align-items: center; margin-top: 3rem; animation: marquee 25s linear infinite; white-space: nowrap; }
-  @keyframes marquee { from{transform:translateX(0);}to{transform:translateX(-50%);} }
-  .client-pill { flex-shrink: 0; padding: .6rem 1.4rem; background: var(--glass); border: 1px solid var(--border); border-radius: 100px; font-size: .82rem; color: #9D6BC9; }
+  /* ══ CLIENTS LOGOS ══ */
+  .clients-logos-track{display:flex;gap:2.5rem;align-items:center;margin-top:2.5rem;animation:marquee 40s linear infinite;white-space:nowrap;}
+  @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .client-logo-item{flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:.6rem 1.2rem;background:var(--glass);border:1px solid var(--border);border-radius:10px;height:64px;min-width:120px;}
+  .client-logo-item img{max-height:44px;max-width:110px;object-fit:contain;opacity:.8;transition:opacity .3s,transform .3s;}
+  .client-logo-item:hover img{opacity:1;transform:scale(1.05);}
+  .client-logo-item span{font-size:.75rem;color:#9D6BC9;white-space:nowrap;}
 
   /* CONTACT */
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3.5rem; }
-  .contact-info p { color: #A78BCA; line-height: 1.8; font-size: 1rem; margin-bottom: 2rem; }
-  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
-  .contact-link { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.5rem; background: var(--glass); border: 1px solid var(--border); border-radius: 10px; text-decoration: none; color: var(--text); font-size: .9rem; transition: border-color .3s, background .3s; }
-  .contact-link:hover { border-color: rgba(192,132,252,.4); background: rgba(107,33,168,.15); }
-  .contact-icon { width: 38px; height: 38px; background: linear-gradient(135deg,rgba(107,33,168,.5),rgba(236,72,153,.3)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
-  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-  .form-group { display: flex; flex-direction: column; gap: .4rem; }
-  .form-group label { font-size: .8rem; font-weight: 500; color: var(--muted); letter-spacing: .5px; }
-  .form-group input, .form-group textarea { background: var(--glass); border: 1px solid var(--border); border-radius: 8px; padding: .85rem 1rem; color: var(--text); font-family: 'Outfit',sans-serif; font-size: .9rem; outline: none; transition: border-color .3s; resize: none; }
-  .form-group input:focus, .form-group textarea:focus { border-color: rgba(192,132,252,.5); }
-  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(160,107,200,.4); }
-  .form-success { display:none; padding:1rem; background:rgba(107,33,168,.2); border:1px solid rgba(192,132,252,.3); border-radius:8px; color:var(--muted); text-align:center; font-size:.9rem; }
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3.5rem;}
+  .contact-info p{color:#A78BCA;line-height:1.8;font-size:1rem;margin-bottom:2rem;}
+  .contact-links{display:flex;flex-direction:column;gap:1rem;}
+  .contact-link{display:flex;align-items:center;gap:1rem;padding:1rem 1.5rem;background:var(--glass);border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--text);font-size:.9rem;transition:border-color .3s,background .3s;}
+  .contact-link:hover{border-color:rgba(192,132,252,.4);background:rgba(107,33,168,.15);}
+  .contact-icon{width:38px;height:38px;background:linear-gradient(135deg,rgba(107,33,168,.5),rgba(236,72,153,.3));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+  .contact-form{display:flex;flex-direction:column;gap:1rem;}
+  .form-group{display:flex;flex-direction:column;gap:.4rem;}
+  .form-group label{font-size:.8rem;font-weight:500;color:var(--muted);letter-spacing:.5px;}
+  .form-group input,.form-group textarea{background:var(--glass);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem;color:var(--text);font-family:'Outfit',sans-serif;font-size:.9rem;outline:none;transition:border-color .3s;resize:none;}
+  .form-group input:focus,.form-group textarea:focus{border-color:rgba(192,132,252,.5);}
+  .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(160,107,200,.4);}
+  .form-success{display:none;padding:1rem;background:rgba(107,33,168,.2);border:1px solid rgba(192,132,252,.3);border-radius:8px;color:var(--muted);text-align:center;font-size:.9rem;}
 
-  /* FOOTER */
-  footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 2rem 4rem; display: flex; align-items: center; justify-content: space-between; }
-  .footer-logo img { height: 44px; }
-  footer p { font-size: .8rem; color: #5C3A7A; }
+  footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2rem 4rem;display:flex;align-items:center;justify-content:space-between;}
+  .footer-logo img{height:44px;}
+  footer p{font-size:.8rem;color:#5C3A7A;}
 
   @media(max-width:900px){
     nav{padding:1rem 1.5rem;} .nav-links{display:none;}
@@ -259,9 +167,9 @@
       <a href="#contact" class="btn-outline">Devis gratuit</a>
     </div>
     <div class="hero-stats">
-      <div><div class="stat-num">20+</div><div class="stat-label">Clients</div></div>
-      <div><div class="stat-num">9+</div><div class="stat-label">Sites créés</div></div>
-      <div><div class="stat-num">N°1</div><div class="stat-label">SEO local</div></div>
+      <div><div class="stat-num">+100</div><div class="stat-label">Clients</div></div>
+      <div><div class="stat-num">+80</div><div class="stat-label">Sites créés</div></div>
+      <div><div class="stat-num">N°1</div><div class="stat-label">SEO Local</div></div>
     </div>
   </div>
 </section>
@@ -286,141 +194,202 @@
   <div class="section-label">Exemples de réalisations</div>
   <div class="section-title">NOS <span>TEMPLATES</span></div>
   <div class="divider"></div>
-
   <div class="slider-outer" id="sliderOuter">
     <div class="slider-track" id="sliderTrack">
 
-      <!-- CARD 1: Restaurant -->
+      <!-- 1 Restaurant -->
       <div class="pcard">
-        <div class="pcard-hover-label">✦ Template Restaurant & Food</div>
-        <div class="pcard-mockups">
-          <div class="desktop-mock">
-            <div class="desktop-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="desktop-url"></div></div>
-            <div class="desktop-screen"><canvas id="c1d" width="480" height="300"></canvas></div>
+        <div class="pcard-label">🍽️ Restaurant & Café</div>
+        <div class="pcard-screens">
+          <div class="dmock">
+            <div class="dbar"><div class="dd dd-r"></div><div class="dd dd-y"></div><div class="dd dd-g"></div><div class="durl"></div></div>
+            <div class="dscreen"><canvas id="c1d" width="500" height="280"></canvas></div>
           </div>
-          <div class="phone-mock">
-            <div class="phone-top"><div class="phone-notch"></div></div>
-            <div class="phone-screen"><canvas id="c1m" width="90" height="160"></canvas></div>
-            <div class="phone-home"><div class="phone-home-bar"></div></div>
+          <div class="pmock">
+            <div class="ptop"><div class="pnotch"></div></div>
+            <div class="pscreen"><canvas id="c1m" width="80" height="150"></canvas></div>
+            <div class="pbottom"><div class="pbar"></div></div>
           </div>
         </div>
         <div class="pcard-info">
-          <h3>Restaurant & Food</h3>
-          <p>Site vitrine élégant pour restaurant, café ou traiteur</p>
+          <h3>Restaurant & Café</h3>
+          <p>Menu en ligne, réservation, galerie photos</p>
           <span class="ptag">WordPress</span><span class="ptag">Responsive</span><span class="ptag">Réservation</span>
         </div>
       </div>
 
-      <!-- CARD 2: Immobilier -->
+      <!-- 2 Médecin / Clinique -->
       <div class="pcard">
-        <div class="pcard-hover-label">✦ Template Immobilier & Luxe</div>
-        <div class="pcard-mockups">
-          <div class="desktop-mock">
-            <div class="desktop-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="desktop-url"></div></div>
-            <div class="desktop-screen"><canvas id="c2d" width="480" height="300"></canvas></div>
+        <div class="pcard-label">🏥 Médecin & Clinique</div>
+        <div class="pcard-screens">
+          <div class="dmock">
+            <div class="dbar"><div class="dd dd-r"></div><div class="dd dd-y"></div><div class="dd dd-g"></div><div class="durl"></div></div>
+            <div class="dscreen"><canvas id="c2d" width="500" height="280"></canvas></div>
           </div>
-          <div class="phone-mock">
-            <div class="phone-top"><div class="phone-notch"></div></div>
-            <div class="phone-screen"><canvas id="c2m" width="90" height="160"></canvas></div>
-            <div class="phone-home"><div class="phone-home-bar"></div></div>
+          <div class="pmock">
+            <div class="ptop"><div class="pnotch"></div></div>
+            <div class="pscreen"><canvas id="c2m" width="80" height="150"></canvas></div>
+            <div class="pbottom"><div class="pbar"></div></div>
           </div>
         </div>
         <div class="pcard-info">
-          <h3>Immobilier & Luxe</h3>
-          <p>Agence immobilière, promoteur ou architecte</p>
+          <h3>Médecin & Clinique</h3>
+          <p>Prise de rendez-vous en ligne, services, équipe</p>
+          <span class="ptag">WordPress</span><span class="ptag">RDV en ligne</span><span class="ptag">SEO local</span>
+        </div>
+      </div>
+
+      <!-- 3 École / Formation -->
+      <div class="pcard">
+        <div class="pcard-label">🎓 École & Formation</div>
+        <div class="pcard-screens">
+          <div class="dmock">
+            <div class="dbar"><div class="dd dd-r"></div><div class="dd dd-y"></div><div class="dd dd-g"></div><div class="durl"></div></div>
+            <div class="dscreen"><canvas id="c3d" width="500" height="280"></canvas></div>
+          </div>
+          <div class="pmock">
+            <div class="ptop"><div class="pnotch"></div></div>
+            <div class="pscreen"><canvas id="c3m" width="80" height="150"></canvas></div>
+            <div class="pbottom"><div class="pbar"></div></div>
+          </div>
+        </div>
+        <div class="pcard-info">
+          <h3>École & Formation</h3>
+          <p>Catalogue de formations, inscription en ligne</p>
+          <span class="ptag">WordPress</span><span class="ptag">LMS</span><span class="ptag">Inscription</span>
+        </div>
+      </div>
+
+      <!-- 4 Opticien -->
+      <div class="pcard">
+        <div class="pcard-label">👓 Opticien & Optique</div>
+        <div class="pcard-screens">
+          <div class="dmock">
+            <div class="dbar"><div class="dd dd-r"></div><div class="dd dd-y"></div><div class="dd dd-g"></div><div class="durl"></div></div>
+            <div class="dscreen"><canvas id="c4d" width="500" height="280"></canvas></div>
+          </div>
+          <div class="pmock">
+            <div class="ptop"><div class="pnotch"></div></div>
+            <div class="pscreen"><canvas id="c4m" width="80" height="150"></canvas></div>
+            <div class="pbottom"><div class="pbar"></div></div>
+          </div>
+        </div>
+        <div class="pcard-info">
+          <h3>Opticien & Optique</h3>
+          <p>Catalogue lunettes, RDV examen de vue</p>
+          <span class="ptag">WordPress</span><span class="ptag">Catalogue</span><span class="ptag">E-commerce</span>
+        </div>
+      </div>
+
+      <!-- 5 Salle de sport -->
+      <div class="pcard">
+        <div class="pcard-label">💪 Salle de Sport & Fitness</div>
+        <div class="pcard-screens">
+          <div class="dmock">
+            <div class="dbar"><div class="dd dd-r"></div><div class="dd dd-y"></div><div class="dd dd-g"></div><div class="durl"></div></div>
+            <div class="dscreen"><canvas id="c5d" width="500" height="280"></canvas></div>
+          </div>
+          <div class="pmock">
+            <div class="ptop"><div class="pnotch"></div></div>
+            <div class="pscreen"><canvas id="c5m" width="80" height="150"></canvas></div>
+            <div class="pbottom"><div class="pbar"></div></div>
+          </div>
+        </div>
+        <div class="pcard-info">
+          <h3>Salle de Sport & Fitness</h3>
+          <p>Planning des cours, abonnements, coaches</p>
+          <span class="ptag">WordPress</span><span class="ptag">Planning</span><span class="ptag">Abonnement</span>
+        </div>
+      </div>
+
+      <!-- 6 Immobilier -->
+      <div class="pcard">
+        <div class="pcard-label">🏠 Immobilier & Promotion</div>
+        <div class="pcard-screens">
+          <div class="dmock">
+            <div class="dbar"><div class="dd dd-r"></div><div class="dd dd-y"></div><div class="dd dd-g"></div><div class="durl"></div></div>
+            <div class="dscreen"><canvas id="c6d" width="500" height="280"></canvas></div>
+          </div>
+          <div class="pmock">
+            <div class="ptop"><div class="pnotch"></div></div>
+            <div class="pscreen"><canvas id="c6m" width="80" height="150"></canvas></div>
+            <div class="pbottom"><div class="pbar"></div></div>
+          </div>
+        </div>
+        <div class="pcard-info">
+          <h3>Immobilier & Promotion</h3>
+          <p>Catalogue biens, visite virtuelle, contact</p>
           <span class="ptag">WordPress</span><span class="ptag">Catalogue</span><span class="ptag">SEO</span>
         </div>
       </div>
 
-      <!-- CARD 3: E-commerce -->
+      <!-- 7 E-commerce -->
       <div class="pcard">
-        <div class="pcard-hover-label">✦ Template Boutique E-commerce</div>
-        <div class="pcard-mockups">
-          <div class="desktop-mock">
-            <div class="desktop-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="desktop-url"></div></div>
-            <div class="desktop-screen"><canvas id="c3d" width="480" height="300"></canvas></div>
+        <div class="pcard-label">🛍️ Boutique E-commerce</div>
+        <div class="pcard-screens">
+          <div class="dmock">
+            <div class="dbar"><div class="dd dd-r"></div><div class="dd dd-y"></div><div class="dd dd-g"></div><div class="durl"></div></div>
+            <div class="dscreen"><canvas id="c7d" width="500" height="280"></canvas></div>
           </div>
-          <div class="phone-mock">
-            <div class="phone-top"><div class="phone-notch"></div></div>
-            <div class="phone-screen"><canvas id="c3m" width="90" height="160"></canvas></div>
-            <div class="phone-home"><div class="phone-home-bar"></div></div>
+          <div class="pmock">
+            <div class="ptop"><div class="pnotch"></div></div>
+            <div class="pscreen"><canvas id="c7m" width="80" height="150"></canvas></div>
+            <div class="pbottom"><div class="pbar"></div></div>
           </div>
         </div>
         <div class="pcard-info">
           <h3>Boutique E-commerce</h3>
-          <p>Vente en ligne, mode, beauté ou produits artisanaux</p>
+          <p>Vente en ligne, panier, paiement sécurisé</p>
           <span class="ptag">WooCommerce</span><span class="ptag">Paiement</span><span class="ptag">Mobile-first</span>
         </div>
       </div>
 
-      <!-- CARD 4: Médical -->
+      <!-- 8 Hôtel / Riad -->
       <div class="pcard">
-        <div class="pcard-hover-label">✦ Template Médical & Santé</div>
-        <div class="pcard-mockups">
-          <div class="desktop-mock">
-            <div class="desktop-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="desktop-url"></div></div>
-            <div class="desktop-screen"><canvas id="c4d" width="480" height="300"></canvas></div>
+        <div class="pcard-label">🏨 Hôtel & Riad</div>
+        <div class="pcard-screens">
+          <div class="dmock">
+            <div class="dbar"><div class="dd dd-r"></div><div class="dd dd-y"></div><div class="dd dd-g"></div><div class="durl"></div></div>
+            <div class="dscreen"><canvas id="c8d" width="500" height="280"></canvas></div>
           </div>
-          <div class="phone-mock">
-            <div class="phone-top"><div class="phone-notch"></div></div>
-            <div class="phone-screen"><canvas id="c4m" width="90" height="160"></canvas></div>
-            <div class="phone-home"><div class="phone-home-bar"></div></div>
+          <div class="pmock">
+            <div class="ptop"><div class="pnotch"></div></div>
+            <div class="pscreen"><canvas id="c8m" width="80" height="150"></canvas></div>
+            <div class="pbottom"><div class="pbar"></div></div>
           </div>
         </div>
         <div class="pcard-info">
-          <h3>Médical & Santé</h3>
-          <p>Clinique, cabinet médical ou pharmacie</p>
-          <span class="ptag">WordPress</span><span class="ptag">Rendez-vous</span><span class="ptag">SEO local</span>
+          <h3>Hôtel & Riad</h3>
+          <p>Réservation en ligne, galerie, tarifs</p>
+          <span class="ptag">WordPress</span><span class="ptag">Réservation</span><span class="ptag">Multilingue</span>
         </div>
       </div>
 
-      <!-- CARD 5: Corporate -->
+      <!-- 9 Avocat / Notaire -->
       <div class="pcard">
-        <div class="pcard-hover-label">✦ Template Corporate & Business</div>
-        <div class="pcard-mockups">
-          <div class="desktop-mock">
-            <div class="desktop-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="desktop-url"></div></div>
-            <div class="desktop-screen"><canvas id="c5d" width="480" height="300"></canvas></div>
+        <div class="pcard-label">⚖️ Avocat & Notaire</div>
+        <div class="pcard-screens">
+          <div class="dmock">
+            <div class="dbar"><div class="dd dd-r"></div><div class="dd dd-y"></div><div class="dd dd-g"></div><div class="durl"></div></div>
+            <div class="dscreen"><canvas id="c9d" width="500" height="280"></canvas></div>
           </div>
-          <div class="phone-mock">
-            <div class="phone-top"><div class="phone-notch"></div></div>
-            <div class="phone-screen"><canvas id="c5m" width="90" height="160"></canvas></div>
-            <div class="phone-home"><div class="phone-home-bar"></div></div>
+          <div class="pmock">
+            <div class="ptop"><div class="pnotch"></div></div>
+            <div class="pscreen"><canvas id="c9m" width="80" height="150"></canvas></div>
+            <div class="pbottom"><div class="pbar"></div></div>
           </div>
         </div>
         <div class="pcard-info">
-          <h3>Corporate & Business</h3>
-          <p>Entreprise, agence ou société de services</p>
-          <span class="ptag">WordPress</span><span class="ptag">Multilingue</span><span class="ptag">Blog</span>
+          <h3>Avocat & Notaire</h3>
+          <p>Cabinet juridique, domaines, contact</p>
+          <span class="ptag">WordPress</span><span class="ptag">Blog</span><span class="ptag">SEO</span>
         </div>
       </div>
 
-      <!-- CARD 6: Transport -->
-      <div class="pcard">
-        <div class="pcard-hover-label">✦ Template Transport & Logistique</div>
-        <div class="pcard-mockups">
-          <div class="desktop-mock">
-            <div class="desktop-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="desktop-url"></div></div>
-            <div class="desktop-screen"><canvas id="c6d" width="480" height="300"></canvas></div>
-          </div>
-          <div class="phone-mock">
-            <div class="phone-top"><div class="phone-notch"></div></div>
-            <div class="phone-screen"><canvas id="c6m" width="90" height="160"></canvas></div>
-            <div class="phone-home"><div class="phone-home-bar"></div></div>
-          </div>
-        </div>
-        <div class="pcard-info">
-          <h3>Transport & Logistique</h3>
-          <p>Taxi, navette, transport de marchandises</p>
-          <span class="ptag">WordPress</span><span class="ptag">Réservation</span><span class="ptag">Google Maps</span>
-        </div>
-      </div>
-
-    </div><!-- /slider-track -->
-
+    </div>
     <div class="slider-nav">
-      <button class="snav-btn" id="btnLeft">←</button>
-      <button class="snav-btn" id="btnRight">→</button>
+      <button class="snav" id="btnL">←</button>
+      <button class="snav" id="btnR">→</button>
     </div>
   </div>
 </section>
@@ -430,10 +399,48 @@
   <div class="section-label">Ils nous ont fait confiance</div>
   <div class="section-title">NOS <span>CLIENTS</span></div>
   <div class="divider"></div>
-  <div style="overflow:hidden;margin-top:2.5rem">
-    <div class="clients-track">
-      <div class="client-pill">Sono-Ned Medical</div><div class="client-pill">Taxi Navette</div><div class="client-pill">Soprofeu</div><div class="client-pill">Leader Med</div><div class="client-pill">Switch Care</div><div class="client-pill">Perfeo Energy</div><div class="client-pill">Aviation Solidaire</div><div class="client-pill">Grand Optical</div><div class="client-pill">Next Flight</div><div class="client-pill">Continuum Solutions</div><div class="client-pill">DoNet Services</div><div class="client-pill">Sheriff Groupe</div><div class="client-pill">El Menzeh</div><div class="client-pill">YesAdi Shop</div><div class="client-pill">Gwad Air</div><div class="client-pill">Marmo &amp; Piedra</div>
-      <div class="client-pill">Sono-Ned Medical</div><div class="client-pill">Taxi Navette</div><div class="client-pill">Soprofeu</div><div class="client-pill">Leader Med</div><div class="client-pill">Switch Care</div><div class="client-pill">Perfeo Energy</div><div class="client-pill">Aviation Solidaire</div><div class="client-pill">Grand Optical</div>
+  <div style="overflow:hidden;margin-top:2.5rem;">
+    <div class="clients-logos-track" id="clientsTrack">
+      <div class="client-logo-item"><img src="1.png" alt="DoNet Services"></div>
+      <div class="client-logo-item"><img src="2.png" alt="Taxi Navette"></div>
+      <div class="client-logo-item"><img src="3.png" alt="Sheriff Groupe"></div>
+      <div class="client-logo-item"><img src="4.png" alt="Sono-Ned Medical"></div>
+      <div class="client-logo-item"><img src="5.png" alt="Grand Optical"></div>
+      <div class="client-logo-item"><img src="6.png" alt="Airantilles"></div>
+      <div class="client-logo-item"><img src="7.png" alt="La Puerta de la Vida"></div>
+      <div class="client-logo-item"><img src="8.png" alt="Gwad Air"></div>
+      <div class="client-logo-item"><img src="9.png" alt="O'Nouilles"></div>
+      <div class="client-logo-item"><img src="11.png" alt="Switch Care"></div>
+      <div class="client-logo-item"><img src="12.png" alt="El Menzeh"></div>
+      <div class="client-logo-item"><img src="13.png" alt="Bectep"></div>
+      <div class="client-logo-item"><img src="15.png" alt="Airantilles 2"></div>
+      <div class="client-logo-item"><img src="16.png" alt="Leader Med"></div>
+      <div class="client-logo-item"><img src="17.png" alt="Soprofeu"></div>
+      <div class="client-logo-item"><img src="18.png" alt="MetrikX"></div>
+      <div class="client-logo-item"><img src="19.png" alt="Continuum Solutions"></div>
+      <div class="client-logo-item"><img src="20.png" alt="Fadaa Al Mawhiba"></div>
+      <div class="client-logo-item"><img src="21.png" alt="Luxury Aluminium"></div>
+      <div class="client-logo-item"><img src="24.png" alt="La Clinique Dentaire"></div>
+      <div class="client-logo-item"><img src="1.png" alt="DoNet Services"></div>
+      <div class="client-logo-item"><img src="2.png" alt="Taxi Navette"></div>
+      <div class="client-logo-item"><img src="3.png" alt="Sheriff Groupe"></div>
+      <div class="client-logo-item"><img src="4.png" alt="Sono-Ned Medical"></div>
+      <div class="client-logo-item"><img src="5.png" alt="Grand Optical"></div>
+      <div class="client-logo-item"><img src="6.png" alt="Airantilles"></div>
+      <div class="client-logo-item"><img src="7.png" alt="La Puerta de la Vida"></div>
+      <div class="client-logo-item"><img src="8.png" alt="Gwad Air"></div>
+      <div class="client-logo-item"><img src="9.png" alt="O'Nouilles"></div>
+      <div class="client-logo-item"><img src="11.png" alt="Switch Care"></div>
+      <div class="client-logo-item"><img src="12.png" alt="El Menzeh"></div>
+      <div class="client-logo-item"><img src="13.png" alt="Bectep"></div>
+      <div class="client-logo-item"><img src="15.png" alt="Airantilles 2"></div>
+      <div class="client-logo-item"><img src="16.png" alt="Leader Med"></div>
+      <div class="client-logo-item"><img src="17.png" alt="Soprofeu"></div>
+      <div class="client-logo-item"><img src="18.png" alt="MetrikX"></div>
+      <div class="client-logo-item"><img src="19.png" alt="Continuum Solutions"></div>
+      <div class="client-logo-item"><img src="20.png" alt="Fadaa Al Mawhiba"></div>
+      <div class="client-logo-item"><img src="21.png" alt="Luxury Aluminium"></div>
+      <div class="client-logo-item"><img src="24.png" alt="La Clinique Dentaire"></div>
     </div>
   </div>
 </section>
@@ -473,210 +480,140 @@
 </footer>
 
 <script>
-/* ══════════════════════════════════════
-   CANVAS TEMPLATE DRAWINGS
-══════════════════════════════════════ */
-function r(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
-
-// Palette per template
-const palettes = [
-  // 1 Restaurant - warm dark
-  { bg:'#1a0a00', hero:'#3d1500', accent:'#e8621a', accent2:'#f0a060', text:'#fff8f0', nav:'#110600', card:'#2a1200' },
-  // 2 Immobilier - deep navy gold
-  { bg:'#060d18', hero:'#0d1e38', accent:'#c9a84c', accent2:'#e8d090', text:'#eef4ff', nav:'#040a12', card:'#0f1e35' },
-  // 3 E-commerce - rose modern
-  { bg:'#0f0018', hero:'#1e003a', accent:'#e040a0', accent2:'#ff88cc', text:'#fff0f8', nav:'#0a0010', card:'#1a0030' },
-  // 4 Médical - clean teal
-  { bg:'#001a1a', hero:'#003030', accent:'#00c4b4', accent2:'#80ffe8', text:'#e8fffc', nav:'#001010', card:'#002828' },
-  // 5 Corporate - midnight blue
-  { bg:'#06060f', hero:'#0e0e28', accent:'#4f8ef7', accent2:'#a0c4ff', text:'#eef2ff', nav:'#040408', card:'#10102a' },
-  // 6 Transport - dark amber
-  { bg:'#0a0800', hero:'#1a1400', accent:'#f5c400', accent2:'#ffe066', text:'#fff8e0', nav:'#060500', card:'#161000' },
+/* ══ TEMPLATE DESIGNS ══ */
+const T = [
+  // 1 Restaurant - warm terracotta
+  {bg:'#1a0800',nav:'#0f0500',hero:'#2e0f00',a1:'#e8521a',a2:'#ffa040',txt:'#fff5ee',card:'#251000'},
+  // 2 Médecin - clean teal white
+  {bg:'#f0f8ff',nav:'#ffffff',hero:'#e8f4fd',a1:'#0891b2',a2:'#22d3ee',txt:'#0f172a',card:'#ffffff'},
+  // 3 École - deep blue modern
+  {bg:'#0a0f2e',nav:'#060c24',hero:'#0f1a4a',a1:'#3b82f6',a2:'#93c5fd',txt:'#e8f0ff',card:'#0d1638'},
+  // 4 Opticien - elegant dark teal
+  {bg:'#001a18',nav:'#000f0e',hero:'#002825',a1:'#10b981',a2:'#6ee7b7',txt:'#ecfdf5',card:'#002820'},
+  // 5 Sport - dark energy orange
+  {bg:'#0a0a0a',nav:'#000000',hero:'#141414',a1:'#f97316',a2:'#fed7aa',txt:'#fff7ed',card:'#1a1a1a'},
+  // 6 Immobilier - navy gold luxury
+  {bg:'#050d1a',nav:'#030810',hero:'#081428',a1:'#d4a017',a2:'#fde68a',txt:'#f0f4ff',card:'#0a1525'},
+  // 7 E-commerce - rose pink
+  {bg:'#0f001a',nav:'#08000f',hero:'#1a0030',a1:'#ec4899',a2:'#f9a8d4',txt:'#fdf2f8',card:'#15002a'},
+  // 8 Hôtel - warm sand
+  {bg:'#1a1208',nav:'#100b04',hero:'#2a1e0f',a1:'#b45309',a2:'#fcd34d',txt:'#fffbeb',card:'#221a0a'},
+  // 9 Avocat - dark navy serious
+  {bg:'#080c18',nav:'#050810',hero:'#0d1428',a1:'#6366f1',a2:'#a5b4fc',txt:'#eef2ff',card:'#0f1830'},
 ];
 
-function drawDesktop(id, p) {
-  const c = document.getElementById(id);
-  if(!c) return;
-  const ctx = c.getContext('2d');
-  const W = c.width, H = c.height;
+function drawD(id,p){
+  const c=document.getElementById(id); if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  ctx.fillStyle=p.bg; ctx.fillRect(0,0,W,H);
 
-  // bg
-  ctx.fillStyle = p.bg;
-  ctx.fillRect(0,0,W,H);
+  // nav
+  ctx.fillStyle=p.nav; ctx.fillRect(0,0,W,30);
+  ctx.fillStyle=p.a1; ctx.beginPath(); ctx.roundRect(10,9,50,13,3); ctx.fill();
+  for(let i=0;i<4;i++){ctx.fillStyle='rgba(128,128,128,.3)';ctx.fillRect(220+i*60,13,44,5);}
+  ctx.fillStyle=p.a1; ctx.beginPath(); ctx.roundRect(420,9,58,13,4); ctx.fill();
 
-  // nav bar
-  ctx.fillStyle = p.nav;
-  ctx.fillRect(0,0,W,28);
-  // logo block
-  ctx.fillStyle = p.accent;
-  ctx.fillRect(10,8,44,12);
-  // nav items
-  for(let i=0;i<4;i++){
-    ctx.fillStyle = 'rgba(255,255,255,.25)';
-    ctx.fillRect(230+i*55,11,38,6);
-  }
-  // CTA button in nav
-  ctx.fillStyle = p.accent;
-  ctx.beginPath(); ctx.roundRect(400,8,60,13,3); ctx.fill();
+  // hero gradient
+  const g=ctx.createLinearGradient(0,30,W,H*.55);
+  g.addColorStop(0,p.hero); g.addColorStop(1,p.bg);
+  ctx.fillStyle=g; ctx.fillRect(0,30,W,H*.52);
 
-  // hero section
-  const grd = ctx.createLinearGradient(0,28,0,H*0.55);
-  grd.addColorStop(0, p.hero);
-  grd.addColorStop(1, p.bg);
-  ctx.fillStyle = grd;
-  ctx.fillRect(0,28,W,H*0.52);
+  // big heading
+  ctx.fillStyle=p.txt; ctx.fillRect(22,50,180,16);
+  ctx.fillStyle=p.a1; ctx.fillRect(22,72,140,12);
+  ctx.fillStyle=p.txt; ctx.globalAlpha=.6; ctx.fillRect(22,90,200,7); ctx.globalAlpha=.4; ctx.fillRect(22,102,160,6); ctx.globalAlpha=1;
 
-  // hero heading lines
-  ctx.fillStyle = p.text;
-  ctx.fillRect(24,52,200,14);
-  ctx.fillRect(24,72,160,10);
-  ctx.fillRect(24,88,120,7);
-  // accent line
-  ctx.fillStyle = p.accent;
-  ctx.fillRect(24,105,80,4);
-  // CTA
-  ctx.fillStyle = p.accent;
-  ctx.beginPath(); ctx.roundRect(24,116,70,18,4); ctx.fill();
-  ctx.fillStyle = 'rgba(255,255,255,.15)';
-  ctx.beginPath(); ctx.roundRect(102,116,60,18,4); ctx.fill();
+  // CTA buttons
+  ctx.fillStyle=p.a1; ctx.beginPath(); ctx.roundRect(22,116,74,20,4); ctx.fill();
+  ctx.fillStyle='rgba(128,128,128,.2)'; ctx.beginPath(); ctx.roundRect(102,116,64,20,4); ctx.fill();
 
-  // hero image block (right side)
-  ctx.fillStyle = p.card;
-  ctx.beginPath(); ctx.roundRect(270,38,180,120,8); ctx.fill();
-  // image placeholder gradient
-  const hg = ctx.createLinearGradient(270,38,450,158);
-  hg.addColorStop(0, p.hero);
-  hg.addColorStop(1, p.accent+'33');
-  ctx.fillStyle = hg;
-  ctx.beginPath(); ctx.roundRect(270,38,180,120,8); ctx.fill();
-  // decorative circles
-  ctx.fillStyle = p.accent+'44';
-  ctx.beginPath(); ctx.arc(420,80,35,0,Math.PI*2); ctx.fill();
-  ctx.fillStyle = p.accent2+'22';
-  ctx.beginPath(); ctx.arc(300,130,25,0,Math.PI*2); ctx.fill();
+  // hero visual block
+  const hg=ctx.createLinearGradient(260,35,W-10,160);
+  hg.addColorStop(0,p.hero); hg.addColorStop(1,p.a1+'44');
+  ctx.fillStyle=hg; ctx.beginPath(); ctx.roundRect(260,38,W-270,H*.45-10,10); ctx.fill();
+  // decorative shape
+  ctx.fillStyle=p.a1+'55'; ctx.beginPath(); ctx.arc(W-80,90,45,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle=p.a2+'33'; ctx.beginPath(); ctx.arc(290,130,28,0,Math.PI*2); ctx.fill();
+  // image lines
+  ctx.fillStyle='rgba(255,255,255,.1)';
+  ctx.fillRect(275,55,100,8); ctx.fillRect(275,68,70,5); ctx.fillRect(275,78,85,4);
 
   // cards row
-  const cardY = H*0.62;
+  const cy=H*.6;
   for(let i=0;i<3;i++){
-    ctx.fillStyle = p.card;
-    ctx.beginPath(); ctx.roundRect(16+i*154,cardY,140,H-cardY-10,6); ctx.fill();
-    ctx.fillStyle = p.accent;
-    ctx.fillRect(16+i*154,cardY,140,18);
-    ctx.fillStyle = 'rgba(255,255,255,.2)';
-    ctx.fillRect(24+i*154,cardY+26,80,6);
-    ctx.fillRect(24+i*154,cardY+38,100,4);
-    ctx.fillRect(24+i*154,cardY+48,60,4);
+    ctx.fillStyle=p.card; ctx.beginPath(); ctx.roundRect(15+i*162,cy,150,H-cy-8,7); ctx.fill();
+    ctx.fillStyle=p.a1; ctx.fillRect(15+i*162,cy,150,20);
+    ctx.fillStyle='rgba(255,255,255,.15)';
+    ctx.fillRect(23+i*162,cy+28,80,6); ctx.fillRect(23+i*162,cy+40,110,4); ctx.fillRect(23+i*162,cy+50,65,4);
+    // mini accent
+    ctx.fillStyle=p.a2+'88'; ctx.beginPath(); ctx.roundRect(23+i*162,H-25,40,8,3); ctx.fill();
   }
-  // 4th card partial
-  ctx.fillStyle = p.card;
-  ctx.beginPath(); ctx.roundRect(478,cardY,30,H-cardY-10,6); ctx.fill();
+  // 4th partial
+  ctx.fillStyle=p.card; ctx.beginPath(); ctx.roundRect(495,cy,20,H-cy-8,7); ctx.fill();
 }
 
-function drawPhone(id, p) {
-  const c = document.getElementById(id);
-  if(!c) return;
-  const ctx = c.getContext('2d');
-  const W = c.width, H = c.height;
-
-  ctx.fillStyle = p.bg; ctx.fillRect(0,0,W,H);
-
-  // header
-  ctx.fillStyle = p.nav; ctx.fillRect(0,0,W,18);
-  ctx.fillStyle = p.accent; ctx.fillRect(4,5,24,8);
+function drawM(id,p){
+  const c=document.getElementById(id); if(!c)return;
+  const ctx=c.getContext('2d'),W=c.width,H=c.height;
+  ctx.fillStyle=p.bg; ctx.fillRect(0,0,W,H);
+  // status bar
+  ctx.fillStyle=p.nav; ctx.fillRect(0,0,W,20);
+  ctx.fillStyle=p.a1; ctx.fillRect(4,6,26,9);
   // hamburger
-  for(let i=0;i<3;i++){ctx.fillStyle='rgba(255,255,255,.4)';ctx.fillRect(60,6+i*3.5,14,2);}
-
+  for(let i=0;i<3;i++){ctx.fillStyle='rgba(128,128,128,.5)';ctx.fillRect(62,8+i*4,12,2);}
   // hero
-  const gh = ctx.createLinearGradient(0,18,0,70);
-  gh.addColorStop(0,p.hero); gh.addColorStop(1,p.bg);
-  ctx.fillStyle=gh; ctx.fillRect(0,18,W,52);
-  ctx.fillStyle=p.text;
-  ctx.fillRect(6,26,55,8);
-  ctx.fillRect(6,38,42,5);
-  ctx.fillStyle=p.accent;
-  ctx.fillRect(6,48,40,3);
-  ctx.beginPath();ctx.roundRect(6,54,36,12,3);ctx.fill();
-
+  const g=ctx.createLinearGradient(0,20,0,75);
+  g.addColorStop(0,p.hero); g.addColorStop(1,p.bg);
+  ctx.fillStyle=g; ctx.fillRect(0,20,W,55);
+  // heading
+  ctx.fillStyle=p.txt; ctx.fillRect(6,28,50,9);
+  ctx.fillStyle=p.a1; ctx.fillRect(6,42,38,6);
+  ctx.fillStyle='rgba(128,128,128,.3)'; ctx.fillRect(6,53,55,4);
+  // CTA
+  ctx.fillStyle=p.a1; ctx.beginPath(); ctx.roundRect(6,61,34,13,3); ctx.fill();
   // hero img
-  ctx.fillStyle=p.card;
-  ctx.beginPath();ctx.roundRect(52,22,32,40,4);ctx.fill();
-  const hi=ctx.createLinearGradient(52,22,84,62);
-  hi.addColorStop(0,p.hero);hi.addColorStop(1,p.accent+'44');
-  ctx.fillStyle=hi;ctx.beginPath();ctx.roundRect(52,22,32,40,4);ctx.fill();
-
+  const hg=ctx.createLinearGradient(50,22,W-2,72);
+  hg.addColorStop(0,p.hero); hg.addColorStop(1,p.a1+'55');
+  ctx.fillStyle=hg; ctx.beginPath(); ctx.roundRect(50,24,W-54,44,5); ctx.fill();
+  ctx.fillStyle=p.a1+'66'; ctx.beginPath(); ctx.arc(W-20,45,16,0,Math.PI*2); ctx.fill();
   // cards
   for(let i=0;i<3;i++){
-    ctx.fillStyle=p.card;
-    ctx.beginPath();ctx.roundRect(4,76+i*26,W-8,22,4);ctx.fill();
-    ctx.fillStyle=p.accent;ctx.fillRect(4,76+i*26,W-8,7);
-    ctx.fillStyle='rgba(255,255,255,.2)';
-    ctx.fillRect(8,88+i*26,36,4);
-    ctx.fillRect(8,95+i*26,50,3);
+    ctx.fillStyle=p.card; ctx.beginPath(); ctx.roundRect(4,80+i*24,W-8,20,4); ctx.fill();
+    ctx.fillStyle=p.a1; ctx.fillRect(4,80+i*24,W-8,7);
+    ctx.fillStyle='rgba(255,255,255,.15)';
+    ctx.fillRect(8,92+i*24,32,4); ctx.fillRect(8,99+i*24,48,3);
   }
 }
 
-// Draw all 6 templates
-window.addEventListener('load', ()=>{
-  palettes.forEach((p,i)=>{
-    drawDesktop('c'+(i+1)+'d', p);
-    drawPhone('c'+(i+1)+'m', p);
-  });
+window.addEventListener('load',()=>{
+  T.forEach((p,i)=>{ drawD('c'+(i+1)+'d',p); drawM('c'+(i+1)+'m',p); });
 });
 
-/* ══════════════════════════════════════
-   DRAG-TO-SCROLL SLIDER
-══════════════════════════════════════ */
-const track = document.getElementById('sliderTrack');
-const outer = document.getElementById('sliderOuter');
-let isDown=false, startX=0, scrollLeft=0;
+/* ══ DRAG SLIDER ══ */
+const track=document.getElementById('sliderTrack');
+const outer=document.getElementById('sliderOuter');
+let isDown=false,startX=0,scrollLeft=0;
+outer.addEventListener('mousedown',e=>{isDown=true;outer.classList.add('dragging');startX=e.pageX-track.offsetLeft;scrollLeft=track.scrollLeft;});
+outer.addEventListener('mouseleave',()=>{isDown=false;outer.classList.remove('dragging');});
+outer.addEventListener('mouseup',()=>{isDown=false;outer.classList.remove('dragging');});
+outer.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();const x=e.pageX-track.offsetLeft;track.scrollLeft=scrollLeft-(x-startX)*1.5;});
+outer.addEventListener('touchstart',e=>{startX=e.touches[0].pageX-track.offsetLeft;scrollLeft=track.scrollLeft;});
+outer.addEventListener('touchmove',e=>{const x=e.touches[0].pageX-track.offsetLeft;track.scrollLeft=scrollLeft-(x-startX)*1.2;});
+document.getElementById('btnL').addEventListener('click',()=>track.scrollBy({left:-420,behavior:'smooth'}));
+document.getElementById('btnR').addEventListener('click',()=>track.scrollBy({left:420,behavior:'smooth'}));
 
-outer.addEventListener('mousedown', e=>{
-  isDown=true; outer.classList.add('dragging');
-  startX = e.pageX - track.offsetLeft;
-  scrollLeft = track.scrollLeft;
-});
-outer.addEventListener('mouseleave',()=>{ isDown=false; outer.classList.remove('dragging'); });
-outer.addEventListener('mouseup',()=>{ isDown=false; outer.classList.remove('dragging'); });
-outer.addEventListener('mousemove', e=>{
-  if(!isDown) return;
+/* ══ FORM ══ */
+const form=document.getElementById('contactForm');
+const suc=document.getElementById('formSuccess');
+form.addEventListener('submit',async e=>{
   e.preventDefault();
-  const x = e.pageX - track.offsetLeft;
-  const walk = (x - startX)*1.5;
-  track.scrollLeft = scrollLeft - walk;
-});
-
-// Touch support
-outer.addEventListener('touchstart', e=>{
-  startX = e.touches[0].pageX - track.offsetLeft;
-  scrollLeft = track.scrollLeft;
-});
-outer.addEventListener('touchmove', e=>{
-  const x = e.touches[0].pageX - track.offsetLeft;
-  track.scrollLeft = scrollLeft - (x - startX)*1.2;
-});
-
-// Arrow buttons
-document.getElementById('btnLeft').addEventListener('click',()=>{
-  track.scrollBy({left:-560, behavior:'smooth'});
-});
-document.getElementById('btnRight').addEventListener('click',()=>{
-  track.scrollBy({left:560, behavior:'smooth'});
-});
-
-/* ══════════════════════════════════════
-   FORMSPREE
-══════════════════════════════════════ */
-const form = document.getElementById('contactForm');
-const success = document.getElementById('formSuccess');
-form.addEventListener('submit', async e=>{
-  e.preventDefault();
-  const btn = form.querySelector('button[type="submit"]');
-  btn.textContent='Envoi en cours...'; btn.disabled=true;
-  try {
-    const res = await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-    if(res.ok){ form.reset(); success.style.display='block'; btn.textContent='Message envoyé ✅'; }
-    else { btn.textContent='Erreur — réessayez'; btn.disabled=false; }
-  } catch { btn.textContent='Erreur — réessayez'; btn.disabled=false; }
+  const btn=form.querySelector('button[type="submit"]');
+  btn.textContent='Envoi...';btn.disabled=true;
+  try{
+    const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    if(res.ok){form.reset();suc.style.display='block';btn.textContent='Envoyé ✅';}
+    else{btn.textContent='Erreur — réessayez';btn.disabled=false;}
+  }catch{btn.textContent='Erreur — réessayez';btn.disabled=false;}
 });
 </script>
 </body>
