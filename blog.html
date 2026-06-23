@@ -22,6 +22,28 @@
 .portfolio-card img{background:#111;border-bottom:1px solid rgba(255,255,255,.08)}
 .no-css-warning{display:none}
 
+
+/* ===== ANIMATIONS BLOG ===== */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes glow{0%,100%{box-shadow:0 18px 45px rgba(124,92,252,.3)}50%{box-shadow:0 18px 65px rgba(241,61,154,.5)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+.blog-hero h1{animation:fadeInUp .8s .1s ease both}
+.blog-hero .lead{animation:fadeInUp .8s .25s ease both}
+.btn-primary{animation:glow 3s ease infinite;position:relative;overflow:hidden}
+.btn-primary:hover{animation:none;transform:translateY(-4px) scale(1.04)}
+.float-wa{animation:float 3s ease infinite}
+.float-call{animation:float 3s .5s ease infinite}
+.article-card{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.article-card:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 24px 60px rgba(124,92,252,.18)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+/* Filtre catégorie */
+.filter-bar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.filter-btn{padding:.45rem 1rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--muted);font:800 .75rem 'Inter';cursor:pointer;transition:all .2s;text-transform:uppercase;letter-spacing:.1em}
+.filter-btn:hover,.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.article-card[data-hidden]{display:none}
+
 </style></head><body><a class="skip-link" data-i18n="skip" href="#main">Aller au contenu</a>
 <header class="site-header">
 <div class="container nav">
@@ -42,14 +64,70 @@
 <a class="btn btn-soft" data-i18n="nav_cta" href="index.html#contact">Devis gratuit</a>
 </div>
 </div>
-</header><main id="main"><section class="blog-hero"><div class="container"><div class="eyebrow" data-i18n="blog_eye">Blog &amp; SEO</div><h1 data-i18n="blog_page_title">Blog digital marketing &amp; SEO</h1><p class="lead" data-i18n="blog_page_desc">Des guides pratiques pour améliorer votre visibilité, générer plus de contacts et offrir une meilleure expérience client.</p></div></section><section class="section"><div class="container"><div class="blog-grid"><article class="article-card"><div class="article-meta"><span>SEO Local</span><span>7 min</span></div><h3 data-i18n="article_seo-local-el-jadida-2026_title">Comment apparaître sur Google à El Jadida en 2026 : guide SEO local</h3><p data-i18n="article_seo-local-el-jadida-2026_desc">Une méthode claire pour transformer votre site et votre fiche Google Business Profile en source régulière de demandes locales.</p><a class="read-link" data-i18n="read_article" href="articles/seo-local-el-jadida-2026.html">Lire l’article →</a></article>
-<article class="article-card"><div class="article-meta"><span>Google Business Profile</span><span>6 min</span></div><h3 data-i18n="article_google-business-profile-appels_title">Google Business Profile : comment recevoir plus d’appels sans augmenter le budget pub</h3><p data-i18n="article_google-business-profile-appels_desc">Les actions concrètes pour rendre votre fiche Google plus visible, plus rassurante et plus rentable.</p><a class="read-link" data-i18n="read_article" href="articles/google-business-profile-appels.html">Lire l’article →</a></article>
-<article class="article-card"><div class="article-meta"><span>Conversion</span><span>6 min</span></div><h3 data-i18n="article_site-rapide-mobile-first-conversion_title">Site rapide et mobile-first : pourquoi la vitesse convertit mieux</h3><p data-i18n="article_site-rapide-mobile-first-conversion_desc">Découvrez comment la performance, l’ergonomie mobile et les appels à l’action influencent directement vos demandes clients.</p><a class="read-link" data-i18n="read_article" href="articles/site-rapide-mobile-first-conversion.html">Lire l’article →</a></article>
-<article class="article-card"><div class="article-meta"><span>Innovation</span><span>8 min</span></div><h3 data-i18n="article_ia-chatbots-automatisation-pme_title">IA, chatbots et automatisation : comment les PME peuvent gagner du temps</h3><p data-i18n="article_ia-chatbots-automatisation-pme_desc">Des idées concrètes pour utiliser l’intelligence artificielle sans compliquer votre organisation.</p><a class="read-link" data-i18n="read_article" href="articles/ia-chatbots-automatisation-pme.html">Lire l’article →</a></article>
-<article class="article-card"><div class="article-meta"><span>SEO Multilingue</span><span>7 min</span></div><h3 data-i18n="article_seo-multilingue-maroc_title">SEO multilingue au Maroc : français, arabe et anglais sans perdre Google</h3><p data-i18n="article_seo-multilingue-maroc_desc">Comment structurer un site multilingue propre pour parler à plus de clients et préserver la visibilité SEO.</p><a class="read-link" data-i18n="read_article" href="articles/seo-multilingue-maroc.html">Lire l’article →</a></article>
-<article class="article-card"><div class="article-meta"><span>Stratégie sectorielle</span><span>8 min</span></div><h3 data-i18n="article_marketing-digital-secteurs-medical-formation-restauration_title">Marketing digital pour médecins, opticiens, écoles, restaurants et industriels</h3><p data-i18n="article_marketing-digital-secteurs-medical-formation-restauration_desc">Chaque secteur a ses codes. Voici comment adapter votre site, vos contenus et vos appels à l’action.</p><a class="read-link" data-i18n="read_article" href="articles/marketing-digital-secteurs-medical-formation-restauration.html">Lire l’article →</a></article>
-<article class="article-card"><div class="article-meta"><span>UX &amp; Conversion</span><span>7 min</span></div><h3 data-i18n="article_design-oriente-conversion_title">Design orienté conversion : transformer les visiteurs en clients</h3><p data-i18n="article_design-oriente-conversion_desc">Les principes UX qui font la différence entre un joli site et un site qui génère des demandes.</p><a class="read-link" data-i18n="read_article" href="articles/design-oriente-conversion.html">Lire l’article →</a></article>
-<article class="article-card"><div class="article-meta"><span>Refonte Web</span><span>6 min</span></div><h3 data-i18n="article_refonte-site-web-signaux_title">Refonte de site web : 9 signes qu’il est temps de moderniser votre présence digitale</h3><p data-i18n="article_refonte-site-web-signaux_desc">Votre site ne convertit plus ? Voici les signaux qui montrent qu’une refonte peut devenir rentable.</p><a class="read-link" data-i18n="read_article" href="articles/refonte-site-web-signaux.html">Lire l’article →</a></article></div></div></section><section class="section alt"><div class="container proof-grid"><div><div class="eyebrow" data-i18n="audit_eye">Audit</div><h2 data-i18n="article_cta_title">Vous voulez appliquer ces conseils ?</h2><p class="lead" data-i18n="article_cta_desc">Demandez un audit gratuit. Nous vous indiquons les actions prioritaires pour votre site et votre fiche Google.</p></div><div class="audit-card"><h3 data-i18n="audit_title">Audit gratuit de votre présence Google</h3><p data-i18n="audit_desc">Envoyez votre site ou votre fiche Google. Nous vous répondons avec 3 actions prioritaires pour gagner en visibilité.</p><a class="btn btn-primary" data-i18n="article_cta_btn" href="index.html#contact">Demander un audit</a></div></div></section></main><div class="floating-contact"><a aria-label="WhatsApp" class="float-wa" href="https://wa.me/212679148046?text=Bonjour%20El%20Jadida%20Web%20Solutions%2C%20je%20veux%20un%20devis%20pour%20mon%20projet." rel="noopener" target="_blank">💬</a><a aria-label="Appel" class="float-call" href="tel:+212620830606">📞</a></div>
+</header><main id="main"><section class="blog-hero"><div class="container"><div class="eyebrow" data-i18n="blog_eye">Blog &amp; SEO</div><h1 data-i18n="blog_page_title">Ce que Google ne vous dit pas.<br/><span class="gradient">Nous, si.</span></h1><p class="lead" data-i18n="blog_page_desc">Des guides concrets — pas du jargon — pour que votre site attire de vrais clients au Maroc et à l'international.</p></div></section><section class="section"><div class="container">
+<div class="filter-bar" id="filterBar">
+  <button class="filter-btn active" data-cat="all">Tous</button>
+  <button class="filter-btn" data-cat="seo">SEO</button>
+  <button class="filter-btn" data-cat="conversion">Conversion</button>
+  <button class="filter-btn" data-cat="google">Google</button>
+  <button class="filter-btn" data-cat="ia">IA & Tech</button>
+  <button class="filter-btn" data-cat="secteur">Secteurs</button>
+  <button class="filter-btn" data-cat="design">Design</button>
+</div>
+<div class="blog-grid" id="blogGrid">
+
+<article class="article-card reveal" data-cat="seo"><div class="article-meta"><span>SEO Local</span><span>7 min</span></div><h3>Comment apparaître sur Google à El Jadida en 2026 : guide SEO local</h3><p>Une méthode claire pour transformer votre site et votre fiche Google Business Profile en source régulière de demandes locales.</p><a class="read-link" href="articles/seo-local-el-jadida-2026.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="google"><div class="article-meta"><span>Google Business Profile</span><span>6 min</span></div><h3>Google Business Profile : comment recevoir plus d'appels sans augmenter le budget pub</h3><p>Les actions concrètes pour rendre votre fiche Google plus visible, plus rassurante et plus rentable.</p><a class="read-link" href="articles/google-business-profile-appels.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="conversion"><div class="article-meta"><span>Conversion</span><span>6 min</span></div><h3>Site rapide et mobile-first : pourquoi la vitesse convertit mieux</h3><p>Découvrez comment la performance, l'ergonomie mobile et les appels à l'action influencent directement vos demandes clients.</p><a class="read-link" href="articles/site-rapide-mobile-first-conversion.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="ia"><div class="article-meta"><span>Innovation</span><span>8 min</span></div><h3>IA, chatbots et automatisation : comment les PME peuvent gagner du temps</h3><p>Des idées concrètes pour utiliser l'intelligence artificielle sans compliquer votre organisation.</p><a class="read-link" href="articles/ia-chatbots-automatisation-pme.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="seo"><div class="article-meta"><span>SEO Multilingue</span><span>7 min</span></div><h3>SEO multilingue au Maroc : français, arabe et anglais sans perdre Google</h3><p>Comment structurer un site multilingue propre pour parler à plus de clients et préserver la visibilité SEO.</p><a class="read-link" href="articles/seo-multilingue-maroc.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="secteur"><div class="article-meta"><span>Stratégie sectorielle</span><span>8 min</span></div><h3>Marketing digital pour médecins, opticiens, écoles, restaurants et industriels</h3><p>Chaque secteur a ses codes. Voici comment adapter votre site, vos contenus et vos appels à l'action.</p><a class="read-link" href="articles/marketing-digital-secteurs-medical-formation-restauration.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="design"><div class="article-meta"><span>UX &amp; Conversion</span><span>7 min</span></div><h3>Design orienté conversion : transformer les visiteurs en clients</h3><p>Les principes UX qui font la différence entre un joli site et un site qui génère des demandes.</p><a class="read-link" href="articles/design-oriente-conversion.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="design"><div class="article-meta"><span>Refonte Web</span><span>6 min</span></div><h3>Refonte de site web : 9 signes qu'il est temps de moderniser votre présence digitale</h3><p>Votre site ne convertit plus ? Voici les signaux qui montrent qu'une refonte peut devenir rentable.</p><a class="read-link" href="articles/refonte-site-web-signaux.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="seo"><div class="article-meta"><span>SEO Casablanca</span><span>7 min</span></div><h3>Référencement naturel à Casablanca : dominer Google dans la plus grande ville du Maroc</h3><p>80% des entreprises casablancaises ignorent ces 5 techniques SEO. Voici comment prendre une longueur d'avance sur vos concurrents locaux.</p><a class="read-link" href="articles/seo-casablanca.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="conversion"><div class="article-meta"><span>E-commerce</span><span>8 min</span></div><h3>Vendre en ligne au Maroc : guide complet pour lancer sa boutique e-commerce en 2026</h3><p>De WooCommerce à Shopify, quelles plateformes choisir ? Comment accepter les paiements et attirer ses premiers clients ?</p><a class="read-link" href="articles/ecommerce-maroc-guide.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="google"><div class="article-meta"><span>Google Ads</span><span>6 min</span></div><h3>Google Ads au Maroc : comment ne pas gaspiller son budget publicitaire</h3><p>La plupart des campagnes perdent 60% de leur budget sur de mauvais clics. Voici comment cibler juste et mesurer ce qui rapporte vraiment.</p><a class="read-link" href="articles/google-ads-maroc-budget.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="secteur"><div class="article-meta"><span>Immobilier</span><span>7 min</span></div><h3>Site web pour agence immobilière au Maroc : ce qui fait vendre des biens en 2026</h3><p>Les acheteurs visitent 8 sites avant de contacter une agence. Comment être celui qu'ils choisissent grâce à un site pensé pour convertir ?</p><a class="read-link" href="articles/site-web-agence-immobiliere-maroc.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="ia"><div class="article-meta"><span>IA &amp; SEO</span><span>8 min</span></div><h3>Comment l'IA transforme le SEO en 2026 : ce que tout entrepreneur marocain doit savoir</h3><p>Google SGE, ChatGPT Search, Perplexity… Le trafic organique change de visage. Voici comment adapter votre stratégie maintenant.</p><a class="read-link" href="articles/ia-seo-2026.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="secteur"><div class="article-meta"><span>Restauration</span><span>5 min</span></div><h3>Site web pour restaurant au Maroc : les 7 éléments qui font réserver vos tables en ligne</h3><p>Un menu mal présenté, pas de photos, aucun bouton de réservation : voici les erreurs qui vous coûtent des clients chaque soir.</p><a class="read-link" href="articles/site-web-restaurant-maroc.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="conversion"><div class="article-meta"><span>Landing Page</span><span>6 min</span></div><h3>Landing page qui convertit : la structure exacte pour transformer un clic en demande client</h3><p>Titre, preuve sociale, CTA, formulaire… L'ordre dans lequel vous présentez ces éléments change tout. Voici la structure qui fonctionne.</p><a class="read-link" href="articles/landing-page-convertit.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="seo"><div class="article-meta"><span>SEO Technique</span><span>9 min</span></div><h3>Audit SEO technique : la checklist des 30 points à vérifier sur votre site web</h3><p>Core Web Vitals, balises meta, sitemap, robots.txt, liens cassés… Passez votre site au crible avec cette checklist actionnable.</p><a class="read-link" href="articles/audit-seo-technique-checklist.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="secteur"><div class="article-meta"><span>Médical</span><span>6 min</span></div><h3>Site web pour médecin ou clinique : comment rassurer les patients avant la première consultation</h3><p>Les patients recherchent leur médecin sur Google avant d'appeler. Voici comment votre site peut répondre à leurs questions et déclencher la prise de rendez-vous.</p><a class="read-link" href="articles/site-web-medecin-clinique.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="google"><div class="article-meta"><span>Avis Google</span><span>5 min</span></div><h3>Avis Google : comment obtenir plus d'étoiles et transformer la réputation en clients</h3><p>Les entreprises avec 4,5+ étoiles reçoivent 3x plus d'appels. Voici la méthode simple pour collecter des avis sans paraître insistant.</p><a class="read-link" href="articles/avis-google-reputation.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="design"><div class="article-meta"><span>Mobile First</span><span>6 min</span></div><h3>Design mobile-first au Maroc : pourquoi 78% de vos visiteurs arrivent depuis un smartphone</h3><p>Au Maroc, 4 visiteurs sur 5 naviguent sur mobile. Un site non optimisé perd ces clients en 3 secondes. Voici comment corriger ça.</p><a class="read-link" href="articles/design-mobile-first-maroc.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="ia"><div class="article-meta"><span>Automatisation</span><span>7 min</span></div><h3>WhatsApp Business + automatisation : comment répondre à vos clients 24h/24 sans y passer vos nuits</h3><p>Chatbot WhatsApp, réponses automatiques, formulaires intelligents… Les outils concrets pour ne jamais manquer un prospect.</p><a class="read-link" href="articles/whatsapp-business-automatisation.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="secteur"><div class="article-meta"><span>Formation</span><span>6 min</span></div><h3>Marketing digital pour centres de formation au Maroc : attirer plus d'inscriptions sans augmenter le budget pub</h3><p>Pages de formation dédiées, SEO sur les noms de certifications, témoignages d'anciens élèves… La stratégie complète.</p><a class="read-link" href="articles/marketing-digital-centre-formation.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="conversion"><div class="article-meta"><span>Copywriting</span><span>7 min</span></div><h3>Copywriting pour PME marocaines : écrire des textes qui vendent sans paraître agressif</h3><p>Les mots que vous choisissez sur votre site font toute la différence. Voici les formules qui rassurent, convainquent et déclenchent l'action.</p><a class="read-link" href="articles/copywriting-pme-maroc.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="seo"><div class="article-meta"><span>Contenu SEO</span><span>8 min</span></div><h3>Blog d'entreprise au Maroc : comment écrire des articles qui attirent des clients qualifiés sur Google</h3><p>Recherche de mots-clés, structure d'article, fréquence de publication… Le guide complet pour transformer votre blog en machine à leads.</p><a class="read-link" href="articles/blog-entreprise-seo-maroc.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="google"><div class="article-meta"><span>Analytics</span><span>6 min</span></div><h3>Google Analytics 4 pour les PME : les 5 métriques qui indiquent vraiment si votre site performe</h3><p>Taux de rebond, conversions, sources de trafic… Arrêtez de vous noyer dans les chiffres et concentrez-vous sur ce qui compte.</p><a class="read-link" href="articles/google-analytics-pme.html">Lire l'article →</a></article>
+
+<article class="article-card reveal" data-cat="secteur"><div class="article-meta"><span>Hôtellerie</span><span>7 min</span></div><h3>Site web pour hôtel ou riad au Maroc : augmenter les réservations directes sans payer Booking</h3><p>Booking.com prend 15 à 25% de commission. Voici comment attirer des réservations directes grâce à un site optimisé et une stratégie SEO locale.</p><a class="read-link" href="articles/site-web-hotel-riad-maroc.html">Lire l'article →</a></article>
+
+</div>
+</div></section><section class="section alt"><div class="container proof-grid"><div><div class="eyebrow" data-i18n="audit_eye">Audit</div><h2 data-i18n="article_cta_title">Vous voulez appliquer ces conseils ?</h2><p class="lead" data-i18n="article_cta_desc">Demandez un audit gratuit. Nous vous indiquons les actions prioritaires pour votre site et votre fiche Google.</p></div><div class="audit-card"><h3 data-i18n="audit_title">Audit gratuit de votre présence Google</h3><p data-i18n="audit_desc">Envoyez votre site ou votre fiche Google. Nous vous répondons avec 3 actions prioritaires pour gagner en visibilité.</p><a class="btn btn-primary" data-i18n="article_cta_btn" href="index.html#contact">Demander un audit</a></div></div></section></main><div class="floating-contact"><a aria-label="WhatsApp" class="float-wa" href="https://wa.me/212679148046?text=Bonjour%20El%20Jadida%20Web%20Solutions%2C%20je%20veux%20un%20devis%20pour%20mon%20projet." rel="noopener" target="_blank">💬</a><a aria-label="Appel" class="float-call" href="tel:+212620830606">📞</a></div>
 <footer class="site-footer">
 <div class="container footer-grid">
 <a class="brand" href="index.html"><span class="logo-mark" style="background:none;box-shadow:none;padding:0;overflow:hidden;"><img src="logo.png" alt="El Jadida Web Solutions" style="width:42px;height:42px;object-fit:contain;border-radius:10px;display:block;"></span><span class="logo-word">El Jadida<br/><span>Web Solutions</span></span></a>
@@ -79,6 +157,24 @@ document.addEventListener('DOMContentLoaded',()=>{
  document.querySelectorAll('.testimonial-track').forEach(track=>{if(!track.dataset.ready){track.innerHTML+=track.innerHTML;track.dataset.ready='1';}});
  document.querySelectorAll('[data-year]').forEach(el=>el.textContent='2026');
  applyLang(currentLang());
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*0.08+'s';obs.observe(el);});
+
+// Filtre catégories
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat=btn.dataset.cat;
+    document.querySelectorAll('.article-card').forEach(card=>{
+      const show = cat==='all' || card.dataset.cat===cat;
+      card.style.display = show ? '' : 'none';
+    });
+  });
+});
+
 });
 
 </script></body></html>
