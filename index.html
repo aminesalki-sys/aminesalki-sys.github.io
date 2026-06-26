@@ -389,8 +389,8 @@ document.addEventListener('DOMContentLoaded',()=>{
  document.querySelectorAll('[data-year]').forEach(el=>el.textContent='2026');
  applyLang(currentLang());
 
-// ===== SLIDERS PORTFOLIO & TÉMOIGNAGES =====
-function buildSlider(cfg){
+// ===== SLIDERS INFINIS PORTFOLIO & TÉMOIGNAGES =====
+function buildInfiniteSlider(cfg){
   var track = document.getElementById(cfg.track);
   var outer = document.getElementById(cfg.outer);
   var dotsWrap = document.getElementById(cfg.dots);
@@ -398,41 +398,81 @@ function buildSlider(cfg){
   var btnNext = document.getElementById(cfg.next);
   if(!track || !outer) return;
 
-  var slides = Array.from(track.children);
-  var total = slides.length;
-  var current = 0;
+  // Cloner les slides pour l'infini
+  var origSlides = Array.from(track.children);
+  var total = origSlides.length;
+
+  // Dupliquer avant ET après
+  origSlides.forEach(function(s){
+    track.appendChild(s.cloneNode(true));
+  });
+  origSlides.forEach(function(s){
+    track.insertBefore(s.cloneNode(true), track.firstChild);
+  });
+
+  var allSlides = Array.from(track.children);
+  var current = total; // on commence au premier "vrai" slide (après les clones de fin)
   var autoTimer = null;
   var isDragging = false;
   var dragStartX = 0;
-  var dragStartScroll = 0;
-
-  // Créer les dots
-  slides.forEach(function(_,i){
-    var d = document.createElement('button');
-    d.className = 'slider-dot' + (i===0?' active':'');
-    d.setAttribute('aria-label','Slide '+(i+1));
-    d.addEventListener('click', function(){ goTo(i); resetAuto(); });
-    dotsWrap.appendChild(d);
-  });
+  var isTransitioning = false;
 
   function gap(){ return parseFloat(getComputedStyle(track).gap) || 28; }
-  function slideW(){ return slides[0].offsetWidth + gap(); }
+  function slideW(){ return allSlides[0].offsetWidth + gap(); }
 
+  // Positionner sans animation
+  function jumpTo(idx){
+    track.style.transition = 'none';
+    track.style.transform = 'translateX(-' + (idx * slideW()) + 'px)';
+    current = idx;
+  }
+
+  // Aller à un index avec animation
   function goTo(idx){
-    current = ((idx % total) + total) % total;
-    track.style.transform = 'translateX(-' + (current * slideW()) + 'px)';
+    if(isTransitioning) return;
+    isTransitioning = true;
+    current = idx;
+    track.style.transition = 'transform .5s cubic-bezier(.4,0,.2,1)';
+    track.style.transform = 'translateX(-' + (idx * slideW()) + 'px)';
+    // Mettre à jour les dots (index relatif aux vrais slides)
+    var dotIdx = ((idx - total) % total + total) % total;
     dotsWrap.querySelectorAll('.slider-dot').forEach(function(d,i){
-      d.classList.toggle('active', i === current);
+      d.classList.toggle('active', i === dotIdx);
     });
   }
+
+  // Après transition : reboucler silencieusement si on est sur un clone
+  track.addEventListener('transitionend', function(){
+    isTransitioning = false;
+    if(current <= total - 1){
+      // On est sur les clones du début → sauter aux vrais slides à la fin
+      jumpTo(current + total);
+    } else if(current >= total * 2){
+      // On est sur les clones de la fin → sauter aux vrais slides du début
+      jumpTo(current - total);
+    }
+  });
 
   function next(){ goTo(current + 1); }
   function prev(){ goTo(current - 1); }
 
+  // Créer les dots (un par slide original)
+  origSlides.forEach(function(_,i){
+    var d = document.createElement('button');
+    d.className = 'slider-dot' + (i===0?' active':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.addEventListener('click', function(){ goTo(total + i); resetAuto(); });
+    dotsWrap.appendChild(d);
+  });
+
+  // Positionnement initial sans animation
+  jumpTo(total);
+
+  // Boutons
   if(btnNext) btnNext.addEventListener('click', function(){ next(); resetAuto(); });
   if(btnPrev) btnPrev.addEventListener('click', function(){ prev(); resetAuto(); });
 
-  // Scroll horizontal (molette)
+  // Scroll horizontal molette
   outer.addEventListener('wheel', function(e){
     if(Math.abs(e.deltaX) > Math.abs(e.deltaY)){
       e.preventDefault();
@@ -450,15 +490,15 @@ function buildSlider(cfg){
   window.addEventListener('mousemove', function(e){
     if(!isDragging) return;
     var diff = dragStartX - e.clientX;
-    var base = current * slideW();
-    track.style.transform = 'translateX(-' + (base + diff) + 'px)';
+    track.style.transform = 'translateX(-' + (current * slideW() + diff) + 'px)';
   });
   window.addEventListener('mouseup', function(e){
     if(!isDragging) return;
     isDragging = false;
     track.style.transition = '';
     var diff = dragStartX - e.clientX;
-    if(Math.abs(diff) > 60){ diff > 0 ? next() : prev(); }
+    if(diff > 60){ next(); }
+    else if(diff < -60){ prev(); }
     else { goTo(current); }
     resetAuto();
   });
@@ -478,18 +518,21 @@ function buildSlider(cfg){
   outer.addEventListener('mouseleave', function(){ startAuto(); });
 
   // Recalculer à resize
-  window.addEventListener('resize', function(){ goTo(current); });
+  window.addEventListener('resize', function(){
+    track.style.transition = 'none';
+    track.style.transform = 'translateX(-' + (current * slideW()) + 'px)';
+  });
 
   startAuto();
 }
 
-buildSlider({
+buildInfiniteSlider({
   track:'portfolioTrack', outer:'portTrackOuter',
   dots:'portDots', prev:'portPrev', next:'portNext',
   delay:3800
 });
 
-buildSlider({
+buildInfiniteSlider({
   track:'testiTrack', outer:'testiTrackOuter',
   dots:'testiDots', prev:'testiPrev', next:'testiNext',
   delay:4500
