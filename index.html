@@ -147,7 +147,20 @@ html[dir="rtl"] .portfolio-track,
 html[dir="rtl"] .testi-track{direction:ltr}
 html[dir="rtl"] .portfolio-slider-wrap,
 html[dir="rtl"] .testi-slider-wrap{direction:ltr}
-html[dir="rtl"] .portfolio-body{flex-direction:row-reverse;text-align:right}
+/* Texte arabe dans les cartes : RTL à l'intérieur, aligné droite */
+html[dir="rtl"] .portfolio-body{flex-direction:row-reverse}
+html[dir="rtl"] .portfolio-body-left{direction:rtl;text-align:right;overflow:hidden}
+html[dir="rtl"] .portfolio-body-left h3,
+html[dir="rtl"] .portfolio-body-left p{direction:rtl;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:normal}
+html[dir="rtl"] .testimonial-card{direction:rtl;text-align:right}
+html[dir="rtl"] .testimonial-card p,
+html[dir="rtl"] .testimonial-card strong,
+html[dir="rtl"] .testimonial-card span{direction:rtl;text-align:right}
+html[dir="rtl"] .stars{text-align:right}
+/* Eviter débordement texte */
+.portfolio-body-left{min-width:0;overflow:hidden}
+.portfolio-body-left h3{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.testimonial-card p{word-break:break-word;overflow-wrap:break-word}
 
 @media(max-width:700px){
   .portfolio-slide{flex:0 0 310px}
@@ -398,20 +411,15 @@ function buildInfiniteSlider(cfg){
   var btnNext = document.getElementById(cfg.next);
   if(!track || !outer) return;
 
-  // Cloner les slides pour l'infini
   var origSlides = Array.from(track.children);
   var total = origSlides.length;
 
-  // Dupliquer avant ET après
-  origSlides.forEach(function(s){
-    track.appendChild(s.cloneNode(true));
-  });
-  origSlides.forEach(function(s){
-    track.insertBefore(s.cloneNode(true), track.firstChild);
-  });
+  // Cloner APRÈS seulement (pas avant) — on gère le saut manuellement
+  origSlides.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
+  origSlides.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
 
   var allSlides = Array.from(track.children);
-  var current = total; // on commence au premier "vrai" slide (après les clones de fin)
+  var current = 0;
   var autoTimer = null;
   var isDragging = false;
   var dragStartX = 0;
@@ -420,59 +428,61 @@ function buildInfiniteSlider(cfg){
   function gap(){ return parseFloat(getComputedStyle(track).gap) || 28; }
   function slideW(){ return allSlides[0].offsetWidth + gap(); }
 
-  // Positionner sans animation
   function jumpTo(idx){
     track.style.transition = 'none';
     track.style.transform = 'translateX(-' + (idx * slideW()) + 'px)';
+    // forcer reflow
+    track.getBoundingClientRect();
     current = idx;
   }
 
-  // Aller à un index avec animation
   function goTo(idx){
     if(isTransitioning) return;
     isTransitioning = true;
     current = idx;
-    track.style.transition = 'transform .5s cubic-bezier(.4,0,.2,1)';
+    track.style.transition = 'transform .52s cubic-bezier(.4,0,.2,1)';
     track.style.transform = 'translateX(-' + (idx * slideW()) + 'px)';
-    // Mettre à jour les dots (index relatif aux vrais slides)
-    var dotIdx = ((idx - total) % total + total) % total;
+    // dots sur l'index réel
+    var dotIdx = idx % total;
     dotsWrap.querySelectorAll('.slider-dot').forEach(function(d,i){
       d.classList.toggle('active', i === dotIdx);
     });
   }
 
-  // Après transition : reboucler silencieusement si on est sur un clone
   track.addEventListener('transitionend', function(){
     isTransitioning = false;
-    if(current <= total - 1){
-      // On est sur les clones du début → sauter aux vrais slides à la fin
-      jumpTo(current + total);
-    } else if(current >= total * 2){
-      // On est sur les clones de la fin → sauter aux vrais slides du début
-      jumpTo(current - total);
-    }
+    // Si on a atteint la 3e copie, sauter à la 1ère copie silencieusement
+    if(current >= total * 2){ jumpTo(current - total); }
+    // Si on est en dessous de 0 (impossible ici mais sécurité)
+    if(current < 0){ jumpTo(current + total); }
   });
 
   function next(){ goTo(current + 1); }
-  function prev(){ goTo(current - 1); }
+  function prev(){
+    if(current === 0){
+      // Sauter à la fin du 2e bloc sans animation, puis reculer
+      jumpTo(total * 2 - 1);
+      setTimeout(function(){ goTo(total * 2 - 1); }, 20);
+      return;
+    }
+    goTo(current - 1);
+  }
 
-  // Créer les dots (un par slide original)
+  // Dots
   origSlides.forEach(function(_,i){
     var d = document.createElement('button');
     d.className = 'slider-dot' + (i===0?' active':'');
     d.setAttribute('aria-label','Slide '+(i+1));
-    d.addEventListener('click', function(){ goTo(total + i); resetAuto(); });
+    d.addEventListener('click', function(){ goTo(i); resetAuto(); });
     dotsWrap.appendChild(d);
   });
 
-  // Positionnement initial sans animation
-  jumpTo(total);
+  jumpTo(0);
 
-  // Boutons
   if(btnNext) btnNext.addEventListener('click', function(){ next(); resetAuto(); });
   if(btnPrev) btnPrev.addEventListener('click', function(){ prev(); resetAuto(); });
 
-  // Scroll horizontal molette
+  // Scroll molette horizontal
   outer.addEventListener('wheel', function(e){
     if(Math.abs(e.deltaX) > Math.abs(e.deltaY)){
       e.preventDefault();
@@ -483,8 +493,7 @@ function buildInfiniteSlider(cfg){
 
   // Drag souris
   outer.addEventListener('mousedown', function(e){
-    isDragging = true;
-    dragStartX = e.clientX;
+    isDragging = true; dragStartX = e.clientX;
     track.style.transition = 'none';
   });
   window.addEventListener('mousemove', function(e){
@@ -494,49 +503,32 @@ function buildInfiniteSlider(cfg){
   });
   window.addEventListener('mouseup', function(e){
     if(!isDragging) return;
-    isDragging = false;
-    track.style.transition = '';
+    isDragging = false; track.style.transition = '';
     var diff = dragStartX - e.clientX;
-    if(diff > 60){ next(); }
-    else if(diff < -60){ prev(); }
-    else { goTo(current); }
+    if(diff > 60){ next(); } else if(diff < -60){ prev(); } else { goTo(current); }
     resetAuto();
   });
 
   // Swipe tactile
   var touchX = 0;
-  outer.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; }, {passive:true});
+  outer.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; },{passive:true});
   outer.addEventListener('touchend', function(e){
     var diff = touchX - e.changedTouches[0].clientX;
-    if(Math.abs(diff) > 50){ diff > 0 ? next() : prev(); resetAuto(); }
-  }, {passive:true});
+    if(Math.abs(diff)>50){ diff>0?next():prev(); resetAuto(); }
+  },{passive:true});
 
   // Autoplay
-  function startAuto(){ autoTimer = setInterval(next, cfg.delay || 3800); }
+  function startAuto(){ autoTimer = setInterval(next, cfg.delay||3800); }
   function resetAuto(){ clearInterval(autoTimer); startAuto(); }
   outer.addEventListener('mouseenter', function(){ clearInterval(autoTimer); });
   outer.addEventListener('mouseleave', function(){ startAuto(); });
-
-  // Recalculer à resize
-  window.addEventListener('resize', function(){
-    track.style.transition = 'none';
-    track.style.transform = 'translateX(-' + (current * slideW()) + 'px)';
-  });
+  window.addEventListener('resize', function(){ track.style.transition='none'; track.style.transform='translateX(-'+(current*slideW())+'px)'; });
 
   startAuto();
 }
 
-buildInfiniteSlider({
-  track:'portfolioTrack', outer:'portTrackOuter',
-  dots:'portDots', prev:'portPrev', next:'portNext',
-  delay:3800
-});
-
-buildInfiniteSlider({
-  track:'testiTrack', outer:'testiTrackOuter',
-  dots:'testiDots', prev:'testiPrev', next:'testiNext',
-  delay:4500
-});
+buildInfiniteSlider({ track:'portfolioTrack', outer:'portTrackOuter', dots:'portDots', prev:'portPrev', next:'portNext', delay:3800 });
+buildInfiniteSlider({ track:'testiTrack', outer:'testiTrackOuter', dots:'testiDots', prev:'testiPrev', next:'testiNext', delay:4500 });
 
 
 // Scroll reveal
