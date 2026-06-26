@@ -100,29 +100,62 @@
 .reveal-scale.visible{opacity:1;transform:scale(1)}
 
 
-/* ===== PORTFOLIO SLIDER PLEINE LARGEUR ===== */
-.portfolio-section{overflow:hidden;padding-bottom:0}
-.portfolio-slider-wrap{position:relative;width:100vw;left:50%;transform:translateX(-50%);margin-top:2.5rem}
-.portfolio-track-outer{overflow:hidden;width:100%;position:relative}
-.portfolio-track-outer::before,.portfolio-track-outer::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
-.portfolio-track-outer::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
-.portfolio-track-outer::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
-.portfolio-track{display:flex;gap:1.6rem;transition:transform .6s cubic-bezier(.4,0,.2,1);padding:1rem 2rem 2.5rem}
-.portfolio-slide{flex:0 0 420px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.035);border-radius:24px;box-shadow:0 18px 60px rgba(0,0,0,.28);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;cursor:pointer}
-.portfolio-slide:hover{transform:translateY(-10px) scale(1.02);border-color:var(--accent);box-shadow:0 30px 80px rgba(124,92,252,.25)}
-.portfolio-slide img{width:100%;height:360px;object-fit:cover;object-position:top;display:block;background:#111}
-.portfolio-slide .portfolio-body{padding:1.25rem}
-.portfolio-slide .portfolio-body h3{font-size:1.1rem;font-family:'Manrope',sans-serif;font-weight:800}
-.portfolio-slide .portfolio-body p{margin-top:.45rem;color:var(--muted);font-size:.9rem;line-height:1.65}
-.portfolio-slide .badge{position:absolute;top:14px;left:14px;background:rgba(7,7,12,.82);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:.48rem .75rem;color:#fff;font-weight:900;font-size:.72rem}
-/* Boutons nav */
-.slider-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.5rem;padding-bottom:1rem}
-.slider-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:1.2rem;cursor:pointer;display:grid;place-items:center;transition:all .2s;backdrop-filter:blur(10px)}
-.slider-btn:hover{background:var(--accent);border-color:var(--accent);transform:scale(1.1)}
+/* ===== PORTFOLIO SLIDER STYLE OUICODE ===== */
+.portfolio-section{overflow:hidden}
+.portfolio-slider-wrap{position:relative;width:100vw;left:50%;transform:translateX(-50%);margin-top:2.5rem;user-select:none}
+.portfolio-track-outer{overflow:hidden;width:100%;position:relative;cursor:grab}
+.portfolio-track-outer:active{cursor:grabbing}
+.portfolio-track{display:flex;gap:1.8rem;transition:transform .55s cubic-bezier(.4,0,.2,1);padding:1rem 3rem 1.5rem;will-change:transform}
+.portfolio-slide{flex:0 0 480px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:22px;box-shadow:0 12px 50px rgba(0,0,0,.35);transition:border-color .3s,box-shadow .3s,transform .3s}
+.portfolio-slide:hover{border-color:var(--accent);box-shadow:0 20px 70px rgba(124,92,252,.3);transform:translateY(-6px)}
+.portfolio-slide a.slide-link{display:block;text-decoration:none;color:inherit}
+.portfolio-slide img{width:100%;height:320px;object-fit:cover;object-position:top;display:block;background:#111;transition:transform .4s ease}
+.portfolio-slide:hover img{transform:scale(1.03)}
+.portfolio-body{padding:1.2rem 1.3rem 1.4rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.portfolio-body-left h3{font-size:1.05rem;font-family:'Manrope',sans-serif;font-weight:800;margin-bottom:.3rem}
+.portfolio-body-left p{color:var(--muted);font-size:.85rem}
+.portfolio-body .visit-btn{flex-shrink:0;padding:.45rem .9rem;border-radius:999px;background:rgba(124,92,252,.15);border:1px solid rgba(124,92,252,.35);color:var(--accent);font-size:.78rem;font-weight:800;white-space:nowrap;transition:all .2s;text-decoration:none}
+.portfolio-body .visit-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.slide-badge{position:absolute;top:12px;left:12px;background:rgba(7,7,12,.82);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:.4rem .75rem;color:#fff;font-weight:900;font-size:.7rem;pointer-events:none}
+/* NAV */
+.slider-nav{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-top:1.6rem;padding-bottom:.5rem}
+.slider-btn{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);color:#fff;font-size:1.1rem;cursor:pointer;display:grid;place-items:center;transition:all .22s;backdrop-filter:blur(10px);flex-shrink:0}
+.slider-btn:hover{background:var(--accent);border-color:var(--accent);transform:scale(1.12)}
 .slider-dots{display:flex;gap:.55rem;align-items:center}
-.slider-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .3s}
-.slider-dot.active{background:var(--accent);width:24px;border-radius:4px}
-@media(max-width:700px){.portfolio-slide{flex:0 0 300px}.portfolio-slide img{height:260px}}
+.slider-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:all .3s;padding:0}
+.slider-dot.active{background:var(--accent);width:26px;border-radius:4px}
+
+/* ===== TESTIMONIAL SLIDER (même style) ===== */
+.testimonials{overflow:hidden}
+.testi-slider-wrap{position:relative;width:100vw;left:50%;transform:translateX(-50%);margin-top:2.5rem;user-select:none}
+.testi-track-outer{overflow:hidden;width:100%;position:relative;cursor:grab}
+.testi-track-outer:active{cursor:grabbing}
+.testi-track-outer::before,.testi-track-outer::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.testi-track-outer::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.testi-track-outer::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
+.testi-track{display:flex;gap:1.4rem;transition:transform .55s cubic-bezier(.4,0,.2,1);padding:1rem 3rem 1.5rem;will-change:transform}
+.testimonial-card{flex:0 0 360px;min-height:220px;padding:1.6rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);border-radius:22px;transition:border-color .25s,transform .25s;flex-shrink:0}
+.testimonial-card:hover{border-color:rgba(124,92,252,.4);transform:scale(1.02)}
+.stars{color:var(--gold);letter-spacing:.12em;margin-bottom:.9rem;font-size:1rem}
+.testimonial-card p{color:#fff;line-height:1.72;margin-bottom:1.2rem;font-size:.93rem}
+.testimonial-card strong{display:block;font-weight:800}
+.testimonial-card span{display:block;margin-top:.25rem;color:var(--muted2);font-size:.82rem}
+.testi-nav{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-top:1.6rem;padding-bottom:.5rem}
+
+/* Fix RTL arabe — sliders toujours LTR */
+html[dir="rtl"] .portfolio-track,
+html[dir="rtl"] .testi-track{direction:ltr}
+html[dir="rtl"] .portfolio-slider-wrap,
+html[dir="rtl"] .testi-slider-wrap{direction:ltr}
+html[dir="rtl"] .portfolio-body{flex-direction:row-reverse;text-align:right}
+
+@media(max-width:700px){
+  .portfolio-slide{flex:0 0 310px}
+  .portfolio-slide img{height:220px}
+  .testimonial-card{flex:0 0 290px}
+  .portfolio-track,.testi-track{padding:1rem 1.5rem 1.5rem}
+}
+
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"El Jadida Web Solutions","url":"https://www.eljadidawebsolutions.com/","telephone":"+212620830606","email":"amine.salki@gmail.com","address":{"@type":"PostalAddress","streetAddress":"aprt 3, Lot nouzha, imm 4","addressLocality":"El Jadida","postalCode":"24000","addressCountry":"MA"},"areaServed":["El Jadida","Casablanca","Rabat","Maroc"],"sameAs":["https://maps.app.goo.gl/HU6UTVKSi1T74BHA6"],"description":"Agence web spécialisée en création de sites, SEO et marketing digital."}</script>
@@ -161,31 +194,79 @@
 <article class="service-card"><div class="service-num">06</div><div class="service-icon">🤖</div><h3 data-i18n="service6_title">IA &amp; Automatisation</h3><p data-i18n="service6_desc">Chatbots, formulaires intelligents, automatisation des demandes et suivi commercial plus rapide.</p></article></div></div></section>
 <section class="section"><div class="container proof-grid"><div class="proof-panel"><div class="eyebrow" data-i18n="proof_eye">Pourquoi nous choisir</div><h2 data-i18n="proof_title">Un visiteur reste 8 secondes.<br/><span class="gradient">Voici comment le convaincre.</span></h2><p class="lead" data-i18n="proof_desc">La science le confirme : les clients ne lisent pas, ils scannent. Ils cherchent une raison de faire confiance en 8 secondes. Nous concevons chaque site pour gagner ce pari.</p><div class="proof-list"><div class="proof-item"><span class="check">✓</span><span data-i18n="proof1">Promesse claire dès le premier écran et appels à l’action répétés.</span></div><div class="proof-item"><span class="check">✓</span><span data-i18n="proof2">Pages services optimisées pour le SEO local et les recherches métiers.</span></div><div class="proof-item"><span class="check">✓</span><span data-i18n="proof3">Preuves, témoignages, FAQ et garanties pour rassurer avant le contact.</span></div><div class="proof-item"><span class="check">✓</span><span data-i18n="proof4">Suivi des demandes : appels, WhatsApp, formulaires et conversions.</span></div></div></div><aside class="audit-card"><h3 data-i18n="audit_title">Êtes-vous invisible sur Google ? Découvrez-le gratuitement.</h3><p data-i18n="audit_desc">En 24h, nous analysons votre site et votre fiche Google. Vous recevez 3 actions concrètes pour apparaître en premier — avant vos concurrents. Gratuit. Sans engagement.</p><a class="btn btn-primary" data-i18n="audit_btn" href="https://wa.me/212679148046?text=Bonjour%2C%20je%20veux%20un%20audit%20gratuit%20de%20ma%20pr%C3%A9sence%20Google." rel="noopener" target="_blank">Demander mon audit</a></aside></div></section>
 <section class="section portfolio-section" id="portfolio"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="portfolio_eye">Exemples de sites</div><h2 data-i18n="portfolio_title">Ils nous ont fait confiance.<br/><span class="gradient">Leurs résultats parlent.</span></h2></div><p class="lead" data-i18n="portfolio_desc">Des PME d'El Jadida, Casablanca et d'ailleurs ont transformé leur visibilité digitale. Voici quelques exemples concrets.</p></div><div class="portfolio-slider-wrap">
-  <div class="portfolio-track-outer">
+  <div class="portfolio-track-outer" id="portTrackOuter">
     <div class="portfolio-track" id="portfolioTrack">
 
-      <div class="portfolio-slide"><span class="badge">Événementiel &amp; mariage</span><img alt="Afrah Darna" loading="lazy" src="assets/site-mariage-afrah-darna.png"/><div class="portfolio-body"><h3>Afrah Darna</h3><p>Site événementiel premium avec galerie, partenaires et appels à l'action.</p></div></div>
+      <div class="portfolio-slide">
+        <a class="slide-link" href="https://www.afrahdarnaprestige.ma/" target="_blank" rel="noopener">
+          <span class="slide-badge">Événementiel &amp; mariage</span>
+          <img alt="Afrah Darna Prestige" loading="lazy" src="assets/site-mariage-afrah-darna.png"/>
+          <div class="portfolio-body"><div class="portfolio-body-left"><h3>Afrah Darna Prestige</h3><p>Site événementiel premium avec galerie et appels à l'action</p></div><span class="visit-btn">Voir →</span></div>
+        </a>
+      </div>
 
-      <div class="portfolio-slide"><span class="badge">Aviation humanitaire</span><img alt="Aviation Solidaire" loading="lazy" src="assets/site-aviation-solidaire.png"/><div class="portfolio-body"><h3>Aviation Solidaire</h3><p>Site institutionnel structuré pour présenter missions, organisation et contact.</p></div></div>
+      <div class="portfolio-slide">
+        <a class="slide-link" href="https://fitnessldn.com/" target="_blank" rel="noopener">
+          <span class="slide-badge">Sport &amp; Fitness</span>
+          <img alt="FitnessLDN" loading="lazy" src="assets/site-fitness-ldn.png"/>
+          <div class="portfolio-body"><div class="portfolio-body-left"><h3>FitnessLDN</h3><p>Coaching premium avec transformations clients et tarifs</p></div><span class="visit-btn">Voir →</span></div>
+        </a>
+      </div>
 
-      <div class="portfolio-slide"><span class="badge">Médical B2B</span><img alt="Sono-Ned Medical" loading="lazy" src="assets/site-sono-ned-medical.png"/><div class="portfolio-body"><h3>Sono-Ned Medical</h3><p>Site médical B2B avec spécialités, partenaires, preuves et témoignages.</p></div></div>
+      <div class="portfolio-slide">
+        <a class="slide-link" href="http://ouicoderoute.com/" target="_blank" rel="noopener">
+          <span class="slide-badge">EdTech &amp; Formation</span>
+          <img alt="OuiCode de la route" loading="lazy" src="assets/site-oui-code-route.png"/>
+          <div class="portfolio-body"><div class="portfolio-body-left"><h3>OuiCode — Code de la route</h3><p>Plateforme e-learning gamifiée, programme 7 jours, sessions live</p></div><span class="visit-btn">Voir →</span></div>
+        </a>
+      </div>
 
-      <div class="portfolio-slide"><span class="badge">Industriel &amp; sécurité</span><img alt="Soprofeu" loading="lazy" src="assets/site-soprofeu.png"/><div class="portfolio-body"><h3>Soprofeu</h3><p>Site industriel moderne pour sécurité incendie, formations et demande de devis.</p></div></div>
+      <div class="portfolio-slide">
+        <a class="slide-link" href="https://www.taxinavette.ma/" target="_blank" rel="noopener">
+          <span class="slide-badge">Transport &amp; navette</span>
+          <img alt="Taxi Navette" loading="lazy" src="assets/site-taxi-navette.png"/>
+          <div class="portfolio-body"><div class="portfolio-body-left"><h3>Taxi Navette Maroc</h3><p>Réservation, flotte, témoignages et formulaire de demande</p></div><span class="visit-btn">Voir →</span></div>
+        </a>
+      </div>
 
-      <div class="portfolio-slide"><span class="badge">Sport &amp; Fitness</span><img alt="FitnessBDN" loading="lazy" src="assets/site-fitness-ldn.png"/><div class="portfolio-body"><h3>FitnessBDN</h3><p>Site fitness premium avec transformations clients, tarifs et programme personnalisé.</p></div></div>
+      <div class="portfolio-slide">
+        <a class="slide-link" href="https://switch-care.fr/" target="_blank" rel="noopener">
+          <span class="slide-badge">Aviation privée</span>
+          <img alt="Switch Care" loading="lazy" src="assets/site-switch-care.png"/>
+          <div class="portfolio-body"><div class="portfolio-body-left"><h3>Switch Care</h3><p>Positionnement premium, pages services, crédibilité internationale</p></div><span class="visit-btn">Voir →</span></div>
+        </a>
+      </div>
 
-      <div class="portfolio-slide"><span class="badge">EdTech &amp; Formation</span><img alt="OuiCode de la route" loading="lazy" src="assets/site-oui-code-route.png"/><div class="portfolio-body"><h3>OuiCode — Code de la route</h3><p>Plateforme e-learning gamifiée avec jeux pédagogiques, programme 7 jours et sessions live.</p></div></div>
+      <div class="portfolio-slide">
+        <a class="slide-link" href="http://aviation-solidaire.fr/" target="_blank" rel="noopener">
+          <span class="slide-badge">Aviation humanitaire</span>
+          <img alt="Aviation Solidaire" loading="lazy" src="assets/site-aviation-solidaire.png"/>
+          <div class="portfolio-body"><div class="portfolio-body-left"><h3>Aviation Solidaire</h3><p>Site institutionnel pour missions, organisation et contact</p></div><span class="visit-btn">Voir →</span></div>
+        </a>
+      </div>
 
-      <div class="portfolio-slide"><span class="badge">Transport &amp; navette</span><img alt="Taxi Navette" loading="lazy" src="assets/site-taxi-navette.png"/><div class="portfolio-body"><h3>Taxi Navette</h3><p>Réservation, flotte, avantages, témoignages et formulaire de demande.</p></div></div>
+      <div class="portfolio-slide">
+        <a class="slide-link" href="https://sononedmedical.com/" target="_blank" rel="noopener">
+          <span class="slide-badge">Médical B2B</span>
+          <img alt="Sono-Ned Medical" loading="lazy" src="assets/site-sono-ned-medical.png"/>
+          <div class="portfolio-body"><div class="portfolio-body-left"><h3>Sono-Ned Medical</h3><p>Site médical B2B avec spécialités, partenaires et témoignages</p></div><span class="visit-btn">Voir →</span></div>
+        </a>
+      </div>
 
-      <div class="portfolio-slide"><span class="badge">Aviation privée</span><img alt="Switch Care" loading="lazy" src="assets/site-switch-care.png"/><div class="portfolio-body"><h3>Switch Care</h3><p>Positionnement premium, pages services et crédibilité internationale.</p></div></div>
+      <div class="portfolio-slide">
+        <a class="slide-link" href="https://www.soprofeu.com/" target="_blank" rel="noopener">
+          <span class="slide-badge">Industriel &amp; sécurité</span>
+          <img alt="Soprofeu" loading="lazy" src="assets/site-soprofeu.png"/>
+          <div class="portfolio-body"><div class="portfolio-body-left"><h3>Soprofeu</h3><p>Site industriel pour sécurité incendie, formations et devis</p></div><span class="visit-btn">Voir →</span></div>
+        </a>
+      </div>
 
     </div>
   </div>
   <div class="slider-nav">
-    <button class="slider-btn" id="slidePrev" aria-label="Précédent">&#8592;</button>
-    <div class="slider-dots" id="sliderDots"></div>
-    <button class="slider-btn" id="slideNext" aria-label="Suivant">&#8594;</button>
+    <button class="slider-btn" id="portPrev" aria-label="Précédent">&#8592;</button>
+    <div class="slider-dots" id="portDots"></div>
+    <button class="slider-btn" id="portNext" aria-label="Suivant">&#8594;</button>
   </div>
 </div>
 </div></section>
@@ -197,18 +278,41 @@
 <section class="section"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="pricing_eye">Offres</div><h2 data-i18n="pricing_title">Des packs clairs<br/><span class="gradient">pour chaque étape</span></h2></div><p class="lead" data-i18n="pricing_desc">Des formules adaptées aux entrepreneurs, PME et entreprises qui veulent accélérer leur acquisition.</p></div><div class="pricing-grid"><article class="pricing-card"><h3 data-i18n="pack1_name">Starter</h3><div class="pricing-note" data-i18n="pack1_note">Pour lancer proprement</div><ul><li data-i18n="pack1_item1">Site vitrine responsive</li><li data-i18n="pack1_item2">Formulaire + WhatsApp</li><li data-i18n="pack1_item3">SEO technique de base</li><li data-i18n="pack1_item4">Mise en ligne</li></ul><a class="btn btn-soft" data-i18n="quote_btn" href="#contact">Demander un devis</a></article>
 <article class="pricing-card featured"><h3 data-i18n="pack2_name">Business</h3><div class="pricing-note" data-i18n="pack2_note">Pour générer plus de demandes</div><ul><li data-i18n="pack2_item1">Pages services ciblées</li><li data-i18n="pack2_item2">Blog SEO initial</li><li data-i18n="pack2_item3">Optimisation Google Business</li><li data-i18n="pack2_item4">Suivi conversion</li></ul><a class="btn btn-soft" data-i18n="quote_btn" href="#contact">Demander un devis</a></article>
 <article class="pricing-card"><h3 data-i18n="pack3_name">Premium</h3><div class="pricing-note" data-i18n="pack3_note">Pour accélérer la croissance</div><ul><li data-i18n="pack3_item1">Stratégie SEO avancée</li><li data-i18n="pack3_item2">Landing pages Ads</li><li data-i18n="pack3_item3">Automatisation &amp; chatbot</li><li data-i18n="pack3_item4">Reporting mensuel</li></ul><a class="btn btn-soft" data-i18n="quote_btn" href="#contact">Demander un devis</a></article></div></div></section>
-<section class="section testimonials alt" id="testimonials"><div class="container"><div class="eyebrow" data-i18n="testimonials_eye">Ils en parlent mieux que nous</div><h2 data-i18n="testimonials_title">Ce que disent <span class="gradient">nos clients</span></h2><div class="testimonial-slider"><div class="testimonial-track"><article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi1_text">“Le site présente nos spécialités avec clarté. Les patients trouvent rapidement les informations et les demandes de rendez-vous sont plus simples.”</p><strong data-i18n="testi1_sector">Cabinet médical</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
-<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi2_text">“La nouvelle page explique nos abonnements et met en avant les coachs. Les visiteurs comprennent mieux notre offre avant de venir.”</p><strong data-i18n="testi2_sector">Salle de sport</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
-<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi3_text">“Le catalogue, les horaires et le bouton WhatsApp nous aident à recevoir des demandes plus qualifiées.”</p><strong data-i18n="testi3_sector">Opticien</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
-<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi4_text">“Les parents trouvent les programmes, les niveaux et le formulaire d’inscription sans nous appeler plusieurs fois.”</p><strong data-i18n="testi4_sector">École privée</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
-<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi5_text">“Les pages par formation nous permettent de répondre aux recherches précises et d’envoyer le bon programme aux prospects.”</p><strong data-i18n="testi5_sector">Centre de formation</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
-<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi6_text">“Les photos, le menu et la réservation donnent envie. Le site est devenu un vrai support commercial.”</p><strong data-i18n="testi6_sector">Restaurant</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
-<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi7_text">“Le design met en valeur l’ambiance et les produits. Les clients consultent facilement l’adresse et les horaires.”</p><strong data-i18n="testi7_sector">Café &amp; pâtisserie</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
-<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi8_text">“La présentation technique est claire et rassurante. Les demandes de devis arrivent avec plus d’informations utiles.”</p><strong data-i18n="testi8_sector">Industrie</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
-<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi9_text">“Les biens sont mieux présentés, les contacts sont plus directs et l’image de marque est plus professionnelle.”</p><strong data-i18n="testi9_sector">Agence immobilière</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
-<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi10_text">“L’expérience mobile est fluide et rassure les nouveaux patients avant la prise de contact.”</p><strong data-i18n="testi10_sector">Clinique dentaire</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
-<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi11_text">“Le contenu explique enfin notre expertise sans jargon. Les prospects arrivent mieux informés.”</p><strong data-i18n="testi11_sector">Cabinet de conseil</strong><span data-i18n="testi_label">Retour client sectoriel</span></article>
-<article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi12_text">“Le parcours d’achat est plus clair et les pages produits inspirent davantage confiance.”</p><strong data-i18n="testi12_sector">Boutique e-commerce</strong><span data-i18n="testi_label">Retour client sectoriel</span></article></div></div></div></section>
+<section class="section testimonials alt" id="testimonials"><div class="container"><div class="eyebrow" data-i18n="testimonials_eye">Ils en parlent mieux que nous</div><h2 data-i18n="testimonials_title">Ce que disent <span class="gradient">nos clients</span></h2><div class="testi-slider-wrap">
+  <div class="testi-track-outer" id="testiTrackOuter">
+    <div class="testi-track" id="testiTrack">
+
+      <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi1_text">"Le site présente nos spécialités avec clarté. Les patients trouvent rapidement les informations et les demandes de rendez-vous sont plus simples."</p><strong data-i18n="testi1_sector">Cabinet médical</strong><span data-i18n="testi_label">Client El Jadida Web Solutions</span></article>
+
+      <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi2_text">"La nouvelle page explique nos abonnements et met en avant les coachs. Les visiteurs comprennent mieux notre offre avant de venir."</p><strong data-i18n="testi2_sector">Salle de sport</strong><span data-i18n="testi_label">Client El Jadida Web Solutions</span></article>
+
+      <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi3_text">"Le catalogue, les horaires et le bouton WhatsApp nous aident à recevoir des demandes plus qualifiées."</p><strong data-i18n="testi3_sector">Opticien</strong><span data-i18n="testi_label">Client El Jadida Web Solutions</span></article>
+
+      <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi4_text">"Les parents trouvent les programmes, les niveaux et le formulaire d'inscription sans nous appeler plusieurs fois."</p><strong data-i18n="testi4_sector">École privée</strong><span data-i18n="testi_label">Client El Jadida Web Solutions</span></article>
+
+      <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi5_text">"Les pages par formation nous permettent de répondre aux recherches précises et d'envoyer le bon programme aux prospects."</p><strong data-i18n="testi5_sector">Centre de formation</strong><span data-i18n="testi_label">Client El Jadida Web Solutions</span></article>
+
+      <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi6_text">"Les photos, le menu et la réservation donnent envie. Le site est devenu un vrai support commercial."</p><strong data-i18n="testi6_sector">Restaurant</strong><span data-i18n="testi_label">Client El Jadida Web Solutions</span></article>
+
+      <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi7_text">"Le design met en valeur l'ambiance et les produits. Les clients consultent facilement l'adresse et les horaires."</p><strong data-i18n="testi7_sector">Café &amp; pâtisserie</strong><span data-i18n="testi_label">Client El Jadida Web Solutions</span></article>
+
+      <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi8_text">"La présentation technique est claire et rassurante. Les demandes de devis arrivent avec plus d'informations utiles."</p><strong data-i18n="testi8_sector">Industrie</strong><span data-i18n="testi_label">Client El Jadida Web Solutions</span></article>
+
+      <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi9_text">"Les biens sont mieux présentés, les contacts sont plus directs et l'image de marque est plus professionnelle."</p><strong data-i18n="testi9_sector">Agence immobilière</strong><span data-i18n="testi_label">Client El Jadida Web Solutions</span></article>
+
+      <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi10_text">"L'expérience mobile est fluide et rassure les visiteurs. Le contenu explique enfin notre expertise sans jargon."</p><strong data-i18n="testi10_sector">Laboratoire</strong><span data-i18n="testi_label">Client El Jadida Web Solutions</span></article>
+
+      <article class="testimonial-card"><div class="stars">★★★★★</div><p data-i18n="testi11_text">"Le parcours d'achat est plus clair et les prospects arrivent mieux informés. Nos offres sont enfin bien valorisées."</p><strong data-i18n="testi11_sector">E-commerce</strong><span data-i18n="testi_label">Client El Jadida Web Solutions</span></article>
+
+    </div>
+  </div>
+  <div class="testi-nav slider-nav">
+    <button class="slider-btn" id="testiPrev" aria-label="Précédent">&#8592;</button>
+    <div class="slider-dots" id="testiDots"></div>
+    <button class="slider-btn" id="testiNext" aria-label="Suivant">&#8594;</button>
+  </div>
+</div>
+</section>
 <section class="section" id="blog"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="blog_eye">Blog &amp; SEO</div><h2 data-i18n="blog_title">Articles utiles pour gagner<br/><span class="gradient">en visibilité Google</span></h2></div><p class="lead" data-i18n="blog_desc">Une page blog dédiée et des articles complets pour attirer des recherches qualifiées, rassurer les lecteurs et améliorer le référencement.</p></div><div class="blog-grid"><article class="article-card">
 <div class="article-meta"><span>SEO Local</span><span>7 min</span></div>
 <h3 data-i18n="article_seo-local-el-jadida-2026_title">Comment apparaître sur Google à El Jadida en 2026 : guide SEO local</h3>
@@ -285,62 +389,111 @@ document.addEventListener('DOMContentLoaded',()=>{
  document.querySelectorAll('[data-year]').forEach(el=>el.textContent='2026');
  applyLang(currentLang());
 
-// ===== PORTFOLIO SLIDER =====
-(function(){
-  const track = document.getElementById('portfolioTrack');
-  const dotsWrap = document.getElementById('sliderDots');
-  if(!track) return;
+// ===== SLIDERS PORTFOLIO & TÉMOIGNAGES =====
+function buildSlider(cfg){
+  var track = document.getElementById(cfg.track);
+  var outer = document.getElementById(cfg.outer);
+  var dotsWrap = document.getElementById(cfg.dots);
+  var btnPrev = document.getElementById(cfg.prev);
+  var btnNext = document.getElementById(cfg.next);
+  if(!track || !outer) return;
 
-  const slides = track.querySelectorAll('.portfolio-slide');
-  const total = slides.length;
-  let current = 0;
-  let autoTimer;
+  var slides = Array.from(track.children);
+  var total = slides.length;
+  var current = 0;
+  var autoTimer = null;
+  var isDragging = false;
+  var dragStartX = 0;
+  var dragStartScroll = 0;
 
   // Créer les dots
-  slides.forEach((_,i)=>{
-    const d = document.createElement('button');
+  slides.forEach(function(_,i){
+    var d = document.createElement('button');
     d.className = 'slider-dot' + (i===0?' active':'');
     d.setAttribute('aria-label','Slide '+(i+1));
-    d.addEventListener('click',()=>goTo(i));
+    d.addEventListener('click', function(){ goTo(i); resetAuto(); });
     dotsWrap.appendChild(d);
   });
 
-  function getSlideWidth(){
-    return slides[0].offsetWidth + 25.6; // gap 1.6rem ≈ 25.6px
-  }
+  function gap(){ return parseFloat(getComputedStyle(track).gap) || 28; }
+  function slideW(){ return slides[0].offsetWidth + gap(); }
 
   function goTo(idx){
-    current = (idx + total) % total;
-    const offset = current * getSlideWidth();
-    track.style.transform = 'translateX(-' + offset + 'px)';
-    dotsWrap.querySelectorAll('.slider-dot').forEach((d,i)=>{
-      d.classList.toggle('active', i===current);
+    current = ((idx % total) + total) % total;
+    track.style.transform = 'translateX(-' + (current * slideW()) + 'px)';
+    dotsWrap.querySelectorAll('.slider-dot').forEach(function(d,i){
+      d.classList.toggle('active', i === current);
     });
   }
 
-  function next(){ goTo(current+1); }
-  function prev(){ goTo(current-1); }
+  function next(){ goTo(current + 1); }
+  function prev(){ goTo(current - 1); }
 
-  document.getElementById('slideNext').addEventListener('click',()=>{next();resetAuto();});
-  document.getElementById('slidePrev').addEventListener('click',()=>{prev();resetAuto();});
+  if(btnNext) btnNext.addEventListener('click', function(){ next(); resetAuto(); });
+  if(btnPrev) btnPrev.addEventListener('click', function(){ prev(); resetAuto(); });
+
+  // Scroll horizontal (molette)
+  outer.addEventListener('wheel', function(e){
+    if(Math.abs(e.deltaX) > Math.abs(e.deltaY)){
+      e.preventDefault();
+      if(e.deltaX > 30){ next(); resetAuto(); }
+      else if(e.deltaX < -30){ prev(); resetAuto(); }
+    }
+  }, {passive:false});
+
+  // Drag souris
+  outer.addEventListener('mousedown', function(e){
+    isDragging = true;
+    dragStartX = e.clientX;
+    track.style.transition = 'none';
+  });
+  window.addEventListener('mousemove', function(e){
+    if(!isDragging) return;
+    var diff = dragStartX - e.clientX;
+    var base = current * slideW();
+    track.style.transform = 'translateX(-' + (base + diff) + 'px)';
+  });
+  window.addEventListener('mouseup', function(e){
+    if(!isDragging) return;
+    isDragging = false;
+    track.style.transition = '';
+    var diff = dragStartX - e.clientX;
+    if(Math.abs(diff) > 60){ diff > 0 ? next() : prev(); }
+    else { goTo(current); }
+    resetAuto();
+  });
 
   // Swipe tactile
-  let startX=0;
-  track.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;},{passive:true});
-  track.addEventListener('touchend',e=>{
-    const diff=startX-e.changedTouches[0].clientX;
-    if(Math.abs(diff)>50){ diff>0?next():prev(); resetAuto(); }
-  },{passive:true});
+  var touchX = 0;
+  outer.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; }, {passive:true});
+  outer.addEventListener('touchend', function(e){
+    var diff = touchX - e.changedTouches[0].clientX;
+    if(Math.abs(diff) > 50){ diff > 0 ? next() : prev(); resetAuto(); }
+  }, {passive:true});
 
-  function startAuto(){ autoTimer=setInterval(next, 3500); }
+  // Autoplay
+  function startAuto(){ autoTimer = setInterval(next, cfg.delay || 3800); }
   function resetAuto(){ clearInterval(autoTimer); startAuto(); }
+  outer.addEventListener('mouseenter', function(){ clearInterval(autoTimer); });
+  outer.addEventListener('mouseleave', function(){ startAuto(); });
 
-  // Pause au survol
-  track.parentElement.addEventListener('mouseenter',()=>clearInterval(autoTimer));
-  track.parentElement.addEventListener('mouseleave',()=>startAuto());
+  // Recalculer à resize
+  window.addEventListener('resize', function(){ goTo(current); });
 
   startAuto();
-})();
+}
+
+buildSlider({
+  track:'portfolioTrack', outer:'portTrackOuter',
+  dots:'portDots', prev:'portPrev', next:'portNext',
+  delay:3800
+});
+
+buildSlider({
+  track:'testiTrack', outer:'testiTrackOuter',
+  dots:'testiDots', prev:'testiPrev', next:'testiNext',
+  delay:4500
+});
 
 
 // Scroll reveal
