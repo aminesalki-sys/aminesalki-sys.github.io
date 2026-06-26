@@ -261,6 +261,104 @@ html[dir="rtl"] p { word-break: break-word; overflow-wrap: break-word; }
 }
 
 
+
+/* ===== ANIMATIONS SECTIONS & BOUTONS ===== */
+
+/* Reveal au scroll */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .65s cubic-bezier(.4,0,.2,1),transform .65s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* Entrées hero */
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-50px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(50px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
+@keyframes glowPulse{0%,100%{box-shadow:0 18px 45px rgba(124,92,252,.3)}50%{box-shadow:0 18px 65px rgba(241,61,154,.5)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes shimmerBtn{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes borderBlink{0%,100%{border-color:rgba(124,92,252,.22)}50%{border-color:rgba(124,92,252,.7)}}
+
+.hero-tag{animation:slideInLeft .6s .1s ease both}
+.hero h1{animation:slideInUp .8s .2s ease both}
+.hero .lead{animation:slideInUp .8s .35s ease both}
+.hero-actions{animation:slideInUp .8s .5s ease both}
+.hero-stats{animation:fadeIn .9s .65s ease both}
+
+/* Bouton primaire — glow pulsant */
+.btn-primary{
+  animation:glowPulse 3s ease infinite;
+  position:relative;overflow:hidden;
+  transition:transform .22s ease,box-shadow .22s ease !important;
+}
+.btn-primary:hover{
+  animation:none;
+  transform:translateY(-4px) scale(1.05) !important;
+  box-shadow:0 24px 60px rgba(241,61,154,.45) !important;
+}
+/* Shimmer au hover */
+.btn-primary::after{
+  content:'';position:absolute;inset:0;border-radius:999px;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.2) 50%,transparent 100%);
+  background-size:200% auto;opacity:0;transition:opacity .2s;
+}
+.btn-primary:hover::after{opacity:1;animation:shimmerBtn .6s ease}
+
+/* Bouton secondaire */
+.btn-secondary,.btn-soft{
+  transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.btn-secondary:hover,.btn-soft:hover{
+  transform:translateY(-3px);
+  background:rgba(255,255,255,.1);
+  border-color:rgba(255,255,255,.35);
+  box-shadow:0 12px 30px rgba(0,0,0,.2);
+}
+
+/* Service cards */
+.service-card{transition:transform .25s ease,background .25s ease,box-shadow .25s ease}
+.service-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.service-icon{transition:transform .3s ease}
+.service-card:hover .service-icon{transform:scale(1.18) rotate(-6deg)}
+
+/* Portfolio slides */
+.portfolio-slide{transition:border-color .3s ease,box-shadow .3s ease,transform .3s ease}
+.portfolio-slide:hover{transform:translateY(-8px) scale(1.01);border-color:var(--accent);box-shadow:0 28px 70px rgba(124,92,252,.25)}
+
+/* Testimonial cards */
+.testimonial-card{transition:transform .25s ease,border-color .25s ease}
+.testimonial-card:hover{transform:scale(1.03);border-color:rgba(124,92,252,.4)}
+
+/* Pricing cards */
+.pricing-card{transition:transform .25s ease,box-shadow .25s ease}
+.pricing-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.pricing-card.featured{animation:borderBlink 2.5s ease infinite}
+
+/* Contact links */
+.contact-link{transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.contact-link:hover{transform:translateX(6px);box-shadow:0 10px 30px rgba(124,92,252,.2)}
+html[dir='rtl'] .contact-link:hover{transform:translateX(-6px)}
+
+/* FAQ items */
+.faq-item{transition:border-color .25s ease,background .25s ease}
+.faq-item:hover{border-color:rgba(124,92,252,.4);background:rgba(124,92,252,.06)}
+
+/* Floating buttons */
+.float-wa{animation:floatY 3s ease infinite}
+.float-call{animation:floatY 3s .5s ease infinite}
+
+/* Article cards */
+.article-card{transition:transform .25s ease,border-color .25s ease}
+.article-card:hover{transform:translateY(-6px);border-color:var(--accent)}
+
+/* Stat cards */
+.stat-card{transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.stat-card:hover{transform:translateY(-5px) scale(1.04);border-color:rgba(124,92,252,.45);background:rgba(124,92,252,.08)}
+
+/* Conv cards */
+.conv-card{transition:transform .25s ease,background .25s ease}
+.conv-card:hover{transform:translateY(-5px);background:rgba(124,92,252,.12)}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"El Jadida Web Solutions","url":"https://www.eljadidawebsolutions.com/","telephone":"+212620830606","email":"amine.salki@gmail.com","address":{"@type":"PostalAddress","streetAddress":"aprt 3, Lot nouzha, imm 4","addressLocality":"El Jadida","postalCode":"24000","addressCountry":"MA"},"areaServed":["El Jadida","Casablanca","Rabat","Maroc"],"sameAs":["https://maps.app.goo.gl/HU6UTVKSi1T74BHA6"],"description":"Agence web spécialisée en création de sites, SEO et marketing digital."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "Combien de temps prend la création d’un site ?", "acceptedAnswer": {"@type": "Answer", "text": "Selon le projet, un site vitrine peut être livré rapidement après validation du contenu. Les sites plus avancés demandent un cadrage plus détaillé."}},{"@type": "Question", "name": "Est-ce que le site sera optimisé SEO ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. La structure, les titres, la vitesse, les balises, les contenus et le maillage sont pensés dès le départ pour le référencement."}},{"@type": "Question", "name": "Pouvez-vous gérer la fiche Google ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nous pouvons optimiser la fiche, les catégories, les services, les photos, les descriptions et la stratégie d’avis."}},{"@type": "Question", "name": "Le site peut-il être en français, arabe et anglais ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Le site intègre un système multilingue avec direction RTL pour l’arabe et mémorisation du choix de langue."}},{"@type": "Question", "name": "Proposez-vous un accompagnement après livraison ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nous pouvons assurer la maintenance, les mises à jour, le blog, le SEO et les campagnes publicitaires."}},{"@type": "Question", "name": "Puis-je demander un audit avant de commencer ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. L’audit gratuit permet d’identifier rapidement les actions qui auront le plus d’impact sur votre visibilité et vos conversions."}}]}</script>
@@ -505,6 +603,165 @@ function buildOuiSlider(cfg){
   var origSlides = Array.from(track.children);
   var TOTAL = origSlides.length;
   var GAP = cfg.gap || 25;
+  var SPEED = cfg.speed || 0.5;
+
+  // Cloner 2x pour loop infinie
+  origSlides.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
+  origSlides.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
+
+  var pos = 0, slideW = 0, cur = 0;
+  var dragging = false, startX = 0, startPos = 0;
+  var isAuto = true, raf = null;
+
+  function calcSlideW(){
+    var s = track.firstElementChild;
+    if(s) slideW = s.offsetWidth + GAP;
+  }
+
+  function init(){
+    calcSlideW();
+    pos = -(TOTAL * slideW);
+    track.style.transition = 'none';
+    track.style.transform = 'translateX(' + pos + 'px)';
+    if(raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(autoTick);
+  }
+
+  function autoTick(){
+    if(isAuto){
+      pos -= SPEED;
+      if(pos <= -(2 * TOTAL * slideW)){
+        pos += TOTAL * slideW;
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(' + pos + 'px)';
+        track.getBoundingClientRect();
+      } else {
+        track.style.transform = 'translateX(' + pos + 'px)';
+      }
+      var absPos = Math.abs(pos) - TOTAL * slideW;
+      if(absPos < 0) absPos += TOTAL * slideW;
+      var newCur = ((Math.round(absPos / slideW) % TOTAL) + TOTAL) % TOTAL;
+      if(newCur !== cur){ cur = newCur; updateDots(); }
+    }
+    raf = requestAnimationFrame(autoTick);
+  }
+
+  function pauseAuto(){ isAuto = false; }
+  function resumeAuto(){ setTimeout(function(){ isAuto = true; }, 1800); }
+
+  function snapTo(dir){
+    pauseAuto(); calcSlideW();
+    var loopOffset = TOTAL * slideW;
+    var relPos = Math.abs(pos) - loopOffset;
+    if(relPos < 0) relPos += TOTAL * slideW;
+    var nearIdx = Math.round(relPos / slideW);
+    var targetIdx = nearIdx + dir;
+    var targetPos = -(loopOffset + targetIdx * slideW);
+    track.style.transition = 'transform .48s cubic-bezier(.4,0,.2,1)';
+    pos = targetPos;
+    track.style.transform = 'translateX(' + pos + 'px)';
+    cur = (((targetIdx % TOTAL) + TOTAL) % TOTAL);
+    updateDots();
+    setTimeout(function(){
+      track.style.transition = 'none';
+      if(pos <= -(2 * TOTAL * slideW)) pos += TOTAL * slideW;
+      if(pos > -(TOTAL * slideW)) pos -= TOTAL * slideW;
+      track.style.transform = 'translateX(' + pos + 'px)';
+      track.getBoundingClientRect();
+      resumeAuto();
+    }, 520);
+  }
+
+  function updateDots(){
+    if(!dotsWrap) return;
+    dotsWrap.querySelectorAll('.slider-dot').forEach(function(d,i){
+      d.classList.toggle('active', i === cur);
+    });
+  }
+
+  if(dotsWrap){
+    origSlides.forEach(function(_,i){
+      var d = document.createElement('button');
+      d.className = 'slider-dot' + (i===0?' active':'');
+      d.setAttribute('aria-label','Slide '+(i+1));
+      d.addEventListener('click', function(){ snapTo(i - cur); });
+      dotsWrap.appendChild(d);
+    });
+  }
+
+  if(btnNext) btnNext.addEventListener('click', function(){ snapTo(+1); });
+  if(btnPrev) btnPrev.addEventListener('click', function(){ snapTo(-1); });
+
+  outer.addEventListener('wheel', function(e){
+    if(Math.abs(e.deltaX) > Math.abs(e.deltaY)){
+      e.preventDefault();
+      if(e.deltaX > 30){ snapTo(+1); } else if(e.deltaX < -30){ snapTo(-1); }
+    }
+  }, {passive:false});
+
+  outer.addEventListener('mousedown', function(e){
+    dragging = true; startX = e.clientX; startPos = pos;
+    pauseAuto(); track.style.transition = 'none';
+  });
+  window.addEventListener('mousemove', function(e){
+    if(!dragging) return;
+    pos = startPos + (e.clientX - startX);
+    track.style.transform = 'translateX(' + pos + 'px)';
+  });
+  window.addEventListener('mouseup', function(e){
+    if(!dragging) return; dragging = false; track.style.transition = '';
+    var diff = e.clientX - startX;
+    if(diff < -60){ snapTo(+1); } else if(diff > 60){ snapTo(-1); } else { snapTo(0); }
+  });
+
+  var touchX = 0;
+  outer.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; pauseAuto(); },{passive:true});
+  outer.addEventListener('touchend', function(e){
+    var diff = e.changedTouches[0].clientX - touchX;
+    if(diff < -50){ snapTo(+1); } else if(diff > 50){ snapTo(-1); } else { resumeAuto(); }
+  },{passive:true});
+
+  outer.addEventListener('mouseenter', function(){ if(!dragging) pauseAuto(); });
+  outer.addEventListener('mouseleave', function(){ if(!dragging) resumeAuto(); });
+  window.addEventListener('resize', function(){ calcSlideW(); });
+  init();
+}
+
+buildOuiSlider({track:'portfolioTrack', outer:'portTrackOuter', dots:'portDots', prev:'portPrev', next:'portNext', speed:0.45, gap:25});
+buildOuiSlider({track:'testiTrack', outer:'testiTrackOuter', dots:'testiDots', prev:'testiPrev', next:'testiNext', speed:0.35, gap:22});
+
+// ===== SCROLL REVEAL =====
+var revealObs = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      revealObs.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.1});
+document.querySelectorAll('.service-card,.conv-card,.faq-item,.article-card,.stat-card,.pricing-card').forEach(function(el,i){
+  el.classList.add('reveal');
+  el.style.transitionDelay = (i % 4) * 0.08 + 's';
+  revealObs.observe(el);
+});
+document.querySelectorAll('.section-head,.proof-panel,.audit-card,.contact-list,.portfolio-slider-wrap,.testi-slider-wrap').forEach(function(el){
+  el.classList.add('reveal');
+  revealObs.observe(el);
+});
+
+
+// ===== SLIDERS STYLE OUICODE — RAF autoScroll fluide =====
+function buildOuiSlider(cfg){
+  var track = document.getElementById(cfg.track);
+  var outer = document.getElementById(cfg.outer);
+  var dotsWrap = document.getElementById(cfg.dots);
+  var btnPrev = document.getElementById(cfg.prev);
+  var btnNext = document.getElementById(cfg.next);
+  if(!track || !outer) return;
+
+  var origSlides = Array.from(track.children);
+  var TOTAL = origSlides.length;
+  var GAP = cfg.gap || 25;
   var SPEED = cfg.speed || 0.5; // px par frame
 
   // Cloner 3x pour loop infinie fluide (comme OuiCode)
@@ -651,198 +908,10 @@ buildOuiSlider({track:'portfolioTrack', outer:'portTrackOuter', dots:'portDots',
 buildOuiSlider({track:'testiTrack', outer:'testiTrackOuter', dots:'testiDots', prev:'testiPrev', next:'testiNext', speed:0.35, gap:22});
 
 
-// Scroll reveal
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
 
-document.querySelectorAll('.service-card,.portfolio-card,.testimonial-card,.pricing-card,.conv-card,.faq-item,.article-card,.stat-card').forEach((el, i) => {
-  el.classList.add('reveal');
-  el.style.transitionDelay = (i % 4) * 0.1 + 's';
-  revealObserver.observe(el);
-});
-document.querySelectorAll('.section-head, .proof-panel, .audit-card, .contact-list').forEach(el => {
-  el.classList.add('reveal');
-  revealObserver.observe(el);
-});
 
 });
 
 </script>
-</body></html// ===== SLIDERS STYLE OUICODE — RAF autoScroll fluide =====
-function buildOuiSlider(cfg){
-  var track = document.getElementById(cfg.track);
-  var outer = document.getElementById(cfg.outer);
-  var dotsWrap = document.getElementById(cfg.dots);
-  var btnPrev = document.getElementById(cfg.prev);
-  var btnNext = document.getElementById(cfg.next);
-  if(!track || !outer) return;
-
-  var origSlides = Array.from(track.children);
-  var TOTAL = origSlides.length;
-  var GAP = cfg.gap || 25;
-  var SPEED = cfg.speed || 0.5;
-
-  // Cloner 2x pour loop infinie fluide
-  origSlides.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
-  origSlides.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
-
-  var pos = 0;
-  var slideW = 0;
-  var cur = 0;
-  var dragging = false;
-  var startX = 0;
-  var startPos = 0;
-  var isAuto = true;
-  var raf = null;
-
-  function calcSlideW(){
-    var s = track.firstElementChild;
-    if(s) slideW = s.offsetWidth + GAP;
-  }
-
-  function init(){
-    calcSlideW();
-    pos = -(TOTAL * slideW);
-    track.style.transition = 'none';
-    track.style.transform = 'translateX(' + pos + 'px)';
-    if(raf) cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(autoTick);
-  }
-
-  function autoTick(){
-    if(isAuto){
-      pos -= SPEED;
-      if(pos <= -(2 * TOTAL * slideW)){
-        pos += TOTAL * slideW;
-        track.style.transition = 'none';
-        track.style.transform = 'translateX(' + pos + 'px)';
-        track.getBoundingClientRect();
-      } else {
-        track.style.transform = 'translateX(' + pos + 'px)';
-      }
-      var absPos = Math.abs(pos) - TOTAL * slideW;
-      if(absPos < 0) absPos += TOTAL * slideW;
-      var newCur = Math.round(absPos / slideW) % TOTAL;
-      newCur = ((newCur % TOTAL) + TOTAL) % TOTAL;
-      if(newCur !== cur){ cur = newCur; updateDots(); }
-    }
-    raf = requestAnimationFrame(autoTick);
-  }
-
-  function pauseAuto(){ isAuto = false; }
-  function resumeAuto(){ setTimeout(function(){ isAuto = true; }, 1800); }
-
-  function snapTo(dir){
-    pauseAuto();
-    calcSlideW();
-    var loopOffset = TOTAL * slideW;
-    var relPos = Math.abs(pos) - loopOffset;
-    if(relPos < 0) relPos += TOTAL * slideW;
-    var nearIdx = Math.round(relPos / slideW);
-    var targetIdx = nearIdx + dir;
-    var targetPos = -(loopOffset + targetIdx * slideW);
-    track.style.transition = 'transform .48s cubic-bezier(.4,0,.2,1)';
-    pos = targetPos;
-    track.style.transform = 'translateX(' + pos + 'px)';
-    cur = (((targetIdx % TOTAL) + TOTAL) % TOTAL);
-    updateDots();
-    setTimeout(function(){
-      track.style.transition = 'none';
-      if(pos <= -(2 * TOTAL * slideW)) pos += TOTAL * slideW;
-      if(pos > -(TOTAL * slideW)) pos -= TOTAL * slideW;
-      track.style.transform = 'translateX(' + pos + 'px)';
-      track.getBoundingClientRect();
-      resumeAuto();
-    }, 520);
-  }
-
-  function updateDots(){
-    if(!dotsWrap) return;
-    dotsWrap.querySelectorAll('.slider-dot').forEach(function(d,i){
-      d.classList.toggle('active', i === cur);
-    });
-  }
-
-  if(dotsWrap){
-    origSlides.forEach(function(_,i){
-      var d = document.createElement('button');
-      d.className = 'slider-dot' + (i===0?' active':'');
-      d.setAttribute('aria-label','Slide '+(i+1));
-      d.addEventListener('click', function(){ snapTo(i - cur); });
-      dotsWrap.appendChild(d);
-    });
-  }
-
-  if(btnNext) btnNext.addEventListener('click', function(){ snapTo(+1); });
-  if(btnPrev) btnPrev.addEventListener('click', function(){ snapTo(-1); });
-
-  outer.addEventListener('wheel', function(e){
-    if(Math.abs(e.deltaX) > Math.abs(e.deltaY)){
-      e.preventDefault();
-      if(e.deltaX > 30){ snapTo(+1); } else if(e.deltaX < -30){ snapTo(-1); }
-    }
-  }, {passive:false});
-
-  outer.addEventListener('mousedown', function(e){
-    dragging = true; startX = e.clientX; startPos = pos;
-    pauseAuto(); track.style.transition = 'none';
-  });
-  window.addEventListener('mousemove', function(e){
-    if(!dragging) return;
-    pos = startPos + (e.clientX - startX);
-    track.style.transform = 'translateX(' + pos + 'px)';
-  });
-  window.addEventListener('mouseup', function(e){
-    if(!dragging) return; dragging = false; track.style.transition = '';
-    var diff = e.clientX - startX;
-    if(diff < -60){ snapTo(+1); } else if(diff > 60){ snapTo(-1); } else { snapTo(0); }
-  });
-
-  var touchX = 0;
-  outer.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; pauseAuto(); },{passive:true});
-  outer.addEventListener('touchend', function(e){
-    var diff = e.changedTouches[0].clientX - touchX;
-    if(diff < -50){ snapTo(+1); } else if(diff > 50){ snapTo(-1); } else { resumeAuto(); }
-  },{passive:true});
-
-  outer.addEventListener('mouseenter', function(){ if(!dragging) pauseAuto(); });
-  outer.addEventListener('mouseleave', function(){ if(!dragging) resumeAuto(); });
-  window.addEventListener('resize', function(){ calcSlideW(); });
-
-  init();
-}
-
-buildOuiSlider({track:'portfolioTrack', outer:'portTrackOuter', dots:'portDots', prev:'portPrev', next:'portNext', speed:0.45, gap:25});
-buildOuiSlider({track:'testiTrack', outer:'testiTrackOuter', dots:'testiDots', prev:'testiPrev', next:'testiNext', speed:0.35, gap:22});
-
-
-// Scroll reveal
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.service-card,.portfolio-card,.testimonial-card,.pricing-card,.conv-card,.faq-item,.article-card,.stat-card').forEach((el, i) => {
-  el.classList.add('reveal');
-  el.style.transitionDelay = (i % 4) * 0.1 + 's';
-  revealObserver.observe(el);
-});
-document.querySelectorAll('.section-head, .proof-panel, .audit-card, .contact-list').forEach(el => {
-  el.classList.add('reveal');
-  revealObserver.observe(el);
-});
-
-});
-
-</script>
-</body></html>
+</body>
+</html>
