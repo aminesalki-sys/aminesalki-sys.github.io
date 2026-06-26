@@ -99,6 +99,31 @@
 .reveal-scale{opacity:0;transform:scale(.9);transition:opacity .6s ease,transform .6s ease}
 .reveal-scale.visible{opacity:1;transform:scale(1)}
 
+
+/* ===== PORTFOLIO SLIDER PLEINE LARGEUR ===== */
+.portfolio-section{overflow:hidden;padding-bottom:0}
+.portfolio-slider-wrap{position:relative;width:100vw;left:50%;transform:translateX(-50%);margin-top:2.5rem}
+.portfolio-track-outer{overflow:hidden;width:100%;position:relative}
+.portfolio-track-outer::before,.portfolio-track-outer::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.portfolio-track-outer::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.portfolio-track-outer::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
+.portfolio-track{display:flex;gap:1.6rem;transition:transform .6s cubic-bezier(.4,0,.2,1);padding:1rem 2rem 2.5rem}
+.portfolio-slide{flex:0 0 420px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.035);border-radius:24px;box-shadow:0 18px 60px rgba(0,0,0,.28);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;cursor:pointer}
+.portfolio-slide:hover{transform:translateY(-10px) scale(1.02);border-color:var(--accent);box-shadow:0 30px 80px rgba(124,92,252,.25)}
+.portfolio-slide img{width:100%;height:360px;object-fit:cover;object-position:top;display:block;background:#111}
+.portfolio-slide .portfolio-body{padding:1.25rem}
+.portfolio-slide .portfolio-body h3{font-size:1.1rem;font-family:'Manrope',sans-serif;font-weight:800}
+.portfolio-slide .portfolio-body p{margin-top:.45rem;color:var(--muted);font-size:.9rem;line-height:1.65}
+.portfolio-slide .badge{position:absolute;top:14px;left:14px;background:rgba(7,7,12,.82);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:.48rem .75rem;color:#fff;font-weight:900;font-size:.72rem}
+/* Boutons nav */
+.slider-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.5rem;padding-bottom:1rem}
+.slider-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:1.2rem;cursor:pointer;display:grid;place-items:center;transition:all .2s;backdrop-filter:blur(10px)}
+.slider-btn:hover{background:var(--accent);border-color:var(--accent);transform:scale(1.1)}
+.slider-dots{display:flex;gap:.55rem;align-items:center}
+.slider-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .3s}
+.slider-dot.active{background:var(--accent);width:24px;border-radius:4px}
+@media(max-width:700px){.portfolio-slide{flex:0 0 300px}.portfolio-slide img{height:260px}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"El Jadida Web Solutions","url":"https://www.eljadidawebsolutions.com/","telephone":"+212620830606","email":"amine.salki@gmail.com","address":{"@type":"PostalAddress","streetAddress":"aprt 3, Lot nouzha, imm 4","addressLocality":"El Jadida","postalCode":"24000","addressCountry":"MA"},"areaServed":["El Jadida","Casablanca","Rabat","Maroc"],"sameAs":["https://maps.app.goo.gl/HU6UTVKSi1T74BHA6"],"description":"Agence web spécialisée en création de sites, SEO et marketing digital."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "Combien de temps prend la création d’un site ?", "acceptedAnswer": {"@type": "Answer", "text": "Selon le projet, un site vitrine peut être livré rapidement après validation du contenu. Les sites plus avancés demandent un cadrage plus détaillé."}},{"@type": "Question", "name": "Est-ce que le site sera optimisé SEO ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. La structure, les titres, la vitesse, les balises, les contenus et le maillage sont pensés dès le départ pour le référencement."}},{"@type": "Question", "name": "Pouvez-vous gérer la fiche Google ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nous pouvons optimiser la fiche, les catégories, les services, les photos, les descriptions et la stratégie d’avis."}},{"@type": "Question", "name": "Le site peut-il être en français, arabe et anglais ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Le site intègre un système multilingue avec direction RTL pour l’arabe et mémorisation du choix de langue."}},{"@type": "Question", "name": "Proposez-vous un accompagnement après livraison ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nous pouvons assurer la maintenance, les mises à jour, le blog, le SEO et les campagnes publicitaires."}},{"@type": "Question", "name": "Puis-je demander un audit avant de commencer ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. L’audit gratuit permet d’identifier rapidement les actions qui auront le plus d’impact sur votre visibilité et vos conversions."}}]}</script>
@@ -135,12 +160,35 @@
 <article class="service-card"><div class="service-num">05</div><div class="service-icon">🎨</div><h3 data-i18n="service5_title">Branding &amp; UX</h3><p data-i18n="service5_desc">Identité visuelle, design d’interface, expérience utilisateur et messages commerciaux clairs.</p></article>
 <article class="service-card"><div class="service-num">06</div><div class="service-icon">🤖</div><h3 data-i18n="service6_title">IA &amp; Automatisation</h3><p data-i18n="service6_desc">Chatbots, formulaires intelligents, automatisation des demandes et suivi commercial plus rapide.</p></article></div></div></section>
 <section class="section"><div class="container proof-grid"><div class="proof-panel"><div class="eyebrow" data-i18n="proof_eye">Pourquoi nous choisir</div><h2 data-i18n="proof_title">Un visiteur reste 8 secondes.<br/><span class="gradient">Voici comment le convaincre.</span></h2><p class="lead" data-i18n="proof_desc">La science le confirme : les clients ne lisent pas, ils scannent. Ils cherchent une raison de faire confiance en 8 secondes. Nous concevons chaque site pour gagner ce pari.</p><div class="proof-list"><div class="proof-item"><span class="check">✓</span><span data-i18n="proof1">Promesse claire dès le premier écran et appels à l’action répétés.</span></div><div class="proof-item"><span class="check">✓</span><span data-i18n="proof2">Pages services optimisées pour le SEO local et les recherches métiers.</span></div><div class="proof-item"><span class="check">✓</span><span data-i18n="proof3">Preuves, témoignages, FAQ et garanties pour rassurer avant le contact.</span></div><div class="proof-item"><span class="check">✓</span><span data-i18n="proof4">Suivi des demandes : appels, WhatsApp, formulaires et conversions.</span></div></div></div><aside class="audit-card"><h3 data-i18n="audit_title">Êtes-vous invisible sur Google ? Découvrez-le gratuitement.</h3><p data-i18n="audit_desc">En 24h, nous analysons votre site et votre fiche Google. Vous recevez 3 actions concrètes pour apparaître en premier — avant vos concurrents. Gratuit. Sans engagement.</p><a class="btn btn-primary" data-i18n="audit_btn" href="https://wa.me/212679148046?text=Bonjour%2C%20je%20veux%20un%20audit%20gratuit%20de%20ma%20pr%C3%A9sence%20Google." rel="noopener" target="_blank">Demander mon audit</a></aside></div></section>
-<section class="section portfolio-section" id="portfolio"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="portfolio_eye">Exemples de sites</div><h2 data-i18n="portfolio_title">Ils nous ont fait confiance.<br/><span class="gradient">Leurs résultats parlent.</span></h2></div><p class="lead" data-i18n="portfolio_desc">Des PME d'El Jadida, Casablanca et d'ailleurs ont transformé leur visibilité digitale. Voici quelques exemples concrets.</p></div><div class="portfolio-grid"><article class="portfolio-card"><span class="badge" data-i18n="port1_sector">Événementiel &amp; mariage</span><img alt="Capture du site Afrah Darna" loading="lazy" src="assets/site-mariage-afrah-darna.png"/><div class="portfolio-body"><h3>Afrah Darna</h3><p data-i18n="port1_desc">Site événementiel premium avec galerie, partenaires et appels à l’action.</p></div></article>
-<article class="portfolio-card"><span class="badge" data-i18n="port2_sector">Aviation humanitaire</span><img alt="Capture du site Aviation Solidaire" loading="lazy" src="assets/site-aviation-solidaire.png"/><div class="portfolio-body"><h3>Aviation Solidaire</h3><p data-i18n="port2_desc">Site institutionnel structuré pour présenter missions, organisation et contact.</p></div></article>
-<article class="portfolio-card"><span class="badge" data-i18n="port3_sector">Médical B2B</span><img alt="Capture du site Sono-Ned Medical" loading="lazy" src="assets/site-sono-ned-medical.png"/><div class="portfolio-body"><h3>Sono-Ned Medical</h3><p data-i18n="port3_desc">Site médical B2B avec spécialités, partenaires, preuves et témoignages.</p></div></article>
-<article class="portfolio-card"><span class="badge" data-i18n="port4_sector">Industriel &amp; sécurité</span><img alt="Capture du site Soprofeu" loading="lazy" src="assets/site-soprofeu.png"/><div class="portfolio-body"><h3>Soprofeu</h3><p data-i18n="port4_desc">Site industriel moderne pour sécurité incendie, formations et demande de devis.</p></div></article>
-<article class="portfolio-card"><span class="badge" data-i18n="port5_sector">Aviation privée</span><img alt="Capture du site Switch Care" loading="lazy" src="assets/site-switch-care.png"/><div class="portfolio-body"><h3>Switch Care</h3><p data-i18n="port5_desc">Positionnement premium, pages services et crédibilité internationale.</p></div></article>
-<article class="portfolio-card"><span class="badge" data-i18n="port6_sector">Transport &amp; navette</span><img alt="Capture du site Taxi Navette" loading="lazy" src="assets/site-taxi-navette.png"/><div class="portfolio-body"><h3>Taxi Navette</h3><p data-i18n="port6_desc">Réservation, flotte, avantages, témoignages et formulaire de demande.</p></div></article></div></div></section>
+<section class="section portfolio-section" id="portfolio"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="portfolio_eye">Exemples de sites</div><h2 data-i18n="portfolio_title">Ils nous ont fait confiance.<br/><span class="gradient">Leurs résultats parlent.</span></h2></div><p class="lead" data-i18n="portfolio_desc">Des PME d'El Jadida, Casablanca et d'ailleurs ont transformé leur visibilité digitale. Voici quelques exemples concrets.</p></div><div class="portfolio-slider-wrap">
+  <div class="portfolio-track-outer">
+    <div class="portfolio-track" id="portfolioTrack">
+
+      <div class="portfolio-slide"><span class="badge">Événementiel &amp; mariage</span><img alt="Afrah Darna" loading="lazy" src="assets/site-mariage-afrah-darna.png"/><div class="portfolio-body"><h3>Afrah Darna</h3><p>Site événementiel premium avec galerie, partenaires et appels à l'action.</p></div></div>
+
+      <div class="portfolio-slide"><span class="badge">Aviation humanitaire</span><img alt="Aviation Solidaire" loading="lazy" src="assets/site-aviation-solidaire.png"/><div class="portfolio-body"><h3>Aviation Solidaire</h3><p>Site institutionnel structuré pour présenter missions, organisation et contact.</p></div></div>
+
+      <div class="portfolio-slide"><span class="badge">Médical B2B</span><img alt="Sono-Ned Medical" loading="lazy" src="assets/site-sono-ned-medical.png"/><div class="portfolio-body"><h3>Sono-Ned Medical</h3><p>Site médical B2B avec spécialités, partenaires, preuves et témoignages.</p></div></div>
+
+      <div class="portfolio-slide"><span class="badge">Industriel &amp; sécurité</span><img alt="Soprofeu" loading="lazy" src="assets/site-soprofeu.png"/><div class="portfolio-body"><h3>Soprofeu</h3><p>Site industriel moderne pour sécurité incendie, formations et demande de devis.</p></div></div>
+
+      <div class="portfolio-slide"><span class="badge">Sport &amp; Fitness</span><img alt="FitnessBDN" loading="lazy" src="assets/site-fitness-ldn.png"/><div class="portfolio-body"><h3>FitnessBDN</h3><p>Site fitness premium avec transformations clients, tarifs et programme personnalisé.</p></div></div>
+
+      <div class="portfolio-slide"><span class="badge">EdTech &amp; Formation</span><img alt="OuiCode de la route" loading="lazy" src="assets/site-oui-code-route.png"/><div class="portfolio-body"><h3>OuiCode — Code de la route</h3><p>Plateforme e-learning gamifiée avec jeux pédagogiques, programme 7 jours et sessions live.</p></div></div>
+
+      <div class="portfolio-slide"><span class="badge">Transport &amp; navette</span><img alt="Taxi Navette" loading="lazy" src="assets/site-taxi-navette.png"/><div class="portfolio-body"><h3>Taxi Navette</h3><p>Réservation, flotte, avantages, témoignages et formulaire de demande.</p></div></div>
+
+      <div class="portfolio-slide"><span class="badge">Aviation privée</span><img alt="Switch Care" loading="lazy" src="assets/site-switch-care.png"/><div class="portfolio-body"><h3>Switch Care</h3><p>Positionnement premium, pages services et crédibilité internationale.</p></div></div>
+
+    </div>
+  </div>
+  <div class="slider-nav">
+    <button class="slider-btn" id="slidePrev" aria-label="Précédent">&#8592;</button>
+    <div class="slider-dots" id="sliderDots"></div>
+    <button class="slider-btn" id="slideNext" aria-label="Suivant">&#8594;</button>
+  </div>
+</div>
+</div></section>
 <section class="section alt"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="conversion_eye">Pensé marketing</div><h2 data-i18n="conversion_title">Les détails qui transforment<br/><span class="gradient">un site en machine à demandes</span></h2></div><p class="lead" data-i18n="conversion_desc">Au-delà du design, nous intégrons des preuves, des appels à l’action, des réponses aux objections et des parcours rapides.</p></div><div class="conversion-grid">
 <article class="conv-card"><div class="service-icon">⚡</div><strong data-i18n="conv1_title">Vitesse &amp; mobile-first</strong><p data-i18n="conv1_desc">Des pages rapides, lisibles et faciles à contacter depuis smartphone.</p></article>
 <article class="conv-card"><div class="service-icon">🧭</div><strong data-i18n="conv2_title">Parcours clair</strong><p data-i18n="conv2_desc">Des sections organisées pour expliquer, rassurer puis déclencher l’action.</p></article>
@@ -236,6 +284,64 @@ document.addEventListener('DOMContentLoaded',()=>{
  document.querySelectorAll('.testimonial-track').forEach(track=>{if(!track.dataset.ready){track.innerHTML+=track.innerHTML;track.dataset.ready='1';}});
  document.querySelectorAll('[data-year]').forEach(el=>el.textContent='2026');
  applyLang(currentLang());
+
+// ===== PORTFOLIO SLIDER =====
+(function(){
+  const track = document.getElementById('portfolioTrack');
+  const dotsWrap = document.getElementById('sliderDots');
+  if(!track) return;
+
+  const slides = track.querySelectorAll('.portfolio-slide');
+  const total = slides.length;
+  let current = 0;
+  let autoTimer;
+
+  // Créer les dots
+  slides.forEach((_,i)=>{
+    const d = document.createElement('button');
+    d.className = 'slider-dot' + (i===0?' active':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.addEventListener('click',()=>goTo(i));
+    dotsWrap.appendChild(d);
+  });
+
+  function getSlideWidth(){
+    return slides[0].offsetWidth + 25.6; // gap 1.6rem ≈ 25.6px
+  }
+
+  function goTo(idx){
+    current = (idx + total) % total;
+    const offset = current * getSlideWidth();
+    track.style.transform = 'translateX(-' + offset + 'px)';
+    dotsWrap.querySelectorAll('.slider-dot').forEach((d,i)=>{
+      d.classList.toggle('active', i===current);
+    });
+  }
+
+  function next(){ goTo(current+1); }
+  function prev(){ goTo(current-1); }
+
+  document.getElementById('slideNext').addEventListener('click',()=>{next();resetAuto();});
+  document.getElementById('slidePrev').addEventListener('click',()=>{prev();resetAuto();});
+
+  // Swipe tactile
+  let startX=0;
+  track.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',e=>{
+    const diff=startX-e.changedTouches[0].clientX;
+    if(Math.abs(diff)>50){ diff>0?next():prev(); resetAuto(); }
+  },{passive:true});
+
+  function startAuto(){ autoTimer=setInterval(next, 3500); }
+  function resetAuto(){ clearInterval(autoTimer); startAuto(); }
+
+  // Pause au survol
+  track.parentElement.addEventListener('mouseenter',()=>clearInterval(autoTimer));
+  track.parentElement.addEventListener('mouseleave',()=>startAuto());
+
+  startAuto();
+})();
+
 
 // Scroll reveal
 const revealObserver = new IntersectionObserver((entries) => {
