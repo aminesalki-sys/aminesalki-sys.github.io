@@ -2,7 +2,7 @@
 
 <html dir="ltr" lang="fr">
 <head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>El Jadida Web Solutions | Création site web, SEO &amp; marketing digital à El Jadida</title>
 <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
 <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
@@ -436,9 +436,91 @@ html[dir="rtl"] .service-num{text-align:left}
 @media(max-width:1050px){.service-slide{flex-basis:440px}.service-slide .service-card{min-height:420px}}
 @media(max-width:700px){.service-slide{flex-basis:310px}.services-track{padding:1rem 1.5rem 1.5rem;gap:1.2rem}.service-slide .service-card{min-height:375px;padding:1rem}.service-content{padding:.1rem .2rem .4rem}.service-visual{border-radius:16px}.services-track-outer::before,.services-track-outer::after{width:36px}}
 
+
+
+/* =========================================================
+   OPTIMISATION MOBILE COMPLETE — El Jadida Web Solutions
+   ========================================================= */
+html{-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}
+.input,textarea,select{font-size:16px}
+img{height:auto}
+@supports (padding:max(0px)){body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}}
+@keyframes mobileMenuIn{from{opacity:0;transform:translateY(-8px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:700px){
+  :root{--mobile-header:66px}
+  body{background:#07070c;overflow-x:hidden}
+  body.menu-open{overflow:hidden;touch-action:none}
+  .container{width:min(100% - 1rem,1200px)}
+  .site-header{background:rgba(7,7,12,.94);backdrop-filter:blur(16px)}
+  .nav,.site-header.scrolled .nav{height:var(--mobile-header)}
+  .brand{gap:.52rem;min-width:0;max-width:48vw}
+  .logo-mark{width:36px!important;height:36px!important;border-radius:9px;flex:0 0 36px}
+  .logo-mark img{width:36px!important;height:36px!important;object-fit:contain!important}
+  .logo-word{font-size:.68rem;line-height:1.04;max-width:118px;white-space:normal}
+  .logo-word span{font-size:.53rem;letter-spacing:.1em;margin-top:.08rem}
+  .nav-actions{gap:.45rem;margin-left:auto;flex-shrink:0}
+  .lang-switch{padding:.18rem;border-color:rgba(255,255,255,.13)}
+  .lang-switch button{min-width:33px;min-height:33px;padding:.28rem .42rem;font-size:.68rem}
+  .mobile-toggle{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;font-size:1.22rem;flex:0 0 42px}
+  .mobile-toggle[aria-expanded="true"]{background:rgba(124,92,252,.22);border-color:rgba(124,92,252,.55)}
+  .nav-links{inset:calc(var(--mobile-header) + .65rem) .75rem auto .75rem!important;max-height:calc(100dvh - var(--mobile-header) - 1.3rem);overflow:auto;padding:.75rem;gap:.35rem;border-radius:20px;background:rgba(12,13,22,.98);box-shadow:0 24px 70px rgba(0,0,0,.45);z-index:200;-webkit-overflow-scrolling:touch}
+  .nav-links.open{display:flex;animation:mobileMenuIn .18s ease both}
+  .nav-links a{display:block;width:100%;padding:.92rem 1rem;border-radius:14px;background:rgba(255,255,255,.035);font-size:.78rem;letter-spacing:.1em}
+  .nav-links a:hover{background:rgba(124,92,252,.16)}
+  .hero{min-height:auto;padding:6.8rem 0 3.2rem;background-position:62% center;background-size:cover}
+  .hero::before{background:linear-gradient(180deg,rgba(7,7,12,.94) 0%,rgba(7,7,12,.84) 45%,rgba(7,7,12,.72) 100%)}
+  .hero-grid{display:block}
+  .hero-tag{max-width:100%;font-size:.64rem;letter-spacing:.08em;line-height:1.25;padding:.38rem .78rem;margin-bottom:1rem}
+  .tag-dot{width:18px;height:18px;font-size:.72rem}
+  h1{font-size:clamp(2rem,10.8vw,2.85rem);line-height:1.03;letter-spacing:-.045em;max-width:100%}
+  .hero .lead{margin-top:1.1rem;font-size:.98rem;line-height:1.72;max-width:100%}
+  .hero-actions{display:grid;grid-template-columns:1fr;gap:.72rem;margin-top:1.35rem}
+  .hero-actions .btn{width:100%;min-height:50px;padding:.86rem 1rem;font-size:.92rem}
+  .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin-top:1.45rem}
+  .stat-card{padding:.82rem .65rem;border-radius:16px;text-align:center}
+  .stat-num{font-size:1.42rem}.stat-label{font-size:.61rem;letter-spacing:.08em;margin-top:.32rem}
+  .section{padding:3.35rem 0}.section.alt{background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,0))}
+  .section-head{display:block;margin-bottom:1.45rem}.section-head .lead{margin-top:.85rem}
+  .eyebrow{font-size:.63rem;letter-spacing:.14em;margin-bottom:.72rem;gap:.55rem}.eyebrow::before{width:24px}
+  h2{font-size:clamp(1.68rem,8.3vw,2.38rem);line-height:1.1;letter-spacing:-.04em}
+  h3{letter-spacing:-.025em}.lead{font-size:.98rem;line-height:1.72}
+  .services-slider-wrap,.portfolio-slider-wrap,.testi-slider-wrap{margin-top:1.15rem}
+  .services-track,.portfolio-track,.testi-track{gap:1rem;padding:.65rem 1rem 1rem}
+  .services-track-outer::before,.services-track-outer::after,.testi-track-outer::before,.testi-track-outer::after{width:28px}
+  .service-slide{flex:0 0 min(84vw,330px);max-width:330px}
+  .service-slide .service-card{min-height:auto;padding:.75rem;border-radius:20px}
+  .service-visual{border-radius:15px;margin-bottom:.82rem}
+  .service-content{padding:0 .2rem .35rem}.service-top{gap:.55rem;margin-bottom:.55rem}
+  .service-icon{width:36px;height:36px;font-size:1rem;border-radius:12px}.service-num{font-size:.68rem}
+  .service-slide .service-card h3{font-size:1rem;margin-bottom:.42rem}.service-slide .service-card p{font-size:.84rem;line-height:1.58}
+  .slider-nav{gap:.7rem;margin-top:.58rem}.slider-btn{width:42px;height:42px;font-size:1rem}.slider-dots{gap:.42rem;max-width:52vw;overflow:hidden;justify-content:center}.slider-dot{width:7px;height:7px;flex:0 0 7px}.slider-dot.active{width:22px;flex-basis:22px}
+  .proof-grid,.contact-grid{gap:1rem}.proof-panel,.audit-card,.pricing-card,.article-card,.faq-item,.contact-card{border-radius:20px;padding:1.15rem}.proof-list{gap:.78rem;margin-top:1.05rem}.proof-item{font-size:.9rem;line-height:1.58}.check{width:24px;height:24px;font-size:.85rem}.audit-card h3{font-size:1.25rem}.audit-card p{line-height:1.62;margin:.7rem 0 1rem}
+  .conversion-grid{gap:.72rem}.conv-card{padding:1rem;border-radius:18px}.conv-card strong{margin:.55rem 0 .25rem}.conv-card p{font-size:.84rem;line-height:1.55}
+  .pricing-grid{gap:.85rem}.pricing-card h3{font-size:1.15rem}.pricing-note{margin:.28rem 0 .75rem}.pricing-card ul{gap:.55rem;margin:.85rem 0 1.05rem;font-size:.92rem}.pricing-card .btn{width:100%;min-height:48px}
+  .portfolio-slide{flex:0 0 min(84vw,340px);border-radius:20px}.portfolio-slide img{height:220px}.portfolio-body{padding:1rem;display:block}.portfolio-body-left h3{font-size:1rem}.portfolio-body-left p{font-size:.82rem}.portfolio-body .visit-btn{display:inline-flex;margin-top:.72rem;padding:.48rem .85rem}
+  .testimonial-card{flex:0 0 min(82vw,315px);min-height:auto;padding:1.1rem}.testimonial-card p{font-size:.88rem;line-height:1.62;margin-bottom:.9rem}.stars{font-size:.92rem;margin-bottom:.65rem}
+  .blog-grid,.faq-grid{gap:.78rem}.article-card{min-height:auto}.article-meta{font-size:.68rem}.article-card h3{font-size:1.08rem;margin:.72rem 0 .5rem}.article-card p{font-size:.87rem;line-height:1.58}.faq-item h3{font-size:.96rem}.faq-item p{font-size:.87rem;line-height:1.58}
+  .contact-list{gap:.65rem;margin:1.2rem 0}.contact-link{padding:.82rem;border-radius:16px}.contact-ico{width:38px;height:38px;border-radius:12px}.contact-meta{font-size:.66rem}.form-grid{gap:.75rem}.fg label{font-size:.67rem}.input,textarea,select{font-size:16px!important;padding:.88rem;border-radius:13px}textarea{min-height:120px}.contact-card .btn{width:100%;min-height:50px}.map-card{border-radius:18px}.map-card iframe{height:220px}.map-card a{padding:.85rem 1rem;font-size:.9rem}
+  .site-footer{padding:1.4rem 0 5.8rem}.footer-grid{align-items:flex-start}.footer-links{gap:.75rem}.footer-links a{font-size:.8rem}
+  .floating-contact{right:12px;bottom:calc(12px + env(safe-area-inset-bottom));gap:.55rem}.floating-contact a{width:48px;height:48px;font-size:1.13rem}
+  .btn:hover,.service-slide .service-card:hover,.portfolio-slide:hover,.testimonial-card:hover,.pricing-card:hover,.article-card:hover,.conv-card:hover,.stat-card:hover,.contact-link:hover,.faq-item:hover{transform:none!important}
+}
+@media(max-width:380px){
+  .brand{max-width:44vw}.logo-word{font-size:.62rem;max-width:100px}.logo-word span{font-size:.49rem}.lang-switch button{min-width:30px;font-size:.64rem}.mobile-toggle{width:40px;height:40px;flex-basis:40px}
+  h1{font-size:clamp(1.86rem,10.4vw,2.35rem)}h2{font-size:clamp(1.55rem,8vw,2.1rem)}
+  .service-slide,.portfolio-slide{flex-basis:86vw}.portfolio-slide img{height:205px}.hero-stats{gap:.55rem}.stat-card{padding:.7rem .48rem}.stat-label{font-size:.56rem}.floating-contact a{width:45px;height:45px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+  .portfolio-track,.testi-track,.services-track{transform:none!important}
+}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"El Jadida Web Solutions","url":"https://www.eljadidawebsolutions.com/","telephone":"+212620830606","email":"amine.salki@gmail.com","address":{"@type":"PostalAddress","streetAddress":"aprt 3, Lot nouzha, imm 4","addressLocality":"El Jadida","postalCode":"24000","addressCountry":"MA"},"areaServed":["El Jadida","Casablanca","Rabat","Maroc"],"sameAs":["https://maps.app.goo.gl/HU6UTVKSi1T74BHA6"],"description":"Agence web spécialisée en création de sites, SEO et marketing digital."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "Combien de temps prend la création d’un site ?", "acceptedAnswer": {"@type": "Answer", "text": "Selon le projet, un site vitrine peut être livré rapidement après validation du contenu. Les sites plus avancés demandent un cadrage plus détaillé."}},{"@type": "Question", "name": "Est-ce que le site sera optimisé SEO ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. La structure, les titres, la vitesse, les balises, les contenus et le maillage sont pensés dès le départ pour le référencement."}},{"@type": "Question", "name": "Pouvez-vous gérer la fiche Google ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nous pouvons optimiser la fiche, les catégories, les services, les photos, les descriptions et la stratégie d’avis."}},{"@type": "Question", "name": "Le site peut-il être en français, arabe et anglais ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Le site intègre un système multilingue avec direction RTL pour l’arabe et mémorisation du choix de langue."}},{"@type": "Question", "name": "Proposez-vous un accompagnement après livraison ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nous pouvons assurer la maintenance, les mises à jour, le blog, le SEO et les campagnes publicitaires."}},{"@type": "Question", "name": "Puis-je demander un audit avant de commencer ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. L’audit gratuit permet d’identifier rapidement les actions qui auront le plus d’impact sur votre visibilité et vos conversions."}}]}</script>
+
+<meta name="theme-color" content="#07070c"/>
+<link rel="preload" as="image" href="assets/hero.png" fetchpriority="high"/>
 </head>
 <body>
 <a class="skip-link" data-i18n="skip" href="#main">Aller au contenu</a>
@@ -448,8 +530,8 @@ html[dir="rtl"] .service-num{text-align:left}
 <span class="logo-mark" style="background:none;box-shadow:none;padding:0;overflow:hidden;"><img src="logo.png" alt="El Jadida Web Solutions" style="width:42px;height:42px;object-fit:contain;border-radius:10px;display:block;"></span>
 <span class="logo-word">El Jadida<br/><span>Web Solutions</span></span>
 </a>
-<button aria-label="Menu" class="mobile-toggle">☰</button>
-<ul class="nav-links">
+<button aria-label="Menu" aria-controls="mobileNav" aria-expanded="false" class="mobile-toggle" type="button">☰</button>
+<ul class="nav-links" id="mobileNav">
 <li><a data-i18n="nav_services" href="#services">Services</a></li>
 <li><a data-i18n="nav_portfolio" href="#portfolio">Exemples</a></li>
 <li><a data-i18n="nav_reviews" href="#testimonials">Avis</a></li>
@@ -705,7 +787,13 @@ document.addEventListener('DOMContentLoaded',()=>{
  if(header){window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40));}
  document.querySelectorAll('.lang-switch button').forEach(btn=>btn.addEventListener('click',()=>applyLang(btn.dataset.lang)));
  const toggle=document.querySelector('.mobile-toggle'); const links=document.querySelector('.nav-links');
- if(toggle&&links){toggle.addEventListener('click',()=>links.classList.toggle('open')); links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));}
+ if(toggle&&links){
+  const setMenu=(open)=>{links.classList.toggle('open',open);toggle.setAttribute('aria-expanded',open?'true':'false');document.body.classList.toggle('menu-open',open);};
+  toggle.addEventListener('click',(e)=>{e.stopPropagation();setMenu(!links.classList.contains('open'));});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  document.addEventListener('click',(e)=>{if(links.classList.contains('open')&&!links.contains(e.target)&&!toggle.contains(e.target))setMenu(false);});
+  document.addEventListener('keydown',(e)=>{if(e.key==='Escape')setMenu(false);});
+ }
  document.querySelectorAll('[data-year]').forEach(el=>el.textContent='2026');
  applyLang(currentLang());
 
@@ -723,7 +811,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   var TOTAL=origSlides.length;
   if(!TOTAL) return;
   var GAP=cfg.gap || 25;
-  var SPEED=cfg.speed || 0.45;
+  var reduceMotion=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var SPEED=reduceMotion ? 0 : (cfg.speed || 0.45);
 
   origSlides.forEach(function(s){track.appendChild(s.cloneNode(true));});
   origSlides.forEach(function(s){track.appendChild(s.cloneNode(true));});
@@ -734,7 +823,12 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   function calcSlideW(){
     var s=track.firstElementChild;
-    if(s) slideW=s.offsetWidth + GAP;
+    if(s){
+      var styles=window.getComputedStyle(track);
+      var cssGap=parseFloat(styles.columnGap || styles.gap || styles.getPropertyValue('gap'));
+      GAP=isNaN(cssGap) ? (cfg.gap || 0) : cssGap;
+      slideW=s.getBoundingClientRect().width + GAP;
+    }
   }
   function setPos(x){pos=x; track.style.transform='translateX('+pos+'px)';}
   function normalize(){
@@ -756,7 +850,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(newCur!==cur){cur=newCur; updateDots();}
   }
   function autoTick(){
-    if(isAuto && slideW){
+    if(!reduceMotion && isAuto && slideW){
       pos -= SPEED;
       if(pos <= -(2*TOTAL*slideW)){
         pos += TOTAL*slideW;
@@ -811,11 +905,16 @@ document.addEventListener('DOMContentLoaded',()=>{
     var diff=e.clientX-startX;
     if(diff<-60){snapTo(+1);} else if(diff>60){snapTo(-1);} else {snapTo(0);}
   });
-  var touchX=0;
-  outer.addEventListener('touchstart',function(e){touchX=e.touches[0].clientX;pauseAuto();},{passive:true});
+  var touchX=0, touchStartPos=0;
+  outer.addEventListener('touchstart',function(e){touchX=e.touches[0].clientX;touchStartPos=pos;pauseAuto();track.style.transition='none';},{passive:true});
+  outer.addEventListener('touchmove',function(e){
+    if(!e.touches || !e.touches.length) return;
+    var diff=e.touches[0].clientX-touchX;
+    if(Math.abs(diff)>8){setPos(touchStartPos+diff);}
+  },{passive:true});
   outer.addEventListener('touchend',function(e){
     var diff=e.changedTouches[0].clientX-touchX;
-    if(diff<-50){snapTo(+1);} else if(diff>50){snapTo(-1);} else {resumeAuto();}
+    if(diff<-50){snapTo(+1);} else if(diff>50){snapTo(-1);} else {snapTo(0);}
   },{passive:true});
   outer.addEventListener('mouseenter',function(){if(!dragging) pauseAuto();});
   outer.addEventListener('mouseleave',function(){if(!dragging) resumeAuto();});
@@ -824,6 +923,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     track.style.transition='none';
     setPos(-(TOTAL*slideW + cur*slideW));
   });
+  document.addEventListener('visibilitychange',function(){isAuto=!document.hidden;});
 
   calcSlideW();
   setPos(-(TOTAL*slideW));
