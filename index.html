@@ -151,11 +151,14 @@
 
 /* === SLIDERS : toujours LTR (direction du scroll) === */
 html[dir="rtl"] .portfolio-track,
-html[dir="rtl"] .testi-track { direction: ltr !important; transform-origin: left center; }
+html[dir="rtl"] .testi-track,
+html[dir="rtl"] .services-track { direction: ltr !important; transform-origin: left center; }
 html[dir="rtl"] .portfolio-slider-wrap,
-html[dir="rtl"] .testi-slider-wrap { direction: ltr !important; margin-left: calc(-50vw + 50%) !important; }
+html[dir="rtl"] .testi-slider-wrap,
+html[dir="rtl"] .services-slider-wrap { direction: ltr !important; margin-left: calc(-50vw + 50%) !important; }
 html[dir="rtl"] .portfolio-track-outer,
-html[dir="rtl"] .testi-track-outer { direction: ltr !important; }
+html[dir="rtl"] .testi-track-outer,
+html[dir="rtl"] .services-track-outer { direction: ltr !important; }
 
 /* Contenu des slides portfolio : RTL à l'intérieur */
 html[dir="rtl"] .portfolio-body { flex-direction: row-reverse; }
@@ -401,6 +404,38 @@ html[dir='rtl'] .contact-link:hover{transform:translateX(-6px)}
 .conv-card{transition:transform .25s ease,background .25s ease}
 .conv-card:hover{transform:translateY(-5px);background:rgba(124,92,252,.12)}
 
+
+
+/* ===== SERVICES SLIDER AVEC IMAGES ===== */
+.services-slider-wrap{position:relative;width:100vw;margin-left:calc(-50vw + 50%);margin-top:2.5rem;user-select:none}
+.services-track-outer{overflow:hidden;width:100%;position:relative;cursor:grab}
+.services-track-outer:active{cursor:grabbing}
+.services-track-outer::before,.services-track-outer::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+.services-track-outer::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.services-track-outer::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
+.services-track{display:flex;gap:1.6rem;padding:1rem 0 1.5rem 0;will-change:transform}
+.service-slide{flex:0 0 520px;min-height:100%;position:relative}
+.service-slide .service-card{height:100%;min-height:465px;padding:1.05rem;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.1);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(12,13,22,.96));border-radius:24px;box-shadow:0 18px 60px rgba(0,0,0,.30);overflow:hidden;transition:border-color .3s ease,box-shadow .3s ease,transform .3s ease}
+.service-slide .service-card:hover{transform:translateY(-8px) scale(1.01);border-color:var(--accent);box-shadow:0 28px 70px rgba(124,92,252,.25)}
+.service-visual{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:18px;margin-bottom:1.15rem;border:1px solid rgba(255,255,255,.1);background:#111;box-shadow:0 14px 36px rgba(0,0,0,.22)}
+.service-visual img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;transition:transform .4s ease,filter .4s ease}
+.service-slide .service-card:hover .service-visual img{transform:scale(1.04);filter:saturate(1.08)}
+.service-content{padding:.25rem .75rem .85rem;display:flex;flex-direction:column;flex:1}
+.service-top{display:flex;align-items:center;gap:.85rem;margin-bottom:1rem}
+.service-num{margin-bottom:0;color:var(--accent2);font-weight:900;letter-spacing:.15em;font-size:.72rem}
+.service-icon{width:42px;height:42px;font-size:1.15rem;margin-bottom:0;border-radius:14px;flex-shrink:0}
+.service-slide .service-card h3{font-size:1.15rem;margin-bottom:.7rem}
+.service-slide .service-card p{font-size:.9rem;line-height:1.7;color:var(--muted)}
+.services-nav{margin-top:1rem}
+html[dir="rtl"] .services-slider-wrap{direction:ltr!important;margin-left:calc(-50vw + 50%)!important}
+html[dir="rtl"] .services-track-outer,
+html[dir="rtl"] .services-track{direction:ltr!important}
+html[dir="rtl"] .service-content{text-align:right;direction:rtl}
+html[dir="rtl"] .service-top{flex-direction:row-reverse;justify-content:flex-start}
+html[dir="rtl"] .service-num{text-align:left}
+@media(max-width:1050px){.service-slide{flex-basis:440px}.service-slide .service-card{min-height:420px}}
+@media(max-width:700px){.service-slide{flex-basis:310px}.services-track{padding:1rem 1.5rem 1.5rem;gap:1.2rem}.service-slide .service-card{min-height:375px;padding:1rem}.service-content{padding:.1rem .2rem .4rem}.service-visual{border-radius:16px}.services-track-outer::before,.services-track-outer::after{width:36px}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"El Jadida Web Solutions","url":"https://www.eljadidawebsolutions.com/","telephone":"+212620830606","email":"amine.salki@gmail.com","address":{"@type":"PostalAddress","streetAddress":"aprt 3, Lot nouzha, imm 4","addressLocality":"El Jadida","postalCode":"24000","addressCountry":"MA"},"areaServed":["El Jadida","Casablanca","Rabat","Maroc"],"sameAs":["https://maps.app.goo.gl/HU6UTVKSi1T74BHA6"],"description":"Agence web spécialisée en création de sites, SEO et marketing digital."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "Combien de temps prend la création d’un site ?", "acceptedAnswer": {"@type": "Answer", "text": "Selon le projet, un site vitrine peut être livré rapidement après validation du contenu. Les sites plus avancés demandent un cadrage plus détaillé."}},{"@type": "Question", "name": "Est-ce que le site sera optimisé SEO ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. La structure, les titres, la vitesse, les balises, les contenus et le maillage sont pensés dès le départ pour le référencement."}},{"@type": "Question", "name": "Pouvez-vous gérer la fiche Google ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nous pouvons optimiser la fiche, les catégories, les services, les photos, les descriptions et la stratégie d’avis."}},{"@type": "Question", "name": "Le site peut-il être en français, arabe et anglais ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Le site intègre un système multilingue avec direction RTL pour l’arabe et mémorisation du choix de langue."}},{"@type": "Question", "name": "Proposez-vous un accompagnement après livraison ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Nous pouvons assurer la maintenance, les mises à jour, le blog, le SEO et les campagnes publicitaires."}},{"@type": "Question", "name": "Puis-je demander un audit avant de commencer ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. L’audit gratuit permet d’identifier rapidement les actions qui auront le plus d’impact sur votre visibilité et vos conversions."}}]}</script>
@@ -430,12 +465,54 @@ html[dir='rtl'] .contact-link:hover{transform:translateX(-6px)}
 <main id="main">
 <section class="hero" id="home"><div class="container hero-grid"><div><div class="hero-tag"><span class="tag-dot">✦</span><span data-i18n="hero_tag">Google Certified · El Jadida, Maroc</span></div><h1 data-i18n="hero_title">Votre site web,<br/><span class="gradient">votre meilleur commercial.</span></h1><p class="lead" data-i18n="hero_sub">80% de vos prospects cherchent sur Google avant d'appeler. Êtes-vous là quand ils cherchent ? Nous créons des sites qui attirent, rassurent et convertissent — même pendant que vous dormez.</p><div class="hero-actions"><a class="btn btn-primary" data-i18n="hero_btn1" href="#portfolio">Voir nos créations</a><a class="btn btn-secondary" data-i18n="hero_btn2" href="#contact">Parler d’un projet</a></div><div class="hero-stats"><div class="stat-card"><div class="stat-num">+100</div><div class="stat-label" data-i18n="stat_clients">Clients satisfaits</div></div><div class="stat-card"><div class="stat-num">+80</div><div class="stat-label" data-i18n="stat_sites">Sites créés</div></div><div class="stat-card"><div class="stat-num">N°1</div><div class="stat-label" data-i18n="stat_seo">SEO local</div></div><div class="stat-card"><div class="stat-num">+7</div><div class="stat-label" data-i18n="stat_exp">Ans d’expérience</div></div></div></div><div class="hero-panel"></div></div></section>
 <div class="marquee"><div class="marquee-track"><span data-i18n="marquee">Création Web • SEO • Google Ads • Social Media • Branding • Photo &amp; Vidéo • WordPress • E-commerce • IA &amp; Automatisation •</span><span data-i18n="marquee">Création Web • SEO • Google Ads • Social Media • Branding • Photo &amp; Vidéo • WordPress • E-commerce • IA &amp; Automatisation •</span></div></div>
-<section class="section alt" id="services"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="services_eye">Ce que nous faisons</div><h2 data-i18n="services_title">Ce que font vos concurrents<br/><span class="gradient">pendant que vous attendez</span></h2></div><p class="lead" data-i18n="services_desc">Chaque jour sans site optimisé, c'est un client qui choisit votre concurrent. Voici comment on renverse la tendance.</p></div><div class="services-grid"><article class="service-card"><div class="service-num">01</div><div class="service-icon">🌐</div><h3 data-i18n="service1_title">Création de Sites Web</h3><p data-i18n="service1_desc">Sites vitrines, e-commerce et plateformes sur mesure, rapides, responsives et optimisées SEO dès le départ.</p></article>
-<article class="service-card"><div class="service-num">02</div><div class="service-icon">📈</div><h3 data-i18n="service2_title">SEO &amp; Référencement</h3><p data-i18n="service2_desc">Structure technique, contenus ciblés, blog, maillage interne et stratégie locale pour mieux apparaître sur Google.</p></article>
-<article class="service-card"><div class="service-num">03</div><div class="service-icon">🎯</div><h3 data-i18n="service3_title">Publicité en ligne</h3><p data-i18n="service3_desc">Campagnes Google Ads, Meta Ads et landing pages pensées pour convertir vos budgets en demandes mesurables.</p></article>
-<article class="service-card"><div class="service-num">04</div><div class="service-icon">📱</div><h3 data-i18n="service4_title">Social Media</h3><p data-i18n="service4_desc">Calendrier éditorial, visuels, vidéos courtes et contenus qui donnent confiance à votre audience.</p></article>
-<article class="service-card"><div class="service-num">05</div><div class="service-icon">🎨</div><h3 data-i18n="service5_title">Branding &amp; UX</h3><p data-i18n="service5_desc">Identité visuelle, design d’interface, expérience utilisateur et messages commerciaux clairs.</p></article>
-<article class="service-card"><div class="service-num">06</div><div class="service-icon">🤖</div><h3 data-i18n="service6_title">IA &amp; Automatisation</h3><p data-i18n="service6_desc">Chatbots, formulaires intelligents, automatisation des demandes et suivi commercial plus rapide.</p></article></div></div></section>
+<section class="section alt" id="services"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="services_eye">Ce que nous faisons</div><h2 data-i18n="services_title">Des services complets<br/><span class="gradient">pour votre croissance</span></h2></div><p class="lead" data-i18n="services_desc">De la stratégie à la mise en ligne, nous construisons des outils digitaux pensés pour attirer, rassurer et convertir.</p></div><div class="services-slider-wrap">
+  <div class="services-track-outer" id="servicesTrackOuter">
+    <div class="services-track" id="servicesTrack">
+
+      <div class="service-slide">
+        <article class="service-card"><figure class="service-visual"><img src="assets/creation-site-web.png" alt="Création de sites web professionnels" loading="lazy" decoding="async" width="1920" height="1080"></figure><div class="service-content"><div class="service-top"><div class="service-num">01</div><div class="service-icon">🌐</div></div><h3 data-i18n="service1_title">Création de Sites Web</h3><p data-i18n="service1_desc">Sites vitrines, e-commerce et plateformes sur mesure, rapides, responsives et optimisées SEO dès le départ.</p></div></article>
+      </div>
+
+      <div class="service-slide">
+        <article class="service-card"><figure class="service-visual"><img src="assets/seo.png" alt="SEO et référencement naturel" loading="lazy" decoding="async" width="1920" height="1080"></figure><div class="service-content"><div class="service-top"><div class="service-num">02</div><div class="service-icon">📈</div></div><h3 data-i18n="service2_title">SEO &amp; Référencement</h3><p data-i18n="service2_desc">Structure technique, contenus ciblés, blog, maillage interne et stratégie locale pour mieux apparaître sur Google.</p></div></article>
+      </div>
+
+      <div class="service-slide">
+        <article class="service-card"><figure class="service-visual"><img src="assets/ads.png" alt="Campagnes publicitaires Google Ads et Meta Ads" loading="lazy" decoding="async" width="1920" height="1080"></figure><div class="service-content"><div class="service-top"><div class="service-num">03</div><div class="service-icon">🎯</div></div><h3 data-i18n="service3_title">Campagnes publicitaires</h3><p data-i18n="service3_desc">Campagnes Google Ads, Meta Ads et landing pages pensées pour convertir vos budgets en demandes mesurables.</p></div></article>
+      </div>
+
+      <div class="service-slide">
+        <article class="service-card"><figure class="service-visual"><img src="assets/gestion-des-reseaux-sociaux.png" alt="Gestion des réseaux sociaux" loading="lazy" decoding="async" width="1920" height="1080"></figure><div class="service-content"><div class="service-top"><div class="service-num">04</div><div class="service-icon">📱</div></div><h3 data-i18n="service4_title">Gestion des réseaux sociaux</h3><p data-i18n="service4_desc">Calendrier éditorial, visuels, vidéos courtes et contenus qui donnent confiance à votre audience.</p></div></article>
+      </div>
+
+      <div class="service-slide">
+        <article class="service-card"><figure class="service-visual"><img src="assets/branding.png" alt="Branding et identité visuelle" loading="lazy" decoding="async" width="1920" height="1080"></figure><div class="service-content"><div class="service-top"><div class="service-num">05</div><div class="service-icon">🎨</div></div><h3 data-i18n="service5_title">Branding &amp; identité visuelle</h3><p data-i18n="service5_desc">Identité visuelle, design d’interface, expérience utilisateur et messages commerciaux clairs.</p></div></article>
+      </div>
+
+      <div class="service-slide">
+        <article class="service-card"><figure class="service-visual"><img src="assets/creation-de-contenu.png" alt="Création de contenu digital" loading="lazy" decoding="async" width="1920" height="1080"></figure><div class="service-content"><div class="service-top"><div class="service-num">06</div><div class="service-icon">🎬</div></div><h3 data-i18n="service6_title">Création de contenu</h3><p data-i18n="service6_desc">Posts, vidéos courtes, visuels, textes commerciaux et contenus adaptés à chaque canal digital.</p></div></article>
+      </div>
+
+      <div class="service-slide">
+        <article class="service-card"><figure class="service-visual"><img src="assets/google-business.png" alt="Optimisation Google Business Profile" loading="lazy" decoding="async" width="1920" height="1080"></figure><div class="service-content"><div class="service-top"><div class="service-num">07</div><div class="service-icon">📍</div></div><h3 data-i18n="service7_title">Google Business Profile</h3><p data-i18n="service7_desc">Optimisation de votre fiche Google, services, photos, posts, avis et visibilité locale sur Maps.</p></div></article>
+      </div>
+
+      <div class="service-slide">
+        <article class="service-card"><figure class="service-visual"><img src="assets/email-marketing.png" alt="Email marketing et automatisation" loading="lazy" decoding="async" width="1920" height="1080"></figure><div class="service-content"><div class="service-top"><div class="service-num">08</div><div class="service-icon">✉️</div></div><h3 data-i18n="service8_title">Email marketing &amp; automatisation</h3><p data-i18n="service8_desc">Campagnes email, scénarios automatisés, relances prospects et suivi pour garder le contact.</p></div></article>
+      </div>
+
+      <div class="service-slide">
+        <article class="service-card"><figure class="service-visual"><img src="assets/base-de-donnée.png" onerror="this.onerror=null;this.src='assets/base-de-donnee.png';" alt="Bases de données et prospection" loading="lazy" decoding="async" width="1920" height="1080"></figure><div class="service-content"><div class="service-top"><div class="service-num">09</div><div class="service-icon">🗂️</div></div><h3 data-i18n="service9_title">Bases de données &amp; prospection</h3><p data-i18n="service9_desc">Élaboration, nettoyage et structuration de bases de données pour vos actions commerciales et marketing.</p></div></article>
+      </div>
+
+      <div class="service-slide">
+        <article class="service-card"><figure class="service-visual"><img src="assets/strategie-marketing-digital.png" alt="Stratégie marketing digital" loading="lazy" decoding="async" width="1920" height="1080"></figure><div class="service-content"><div class="service-top"><div class="service-num">10</div><div class="service-icon">🧭</div></div><h3 data-i18n="service10_title">Stratégie marketing digital</h3><p data-i18n="service10_desc">Plan d’action, positionnement, tunnel de conversion, calendrier marketing et suivi des performances.</p></div></article>
+      </div>
+
+    </div>
+  </div>
+  <div class="slider-nav services-nav"><button class="slider-btn" id="servicesPrev" type="button" aria-label="Service précédent">‹</button><div class="slider-dots" id="servicesDots"></div><button class="slider-btn" id="servicesNext" type="button" aria-label="Service suivant">›</button></div>
+</div></div></section>
 <section class="section"><div class="container proof-grid"><div class="proof-panel"><div class="eyebrow" data-i18n="proof_eye">Pourquoi nous choisir</div><h2 data-i18n="proof_title">Un visiteur reste 8 secondes.<br/><span class="gradient">Voici comment le convaincre.</span></h2><p class="lead" data-i18n="proof_desc">La science le confirme : les clients ne lisent pas, ils scannent. Ils cherchent une raison de faire confiance en 8 secondes. Nous concevons chaque site pour gagner ce pari.</p><div class="proof-list"><div class="proof-item"><span class="check">✓</span><span data-i18n="proof1">Promesse claire dès le premier écran et appels à l’action répétés.</span></div><div class="proof-item"><span class="check">✓</span><span data-i18n="proof2">Pages services optimisées pour le SEO local et les recherches métiers.</span></div><div class="proof-item"><span class="check">✓</span><span data-i18n="proof3">Preuves, témoignages, FAQ et garanties pour rassurer avant le contact.</span></div><div class="proof-item"><span class="check">✓</span><span data-i18n="proof4">Suivi des demandes : appels, WhatsApp, formulaires et conversions.</span></div></div></div><aside class="audit-card"><h3 data-i18n="audit_title">Êtes-vous invisible sur Google ? Découvrez-le gratuitement.</h3><p data-i18n="audit_desc">En 24h, nous analysons votre site et votre fiche Google. Vous recevez 3 actions concrètes pour apparaître en premier — avant vos concurrents. Gratuit. Sans engagement.</p><a class="btn btn-primary" data-i18n="audit_btn" href="https://wa.me/212679148046?text=Bonjour%2C%20je%20veux%20un%20audit%20gratuit%20de%20ma%20pr%C3%A9sence%20Google." rel="noopener" target="_blank">Demander mon audit</a></aside></div></section>
 <section class="section portfolio-section" id="portfolio"><div class="container"><div class="section-head"><div><div class="eyebrow" data-i18n="portfolio_eye">Exemples de sites</div><h2 data-i18n="portfolio_title">Ils nous ont fait confiance.<br/><span class="gradient">Leurs résultats parlent.</span></h2></div><p class="lead" data-i18n="portfolio_desc">Des PME d'El Jadida, Casablanca et d'ailleurs ont transformé leur visibilité digitale. Voici quelques exemples concrets.</p></div><div class="portfolio-slider-wrap">
   <div class="portfolio-track-outer" id="portTrackOuter">
@@ -610,7 +687,7 @@ html[dir='rtl'] .contact-link:hover{transform:translateX(-6px)}
 </div>
 </footer>
 <script>
-const COMMON_I18N={"fr":{"nav_services":"Services","nav_portfolio":"Exemples","nav_reviews":"Avis","nav_blog":"Blog","nav_contact":"Contact","nav_cta":"Devis gratuit","hero_tag":"Google Certified · El Jadida, Maroc","hero_title":"Votre présence digitale,<br><span class=\"gradient\">réinventée.</span>","hero_sub":"Agence spécialisée en création de sites web premium, SEO et marketing digital. Nous transformons votre vision en expériences numériques qui convertissent.","hero_btn1":"Voir nos créations","hero_btn2":"Parler d’un projet","stat_clients":"Clients satisfaits","stat_sites":"Sites créés","stat_seo":"SEO local","stat_exp":"Ans d’expérience","marquee":"Création Web • SEO • Google Ads • Social Media • Branding • Photo & Vidéo • WordPress • E-commerce • IA & Automatisation •","services_eye":"Ce que nous faisons","services_title":"Des services complets<br><span class=\"gradient\">pour votre croissance</span>","services_desc":"De la stratégie à la mise en ligne, nous construisons des outils digitaux pensés pour attirer, rassurer et convertir.","proof_eye":"Pourquoi nous choisir","proof_title":"Une expérience pensée pour<br><span class=\"gradient\">convertir vos visiteurs</span>","proof_desc":"Nous ajoutons les éléments marketing qui rassurent vos prospects et réduisent les freins au contact.","audit_eye":"Audit","audit_title":"Audit gratuit de votre présence Google","audit_desc":"Envoyez votre site ou votre fiche Google. Nous vous répondons avec 3 actions prioritaires pour gagner en visibilité.","audit_btn":"Demander mon audit","portfolio_eye":"Exemples de sites","portfolio_title":"Des réalisations réelles<br><span class=\"gradient\">qui donnent confiance</span>","portfolio_desc":"Les captures ci-dessous sont intégrées avec les noms exacts de vos fichiers pour éviter les images cassées sur GitHub.","conversion_eye":"Pensé marketing","conversion_title":"Les détails qui transforment<br><span class=\"gradient\">un site en machine à demandes</span>","conversion_desc":"Au-delà du design, nous intégrons des preuves, des appels à l’action, des réponses aux objections et des parcours rapides.","pricing_eye":"Offres","pricing_title":"Des packs clairs<br><span class=\"gradient\">pour chaque étape</span>","pricing_desc":"Des formules adaptées aux entrepreneurs, PME et entreprises qui veulent accélérer leur acquisition.","testimonials_eye":"Témoignages sectoriels","testimonials_title":"Ce que disent <span class=\"gradient\">nos clients</span>","blog_eye":"Blog & SEO","blog_title":"Articles utiles pour gagner<br><span class=\"gradient\">en visibilité Google</span>","blog_desc":"Une page blog dédiée et des articles complets pour attirer des recherches qualifiées, rassurer les lecteurs et améliorer le référencement.","blog_all":"Voir tous les articles","faq_eye":"Questions fréquentes","faq_title":"Réponses aux objections<br><span class=\"gradient\">avant le premier contact</span>","contact_eye":"Parlons de votre projet","contact_title":"Nous <span class=\"gradient\">contacter</span>","contact_desc":"Vous avez un projet web, une campagne marketing ou une refonte à lancer ? Nous vous répondons rapidement avec une recommandation claire.","contact_phone":"Téléphone","contact_whatsapp":"WhatsApp","contact_email":"Email","contact_address":"Adresse","map_open":"Ouvrir la fiche Google Maps","form_name":"Nom","form_phone":"Téléphone","form_email":"Email","form_service":"Service souhaité","form_message":"Message","form_submit":"Envoyer le message","footer_rights":"Tous droits réservés","blog_page_title":"Blog digital marketing & SEO","blog_page_desc":"Des guides pratiques pour améliorer votre visibilité, générer plus de contacts et offrir une meilleure expérience client.","article_back":"Retour au blog","article_cta_title":"Vous voulez appliquer ces conseils ?","article_cta_desc":"Demandez un audit gratuit. Nous vous indiquons les actions prioritaires pour votre site et votre fiche Google.","article_cta_btn":"Demander un audit","read_article":"Lire l’article →","quote_btn":"Demander un devis","testi_label":"Retour client sectoriel","side_desc":"Création de sites web, SEO local, contenus, publicité et automatisation.","skip":"Aller au contenu","service1_title":"Création de Sites Web","service1_desc":"Sites vitrines, e-commerce et plateformes sur mesure, rapides, responsives et optimisées SEO dès le départ.","service2_title":"SEO & Référencement","service2_desc":"Structure technique, contenus ciblés, blog, maillage interne et stratégie locale pour mieux apparaître sur Google.","service3_title":"Publicité en ligne","service3_desc":"Campagnes Google Ads, Meta Ads et landing pages pensées pour convertir vos budgets en demandes mesurables.","service4_title":"Social Media","service4_desc":"Calendrier éditorial, visuels, vidéos courtes et contenus qui donnent confiance à votre audience.","service5_title":"Branding & UX","service5_desc":"Identité visuelle, design d’interface, expérience utilisateur et messages commerciaux clairs.","service6_title":"IA & Automatisation","service6_desc":"Chatbots, formulaires intelligents, automatisation des demandes et suivi commercial plus rapide.","proof1":"Promesse claire dès le premier écran et appels à l’action répétés.","proof2":"Pages services optimisées pour le SEO local et les recherches métiers.","proof3":"Preuves, témoignages, FAQ et garanties pour rassurer avant le contact.","proof4":"Suivi des demandes : appels, WhatsApp, formulaires et conversions.","port1_sector":"Événementiel & mariage","port1_desc":"Site événementiel premium avec galerie, partenaires et appels à l’action.","port2_sector":"Aviation humanitaire","port2_desc":"Site institutionnel structuré pour présenter missions, organisation et contact.","port3_sector":"Médical B2B","port3_desc":"Site médical B2B avec spécialités, partenaires, preuves et témoignages.","port4_sector":"Industriel & sécurité","port4_desc":"Site industriel moderne pour sécurité incendie, formations et demande de devis.","port5_sector":"Aviation privée","port5_desc":"Positionnement premium, pages services et crédibilité internationale.","port6_sector":"Transport & navette","port6_desc":"Réservation, flotte, avantages, témoignages et formulaire de demande.","conv1_title":"Vitesse & mobile-first","conv1_desc":"Des pages rapides, lisibles et faciles à contacter depuis smartphone.","conv2_title":"Parcours clair","conv2_desc":"Des sections organisées pour expliquer, rassurer puis déclencher l’action.","conv3_title":"Preuves visibles","conv3_desc":"Réalisations, avis, chiffres, secteurs et garanties au bon endroit.","conv4_title":"Contact rapide","conv4_desc":"Boutons flottants WhatsApp/appel, formulaire court et réponse rapide.","pack1_name":"Starter","pack1_note":"Pour lancer proprement","pack1_item1":"Site vitrine responsive","pack1_item2":"Formulaire + WhatsApp","pack1_item3":"SEO technique de base","pack1_item4":"Mise en ligne","pack2_name":"Business","pack2_note":"Pour générer plus de demandes","pack2_item1":"Pages services ciblées","pack2_item2":"Blog SEO initial","pack2_item3":"Optimisation Google Business","pack2_item4":"Suivi conversion","pack3_name":"Premium","pack3_note":"Pour accélérer la croissance","pack3_item1":"Stratégie SEO avancée","pack3_item2":"Landing pages Ads","pack3_item3":"Automatisation & chatbot","pack3_item4":"Reporting mensuel","testi1_sector":"Cabinet médical","testi1_text":"“Le site présente nos spécialités avec clarté. Les patients trouvent rapidement les informations et les demandes de rendez-vous sont plus simples.”","testi2_sector":"Salle de sport","testi2_text":"“La nouvelle page explique nos abonnements et met en avant les coachs. Les visiteurs comprennent mieux notre offre avant de venir.”","testi3_sector":"Opticien","testi3_text":"“Le catalogue, les horaires et le bouton WhatsApp nous aident à recevoir des demandes plus qualifiées.”","testi4_sector":"École privée","testi4_text":"“Les parents trouvent les programmes, les niveaux et le formulaire d’inscription sans nous appeler plusieurs fois.”","testi5_sector":"Centre de formation","testi5_text":"“Les pages par formation nous permettent de répondre aux recherches précises et d’envoyer le bon programme aux prospects.”","testi6_sector":"Restaurant","testi6_text":"“Les photos, le menu et la réservation donnent envie. Le site est devenu un vrai support commercial.”","testi7_sector":"Café & pâtisserie","testi7_text":"“Le design met en valeur l’ambiance et les produits. Les clients consultent facilement l’adresse et les horaires.”","testi8_sector":"Industrie","testi8_text":"“La présentation technique est claire et rassurante. Les demandes de devis arrivent avec plus d’informations utiles.”","testi9_sector":"Agence immobilière","testi9_text":"“Les biens sont mieux présentés, les contacts sont plus directs et l’image de marque est plus professionnelle.”","testi10_sector":"Clinique dentaire","testi10_text":"“L’expérience mobile est fluide et rassure les nouveaux patients avant la prise de contact.”","testi11_sector":"Cabinet de conseil","testi11_text":"“Le contenu explique enfin notre expertise sans jargon. Les prospects arrivent mieux informés.”","testi12_sector":"Boutique e-commerce","testi12_text":"“Le parcours d’achat est plus clair et les pages produits inspirent davantage confiance.”","faq1_q":"Combien de temps prend la création d’un site ?","faq1_a":"Selon le projet, un site vitrine peut être livré rapidement après validation du contenu. Les sites plus avancés demandent un cadrage plus détaillé.","faq2_q":"Est-ce que le site sera optimisé SEO ?","faq2_a":"Oui. La structure, les titres, la vitesse, les balises, les contenus et le maillage sont pensés dès le départ pour le référencement.","faq3_q":"Pouvez-vous gérer la fiche Google ?","faq3_a":"Oui. Nous pouvons optimiser la fiche, les catégories, les services, les photos, les descriptions et la stratégie d’avis.","faq4_q":"Le site peut-il être en français, arabe et anglais ?","faq4_a":"Oui. Le site intègre un système multilingue avec direction RTL pour l’arabe et mémorisation du choix de langue.","faq5_q":"Proposez-vous un accompagnement après livraison ?","faq5_a":"Oui. Nous pouvons assurer la maintenance, les mises à jour, le blog, le SEO et les campagnes publicitaires.","faq6_q":"Puis-je demander un audit avant de commencer ?","faq6_a":"Oui. L’audit gratuit permet d’identifier rapidement les actions qui auront le plus d’impact sur votre visibilité et vos conversions.","article_seo-local-el-jadida-2026_title":"Comment apparaître sur Google à El Jadida en 2026 : guide SEO local","article_seo-local-el-jadida-2026_desc":"Une méthode claire pour transformer votre site et votre fiche Google Business Profile en source régulière de demandes locales.","article_google-business-profile-appels_title":"Google Business Profile : comment recevoir plus d’appels sans augmenter le budget pub","article_google-business-profile-appels_desc":"Les actions concrètes pour rendre votre fiche Google plus visible, plus rassurante et plus rentable.","article_site-rapide-mobile-first-conversion_title":"Site rapide et mobile-first : pourquoi la vitesse convertit mieux","article_site-rapide-mobile-first-conversion_desc":"Découvrez comment la performance, l’ergonomie mobile et les appels à l’action influencent directement vos demandes clients.","article_ia-chatbots-automatisation-pme_title":"IA, chatbots et automatisation : comment les PME peuvent gagner du temps","article_ia-chatbots-automatisation-pme_desc":"Des idées concrètes pour utiliser l’intelligence artificielle sans compliquer votre organisation.","article_seo-multilingue-maroc_title":"SEO multilingue au Maroc : français, arabe et anglais sans perdre Google","article_seo-multilingue-maroc_desc":"Comment structurer un site multilingue propre pour parler à plus de clients et préserver la visibilité SEO.","article_marketing-digital-secteurs-medical-formation-restauration_title":"Marketing digital pour médecins, opticiens, écoles, restaurants et industriels","article_marketing-digital-secteurs-medical-formation-restauration_desc":"Chaque secteur a ses codes. Voici comment adapter votre site, vos contenus et vos appels à l’action.","article_design-oriente-conversion_title":"Design orienté conversion : transformer les visiteurs en clients","article_design-oriente-conversion_desc":"Les principes UX qui font la différence entre un joli site et un site qui génère des demandes.","article_refonte-site-web-signaux_title":"Refonte de site web : 9 signes qu’il est temps de moderniser votre présence digitale","article_refonte-site-web-signaux_desc":"Votre site ne convertit plus ? Voici les signaux qui montrent qu’une refonte peut devenir rentable.","opt_web":"Création site web","opt_seo":"SEO / Référencement","opt_ads":"Google Ads / Meta Ads","opt_refonte":"Refonte site web","opt_blog":"Blog & contenu SEO"},"en":{"nav_services":"Services","nav_portfolio":"Work","nav_reviews":"Reviews","nav_blog":"Blog","nav_contact":"Contact","nav_cta":"Free quote","hero_tag":"Google Certified · El Jadida, Morocco","hero_title":"Your digital presence,<br><span class=\"gradient\">reinvented.</span>","hero_sub":"Premium website creation, SEO and digital marketing. We turn your vision into digital experiences that attract, reassure and convert.","hero_btn1":"View our work","hero_btn2":"Discuss a project","stat_clients":"Happy clients","stat_sites":"Websites built","stat_seo":"Local SEO","stat_exp":"Years experience","marquee":"Web Design • SEO • Google Ads • Social Media • Branding • Photo & Video • WordPress • E-commerce • AI & Automation •","services_eye":"What we do","services_title":"Complete services<br><span class=\"gradient\">for your growth</span>","services_desc":"From strategy to launch, we build digital tools designed to attract, reassure and convert.","proof_eye":"Why choose us","proof_title":"An experience designed to<br><span class=\"gradient\">convert visitors</span>","proof_desc":"We add marketing elements that build trust and reduce hesitation before contact.","audit_eye":"Audit","audit_title":"Free Google presence audit","audit_desc":"Send your website or Google listing. We reply with 3 priority actions to gain visibility.","audit_btn":"Request my audit","portfolio_eye":"Website examples","portfolio_title":"Real work<br><span class=\"gradient\">that builds trust</span>","portfolio_desc":"The screenshots below use your exact file names to avoid broken images on GitHub.","conversion_eye":"Marketing focused","conversion_title":"Details that turn<br><span class=\"gradient\">a website into a lead engine</span>","conversion_desc":"Beyond design, we add proof, calls to action, objection handling and fast contact paths.","pricing_eye":"Offers","pricing_title":"Clear packages<br><span class=\"gradient\">for every stage</span>","pricing_desc":"Flexible options for entrepreneurs, SMEs and companies that want to accelerate acquisition.","testimonials_eye":"Sector testimonials","testimonials_title":"What <span class=\"gradient\">our clients</span> say","blog_eye":"Blog & SEO","blog_title":"Useful articles to improve<br><span class=\"gradient\">Google visibility</span>","blog_desc":"A dedicated blog and full articles to attract qualified searches, reassure readers and improve SEO.","blog_all":"View all articles","faq_eye":"FAQ","faq_title":"Answering objections<br><span class=\"gradient\">before first contact</span>","contact_eye":"Let’s talk about your project","contact_title":"Contact <span class=\"gradient\">us</span>","contact_desc":"Have a website, campaign or redesign project? We reply quickly with a clear recommendation.","contact_phone":"Phone","contact_whatsapp":"WhatsApp","contact_email":"Email","contact_address":"Address","map_open":"Open Google Maps listing","form_name":"Name","form_phone":"Phone","form_email":"Email","form_service":"Desired service","form_message":"Message","form_submit":"Send message","footer_rights":"All rights reserved","blog_page_title":"Digital marketing & SEO blog","blog_page_desc":"Practical guides to improve visibility, generate more inquiries and create a better customer experience.","article_back":"Back to blog","article_cta_title":"Want to apply these ideas?","article_cta_desc":"Request a free audit. We will show you the priority actions for your site and Google profile.","article_cta_btn":"Request an audit","read_article":"Read article →","quote_btn":"Request a quote","testi_label":"Sector client feedback","side_desc":"Website creation, local SEO, content, advertising and automation.","skip":"Skip to content","service1_title":"Website creation","service1_desc":"Showcase websites, e-commerce and custom platforms: fast, responsive and SEO-ready from day one.","service2_title":"SEO & ranking","service2_desc":"Technical structure, targeted content, blog strategy, internal linking and local SEO to appear better on Google.","service3_title":"Online advertising","service3_desc":"Google Ads, Meta Ads and landing pages designed to turn budgets into measurable inquiries.","service4_title":"Social media","service4_desc":"Editorial calendars, visuals, short videos and content that builds trust with your audience.","service5_title":"Branding & UX","service5_desc":"Visual identity, interface design, user experience and clear commercial messaging.","service6_title":"AI & automation","service6_desc":"Chatbots, smart forms, lead automation and faster commercial follow-up.","proof1":"Clear promise above the fold and repeated calls to action.","proof2":"Service pages optimized for local SEO and industry searches.","proof3":"Proof, testimonials, FAQ and guarantees to reassure before contact.","proof4":"Lead tracking: calls, WhatsApp, forms and conversions.","port1_sector":"Events & weddings","port1_desc":"Premium event website with gallery, partners and clear calls to action.","port2_sector":"Humanitarian aviation","port2_desc":"Institutional website structured around missions, organization and contact.","port3_sector":"Medical B2B","port3_desc":"Medical B2B website with specialties, partners, proof and testimonials.","port4_sector":"Industrial & safety","port4_desc":"Modern industrial website for fire safety, training and quote requests.","port5_sector":"Private aviation","port5_desc":"Premium positioning, service pages and international credibility.","port6_sector":"Transport & shuttle","port6_desc":"Booking, fleet, benefits, testimonials and request form.","conv1_title":"Speed & mobile-first","conv1_desc":"Fast, readable pages that make contacting easy from a smartphone.","conv2_title":"Clear journey","conv2_desc":"Sections organized to explain, reassure and trigger action.","conv3_title":"Visible proof","conv3_desc":"Work examples, reviews, numbers, sectors and guarantees in the right places.","conv4_title":"Fast contact","conv4_desc":"Floating WhatsApp/call buttons, short form and quick response promise.","pack1_name":"Starter","pack1_note":"To launch properly","pack1_item1":"Responsive showcase website","pack1_item2":"Form + WhatsApp","pack1_item3":"Basic technical SEO","pack1_item4":"Deployment","pack2_name":"Business","pack2_note":"To generate more leads","pack2_item1":"Targeted service pages","pack2_item2":"Initial SEO blog","pack2_item3":"Google Business optimization","pack2_item4":"Conversion tracking","pack3_name":"Premium","pack3_note":"To accelerate growth","pack3_item1":"Advanced SEO strategy","pack3_item2":"Ads landing pages","pack3_item3":"Automation & chatbot","pack3_item4":"Monthly reporting","testi1_sector":"Medical clinic","testi1_text":"“The website presents our specialties clearly. Patients find information quickly and appointment requests are simpler.”","testi2_sector":"Gym","testi2_text":"“The new page explains our memberships and highlights our coaches. Visitors understand our offer before coming.”","testi3_sector":"Optician","testi3_text":"“The catalogue, hours and WhatsApp button help us receive more qualified inquiries.”","testi4_sector":"Private school","testi4_text":"“Parents find programs, levels and the registration form without calling several times.”","testi5_sector":"Training center","testi5_text":"“Pages by course help us answer precise searches and send the right program to prospects.”","testi6_sector":"Restaurant","testi6_text":"“Photos, menu and booking create desire. The website became a real sales support.”","testi7_sector":"Café & pastry shop","testi7_text":"“The design highlights the atmosphere and products. Customers easily check address and hours.”","testi8_sector":"Industrial company","testi8_text":"“The technical presentation is clear and reassuring. Quote requests arrive with more useful details.”","testi9_sector":"Real estate agency","testi9_text":"“Properties are better presented, contacts are more direct and the brand image is more professional.”","testi10_sector":"Dental clinic","testi10_text":"“The mobile experience is smooth and reassures new patients before contact.”","testi11_sector":"Consulting firm","testi11_text":"“The content explains our expertise without jargon. Prospects arrive better informed.”","testi12_sector":"E-commerce shop","testi12_text":"“The purchase journey is clearer and product pages inspire more trust.”","faq1_q":"How long does website creation take?","faq1_a":"Depending on the project, a showcase website can be delivered quickly after content approval. More advanced websites need deeper planning.","faq2_q":"Will the website be SEO optimized?","faq2_a":"Yes. Structure, titles, speed, tags, content and internal links are planned from the start for search visibility.","faq3_q":"Can you manage the Google profile?","faq3_a":"Yes. We can optimize categories, services, photos, descriptions, posts and the review strategy.","faq4_q":"Can the website be in French, Arabic and English?","faq4_a":"Yes. The website includes a multilingual system with RTL support for Arabic and saved language preferences.","faq5_q":"Do you offer support after delivery?","faq5_a":"Yes. We can handle maintenance, updates, blog content, SEO and advertising campaigns.","faq6_q":"Can I request an audit first?","faq6_a":"Yes. The free audit identifies the actions with the strongest impact on visibility and conversion.","article_seo-local-el-jadida-2026_title":"How to appear on Google in El Jadida in 2026: local SEO guide","article_seo-local-el-jadida-2026_desc":"A practical method to turn your website and Google Business Profile into a consistent source of local leads.","article_google-business-profile-appels_title":"Google Business Profile: get more calls without increasing ad spend","article_google-business-profile-appels_desc":"Concrete steps to make your Google listing more visible, trustworthy and profitable.","article_site-rapide-mobile-first-conversion_title":"Fast mobile-first websites: why speed improves conversion","article_site-rapide-mobile-first-conversion_desc":"How performance, mobile usability and calls to action directly influence customer inquiries.","article_ia-chatbots-automatisation-pme_title":"AI, chatbots and automation: how small businesses save time","article_ia-chatbots-automatisation-pme_desc":"Practical ideas to use AI without adding complexity to your operations.","article_seo-multilingue-maroc_title":"Multilingual SEO in Morocco: French, Arabic and English without confusing Google","article_seo-multilingue-maroc_desc":"How to structure a multilingual website that reaches more clients while protecting SEO visibility.","article_marketing-digital-secteurs-medical-formation-restauration_title":"Digital marketing for clinics, opticians, schools, restaurants and industrial companies","article_marketing-digital-secteurs-medical-formation-restauration_desc":"Each sector has its own codes. Here is how to adapt your website, content and calls to action.","article_design-oriente-conversion_title":"Conversion-focused design: turn visitors into customers","article_design-oriente-conversion_desc":"The UX principles that separate a beautiful website from a website that generates leads.","article_refonte-site-web-signaux_title":"Website redesign: 9 signs it is time to modernize your digital presence","article_refonte-site-web-signaux_desc":"If your website no longer converts, these signals show when a redesign can become profitable.","opt_web":"Website creation","opt_seo":"SEO / Ranking","opt_ads":"Google Ads / Meta Ads","opt_refonte":"Website redesign","opt_blog":"Blog & SEO content"},"ar":{"nav_services":"الخدمات","nav_portfolio":"نماذج الأعمال","nav_reviews":"آراء العملاء","nav_blog":"المدونة","nav_contact":"اتصل بنا","nav_cta":"عرض مجاني","hero_tag":"Google Certified · الجديدة، المغرب","hero_title":"حضورك الرقمي<br><span class=\"gradient\">بشكل جديد.</span>","hero_sub":"وكالة متخصصة في إنشاء المواقع الاحترافية، السيو والتسويق الرقمي. نحول فكرتك إلى تجربة رقمية تجذب وتطمئن وتحول الزوار إلى عملاء.","hero_btn1":"شاهد أعمالنا","hero_btn2":"ناقش مشروعك","stat_clients":"عملاء راضون","stat_sites":"مواقع منجزة","stat_seo":"سيو محلي","stat_exp":"سنوات خبرة","marquee":"إنشاء المواقع • السيو • إعلانات Google • الشبكات الاجتماعية • الهوية البصرية • تصوير وفيديو • WordPress • المتاجر الإلكترونية • الذكاء الاصطناعي •","services_eye":"ما الذي نقدمه","services_title":"خدمات متكاملة<br><span class=\"gradient\">لنمو مشروعك</span>","services_desc":"من الاستراتيجية إلى الإطلاق، نبني أدوات رقمية مصممة لجذب العميل وطمأنته ودفعه للتواصل.","proof_eye":"لماذا تختارنا","proof_title":"تجربة مصممة<br><span class=\"gradient\">لتحويل الزوار إلى عملاء</span>","proof_desc":"نضيف عناصر تسويقية تبني الثقة وتقلل تردد العميل قبل التواصل.","audit_eye":"تدقيق","audit_title":"تدقيق مجاني لحضورك على Google","audit_desc":"أرسل موقعك أو بطاقة Google وسنرسل لك 3 إجراءات أولوية لتحسين الظهور.","audit_btn":"اطلب التدقيق المجاني","portfolio_eye":"نماذج مواقع","portfolio_title":"أعمال حقيقية<br><span class=\"gradient\">تعطي الثقة</span>","portfolio_desc":"الصور التالية مدمجة بالأسماء الدقيقة للملفات لتجنب مشكلة عدم ظهور الصور على GitHub.","conversion_eye":"تفكير تسويقي","conversion_title":"تفاصيل تحول<br><span class=\"gradient\">الموقع إلى مصدر طلبات</span>","conversion_desc":"إلى جانب التصميم، نضيف الأدلة وأزرار التواصل والإجابة على الاعتراضات ومسارات اتصال سريعة.","pricing_eye":"العروض","pricing_title":"باقات واضحة<br><span class=\"gradient\">لكل مرحلة</span>","pricing_desc":"حلول مناسبة للمقاولين والشركات الصغيرة والمتوسطة التي تريد تسريع جذب العملاء.","testimonials_eye":"آراء حسب القطاعات","testimonials_title":"ماذا يقول <span class=\"gradient\">عملاؤنا</span>","blog_eye":"المدونة والسيو","blog_title":"مقالات مفيدة لتحسين<br><span class=\"gradient\">ظهورك في Google</span>","blog_desc":"صفحة مدونة مخصصة ومقالات كاملة لجذب عمليات بحث مؤهلة وطمأنة القراء وتحسين السيو.","blog_all":"شاهد كل المقالات","faq_eye":"أسئلة شائعة","faq_title":"إجابات على الاعتراضات<br><span class=\"gradient\">قبل أول تواصل</span>","contact_eye":"لنتحدث عن مشروعك","contact_title":"اتصل <span class=\"gradient\">بنا</span>","contact_desc":"لديك مشروع موقع أو حملة تسويق أو تجديد؟ نرد بسرعة بتوصية واضحة.","contact_phone":"الهاتف","contact_whatsapp":"واتساب","contact_email":"البريد الإلكتروني","contact_address":"العنوان","map_open":"افتح بطاقة Google Maps","form_name":"الاسم","form_phone":"الهاتف","form_email":"البريد الإلكتروني","form_service":"الخدمة المطلوبة","form_message":"الرسالة","form_submit":"إرسال الرسالة","footer_rights":"جميع الحقوق محفوظة","blog_page_title":"مدونة التسويق الرقمي والسيو","blog_page_desc":"دلائل عملية لتحسين الظهور، الحصول على طلبات أكثر وتقديم تجربة عميل أفضل.","article_back":"العودة إلى المدونة","article_cta_title":"هل تريد تطبيق هذه النصائح؟","article_cta_desc":"اطلب تدقيقاً مجانياً. سنوضح لك الإجراءات الأولوية لموقعك وبطاقة Google.","article_cta_btn":"اطلب التدقيق","read_article":"اقرأ المقال ←","quote_btn":"اطلب عرضاً","testi_label":"رأي عميل حسب القطاع","side_desc":"إنشاء المواقع، السيو المحلي، المحتوى، الإعلانات والأتمتة.","skip":"الانتقال إلى المحتوى","service1_title":"إنشاء المواقع","service1_desc":"مواقع تعريفية، متاجر إلكترونية ومنصات مخصصة سريعة ومتجاوبة ومهيأة للسيو من البداية.","service2_title":"السيو والظهور في Google","service2_desc":"بنية تقنية، محتوى مستهدف، مدونة، روابط داخلية واستراتيجية محلية لتحسين الظهور.","service3_title":"الإعلانات الرقمية","service3_desc":"حملات Google Ads وMeta Ads وصفحات هبوط لتحويل الميزانية إلى طلبات قابلة للقياس.","service4_title":"الشبكات الاجتماعية","service4_desc":"تقويم محتوى، تصاميم، فيديوهات قصيرة ومحتوى يبني الثقة مع جمهورك.","service5_title":"الهوية وتجربة المستخدم","service5_desc":"هوية بصرية، تصميم واجهات، تجربة مستخدم ورسائل تجارية واضحة.","service6_title":"الذكاء الاصطناعي والأتمتة","service6_desc":"شات بوت، نماذج ذكية، أتمتة الطلبات ومتابعة تجارية أسرع.","proof1":"وعد واضح في الشاشة الأولى وأزرار تواصل متكررة.","proof2":"صفحات خدمات مهيأة للسيو المحلي وبحث القطاعات.","proof3":"أدلة وآراء وأسئلة وضمانات لطمأنة العميل قبل التواصل.","proof4":"تتبع الطلبات: مكالمات، واتساب، نماذج وتحويلات.","port1_sector":"المناسبات والأعراس","port1_desc":"موقع مناسبات احترافي مع معرض صور وشركاء ودعوات واضحة للتواصل.","port2_sector":"الطيران الإنساني","port2_desc":"موقع مؤسساتي منظم لعرض المهام والتنظيم والتواصل.","port3_sector":"المجال الطبي B2B","port3_desc":"موقع طبي B2B بالتخصصات والشركاء والأدلة وآراء العملاء.","port4_sector":"الصناعة والسلامة","port4_desc":"موقع صناعي حديث للسلامة من الحرائق والتكوين وطلبات العروض.","port5_sector":"الطيران الخاص","port5_desc":"تموقع فاخر وصفحات خدمات ومصداقية دولية.","port6_sector":"النقل والنافيت","port6_desc":"حجز، أسطول، مزايا، آراء ونموذج طلب.","conv1_title":"السرعة والهاتف أولاً","conv1_desc":"صفحات سريعة ومقروءة وسهلة التواصل من الهاتف.","conv2_title":"مسار واضح","conv2_desc":"أقسام منظمة لتشرح وتطمئن ثم تدفع للتواصل.","conv3_title":"أدلة ظاهرة","conv3_desc":"أعمال، آراء، أرقام، قطاعات وضمانات في المكان المناسب.","conv4_title":"تواصل سريع","conv4_desc":"أزرار واتساب واتصال عائمة، نموذج قصير ووعد برد سريع.","pack1_name":"Starter","pack1_note":"للانطلاق بشكل احترافي","pack1_item1":"موقع تعريفي متجاوب","pack1_item2":"نموذج + واتساب","pack1_item3":"سيو تقني أساسي","pack1_item4":"النشر على الإنترنت","pack2_name":"Business","pack2_note":"للحصول على طلبات أكثر","pack2_item1":"صفحات خدمات مستهدفة","pack2_item2":"مدونة SEO أولية","pack2_item3":"تحسين بطاقة Google","pack2_item4":"تتبع التحويلات","pack3_name":"Premium","pack3_note":"لتسريع النمو","pack3_item1":"استراتيجية SEO متقدمة","pack3_item2":"صفحات هبوط للإعلانات","pack3_item3":"أتمتة وشات بوت","pack3_item4":"تقرير شهري","testi1_sector":"عيادة طبية","testi1_text":"“الموقع يعرض تخصصاتنا بوضوح. المرضى يجدون المعلومات بسرعة وطلب المواعيد أصبح أسهل.”","testi2_sector":"قاعة رياضة","testi2_text":"“الصفحة الجديدة تشرح الاشتراكات وتبرز المدربين. الزوار يفهمون عرضنا قبل الزيارة.”","testi3_sector":"محل نظارات","testi3_text":"“الكتالوج، أوقات العمل وزر واتساب يساعدوننا على استقبال طلبات أكثر جودة.”","testi4_sector":"مدرسة خاصة","testi4_text":"“الآباء يجدون البرامج والمستويات ونموذج التسجيل دون الاتصال عدة مرات.”","testi5_sector":"مركز تكوين","testi5_text":"“صفحات كل تكوين تساعدنا على الظهور في بحث محدد وإرسال البرنامج المناسب.”","testi6_sector":"مطعم","testi6_text":"“الصور، القائمة والحجز تخلق الرغبة. الموقع أصبح دعامة تجارية حقيقية.”","testi7_sector":"مقهى وحلويات","testi7_text":"“التصميم يبرز الأجواء والمنتجات. العملاء يجدون العنوان والأوقات بسهولة.”","testi8_sector":"شركة صناعية","testi8_text":"“العرض التقني واضح ومطمئن. طلبات العروض تصل بمعلومات أكثر فائدة.”","testi9_sector":"وكالة عقارية","testi9_text":"“العقارات أصبحت معروضة بشكل أفضل، والتواصل مباشر والصورة أكثر احترافية.”","testi10_sector":"عيادة أسنان","testi10_text":"“تجربة الهاتف سلسة وتطمئن المرضى الجدد قبل التواصل.”","testi11_sector":"مكتب استشارات","testi11_text":"“المحتوى يشرح خبرتنا بدون تعقيد. العملاء المحتملون يصلون أكثر فهماً.”","testi12_sector":"متجر إلكتروني","testi12_text":"“مسار الشراء أوضح وصفحات المنتجات تعطي ثقة أكبر.”","faq1_q":"كم يستغرق إنشاء الموقع؟","faq1_a":"حسب المشروع، يمكن تسليم موقع تعريفي بسرعة بعد اعتماد المحتوى. المواقع المتقدمة تحتاج تخطيطاً أكثر تفصيلاً.","faq2_q":"هل سيكون الموقع مهيأ للسيو؟","faq2_a":"نعم. البنية، العناوين، السرعة، الوسوم، المحتوى والروابط الداخلية تُخطط من البداية للظهور في البحث.","faq3_q":"هل يمكنكم إدارة بطاقة Google؟","faq3_a":"نعم. يمكننا تحسين التصنيفات، الخدمات، الصور، الأوصاف، المنشورات واستراتيجية التقييمات.","faq4_q":"هل يمكن أن يكون الموقع بالفرنسية والعربية والإنجليزية؟","faq4_a":"نعم. الموقع يتضمن نظاماً متعدد اللغات مع دعم RTL للعربية وحفظ اختيار اللغة.","faq5_q":"هل تقدمون مواكبة بعد التسليم؟","faq5_a":"نعم. يمكننا إدارة الصيانة، التحديثات، المدونة، السيو والحملات الإعلانية.","faq6_q":"هل يمكن طلب تدقيق قبل البدء؟","faq6_a":"نعم. التدقيق المجاني يحدد الإجراءات الأعلى تأثيراً على الظهور والتحويلات.","article_seo-local-el-jadida-2026_title":"كيف تظهر على Google في الجديدة سنة 2026: دليل السيو المحلي","article_seo-local-el-jadida-2026_desc":"منهجية عملية لتحويل موقعك وبطاقة Google Business Profile إلى مصدر دائم للطلبات المحلية.","article_google-business-profile-appels_title":"Google Business Profile: كيف تحصل على مكالمات أكثر بدون رفع ميزانية الإعلانات","article_google-business-profile-appels_desc":"خطوات عملية لجعل بطاقة Google أكثر ظهوراً وثقة وربحية.","article_site-rapide-mobile-first-conversion_title":"الموقع السريع والمتجاوب: لماذا السرعة تزيد التحويلات؟","article_site-rapide-mobile-first-conversion_desc":"كيف تؤثر السرعة وتجربة الهاتف وأزرار التواصل على طلبات العملاء.","article_ia-chatbots-automatisation-pme_title":"الذكاء الاصطناعي والشات بوت والأتمتة: كيف تربح الشركات الصغيرة الوقت؟","article_ia-chatbots-automatisation-pme_desc":"أفكار عملية لاستخدام الذكاء الاصطناعي بدون تعقيد العمل اليومي.","article_seo-multilingue-maroc_title":"السيو متعدد اللغات في المغرب: الفرنسية والعربية والإنجليزية بدون إرباك Google","article_seo-multilingue-maroc_desc":"كيف تنظم موقعاً متعدد اللغات يصل إلى عملاء أكثر ويحافظ على ظهوره.","article_marketing-digital-secteurs-medical-formation-restauration_title":"التسويق الرقمي للأطباء والنظارات والمدارس والمطاعم والشركات الصناعية","article_marketing-digital-secteurs-medical-formation-restauration_desc":"كل قطاع له أسلوبه. هكذا تكيف موقعك ومحتواك وأزرار التواصل.","article_design-oriente-conversion_title":"تصميم موجه للتحويل: كيف تحول الزوار إلى عملاء","article_design-oriente-conversion_desc":"مبادئ تجربة المستخدم التي تفرق بين موقع جميل وموقع يجلب الطلبات.","article_refonte-site-web-signaux_title":"تجديد الموقع: 9 علامات تدل أن الوقت حان لتحديث حضورك الرقمي","article_refonte-site-web-signaux_desc":"إذا كان موقعك لا يحول الزوار، فهذه العلامات توضح متى يصبح التجديد مربحاً.","opt_web":"إنشاء موقع","opt_seo":"السيو والظهور","opt_ads":"إعلانات Google / Meta","opt_refonte":"تجديد الموقع","opt_blog":"مدونة ومحتوى SEO"}};
+const COMMON_I18N={"fr":{"nav_services":"Services","nav_portfolio":"Exemples","nav_reviews":"Avis","nav_blog":"Blog","nav_contact":"Contact","nav_cta":"Devis gratuit","hero_tag":"Google Certified · El Jadida, Maroc","hero_title":"Votre présence digitale,<br><span class=\"gradient\">réinventée.</span>","hero_sub":"Agence spécialisée en création de sites web premium, SEO et marketing digital. Nous transformons votre vision en expériences numériques qui convertissent.","hero_btn1":"Voir nos créations","hero_btn2":"Parler d’un projet","stat_clients":"Clients satisfaits","stat_sites":"Sites créés","stat_seo":"SEO local","stat_exp":"Ans d’expérience","marquee":"Création Web • SEO • Google Ads • Social Media • Branding • Photo & Vidéo • WordPress • E-commerce • IA & Automatisation •","services_eye":"Ce que nous faisons","services_title":"Des services complets<br><span class=\"gradient\">pour votre croissance</span>","services_desc":"De la stratégie à la mise en ligne, nous construisons des outils digitaux pensés pour attirer, rassurer et convertir.","proof_eye":"Pourquoi nous choisir","proof_title":"Une expérience pensée pour<br><span class=\"gradient\">convertir vos visiteurs</span>","proof_desc":"Nous ajoutons les éléments marketing qui rassurent vos prospects et réduisent les freins au contact.","audit_eye":"Audit","audit_title":"Audit gratuit de votre présence Google","audit_desc":"Envoyez votre site ou votre fiche Google. Nous vous répondons avec 3 actions prioritaires pour gagner en visibilité.","audit_btn":"Demander mon audit","portfolio_eye":"Exemples de sites","portfolio_title":"Des réalisations réelles<br><span class=\"gradient\">qui donnent confiance</span>","portfolio_desc":"Les captures ci-dessous sont intégrées avec les noms exacts de vos fichiers pour éviter les images cassées sur GitHub.","conversion_eye":"Pensé marketing","conversion_title":"Les détails qui transforment<br><span class=\"gradient\">un site en machine à demandes</span>","conversion_desc":"Au-delà du design, nous intégrons des preuves, des appels à l’action, des réponses aux objections et des parcours rapides.","pricing_eye":"Offres","pricing_title":"Des packs clairs<br><span class=\"gradient\">pour chaque étape</span>","pricing_desc":"Des formules adaptées aux entrepreneurs, PME et entreprises qui veulent accélérer leur acquisition.","testimonials_eye":"Témoignages sectoriels","testimonials_title":"Ce que disent <span class=\"gradient\">nos clients</span>","blog_eye":"Blog & SEO","blog_title":"Articles utiles pour gagner<br><span class=\"gradient\">en visibilité Google</span>","blog_desc":"Une page blog dédiée et des articles complets pour attirer des recherches qualifiées, rassurer les lecteurs et améliorer le référencement.","blog_all":"Voir tous les articles","faq_eye":"Questions fréquentes","faq_title":"Réponses aux objections<br><span class=\"gradient\">avant le premier contact</span>","contact_eye":"Parlons de votre projet","contact_title":"Nous <span class=\"gradient\">contacter</span>","contact_desc":"Vous avez un projet web, une campagne marketing ou une refonte à lancer ? Nous vous répondons rapidement avec une recommandation claire.","contact_phone":"Téléphone","contact_whatsapp":"WhatsApp","contact_email":"Email","contact_address":"Adresse","map_open":"Ouvrir la fiche Google Maps","form_name":"Nom","form_phone":"Téléphone","form_email":"Email","form_service":"Service souhaité","form_message":"Message","form_submit":"Envoyer le message","footer_rights":"Tous droits réservés","blog_page_title":"Blog digital marketing & SEO","blog_page_desc":"Des guides pratiques pour améliorer votre visibilité, générer plus de contacts et offrir une meilleure expérience client.","article_back":"Retour au blog","article_cta_title":"Vous voulez appliquer ces conseils ?","article_cta_desc":"Demandez un audit gratuit. Nous vous indiquons les actions prioritaires pour votre site et votre fiche Google.","article_cta_btn":"Demander un audit","read_article":"Lire l’article →","quote_btn":"Demander un devis","testi_label":"Retour client sectoriel","side_desc":"Création de sites web, SEO local, contenus, publicité et automatisation.","skip":"Aller au contenu","service1_title":"Création de Sites Web","service1_desc":"Sites vitrines, e-commerce et plateformes sur mesure, rapides, responsives et optimisées SEO dès le départ.","service2_title":"SEO & Référencement","service2_desc":"Structure technique, contenus ciblés, blog, maillage interne et stratégie locale pour mieux apparaître sur Google.","service3_title":"Publicité en ligne","service3_desc":"Campagnes Google Ads, Meta Ads et landing pages pensées pour convertir vos budgets en demandes mesurables.","service4_title":"Social Media","service4_desc":"Calendrier éditorial, visuels, vidéos courtes et contenus qui donnent confiance à votre audience.","service5_title":"Branding & UX","service5_desc":"Identité visuelle, design d’interface, expérience utilisateur et messages commerciaux clairs.","service6_title":"Création de contenu","service6_desc":"Posts, vidéos courtes, visuels, textes commerciaux et contenus adaptés à chaque canal digital.","service7_title":"Google Business Profile","service7_desc":"Optimisation de votre fiche Google, services, photos, posts, avis et visibilité locale sur Maps.","service8_title":"Email marketing & automatisation","service8_desc":"Campagnes email, scénarios automatisés, relances prospects et suivi pour garder le contact.","service9_title":"Bases de données & prospection","service9_desc":"Élaboration, nettoyage et structuration de bases de données pour vos actions commerciales et marketing.","service10_title":"Stratégie marketing digital","service10_desc":"Plan d’action, positionnement, tunnel de conversion, calendrier marketing et suivi des performances.","proof1":"Promesse claire dès le premier écran et appels à l’action répétés.","proof2":"Pages services optimisées pour le SEO local et les recherches métiers.","proof3":"Preuves, témoignages, FAQ et garanties pour rassurer avant le contact.","proof4":"Suivi des demandes : appels, WhatsApp, formulaires et conversions.","port1_sector":"Événementiel & mariage","port1_desc":"Site événementiel premium avec galerie, partenaires et appels à l’action.","port2_sector":"Aviation humanitaire","port2_desc":"Site institutionnel structuré pour présenter missions, organisation et contact.","port3_sector":"Médical B2B","port3_desc":"Site médical B2B avec spécialités, partenaires, preuves et témoignages.","port4_sector":"Industriel & sécurité","port4_desc":"Site industriel moderne pour sécurité incendie, formations et demande de devis.","port5_sector":"Aviation privée","port5_desc":"Positionnement premium, pages services et crédibilité internationale.","port6_sector":"Transport & navette","port6_desc":"Réservation, flotte, avantages, témoignages et formulaire de demande.","conv1_title":"Vitesse & mobile-first","conv1_desc":"Des pages rapides, lisibles et faciles à contacter depuis smartphone.","conv2_title":"Parcours clair","conv2_desc":"Des sections organisées pour expliquer, rassurer puis déclencher l’action.","conv3_title":"Preuves visibles","conv3_desc":"Réalisations, avis, chiffres, secteurs et garanties au bon endroit.","conv4_title":"Contact rapide","conv4_desc":"Boutons flottants WhatsApp/appel, formulaire court et réponse rapide.","pack1_name":"Starter","pack1_note":"Pour lancer proprement","pack1_item1":"Site vitrine responsive","pack1_item2":"Formulaire + WhatsApp","pack1_item3":"SEO technique de base","pack1_item4":"Mise en ligne","pack2_name":"Business","pack2_note":"Pour générer plus de demandes","pack2_item1":"Pages services ciblées","pack2_item2":"Blog SEO initial","pack2_item3":"Optimisation Google Business","pack2_item4":"Suivi conversion","pack3_name":"Premium","pack3_note":"Pour accélérer la croissance","pack3_item1":"Stratégie SEO avancée","pack3_item2":"Landing pages Ads","pack3_item3":"Automatisation & chatbot","pack3_item4":"Reporting mensuel","testi1_sector":"Cabinet médical","testi1_text":"“Le site présente nos spécialités avec clarté. Les patients trouvent rapidement les informations et les demandes de rendez-vous sont plus simples.”","testi2_sector":"Salle de sport","testi2_text":"“La nouvelle page explique nos abonnements et met en avant les coachs. Les visiteurs comprennent mieux notre offre avant de venir.”","testi3_sector":"Opticien","testi3_text":"“Le catalogue, les horaires et le bouton WhatsApp nous aident à recevoir des demandes plus qualifiées.”","testi4_sector":"École privée","testi4_text":"“Les parents trouvent les programmes, les niveaux et le formulaire d’inscription sans nous appeler plusieurs fois.”","testi5_sector":"Centre de formation","testi5_text":"“Les pages par formation nous permettent de répondre aux recherches précises et d’envoyer le bon programme aux prospects.”","testi6_sector":"Restaurant","testi6_text":"“Les photos, le menu et la réservation donnent envie. Le site est devenu un vrai support commercial.”","testi7_sector":"Café & pâtisserie","testi7_text":"“Le design met en valeur l’ambiance et les produits. Les clients consultent facilement l’adresse et les horaires.”","testi8_sector":"Industrie","testi8_text":"“La présentation technique est claire et rassurante. Les demandes de devis arrivent avec plus d’informations utiles.”","testi9_sector":"Agence immobilière","testi9_text":"“Les biens sont mieux présentés, les contacts sont plus directs et l’image de marque est plus professionnelle.”","testi10_sector":"Clinique dentaire","testi10_text":"“L’expérience mobile est fluide et rassure les nouveaux patients avant la prise de contact.”","testi11_sector":"Cabinet de conseil","testi11_text":"“Le contenu explique enfin notre expertise sans jargon. Les prospects arrivent mieux informés.”","testi12_sector":"Boutique e-commerce","testi12_text":"“Le parcours d’achat est plus clair et les pages produits inspirent davantage confiance.”","faq1_q":"Combien de temps prend la création d’un site ?","faq1_a":"Selon le projet, un site vitrine peut être livré rapidement après validation du contenu. Les sites plus avancés demandent un cadrage plus détaillé.","faq2_q":"Est-ce que le site sera optimisé SEO ?","faq2_a":"Oui. La structure, les titres, la vitesse, les balises, les contenus et le maillage sont pensés dès le départ pour le référencement.","faq3_q":"Pouvez-vous gérer la fiche Google ?","faq3_a":"Oui. Nous pouvons optimiser la fiche, les catégories, les services, les photos, les descriptions et la stratégie d’avis.","faq4_q":"Le site peut-il être en français, arabe et anglais ?","faq4_a":"Oui. Le site intègre un système multilingue avec direction RTL pour l’arabe et mémorisation du choix de langue.","faq5_q":"Proposez-vous un accompagnement après livraison ?","faq5_a":"Oui. Nous pouvons assurer la maintenance, les mises à jour, le blog, le SEO et les campagnes publicitaires.","faq6_q":"Puis-je demander un audit avant de commencer ?","faq6_a":"Oui. L’audit gratuit permet d’identifier rapidement les actions qui auront le plus d’impact sur votre visibilité et vos conversions.","article_seo-local-el-jadida-2026_title":"Comment apparaître sur Google à El Jadida en 2026 : guide SEO local","article_seo-local-el-jadida-2026_desc":"Une méthode claire pour transformer votre site et votre fiche Google Business Profile en source régulière de demandes locales.","article_google-business-profile-appels_title":"Google Business Profile : comment recevoir plus d’appels sans augmenter le budget pub","article_google-business-profile-appels_desc":"Les actions concrètes pour rendre votre fiche Google plus visible, plus rassurante et plus rentable.","article_site-rapide-mobile-first-conversion_title":"Site rapide et mobile-first : pourquoi la vitesse convertit mieux","article_site-rapide-mobile-first-conversion_desc":"Découvrez comment la performance, l’ergonomie mobile et les appels à l’action influencent directement vos demandes clients.","article_ia-chatbots-automatisation-pme_title":"IA, chatbots et automatisation : comment les PME peuvent gagner du temps","article_ia-chatbots-automatisation-pme_desc":"Des idées concrètes pour utiliser l’intelligence artificielle sans compliquer votre organisation.","article_seo-multilingue-maroc_title":"SEO multilingue au Maroc : français, arabe et anglais sans perdre Google","article_seo-multilingue-maroc_desc":"Comment structurer un site multilingue propre pour parler à plus de clients et préserver la visibilité SEO.","article_marketing-digital-secteurs-medical-formation-restauration_title":"Marketing digital pour médecins, opticiens, écoles, restaurants et industriels","article_marketing-digital-secteurs-medical-formation-restauration_desc":"Chaque secteur a ses codes. Voici comment adapter votre site, vos contenus et vos appels à l’action.","article_design-oriente-conversion_title":"Design orienté conversion : transformer les visiteurs en clients","article_design-oriente-conversion_desc":"Les principes UX qui font la différence entre un joli site et un site qui génère des demandes.","article_refonte-site-web-signaux_title":"Refonte de site web : 9 signes qu’il est temps de moderniser votre présence digitale","article_refonte-site-web-signaux_desc":"Votre site ne convertit plus ? Voici les signaux qui montrent qu’une refonte peut devenir rentable.","opt_web":"Création site web","opt_seo":"SEO / Référencement","opt_ads":"Google Ads / Meta Ads","opt_refonte":"Refonte site web","opt_blog":"Blog & contenu SEO"},"en":{"nav_services":"Services","nav_portfolio":"Work","nav_reviews":"Reviews","nav_blog":"Blog","nav_contact":"Contact","nav_cta":"Free quote","hero_tag":"Google Certified · El Jadida, Morocco","hero_title":"Your digital presence,<br><span class=\"gradient\">reinvented.</span>","hero_sub":"Premium website creation, SEO and digital marketing. We turn your vision into digital experiences that attract, reassure and convert.","hero_btn1":"View our work","hero_btn2":"Discuss a project","stat_clients":"Happy clients","stat_sites":"Websites built","stat_seo":"Local SEO","stat_exp":"Years experience","marquee":"Web Design • SEO • Google Ads • Social Media • Branding • Photo & Video • WordPress • E-commerce • AI & Automation •","services_eye":"What we do","services_title":"Complete services<br><span class=\"gradient\">for your growth</span>","services_desc":"From strategy to launch, we build digital tools designed to attract, reassure and convert.","proof_eye":"Why choose us","proof_title":"An experience designed to<br><span class=\"gradient\">convert visitors</span>","proof_desc":"We add marketing elements that build trust and reduce hesitation before contact.","audit_eye":"Audit","audit_title":"Free Google presence audit","audit_desc":"Send your website or Google listing. We reply with 3 priority actions to gain visibility.","audit_btn":"Request my audit","portfolio_eye":"Website examples","portfolio_title":"Real work<br><span class=\"gradient\">that builds trust</span>","portfolio_desc":"The screenshots below use your exact file names to avoid broken images on GitHub.","conversion_eye":"Marketing focused","conversion_title":"Details that turn<br><span class=\"gradient\">a website into a lead engine</span>","conversion_desc":"Beyond design, we add proof, calls to action, objection handling and fast contact paths.","pricing_eye":"Offers","pricing_title":"Clear packages<br><span class=\"gradient\">for every stage</span>","pricing_desc":"Flexible options for entrepreneurs, SMEs and companies that want to accelerate acquisition.","testimonials_eye":"Sector testimonials","testimonials_title":"What <span class=\"gradient\">our clients</span> say","blog_eye":"Blog & SEO","blog_title":"Useful articles to improve<br><span class=\"gradient\">Google visibility</span>","blog_desc":"A dedicated blog and full articles to attract qualified searches, reassure readers and improve SEO.","blog_all":"View all articles","faq_eye":"FAQ","faq_title":"Answering objections<br><span class=\"gradient\">before first contact</span>","contact_eye":"Let’s talk about your project","contact_title":"Contact <span class=\"gradient\">us</span>","contact_desc":"Have a website, campaign or redesign project? We reply quickly with a clear recommendation.","contact_phone":"Phone","contact_whatsapp":"WhatsApp","contact_email":"Email","contact_address":"Address","map_open":"Open Google Maps listing","form_name":"Name","form_phone":"Phone","form_email":"Email","form_service":"Desired service","form_message":"Message","form_submit":"Send message","footer_rights":"All rights reserved","blog_page_title":"Digital marketing & SEO blog","blog_page_desc":"Practical guides to improve visibility, generate more inquiries and create a better customer experience.","article_back":"Back to blog","article_cta_title":"Want to apply these ideas?","article_cta_desc":"Request a free audit. We will show you the priority actions for your site and Google profile.","article_cta_btn":"Request an audit","read_article":"Read article →","quote_btn":"Request a quote","testi_label":"Sector client feedback","side_desc":"Website creation, local SEO, content, advertising and automation.","skip":"Skip to content","service1_title":"Website creation","service1_desc":"Showcase websites, e-commerce and custom platforms: fast, responsive and SEO-ready from day one.","service2_title":"SEO & ranking","service2_desc":"Technical structure, targeted content, blog strategy, internal linking and local SEO to appear better on Google.","service3_title":"Online advertising","service3_desc":"Google Ads, Meta Ads and landing pages designed to turn budgets into measurable inquiries.","service4_title":"Social media","service4_desc":"Editorial calendars, visuals, short videos and content that builds trust with your audience.","service5_title":"Branding & UX","service5_desc":"Visual identity, interface design, user experience and clear commercial messaging.","service6_title":"Content creation","service6_desc":"Posts, short videos, visuals, sales copy and content adapted to every digital channel.","service7_title":"Google Business Profile","service7_desc":"Optimization of your Google listing, services, photos, posts, reviews and local visibility on Maps.","service8_title":"Email marketing & automation","service8_desc":"Email campaigns, automated journeys, prospect follow-ups and tracking to keep contact active.","service9_title":"Databases & prospecting","service9_desc":"Creation, cleaning and structuring of databases for your sales and marketing actions.","service10_title":"Digital marketing strategy","service10_desc":"Action plan, positioning, conversion funnel, marketing calendar and performance tracking.","proof1":"Clear promise above the fold and repeated calls to action.","proof2":"Service pages optimized for local SEO and industry searches.","proof3":"Proof, testimonials, FAQ and guarantees to reassure before contact.","proof4":"Lead tracking: calls, WhatsApp, forms and conversions.","port1_sector":"Events & weddings","port1_desc":"Premium event website with gallery, partners and clear calls to action.","port2_sector":"Humanitarian aviation","port2_desc":"Institutional website structured around missions, organization and contact.","port3_sector":"Medical B2B","port3_desc":"Medical B2B website with specialties, partners, proof and testimonials.","port4_sector":"Industrial & safety","port4_desc":"Modern industrial website for fire safety, training and quote requests.","port5_sector":"Private aviation","port5_desc":"Premium positioning, service pages and international credibility.","port6_sector":"Transport & shuttle","port6_desc":"Booking, fleet, benefits, testimonials and request form.","conv1_title":"Speed & mobile-first","conv1_desc":"Fast, readable pages that make contacting easy from a smartphone.","conv2_title":"Clear journey","conv2_desc":"Sections organized to explain, reassure and trigger action.","conv3_title":"Visible proof","conv3_desc":"Work examples, reviews, numbers, sectors and guarantees in the right places.","conv4_title":"Fast contact","conv4_desc":"Floating WhatsApp/call buttons, short form and quick response promise.","pack1_name":"Starter","pack1_note":"To launch properly","pack1_item1":"Responsive showcase website","pack1_item2":"Form + WhatsApp","pack1_item3":"Basic technical SEO","pack1_item4":"Deployment","pack2_name":"Business","pack2_note":"To generate more leads","pack2_item1":"Targeted service pages","pack2_item2":"Initial SEO blog","pack2_item3":"Google Business optimization","pack2_item4":"Conversion tracking","pack3_name":"Premium","pack3_note":"To accelerate growth","pack3_item1":"Advanced SEO strategy","pack3_item2":"Ads landing pages","pack3_item3":"Automation & chatbot","pack3_item4":"Monthly reporting","testi1_sector":"Medical clinic","testi1_text":"“The website presents our specialties clearly. Patients find information quickly and appointment requests are simpler.”","testi2_sector":"Gym","testi2_text":"“The new page explains our memberships and highlights our coaches. Visitors understand our offer before coming.”","testi3_sector":"Optician","testi3_text":"“The catalogue, hours and WhatsApp button help us receive more qualified inquiries.”","testi4_sector":"Private school","testi4_text":"“Parents find programs, levels and the registration form without calling several times.”","testi5_sector":"Training center","testi5_text":"“Pages by course help us answer precise searches and send the right program to prospects.”","testi6_sector":"Restaurant","testi6_text":"“Photos, menu and booking create desire. The website became a real sales support.”","testi7_sector":"Café & pastry shop","testi7_text":"“The design highlights the atmosphere and products. Customers easily check address and hours.”","testi8_sector":"Industrial company","testi8_text":"“The technical presentation is clear and reassuring. Quote requests arrive with more useful details.”","testi9_sector":"Real estate agency","testi9_text":"“Properties are better presented, contacts are more direct and the brand image is more professional.”","testi10_sector":"Dental clinic","testi10_text":"“The mobile experience is smooth and reassures new patients before contact.”","testi11_sector":"Consulting firm","testi11_text":"“The content explains our expertise without jargon. Prospects arrive better informed.”","testi12_sector":"E-commerce shop","testi12_text":"“The purchase journey is clearer and product pages inspire more trust.”","faq1_q":"How long does website creation take?","faq1_a":"Depending on the project, a showcase website can be delivered quickly after content approval. More advanced websites need deeper planning.","faq2_q":"Will the website be SEO optimized?","faq2_a":"Yes. Structure, titles, speed, tags, content and internal links are planned from the start for search visibility.","faq3_q":"Can you manage the Google profile?","faq3_a":"Yes. We can optimize categories, services, photos, descriptions, posts and the review strategy.","faq4_q":"Can the website be in French, Arabic and English?","faq4_a":"Yes. The website includes a multilingual system with RTL support for Arabic and saved language preferences.","faq5_q":"Do you offer support after delivery?","faq5_a":"Yes. We can handle maintenance, updates, blog content, SEO and advertising campaigns.","faq6_q":"Can I request an audit first?","faq6_a":"Yes. The free audit identifies the actions with the strongest impact on visibility and conversion.","article_seo-local-el-jadida-2026_title":"How to appear on Google in El Jadida in 2026: local SEO guide","article_seo-local-el-jadida-2026_desc":"A practical method to turn your website and Google Business Profile into a consistent source of local leads.","article_google-business-profile-appels_title":"Google Business Profile: get more calls without increasing ad spend","article_google-business-profile-appels_desc":"Concrete steps to make your Google listing more visible, trustworthy and profitable.","article_site-rapide-mobile-first-conversion_title":"Fast mobile-first websites: why speed improves conversion","article_site-rapide-mobile-first-conversion_desc":"How performance, mobile usability and calls to action directly influence customer inquiries.","article_ia-chatbots-automatisation-pme_title":"AI, chatbots and automation: how small businesses save time","article_ia-chatbots-automatisation-pme_desc":"Practical ideas to use AI without adding complexity to your operations.","article_seo-multilingue-maroc_title":"Multilingual SEO in Morocco: French, Arabic and English without confusing Google","article_seo-multilingue-maroc_desc":"How to structure a multilingual website that reaches more clients while protecting SEO visibility.","article_marketing-digital-secteurs-medical-formation-restauration_title":"Digital marketing for clinics, opticians, schools, restaurants and industrial companies","article_marketing-digital-secteurs-medical-formation-restauration_desc":"Each sector has its own codes. Here is how to adapt your website, content and calls to action.","article_design-oriente-conversion_title":"Conversion-focused design: turn visitors into customers","article_design-oriente-conversion_desc":"The UX principles that separate a beautiful website from a website that generates leads.","article_refonte-site-web-signaux_title":"Website redesign: 9 signs it is time to modernize your digital presence","article_refonte-site-web-signaux_desc":"If your website no longer converts, these signals show when a redesign can become profitable.","opt_web":"Website creation","opt_seo":"SEO / Ranking","opt_ads":"Google Ads / Meta Ads","opt_refonte":"Website redesign","opt_blog":"Blog & SEO content"},"ar":{"nav_services":"الخدمات","nav_portfolio":"نماذج الأعمال","nav_reviews":"آراء العملاء","nav_blog":"المدونة","nav_contact":"اتصل بنا","nav_cta":"عرض مجاني","hero_tag":"Google Certified · الجديدة، المغرب","hero_title":"حضورك الرقمي<br><span class=\"gradient\">بشكل جديد.</span>","hero_sub":"وكالة متخصصة في إنشاء المواقع الاحترافية، السيو والتسويق الرقمي. نحول فكرتك إلى تجربة رقمية تجذب وتطمئن وتحول الزوار إلى عملاء.","hero_btn1":"شاهد أعمالنا","hero_btn2":"ناقش مشروعك","stat_clients":"عملاء راضون","stat_sites":"مواقع منجزة","stat_seo":"سيو محلي","stat_exp":"سنوات خبرة","marquee":"إنشاء المواقع • السيو • إعلانات Google • الشبكات الاجتماعية • الهوية البصرية • تصوير وفيديو • WordPress • المتاجر الإلكترونية • الذكاء الاصطناعي •","services_eye":"ما الذي نقدمه","services_title":"خدمات متكاملة<br><span class=\"gradient\">لنمو مشروعك</span>","services_desc":"من الاستراتيجية إلى الإطلاق، نبني أدوات رقمية مصممة لجذب العميل وطمأنته ودفعه للتواصل.","proof_eye":"لماذا تختارنا","proof_title":"تجربة مصممة<br><span class=\"gradient\">لتحويل الزوار إلى عملاء</span>","proof_desc":"نضيف عناصر تسويقية تبني الثقة وتقلل تردد العميل قبل التواصل.","audit_eye":"تدقيق","audit_title":"تدقيق مجاني لحضورك على Google","audit_desc":"أرسل موقعك أو بطاقة Google وسنرسل لك 3 إجراءات أولوية لتحسين الظهور.","audit_btn":"اطلب التدقيق المجاني","portfolio_eye":"نماذج مواقع","portfolio_title":"أعمال حقيقية<br><span class=\"gradient\">تعطي الثقة</span>","portfolio_desc":"الصور التالية مدمجة بالأسماء الدقيقة للملفات لتجنب مشكلة عدم ظهور الصور على GitHub.","conversion_eye":"تفكير تسويقي","conversion_title":"تفاصيل تحول<br><span class=\"gradient\">الموقع إلى مصدر طلبات</span>","conversion_desc":"إلى جانب التصميم، نضيف الأدلة وأزرار التواصل والإجابة على الاعتراضات ومسارات اتصال سريعة.","pricing_eye":"العروض","pricing_title":"باقات واضحة<br><span class=\"gradient\">لكل مرحلة</span>","pricing_desc":"حلول مناسبة للمقاولين والشركات الصغيرة والمتوسطة التي تريد تسريع جذب العملاء.","testimonials_eye":"آراء حسب القطاعات","testimonials_title":"ماذا يقول <span class=\"gradient\">عملاؤنا</span>","blog_eye":"المدونة والسيو","blog_title":"مقالات مفيدة لتحسين<br><span class=\"gradient\">ظهورك في Google</span>","blog_desc":"صفحة مدونة مخصصة ومقالات كاملة لجذب عمليات بحث مؤهلة وطمأنة القراء وتحسين السيو.","blog_all":"شاهد كل المقالات","faq_eye":"أسئلة شائعة","faq_title":"إجابات على الاعتراضات<br><span class=\"gradient\">قبل أول تواصل</span>","contact_eye":"لنتحدث عن مشروعك","contact_title":"اتصل <span class=\"gradient\">بنا</span>","contact_desc":"لديك مشروع موقع أو حملة تسويق أو تجديد؟ نرد بسرعة بتوصية واضحة.","contact_phone":"الهاتف","contact_whatsapp":"واتساب","contact_email":"البريد الإلكتروني","contact_address":"العنوان","map_open":"افتح بطاقة Google Maps","form_name":"الاسم","form_phone":"الهاتف","form_email":"البريد الإلكتروني","form_service":"الخدمة المطلوبة","form_message":"الرسالة","form_submit":"إرسال الرسالة","footer_rights":"جميع الحقوق محفوظة","blog_page_title":"مدونة التسويق الرقمي والسيو","blog_page_desc":"دلائل عملية لتحسين الظهور، الحصول على طلبات أكثر وتقديم تجربة عميل أفضل.","article_back":"العودة إلى المدونة","article_cta_title":"هل تريد تطبيق هذه النصائح؟","article_cta_desc":"اطلب تدقيقاً مجانياً. سنوضح لك الإجراءات الأولوية لموقعك وبطاقة Google.","article_cta_btn":"اطلب التدقيق","read_article":"اقرأ المقال ←","quote_btn":"اطلب عرضاً","testi_label":"رأي عميل حسب القطاع","side_desc":"إنشاء المواقع، السيو المحلي، المحتوى، الإعلانات والأتمتة.","skip":"الانتقال إلى المحتوى","service1_title":"إنشاء المواقع","service1_desc":"مواقع تعريفية، متاجر إلكترونية ومنصات مخصصة سريعة ومتجاوبة ومهيأة للسيو من البداية.","service2_title":"السيو والظهور في Google","service2_desc":"بنية تقنية، محتوى مستهدف، مدونة، روابط داخلية واستراتيجية محلية لتحسين الظهور.","service3_title":"الإعلانات الرقمية","service3_desc":"حملات Google Ads وMeta Ads وصفحات هبوط لتحويل الميزانية إلى طلبات قابلة للقياس.","service4_title":"الشبكات الاجتماعية","service4_desc":"تقويم محتوى، تصاميم، فيديوهات قصيرة ومحتوى يبني الثقة مع جمهورك.","service5_title":"الهوية وتجربة المستخدم","service5_desc":"هوية بصرية، تصميم واجهات، تجربة مستخدم ورسائل تجارية واضحة.","service6_title":"إنشاء المحتوى","service6_desc":"منشورات، فيديوهات قصيرة، تصاميم، نصوص تجارية ومحتوى مناسب لكل قناة رقمية.","service7_title":"بطاقة Google Business Profile","service7_desc":"تحسين بطاقة Google، الخدمات، الصور، المنشورات، الآراء والظهور المحلي على Maps.","service8_title":"الإيميل ماركتينغ والأتمتة","service8_desc":"حملات بريدية، سيناريوهات آلية، متابعة العملاء المحتملين والحفاظ على التواصل.","service9_title":"قواعد البيانات والتنقيب","service9_desc":"إعداد وتنظيف وتنظيم قواعد البيانات لاستخدامها في الحملات التجارية والتسويقية.","service10_title":"استراتيجية التسويق الرقمي","service10_desc":"خطة عمل، تموقع، مسار تحويل، رزنامة تسويقية وتتبع الأداء.","proof1":"وعد واضح في الشاشة الأولى وأزرار تواصل متكررة.","proof2":"صفحات خدمات مهيأة للسيو المحلي وبحث القطاعات.","proof3":"أدلة وآراء وأسئلة وضمانات لطمأنة العميل قبل التواصل.","proof4":"تتبع الطلبات: مكالمات، واتساب، نماذج وتحويلات.","port1_sector":"المناسبات والأعراس","port1_desc":"موقع مناسبات احترافي مع معرض صور وشركاء ودعوات واضحة للتواصل.","port2_sector":"الطيران الإنساني","port2_desc":"موقع مؤسساتي منظم لعرض المهام والتنظيم والتواصل.","port3_sector":"المجال الطبي B2B","port3_desc":"موقع طبي B2B بالتخصصات والشركاء والأدلة وآراء العملاء.","port4_sector":"الصناعة والسلامة","port4_desc":"موقع صناعي حديث للسلامة من الحرائق والتكوين وطلبات العروض.","port5_sector":"الطيران الخاص","port5_desc":"تموقع فاخر وصفحات خدمات ومصداقية دولية.","port6_sector":"النقل والنافيت","port6_desc":"حجز، أسطول، مزايا، آراء ونموذج طلب.","conv1_title":"السرعة والهاتف أولاً","conv1_desc":"صفحات سريعة ومقروءة وسهلة التواصل من الهاتف.","conv2_title":"مسار واضح","conv2_desc":"أقسام منظمة لتشرح وتطمئن ثم تدفع للتواصل.","conv3_title":"أدلة ظاهرة","conv3_desc":"أعمال، آراء، أرقام، قطاعات وضمانات في المكان المناسب.","conv4_title":"تواصل سريع","conv4_desc":"أزرار واتساب واتصال عائمة، نموذج قصير ووعد برد سريع.","pack1_name":"Starter","pack1_note":"للانطلاق بشكل احترافي","pack1_item1":"موقع تعريفي متجاوب","pack1_item2":"نموذج + واتساب","pack1_item3":"سيو تقني أساسي","pack1_item4":"النشر على الإنترنت","pack2_name":"Business","pack2_note":"للحصول على طلبات أكثر","pack2_item1":"صفحات خدمات مستهدفة","pack2_item2":"مدونة SEO أولية","pack2_item3":"تحسين بطاقة Google","pack2_item4":"تتبع التحويلات","pack3_name":"Premium","pack3_note":"لتسريع النمو","pack3_item1":"استراتيجية SEO متقدمة","pack3_item2":"صفحات هبوط للإعلانات","pack3_item3":"أتمتة وشات بوت","pack3_item4":"تقرير شهري","testi1_sector":"عيادة طبية","testi1_text":"“الموقع يعرض تخصصاتنا بوضوح. المرضى يجدون المعلومات بسرعة وطلب المواعيد أصبح أسهل.”","testi2_sector":"قاعة رياضة","testi2_text":"“الصفحة الجديدة تشرح الاشتراكات وتبرز المدربين. الزوار يفهمون عرضنا قبل الزيارة.”","testi3_sector":"محل نظارات","testi3_text":"“الكتالوج، أوقات العمل وزر واتساب يساعدوننا على استقبال طلبات أكثر جودة.”","testi4_sector":"مدرسة خاصة","testi4_text":"“الآباء يجدون البرامج والمستويات ونموذج التسجيل دون الاتصال عدة مرات.”","testi5_sector":"مركز تكوين","testi5_text":"“صفحات كل تكوين تساعدنا على الظهور في بحث محدد وإرسال البرنامج المناسب.”","testi6_sector":"مطعم","testi6_text":"“الصور، القائمة والحجز تخلق الرغبة. الموقع أصبح دعامة تجارية حقيقية.”","testi7_sector":"مقهى وحلويات","testi7_text":"“التصميم يبرز الأجواء والمنتجات. العملاء يجدون العنوان والأوقات بسهولة.”","testi8_sector":"شركة صناعية","testi8_text":"“العرض التقني واضح ومطمئن. طلبات العروض تصل بمعلومات أكثر فائدة.”","testi9_sector":"وكالة عقارية","testi9_text":"“العقارات أصبحت معروضة بشكل أفضل، والتواصل مباشر والصورة أكثر احترافية.”","testi10_sector":"عيادة أسنان","testi10_text":"“تجربة الهاتف سلسة وتطمئن المرضى الجدد قبل التواصل.”","testi11_sector":"مكتب استشارات","testi11_text":"“المحتوى يشرح خبرتنا بدون تعقيد. العملاء المحتملون يصلون أكثر فهماً.”","testi12_sector":"متجر إلكتروني","testi12_text":"“مسار الشراء أوضح وصفحات المنتجات تعطي ثقة أكبر.”","faq1_q":"كم يستغرق إنشاء الموقع؟","faq1_a":"حسب المشروع، يمكن تسليم موقع تعريفي بسرعة بعد اعتماد المحتوى. المواقع المتقدمة تحتاج تخطيطاً أكثر تفصيلاً.","faq2_q":"هل سيكون الموقع مهيأ للسيو؟","faq2_a":"نعم. البنية، العناوين، السرعة، الوسوم، المحتوى والروابط الداخلية تُخطط من البداية للظهور في البحث.","faq3_q":"هل يمكنكم إدارة بطاقة Google؟","faq3_a":"نعم. يمكننا تحسين التصنيفات، الخدمات، الصور، الأوصاف، المنشورات واستراتيجية التقييمات.","faq4_q":"هل يمكن أن يكون الموقع بالفرنسية والعربية والإنجليزية؟","faq4_a":"نعم. الموقع يتضمن نظاماً متعدد اللغات مع دعم RTL للعربية وحفظ اختيار اللغة.","faq5_q":"هل تقدمون مواكبة بعد التسليم؟","faq5_a":"نعم. يمكننا إدارة الصيانة، التحديثات، المدونة، السيو والحملات الإعلانية.","faq6_q":"هل يمكن طلب تدقيق قبل البدء؟","faq6_a":"نعم. التدقيق المجاني يحدد الإجراءات الأعلى تأثيراً على الظهور والتحويلات.","article_seo-local-el-jadida-2026_title":"كيف تظهر على Google في الجديدة سنة 2026: دليل السيو المحلي","article_seo-local-el-jadida-2026_desc":"منهجية عملية لتحويل موقعك وبطاقة Google Business Profile إلى مصدر دائم للطلبات المحلية.","article_google-business-profile-appels_title":"Google Business Profile: كيف تحصل على مكالمات أكثر بدون رفع ميزانية الإعلانات","article_google-business-profile-appels_desc":"خطوات عملية لجعل بطاقة Google أكثر ظهوراً وثقة وربحية.","article_site-rapide-mobile-first-conversion_title":"الموقع السريع والمتجاوب: لماذا السرعة تزيد التحويلات؟","article_site-rapide-mobile-first-conversion_desc":"كيف تؤثر السرعة وتجربة الهاتف وأزرار التواصل على طلبات العملاء.","article_ia-chatbots-automatisation-pme_title":"الذكاء الاصطناعي والشات بوت والأتمتة: كيف تربح الشركات الصغيرة الوقت؟","article_ia-chatbots-automatisation-pme_desc":"أفكار عملية لاستخدام الذكاء الاصطناعي بدون تعقيد العمل اليومي.","article_seo-multilingue-maroc_title":"السيو متعدد اللغات في المغرب: الفرنسية والعربية والإنجليزية بدون إرباك Google","article_seo-multilingue-maroc_desc":"كيف تنظم موقعاً متعدد اللغات يصل إلى عملاء أكثر ويحافظ على ظهوره.","article_marketing-digital-secteurs-medical-formation-restauration_title":"التسويق الرقمي للأطباء والنظارات والمدارس والمطاعم والشركات الصناعية","article_marketing-digital-secteurs-medical-formation-restauration_desc":"كل قطاع له أسلوبه. هكذا تكيف موقعك ومحتواك وأزرار التواصل.","article_design-oriente-conversion_title":"تصميم موجه للتحويل: كيف تحول الزوار إلى عملاء","article_design-oriente-conversion_desc":"مبادئ تجربة المستخدم التي تفرق بين موقع جميل وموقع يجلب الطلبات.","article_refonte-site-web-signaux_title":"تجديد الموقع: 9 علامات تدل أن الوقت حان لتحديث حضورك الرقمي","article_refonte-site-web-signaux_desc":"إذا كان موقعك لا يحول الزوار، فهذه العلامات توضح متى يصبح التجديد مربحاً.","opt_web":"إنشاء موقع","opt_seo":"السيو والظهور","opt_ads":"إعلانات Google / Meta","opt_refonte":"تجديد الموقع","opt_blog":"مدونة ومحتوى SEO"}};
 
 function applyLang(lang){
  const dict=COMMON_I18N[lang]||COMMON_I18N.fr;
@@ -629,329 +706,150 @@ document.addEventListener('DOMContentLoaded',()=>{
  document.querySelectorAll('.lang-switch button').forEach(btn=>btn.addEventListener('click',()=>applyLang(btn.dataset.lang)));
  const toggle=document.querySelector('.mobile-toggle'); const links=document.querySelector('.nav-links');
  if(toggle&&links){toggle.addEventListener('click',()=>links.classList.toggle('open')); links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));}
- document.querySelectorAll('.testimonial-track').forEach(track=>{if(!track.dataset.ready){track.innerHTML+=track.innerHTML;track.dataset.ready='1';}});
  document.querySelectorAll('[data-year]').forEach(el=>el.textContent='2026');
  applyLang(currentLang());
 
-// ===== SLIDERS STYLE OUICODE — RAF autoScroll fluide =====
-function buildOuiSlider(cfg){
-  var track = document.getElementById(cfg.track);
-  var outer = document.getElementById(cfg.outer);
-  var dotsWrap = document.getElementById(cfg.dots);
-  var btnPrev = document.getElementById(cfg.prev);
-  var btnNext = document.getElementById(cfg.next);
-  if(!track || !outer) return;
+ // ===== SLIDERS AUTO — services, portfolio et avis =====
+ function buildOuiSlider(cfg){
+  var track=document.getElementById(cfg.track);
+  var outer=document.getElementById(cfg.outer);
+  var dotsWrap=document.getElementById(cfg.dots);
+  var btnPrev=document.getElementById(cfg.prev);
+  var btnNext=document.getElementById(cfg.next);
+  if(!track || !outer || track.dataset.sliderReady) return;
+  track.dataset.sliderReady='1';
 
-  var origSlides = Array.from(track.children);
-  var TOTAL = origSlides.length;
-  var GAP = cfg.gap || 25;
-  var SPEED = cfg.speed || 0.5;
+  var origSlides=Array.from(track.children).filter(function(el){return el.nodeType===1;});
+  var TOTAL=origSlides.length;
+  if(!TOTAL) return;
+  var GAP=cfg.gap || 25;
+  var SPEED=cfg.speed || 0.45;
 
-  // Cloner 2x pour loop infinie
-  origSlides.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
-  origSlides.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
+  origSlides.forEach(function(s){track.appendChild(s.cloneNode(true));});
+  origSlides.forEach(function(s){track.appendChild(s.cloneNode(true));});
 
-  var pos = 0, slideW = 0, cur = 0;
-  var dragging = false, startX = 0, startPos = 0;
-  var isAuto = true, raf = null;
+  var pos=0, slideW=0, cur=0;
+  var dragging=false, startX=0, startPos=0;
+  var isAuto=true, raf=null;
 
   function calcSlideW(){
-    var s = track.firstElementChild;
-    if(s) slideW = s.offsetWidth + GAP;
+    var s=track.firstElementChild;
+    if(s) slideW=s.offsetWidth + GAP;
   }
-
-  function init(){
-    calcSlideW();
-    pos = -(TOTAL * slideW);
-    track.style.transition = 'none';
-    track.style.transform = 'translateX(' + pos + 'px)';
-    if(raf) cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(autoTick);
+  function setPos(x){pos=x; track.style.transform='translateX('+pos+'px)';}
+  function normalize(){
+    if(!slideW) return;
+    if(pos <= -(2*TOTAL*slideW)) pos += TOTAL*slideW;
+    if(pos > -(TOTAL*slideW)) pos -= TOTAL*slideW;
+    track.style.transition='none';
+    track.style.transform='translateX('+pos+'px)';
   }
-
+  function updateDots(){
+    if(!dotsWrap) return;
+    dotsWrap.querySelectorAll('.slider-dot').forEach(function(d,i){d.classList.toggle('active',i===cur);});
+  }
+  function updateCurrent(){
+    if(!slideW) return;
+    var absPos=Math.abs(pos) - TOTAL*slideW;
+    if(absPos < 0) absPos += TOTAL*slideW;
+    var newCur=((Math.round(absPos/slideW)%TOTAL)+TOTAL)%TOTAL;
+    if(newCur!==cur){cur=newCur; updateDots();}
+  }
   function autoTick(){
-    if(isAuto){
+    if(isAuto && slideW){
       pos -= SPEED;
-      if(pos <= -(2 * TOTAL * slideW)){
-        pos += TOTAL * slideW;
-        track.style.transition = 'none';
-        track.style.transform = 'translateX(' + pos + 'px)';
-        track.getBoundingClientRect();
-      } else {
-        track.style.transform = 'translateX(' + pos + 'px)';
+      if(pos <= -(2*TOTAL*slideW)){
+        pos += TOTAL*slideW;
+        track.style.transition='none';
       }
-      var absPos = Math.abs(pos) - TOTAL * slideW;
-      if(absPos < 0) absPos += TOTAL * slideW;
-      var newCur = ((Math.round(absPos / slideW) % TOTAL) + TOTAL) % TOTAL;
-      if(newCur !== cur){ cur = newCur; updateDots(); }
+      track.style.transform='translateX('+pos+'px)';
+      updateCurrent();
     }
-    raf = requestAnimationFrame(autoTick);
+    raf=requestAnimationFrame(autoTick);
   }
-
-  function pauseAuto(){ isAuto = false; }
-  function resumeAuto(){ setTimeout(function(){ isAuto = true; }, 1800); }
-
+  function pauseAuto(){isAuto=false;}
+  function resumeAuto(){setTimeout(function(){isAuto=true;},1600);}
   function snapTo(dir){
     pauseAuto(); calcSlideW();
-    var loopOffset = TOTAL * slideW;
-    var relPos = Math.abs(pos) - loopOffset;
-    if(relPos < 0) relPos += TOTAL * slideW;
-    var nearIdx = Math.round(relPos / slideW);
-    var targetIdx = nearIdx + dir;
-    var targetPos = -(loopOffset + targetIdx * slideW);
-    track.style.transition = 'transform .48s cubic-bezier(.4,0,.2,1)';
-    pos = targetPos;
-    track.style.transform = 'translateX(' + pos + 'px)';
-    cur = (((targetIdx % TOTAL) + TOTAL) % TOTAL);
+    var loopOffset=TOTAL*slideW;
+    var relPos=Math.abs(pos)-loopOffset;
+    if(relPos < 0) relPos += TOTAL*slideW;
+    var nearIdx=Math.round(relPos/slideW);
+    var targetIdx=nearIdx+dir;
+    var targetPos=-(loopOffset+targetIdx*slideW);
+    track.style.transition='transform .48s cubic-bezier(.4,0,.2,1)';
+    setPos(targetPos);
+    cur=(((targetIdx%TOTAL)+TOTAL)%TOTAL);
     updateDots();
-    setTimeout(function(){
-      track.style.transition = 'none';
-      if(pos <= -(2 * TOTAL * slideW)) pos += TOTAL * slideW;
-      if(pos > -(TOTAL * slideW)) pos -= TOTAL * slideW;
-      track.style.transform = 'translateX(' + pos + 'px)';
-      track.getBoundingClientRect();
-      resumeAuto();
-    }, 520);
-  }
-
-  function updateDots(){
-    if(!dotsWrap) return;
-    dotsWrap.querySelectorAll('.slider-dot').forEach(function(d,i){
-      d.classList.toggle('active', i === cur);
-    });
+    setTimeout(function(){normalize(); resumeAuto();},520);
   }
 
   if(dotsWrap){
+    dotsWrap.innerHTML='';
     origSlides.forEach(function(_,i){
-      var d = document.createElement('button');
-      d.className = 'slider-dot' + (i===0?' active':'');
+      var d=document.createElement('button');
+      d.className='slider-dot'+(i===0?' active':'');
+      d.type='button';
       d.setAttribute('aria-label','Slide '+(i+1));
-      d.addEventListener('click', function(){ snapTo(i - cur); });
+      d.addEventListener('click',function(){snapTo(i-cur);});
       dotsWrap.appendChild(d);
     });
   }
+  if(btnNext) btnNext.addEventListener('click',function(){snapTo(+1);});
+  if(btnPrev) btnPrev.addEventListener('click',function(){snapTo(-1);});
 
-  if(btnNext) btnNext.addEventListener('click', function(){ snapTo(+1); });
-  if(btnPrev) btnPrev.addEventListener('click', function(){ snapTo(-1); });
-
-  outer.addEventListener('wheel', function(e){
-    if(Math.abs(e.deltaX) > Math.abs(e.deltaY)){
+  outer.addEventListener('wheel',function(e){
+    if(Math.abs(e.deltaX)>Math.abs(e.deltaY)){
       e.preventDefault();
-      if(e.deltaX > 30){ snapTo(+1); } else if(e.deltaX < -30){ snapTo(-1); }
+      if(e.deltaX>30){snapTo(+1);} else if(e.deltaX<-30){snapTo(-1);}
     }
-  }, {passive:false});
-
-  outer.addEventListener('mousedown', function(e){
-    dragging = true; startX = e.clientX; startPos = pos;
-    pauseAuto(); track.style.transition = 'none';
+  },{passive:false});
+  outer.addEventListener('mousedown',function(e){dragging=true;startX=e.clientX;startPos=pos;pauseAuto();track.style.transition='none';});
+  window.addEventListener('mousemove',function(e){if(!dragging) return; setPos(startPos+(e.clientX-startX));});
+  window.addEventListener('mouseup',function(e){
+    if(!dragging) return; dragging=false;
+    var diff=e.clientX-startX;
+    if(diff<-60){snapTo(+1);} else if(diff>60){snapTo(-1);} else {snapTo(0);}
   });
-  window.addEventListener('mousemove', function(e){
-    if(!dragging) return;
-    pos = startPos + (e.clientX - startX);
-    track.style.transform = 'translateX(' + pos + 'px)';
-  });
-  window.addEventListener('mouseup', function(e){
-    if(!dragging) return; dragging = false; track.style.transition = '';
-    var diff = e.clientX - startX;
-    if(diff < -60){ snapTo(+1); } else if(diff > 60){ snapTo(-1); } else { snapTo(0); }
-  });
-
-  var touchX = 0;
-  outer.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; pauseAuto(); },{passive:true});
-  outer.addEventListener('touchend', function(e){
-    var diff = e.changedTouches[0].clientX - touchX;
-    if(diff < -50){ snapTo(+1); } else if(diff > 50){ snapTo(-1); } else { resumeAuto(); }
+  var touchX=0;
+  outer.addEventListener('touchstart',function(e){touchX=e.touches[0].clientX;pauseAuto();},{passive:true});
+  outer.addEventListener('touchend',function(e){
+    var diff=e.changedTouches[0].clientX-touchX;
+    if(diff<-50){snapTo(+1);} else if(diff>50){snapTo(-1);} else {resumeAuto();}
   },{passive:true});
+  outer.addEventListener('mouseenter',function(){if(!dragging) pauseAuto();});
+  outer.addEventListener('mouseleave',function(){if(!dragging) resumeAuto();});
+  window.addEventListener('resize',function(){
+    calcSlideW();
+    track.style.transition='none';
+    setPos(-(TOTAL*slideW + cur*slideW));
+  });
 
-  outer.addEventListener('mouseenter', function(){ if(!dragging) pauseAuto(); });
-  outer.addEventListener('mouseleave', function(){ if(!dragging) resumeAuto(); });
-  window.addEventListener('resize', function(){ calcSlideW(); });
-  init();
-}
+  calcSlideW();
+  setPos(-(TOTAL*slideW));
+  if(raf) cancelAnimationFrame(raf);
+  raf=requestAnimationFrame(autoTick);
+ }
 
-buildOuiSlider({track:'portfolioTrack', outer:'portTrackOuter', dots:'portDots', prev:'portPrev', next:'portNext', speed:0.45, gap:25});
-buildOuiSlider({track:'testiTrack', outer:'testiTrackOuter', dots:'testiDots', prev:'testiPrev', next:'testiNext', speed:0.35, gap:22});
+ buildOuiSlider({track:'servicesTrack',outer:'servicesTrackOuter',dots:'servicesDots',prev:'servicesPrev',next:'servicesNext',speed:0.52,gap:26});
+ buildOuiSlider({track:'portfolioTrack',outer:'portTrackOuter',dots:'portDots',prev:'portPrev',next:'portNext',speed:0.45,gap:25});
+ buildOuiSlider({track:'testiTrack',outer:'testiTrackOuter',dots:'testiDots',prev:'testiPrev',next:'testiNext',speed:0.35,gap:22});
 
-// ===== SCROLL REVEAL =====
-var revealObs = new IntersectionObserver(function(entries){
+ // ===== SCROLL REVEAL =====
+ var revealObs=new IntersectionObserver(function(entries){
   entries.forEach(function(entry){
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-      revealObs.unobserve(entry.target);
-    }
+    if(entry.isIntersecting){entry.target.classList.add('visible');revealObs.unobserve(entry.target);}
   });
-}, {threshold:0.1});
-document.querySelectorAll('.service-card,.conv-card,.faq-item,.article-card,.stat-card,.pricing-card').forEach(function(el,i){
+ },{threshold:0.1});
+ document.querySelectorAll('.conv-card,.faq-item,.article-card,.stat-card,.pricing-card').forEach(function(el,i){
   el.classList.add('reveal');
-  el.style.transitionDelay = (i % 4) * 0.08 + 's';
+  el.style.transitionDelay=(i%4)*0.08+'s';
   revealObs.observe(el);
-});
-document.querySelectorAll('.section-head,.proof-panel,.audit-card,.contact-list,.portfolio-slider-wrap,.testi-slider-wrap').forEach(function(el){
+ });
+ document.querySelectorAll('.section-head,.proof-panel,.audit-card,.contact-list,.services-slider-wrap,.portfolio-slider-wrap,.testi-slider-wrap').forEach(function(el){
   el.classList.add('reveal');
   revealObs.observe(el);
-});
-
-
-// ===== SLIDERS STYLE OUICODE — RAF autoScroll fluide =====
-function buildOuiSlider(cfg){
-  var track = document.getElementById(cfg.track);
-  var outer = document.getElementById(cfg.outer);
-  var dotsWrap = document.getElementById(cfg.dots);
-  var btnPrev = document.getElementById(cfg.prev);
-  var btnNext = document.getElementById(cfg.next);
-  if(!track || !outer) return;
-
-  var origSlides = Array.from(track.children);
-  var TOTAL = origSlides.length;
-  var GAP = cfg.gap || 25;
-  var SPEED = cfg.speed || 0.5; // px par frame
-
-  // Cloner 3x pour loop infinie fluide (comme OuiCode)
-  origSlides.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
-  origSlides.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
-
-  var pos = 0;
-  var slideW = 0;
-  var cur = 0;
-  var dragging = false;
-  var startX = 0;
-  var startPos = 0;
-  var isAuto = true;
-  var raf = null;
-
-  function calcSlideW(){
-    var s = track.querySelector('.portfolio-slide, .testimonial-card');
-    if(s) slideW = s.offsetWidth + GAP;
-  }
-
-  function init(){
-    calcSlideW();
-    pos = -(TOTAL * slideW); // commence sur la 2ème copie
-    track.style.transform = 'translateX(' + pos + 'px)';
-    raf = requestAnimationFrame(autoTick);
-  }
-
-  function autoTick(){
-    if(isAuto){
-      pos -= SPEED;
-      // Loop infinie : quand on dépasse la 3ème copie, sauter à la 2ème
-      if(pos <= -(2 * TOTAL * slideW)){
-        pos += TOTAL * slideW;
-        track.style.transition = 'none';
-        track.style.transform = 'translateX(' + pos + 'px)';
-        track.getBoundingClientRect(); // forcer reflow
-      } else {
-        track.style.transform = 'translateX(' + pos + 'px)';
-      }
-      // Mettre à jour les dots
-      var absPos = Math.abs(pos) - TOTAL * slideW;
-      var newCur = ((Math.round(absPos / slideW) % TOTAL) + TOTAL) % TOTAL;
-      if(newCur !== cur){ cur = newCur; updateDots(); }
-    }
-    raf = requestAnimationFrame(autoTick);
-  }
-
-  function pauseAuto(){ isAuto = false; }
-  function resumeAuto(){ setTimeout(function(){ isAuto = true; }, 1800); }
-
-  function snapTo(dir){
-    pauseAuto();
-    calcSlideW();
-    var loopOffset = TOTAL * slideW;
-    var relPos = Math.abs(pos) - loopOffset;
-    var nearIdx = Math.round(relPos / slideW);
-    var targetIdx = nearIdx + dir;
-    var targetPos = -(loopOffset + targetIdx * slideW);
-
-    track.style.transition = 'transform .48s cubic-bezier(.4,0,.2,1)';
-    pos = targetPos;
-    track.style.transform = 'translateX(' + pos + 'px)';
-    cur = (((targetIdx % TOTAL) + TOTAL) % TOTAL);
-    updateDots();
-
-    setTimeout(function(){
-      track.style.transition = 'none';
-      if(pos <= -(2 * TOTAL * slideW)) pos += TOTAL * slideW;
-      if(pos > -(TOTAL * slideW)) pos -= TOTAL * slideW;
-      track.style.transform = 'translateX(' + pos + 'px)';
-      track.getBoundingClientRect();
-      resumeAuto();
-    }, 500);
-  }
-
-  function updateDots(){
-    if(!dotsWrap) return;
-    dotsWrap.querySelectorAll('.slider-dot').forEach(function(d,i){
-      d.classList.toggle('active', i === cur);
-    });
-  }
-
-  // Créer les dots
-  if(dotsWrap){
-    origSlides.forEach(function(_,i){
-      var d = document.createElement('button');
-      d.className = 'slider-dot' + (i===0?' active':'');
-      d.setAttribute('aria-label','Slide '+(i+1));
-      d.addEventListener('click', function(){ snapTo(i - cur); });
-      dotsWrap.appendChild(d);
-    });
-  }
-
-  // Boutons
-  if(btnNext) btnNext.addEventListener('click', function(){ snapTo(+1); });
-  if(btnPrev) btnPrev.addEventListener('click', function(){ snapTo(-1); });
-
-  // Scroll molette horizontal
-  outer.addEventListener('wheel', function(e){
-    if(Math.abs(e.deltaX) > Math.abs(e.deltaY)){
-      e.preventDefault();
-      if(e.deltaX > 30){ snapTo(+1); } else if(e.deltaX < -30){ snapTo(-1); }
-    }
-  }, {passive:false});
-
-  // Drag souris
-  outer.addEventListener('mousedown', function(e){
-    dragging = true; startX = e.clientX; startPos = pos;
-    pauseAuto(); track.style.transition = 'none';
-  });
-  window.addEventListener('mousemove', function(e){
-    if(!dragging) return;
-    pos = startPos + (e.clientX - startX);
-    track.style.transform = 'translateX(' + pos + 'px)';
-  });
-  window.addEventListener('mouseup', function(e){
-    if(!dragging) return; dragging = false;
-    var diff = e.clientX - startX;
-    if(diff < -60){ snapTo(+1); } else if(diff > 60){ snapTo(-1); } else { snapTo(0); }
-  });
-
-  // Touch
-  var touchX = 0;
-  outer.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; pauseAuto(); },{passive:true});
-  outer.addEventListener('touchend', function(e){
-    var diff = e.changedTouches[0].clientX - touchX;
-    if(diff < -50){ snapTo(+1); } else if(diff > 50){ snapTo(-1); } else { resumeAuto(); }
-  },{passive:true});
-
-  // Pause hover
-  outer.addEventListener('mouseenter', function(){ if(!dragging) pauseAuto(); });
-  outer.addEventListener('mouseleave', function(){ if(!dragging) resumeAuto(); });
-
-  window.addEventListener('resize', function(){ calcSlideW(); });
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-}
-
-buildOuiSlider({track:'portfolioTrack', outer:'portTrackOuter', dots:'portDots', prev:'portPrev', next:'portNext', speed:0.45, gap:25});
-buildOuiSlider({track:'testiTrack', outer:'testiTrackOuter', dots:'testiDots', prev:'testiPrev', next:'testiNext', speed:0.35, gap:22});
-
-
-
-
+ });
 });
 
 </script>
