@@ -1,0 +1,25 @@
+{
+  "name": "El Jadida Web Solutions",
+  "short_name": "EJWS",
+  "description": "Agence web à El Jadida : création sites web, SEO, Google Business Profile et marketing digital.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#07070c",
+  "theme_color": "#07070c",
+  "lang": "fr-MA",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
