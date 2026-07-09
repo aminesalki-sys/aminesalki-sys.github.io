@@ -16,7 +16,7 @@
 
 ## Actions réalisées
 - Ajout d’une architecture en silos : accueil → pages services → articles blog → contact.
-- Ajout de pages services longue traîne pour capter les recherches à intention forte.
+- Ajout de pages services longue traîne pour capter les recherches précises des futurs clients.
 - Ajout d’un sitemap enrichi, robots.txt propre, canonical et hreflang pour FR/EN/AR.
 - Ajout d’une PWA légère : manifest + service worker + page offline.
 - Renforcement mobile et RTL arabe : lisibilité, menu mobile, champs formulaires, boutons pleine largeur.
