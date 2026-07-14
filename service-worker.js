@@ -1,4 +1,4 @@
-const CACHE_VERSION='ejws-no-cache-20260713-v6';
+const CACHE_NAME = 'ejws-seo-expanded-v1';
 self.addEventListener('install', event => { self.skipWaiting(); });
-self.addEventListener('activate', event => { event.waitUntil((async()=>{ const keys=await caches.keys(); await Promise.all(keys.map(k=>caches.delete(k))); await self.clients.claim(); })()); });
-self.addEventListener('fetch', event => { if(event.request.method !== 'GET') return; event.respondWith(fetch(event.request, {cache:'no-store'}).catch(()=>caches.match('/offline.html'))); });
+self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k))))); self.clients.claim(); });
+self.addEventListener('fetch', event => { return; });
