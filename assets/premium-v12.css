@@ -1,0 +1,69 @@
+
+/* ===== Premium v12 - interaction, sliders, mobile nav ===== */
+html{scroll-behavior:smooth}
+a,button,[role="button"]{touch-action:manipulation}
+
+/* stronger mobile nav across all templates */
+@media (max-width: 1050px){
+  .menu-btn,.mobile-toggle{display:grid !important;place-items:center;position:relative;z-index:1150}
+  .nav-links{
+    position:fixed !important;
+    top:78px !important;
+    left:12px !important;
+    right:12px !important;
+    bottom:auto !important;
+    z-index:1140 !important;
+    display:none !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:.4rem !important;
+    padding:1rem !important;
+    background:rgba(10,11,20,.985) !important;
+    border:1px solid rgba(255,255,255,.12) !important;
+    border-radius:22px !important;
+    box-shadow:0 24px 70px rgba(0,0,0,.45) !important;
+    max-height:calc(100vh - 96px) !important;
+    overflow:auto !important;
+  }
+  .nav-links.open{display:flex !important;animation:ejwsMenuIn .18s ease both}
+  .nav-links li{width:100%}
+  .nav-links a{display:block !important;width:100% !important;padding:.95rem 1rem !important;border-radius:14px;background:rgba(255,255,255,.035)}
+  body.menu-open{overflow:hidden}
+  .nav-actions .btn, .nav-actions .btn-soft{display:none !important}
+  .site-header{z-index:1200 !important}
+  html[dir="rtl"] .nav-links{right:12px !important;left:12px !important}
+  html[dir="rtl"] .nav-links a{text-align:right !important}
+}
+@media (max-width: 700px){
+  .nav-links{top:70px !important}
+}
+@keyframes ejwsMenuIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+
+/* homepage/service/portfolio slider controls */
+.slider-nav{position:relative;z-index:10}
+.slider-btn{position:relative;z-index:11;pointer-events:auto !important}
+.services-track-outer,.portfolio-track-outer,.testi-track-outer{scroll-behavior:smooth;-ms-overflow-style:none;scrollbar-width:none}
+.services-track-outer::-webkit-scrollbar,.portfolio-track-outer::-webkit-scrollbar,.testi-track-outer::-webkit-scrollbar{display:none}
+.services-track,.portfolio-track,.testi-track{will-change:transform}
+.services-slide,.portfolio-slide,.testimonial-card{scroll-snap-align:start}
+.services-track-outer,.portfolio-track-outer,.testi-track-outer{scroll-snap-type:x proximity}
+
+/* prevent overlays from blocking clicks */
+.portfolio-slide a.slide-link,.service-slide article,.portfolio-card .card-media,.portfolio-visit,.more,.btn,.slider-btn{position:relative;z-index:3}
+
+/* auto logo slider */
+.reference-slider-viewport{position:relative;overflow:hidden;width:100%;margin-top:1.25rem;mask-image:linear-gradient(90deg,transparent,black 6%,black 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 6%,black 94%,transparent)}
+.reference-slider-track{display:flex;align-items:center;gap:1rem;width:max-content;animation:ejwsLogoMarquee 34s linear infinite}
+.reference-slider-viewport:hover .reference-slider-track{animation-play-state:paused}
+.reference-slider-track .reference-logo-card{list-style:none;flex:0 0 270px;min-width:270px;margin:0}
+.reference-slider-track img{width:100%;height:86px;object-fit:contain}
+.reference-slider-track .reference-logo-card a{display:flex;align-items:center;justify-content:center;width:100%;height:100%;text-decoration:none}
+@keyframes ejwsLogoMarquee{from{transform:translateX(0)}to{transform:translateX(calc(-50% - .5rem))}}
+@media (max-width: 700px){
+  .reference-slider-track .reference-logo-card{flex-basis:220px;min-width:220px}
+  .reference-slider-track img{height:74px}
+}
+html[dir="rtl"] .reference-slider-track{direction:ltr}
+
+/* tiny accessibility niceties */
+.slider-btn:focus-visible,.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid #7c5cfc;outline-offset:3px}
