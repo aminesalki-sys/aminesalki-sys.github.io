@@ -1,0 +1,2 @@
+Bad phrase scan:
+OK - aucune expression interne critique trouvée.
