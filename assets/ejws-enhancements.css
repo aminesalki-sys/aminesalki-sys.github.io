@@ -1,0 +1,34 @@
+/* Améliorations discrètes d'accessibilité, conversion et portfolio ; design original conservé. */
+:where(a,button,input,select,textarea):focus-visible{outline:3px solid #19d7e5!important;outline-offset:3px!important}
+.ejws-lead-panel{padding:clamp(2rem,5vw,4rem) 1rem;background:linear-gradient(135deg,#101226,#241033);color:#fff;border-block:1px solid rgba(178,134,255,.25)}
+.ejws-lead-panel .ejws-inner{max-width:1080px;margin:auto;display:grid;grid-template-columns:1.35fr .65fr;gap:2rem;align-items:center}
+.ejws-lead-panel h2{font-size:clamp(1.6rem,3.2vw,2.5rem);line-height:1.17;margin:.4rem 0}
+.ejws-lead-panel p{color:#d5cee5;line-height:1.7;margin:.55rem 0}
+.ejws-lead-panel .ejws-actions{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:flex-end}
+.ejws-pill{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.25rem;border-radius:99px;text-decoration:none;font-weight:750;background:linear-gradient(115deg,#805df9,#f13d9a);color:#fff!important}
+.ejws-pill-secondary{background:transparent;border:1px solid #ad8aff}
+.ejws-portfolio-section{padding:4rem 1rem;color:#fff;background:linear-gradient(160deg,#0c0c19,#160e29)}
+.ejws-portfolio-inner{max-width:1160px;margin:0 auto}
+.ejws-portfolio-heading{font-size:clamp(1.7rem,3.3vw,2.7rem);margin:.4rem 0 1rem}
+.ejws-portfolio-sub{color:#c7c4d6;margin-bottom:1.8rem;max-width:800px;line-height:1.7}
+.ejws-portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.15rem}
+.ejws-project-card{display:block;background:rgba(255,255,255,.045);border:1px solid rgba(185,146,255,.25);border-radius:19px;overflow:hidden;text-decoration:none!important;color:#fff!important;transition:transform .16s ease,border-color .16s ease}
+.ejws-project-card:hover{transform:translateY(-3px);border-color:#df80ff}
+.ejws-project-card img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block}
+.ejws-project-card > span{display:block;padding:1rem 1.1rem}
+.ejws-project-card strong{display:block;font-size:1.05rem;margin-bottom:.3rem}
+.ejws-project-card small{color:#cbc8de;line-height:1.5}
+.ejws-form-feedback{display:block;margin:.8rem 0 0;padding:.75rem;border-radius:10px;background:#341e2d;color:#fff;line-height:1.5}
+.ejws-form-feedback[hidden]{display:none}
+.ejws-form-feedback a{color:#fff;text-decoration:underline}
+.ejws-consent{position:fixed;bottom:1rem;left:1rem;right:1rem;z-index:9999;max-width:620px;margin:auto;background:#15172b;color:#fff;border:1px solid #8062dd;border-radius:15px;padding:1rem 1.2rem;box-shadow:0 14px 40px #0008}
+.ejws-consent p{margin:0 0 .7rem;line-height:1.6}
+.ejws-consent button{padding:.55rem .9rem;border-radius:8px;border:1px solid #bba7ff;background:transparent;color:#fff;cursor:pointer;margin-right:.5rem}
+.ejws-consent button:first-of-type{background:#8062dd}
+@media(max-width:720px){.ejws-lead-panel .ejws-inner{grid-template-columns:1fr}.ejws-lead-panel .ejws-actions{justify-content:flex-start}.ejws-portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.ejws-project-card > span{padding:.7rem}.ejws-project-card small{font-size:.72rem}}
+@media(max-width:430px){.ejws-portfolio-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+.ejws-audit-extra{margin:1rem 0;padding:.75rem 1rem;border:1px solid rgba(177,151,255,.35);border-radius:12px;color:#e9defe}
+.ejws-audit-extra summary{cursor:pointer;font-weight:750;margin-bottom:.3rem}
+.ejws-audit-extra .field{margin:.75rem 0}

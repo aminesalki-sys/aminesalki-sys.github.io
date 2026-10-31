@@ -12,7 +12,7 @@
     initMenu();
     markCurrentPage();
     updateYear();
-    initForms();
+    // Form sending and error handling are now managed by ejws-conversions.js.
     initLogoCarousels();
     initSlider({ outer: '#servicesTrackOuter', track: '#servicesTrack', prev: '#servicesPrev', next: '#servicesNext', dots: '#servicesDots', autoplay: 4200 });
     initSlider({ outer: '#portTrackOuter', track: '#portfolioTrack', prev: '#portPrev', next: '#portNext', dots: '#portDots', autoplay: 4600 });
