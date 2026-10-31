@@ -32,3 +32,13 @@
 .ejws-audit-extra{margin:1rem 0;padding:.75rem 1rem;border:1px solid rgba(177,151,255,.35);border-radius:12px;color:#e9defe}
 .ejws-audit-extra summary{cursor:pointer;font-weight:750;margin-bottom:.3rem}
 .ejws-audit-extra .field{margin:.75rem 0}
+
+
+/* EJWS: affichage fiable des numéros en arabe (RTL). */
+.ejws-phone-ltr{direction:ltr!important;unicode-bidi:isolate!important;display:inline-block;white-space:nowrap;font-variant-numeric:tabular-nums;}
+/* EJWS: éviter le débordement horizontal des FAQ sur écran intermédiaire. */
+.faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;max-width:100%;min-width:0;}
+.faq-grid > *{min-width:0;max-width:100%;overflow-wrap:anywhere;}
+@media(max-width:1199px){.faq-grid{grid-template-columns:minmax(0,1fr)!important;}}
+/* Les nouveaux liens WhatsApp restent identiques aux cartes de contact existantes. */
+.ejws-direct-wa{border-color:rgba(80,211,167,.35);}
