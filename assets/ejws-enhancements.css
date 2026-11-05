@@ -42,3 +42,16 @@
 @media(max-width:1199px){.faq-grid{grid-template-columns:minmax(0,1fr)!important;}}
 /* Les nouveaux liens WhatsApp restent identiques aux cartes de contact existantes. */
 .ejws-direct-wa{border-color:rgba(80,211,167,.35);}
+
+
+/* 2026-11-05 : liens internes accessibles vers les pages villes (SEO) */
+.ejws-city-hub{padding-top:3.4rem;padding-bottom:3.6rem}
+.ejws-city-hub .section-head{margin-bottom:1.6rem}
+.ejws-city-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.ejws-city-link{display:flex;flex-direction:column;gap:.6rem;padding:1.3rem 1.4rem;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:rgba(255,255,255,.045);color:inherit;text-decoration:none;min-height:170px;transition:border-color .2s ease,transform .2s ease,background .2s ease}
+.ejws-city-link:hover,.ejws-city-link:focus-visible{border-color:rgba(167,139,250,.75);background:rgba(139,92,246,.1);transform:translateY(-2px);outline-offset:3px}
+.ejws-city-link strong{font-size:1rem;color:inherit;line-height:1.35}
+.ejws-city-link span{font-size:.86rem;line-height:1.55;color:rgba(228,231,240,.76)}
+.ejws-city-link .ejws-city-arrow{margin-top:auto;font-weight:700;color:#c4b5fd}
+@media(max-width:900px){.ejws-city-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.ejws-city-grid{grid-template-columns:1fr}.ejws-city-hub{padding-top:2.2rem;padding-bottom:2.6rem}.ejws-city-link{min-height:auto}}
